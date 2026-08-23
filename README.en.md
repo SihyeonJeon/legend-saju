@@ -1,4 +1,4 @@
-<!-- mcp-name: io.github.sihyeonjeon/legend-saju -->
+<!-- mcp-name: io.github.SihyeonJeon/legend-saju -->
 
 <div align="center">
   <img src="assets/og-social-1280x640.png" alt="Legend Saju, an open-source East Asian metaphysics engine" width="100%" />

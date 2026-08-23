@@ -1,4 +1,4 @@
-<!-- mcp-name: io.github.sihyeonjeon/legend-saju -->
+<!-- mcp-name: io.github.SihyeonJeon/legend-saju -->
 
 <div align="center">
   <img src="assets/og-social-1280x640.png" alt="Legend Saju — 출처와 유파를 추적하는 동양 역학 엔진" width="100%" />
