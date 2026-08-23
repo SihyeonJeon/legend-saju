@@ -150,9 +150,9 @@ MCP 서버는 사용자의 목적이 이름에 드러나는 읽기 전용 도구
         ↓
 Legend Saju MCP가 결정론적 계산 수행
         ↓
-출처·유파·충돌·누락 정보가 포함된 구조화 결과
+근거 ID가 연결된 요약·영역별 해석·시간축
         ↓
-호스트 모델이 사람이 읽기 쉬운 한국어로 설명
+호스트 모델이 근거와 경계를 보존해 대화로 전달
 ```
 
 Legend Saju MCP 자체는 OpenAI나 Anthropic API 키를 읽지 않으며 모델을 호출하지 않는다. 대화와 설명에는 사용 중인 Codex·Claude·기타 클라이언트의 기존 모델 세션이 쓰인다.
@@ -237,7 +237,7 @@ console.log(result.routes);
 }
 ```
 
-MCP의 기본 응답은 `consumer` 모드다. 핵심 주장·출처·한계를 중복 없이 압축하며, 전체 계산 자료가 필요할 때만 `evidence` 또는 `debug` 모드를 요청한다.
+MCP의 기본 응답은 `consumer` 모드다. `readingSummary`, 영역별 `sections`, 연도별 `timeline`을 먼저 반환하고 모든 해석 문장을 `evidenceClaimIds`, `sourceRefs`, `counterClaimIds`, `limitationRefs`에 연결한다. `inputNotes`에는 출생시각 출처나 진태양시 미보정 같은 입력 조건을 한 번만 표시한다. 전체 계산 자료가 필요할 때만 `evidence` 또는 `debug` 모드를 요청한다.
 
 ## 왜 만들었나
 

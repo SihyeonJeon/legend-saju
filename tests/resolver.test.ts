@@ -71,6 +71,21 @@ describe("open-ended resolver", () => {
     expect(result.selection.selected).not.toContain("ziwei_gaeun");
   });
 
+  it("treats a generic fortune request as broad while keeping its engine set bounded", () => {
+    const result = resolve({
+      question: "내 운세 봐줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    });
+
+    expect(result.executionPlan.domains).toEqual(["identity", "career", "wealth", "relationship", "family", "timing"]);
+    expect(result.selection.selected).toContain("myeongri_judgment");
+    expect(result.selection.selected).toContain("ziwei_topology");
+    expect(result.selection.selected).toContain("ziwei_doctrine");
+    expect(result.selection.selected).not.toContain("taekil");
+    expect(result.selection.selected).not.toContain("recommend");
+  });
+
   it("adds action guidance without silently turning it into date selection", () => {
     const result = resolve({
       question: "재물운을 보고 구체적 액션도 알려줘",
@@ -211,6 +226,40 @@ describe("token-free MCP handlers", () => {
     expect(JSON.stringify(consumer.structuredContent).length).toBeLessThan(50_000);
     expect(debug.structuredContent.dossier).toBeDefined();
     expect(JSON.stringify(debug.structuredContent).length).toBeGreaterThan(JSON.stringify(consumer.structuredContent).length);
+  });
+
+  it("returns meaning-first consumer sections linked to evidence claims", async () => {
+    const result = await runLegendSajuResolveTool({
+      question: "직업과 재물, 연애 결혼, 앞으로 3년을 종합적으로 봐줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+      timelineRange: { startYear: 2026, endYear: 2028 },
+    });
+    const summary = result.structuredContent.readingSummary as { summary: string; highlights: string[] };
+    const sections = result.structuredContent.sections as Record<string, { interpretations: Array<{ text: string; evidenceClaimIds: string[]; sourceRefs: string[] }> }>;
+    const timeline = result.structuredContent.timeline as Array<{ period: string; summary: string; evidenceClaimIds: string[] }>;
+    const claims = result.structuredContent.claims as Array<{ kind: string; statement: string }>;
+
+    expect(summary.summary).not.toMatch(/계산했다|기록했다|보존했다/);
+    expect(summary.highlights.every((text) => !/계산했다|기록했다|보존했다/.test(text))).toBe(true);
+    expect(Object.keys(sections)).toEqual(expect.arrayContaining(["career", "wealth", "relationship", "timing"]));
+    expect(sections.wealth.interpretations[0].evidenceClaimIds.length).toBeGreaterThan(0);
+    expect(sections.wealth.interpretations[0].sourceRefs.length).toBeGreaterThan(0);
+    expect(timeline).toHaveLength(3);
+    expect(timeline.every((entry) => entry.evidenceClaimIds.length > 0 && entry.summary.includes(entry.period))).toBe(true);
+    expect(claims[0].kind).toBe("heuristic_interpretation");
+  });
+
+  it("surfaces input assumptions without silently upgrading birth-time certainty", async () => {
+    const { birthTimeAccuracy: _omitted, ...birthWithoutAccuracy } = birth;
+    const result = await runLegendSajuResolveTool({
+      question: "올해 직업운을 봐줘",
+      birth: birthWithoutAccuracy,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    });
+    const inputNotes = result.structuredContent.inputNotes as Array<{ code: string }>;
+
+    expect(inputNotes.map((note) => note.code)).toContain("BIRTH_TIME_SOURCE_UNSPECIFIED");
   });
 
   it("exposes a server factory and searchable live manifest", async () => {

@@ -39,7 +39,7 @@ import {
   type LegendSajuResolveInput,
 } from "./resolver";
 
-export const LEGEND_SAJU_ENGINE_VERSION = "0.2.0" as const;
+export const LEGEND_SAJU_ENGINE_VERSION = "0.3.0" as const;
 
 export interface LegendSajuEngineManifest {
   version: typeof LEGEND_SAJU_ENGINE_VERSION;

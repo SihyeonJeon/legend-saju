@@ -34,6 +34,8 @@ import { analyzeMyeongriStructure, computeSajuChartEnvelope } from "./myeongri-s
 import {
   evaluateMyeongriCompatibility,
   evaluateMyeongriJudgment,
+  tenGodFamilyOf,
+  tenGodForStem,
   type CrossChartContact
 } from "./myeongri-judgment";
 import { computeSajuChart, type SajuInput } from "./saju-engine";
@@ -62,12 +64,48 @@ const STRENGTH_STATUS_LABEL: Record<ReturnType<typeof evaluateMyeongriJudgment>[
   extreme_structure_candidate: "특수격 후보 검토가 필요",
 };
 
-const PATTERN_STATUS_LABEL: Record<ReturnType<typeof evaluateMyeongriJudgment>["pattern"]["status"], string> = {
-  supported: "성립을 보강하는 쪽으로 확인됐다",
-  contested: "보강과 훼손이 함께 확인됐다",
-  damaged: "훼손 쪽이 확인됐다",
-  unresolved: "한 방향으로 결정되지 않았다",
+const PATTERN_STATUS_READING: Record<ReturnType<typeof evaluateMyeongriJudgment>["pattern"]["status"], string> = {
+  supported: "이 기능을 살리는 조건이 비교적 갖춰져 있다",
+  contested: "살리는 조건과 방해하는 조건이 함께 있어 환경에 따른 편차를 남긴다",
+  damaged: "방해 조건도 확인돼 이 기능을 곧바로 강점으로 단정하지 않는다",
+  unresolved: "한 방향으로 결정할 조건이 부족하다",
 };
+
+const PATTERN_FAMILY_READING = {
+  peer: {
+    identity: "자기결정·협업·경쟁을 다루는 기능이 중심 후보다",
+    career: "역할·소유권·결정권이 분명한 협업에서 강점을 확인할 수 있다",
+    wealth: "공동 자금과 성과 배분을 분명히 할 때 재물 기능을 다루기 쉽다",
+  },
+  output: {
+    identity: "표현·생산·교육처럼 결과물을 밖으로 내는 기능이 중심 후보다",
+    career: "설명·제작·교육처럼 결과가 확인되는 일에서 직업 기능을 확인할 수 있다",
+    wealth: "만든 결과물을 고객 반응과 수입으로 연결하는 방식이 재물 해석의 중심이다",
+  },
+  wealth: {
+    identity: "거래·재무·고객·운영을 현실적으로 관리하는 기능이 중심 후보다",
+    career: "고객·가격·납기·운영을 직접 다루는 일이 직업 해석의 중심이다",
+    wealth: "현금·거래·보유 자원을 관리하는 방식이 재물 해석의 중심이다",
+  },
+  officer: {
+    identity: "책임·규정·평가를 감당하는 기능이 중심 후보다",
+    career: "책임 범위와 평가 조건이 분명한 조직·전문 역할에서 직업 기능을 확인할 수 있다",
+    wealth: "자격·책임·제도 안에서 보상을 쌓는 방식이 재물 해석의 중심이다",
+  },
+  resource: {
+    identity: "학습·문서·보호·전문성을 축적하는 기능이 중심 후보다",
+    career: "지식·문서·검토·돌봄을 재사용 가능한 전문성으로 만드는 일이 직업 해석의 중심이다",
+    wealth: "축적한 지식과 문서를 전문 서비스로 바꾸는 방식이 재물 해석의 중심이다",
+  },
+} as const;
+
+const TIMING_FAMILY_READING = {
+  peer: "협업·경쟁·자기결정",
+  output: "표현·생산·결과물",
+  wealth: "거래·재무·운영",
+  officer: "책임·규정·평가",
+  resource: "학습·문서·회복",
+} as const;
 
 export interface EngineClaim {
   id: string;
@@ -143,10 +181,14 @@ const DOMAIN_KEYWORDS: Record<LifeDomain, string[]> = {
 };
 
 const DEFAULT_DOMAINS: LifeDomain[] = ["identity", "career", "wealth", "relationship", "family", "timing"];
+const BROAD_READING_PHRASES = ["사주 봐", "운세 봐", "전체 운세", "종합 운세", "전반 운세", "총운"];
 
 export function inferLifeDomains(question?: string): LifeDomain[] {
   if (!question?.trim()) return DEFAULT_DOMAINS;
   const found = (Object.keys(DOMAIN_KEYWORDS) as LifeDomain[]).filter((domain) => DOMAIN_KEYWORDS[domain].some((keyword) => question.includes(keyword)));
+  if (BROAD_READING_PHRASES.some((phrase) => question.includes(phrase)) && found.every((domain) => domain === "identity" || domain === "timing")) {
+    return DEFAULT_DOMAINS;
+  }
   return found.length ? found : DEFAULT_DOMAINS;
 }
 
@@ -317,6 +359,7 @@ function addMyeongriClaims(
   }
   if (selected.has("myeongri_judgment")) {
     const judgment = evaluateMyeongriJudgment(envelope.fullChart!);
+    const patternFamily = tenGodFamilyOf(judgment.pattern.monthMainTenGod);
     const strengthClaimId = add({
       domain: "identity",
       system: "myeongri",
@@ -332,25 +375,31 @@ function addMyeongriClaims(
       confidence: "medium",
       limitations: [judgment.strength.boundary, judgment.strength.policy]
     });
-    const patternClaimIds = [...new Set<LifeDomain>([
+    const patternClaimIds = [...new Set<"identity" | "career" | "wealth">([
       "identity",
       ...domains.filter((domain): domain is "career" | "wealth" => domain === "career" || domain === "wealth")
-    ])].map((domain) => add({
-      domain,
-      system: "myeongri",
-      capabilityId: "myeongri_judgment",
-      kind: "heuristic_interpretation",
-      statement: `월지 본기와 투출로 ${judgment.pattern.pattern}를 세웠고 성패 장치는 ${PATTERN_STATUS_LABEL[judgment.pattern.status]}.`,
-      observations: [
-        `월지 본기 ${judgment.pattern.monthMainStem}=${judgment.pattern.monthMainTenGod}`,
-        ...judgment.pattern.exposedMonthHiddenStems.map((item) => `${item.stem}(${item.tenGod}) 투출 ${item.exposedAt.join("·")}`),
-        ...judgment.pattern.mechanisms.map((mechanism) => `${mechanism.label}:${mechanism.polarity}:${mechanism.grade}:${mechanism.evidence.join("·")}`),
-        ...(judgment.pattern.mechanisms.length ? [] : ["성립·훼손 장치가 한 방향으로 모이지 않음"])
-      ],
-      timeframe: { kind: "natal", value: "월령 격국" },
-      confidence: "medium",
-      limitations: [judgment.pattern.boundary, judgment.pattern.sourceLocator.section]
-    }));
+    ])].map((domain) => {
+      const meaning = patternFamily === "self"
+        ? "한 가지 사회적 기능으로 고정하지 않는다"
+        : PATTERN_FAMILY_READING[patternFamily][domain];
+      return add({
+        domain,
+        system: "myeongri",
+        capabilityId: "myeongri_judgment",
+        kind: "heuristic_interpretation",
+        statement: `${meaning}. ${PATTERN_STATUS_READING[judgment.pattern.status]}.`,
+        observations: [
+          `격국 후보 ${judgment.pattern.pattern}`,
+          `월지 본기 ${judgment.pattern.monthMainStem}=${judgment.pattern.monthMainTenGod}`,
+          ...judgment.pattern.exposedMonthHiddenStems.map((item) => `${item.stem}(${item.tenGod}) 투출 ${item.exposedAt.join("·")}`),
+          ...judgment.pattern.mechanisms.map((mechanism) => `${mechanism.label}:${mechanism.polarity}:${mechanism.grade}:${mechanism.evidence.join("·")}`),
+          ...(judgment.pattern.mechanisms.length ? [] : ["성립·훼손 장치가 한 방향으로 모이지 않음"])
+        ],
+        timeframe: { kind: "natal", value: "월령 격국" },
+        confidence: "medium",
+        limitations: [judgment.pattern.boundary, judgment.pattern.sourceLocator.section]
+      });
+    });
     const usefulGodClaimId = add({
       domain: "methodology",
       system: "myeongri",
@@ -439,6 +488,24 @@ function addMyeongriClaims(
       timeframe: { kind: "range", value: `${luck.daYunAge}; ${input.targetDate.year}` },
       confidence: "high"
     });
+    const annualStem = luck.seYun[0];
+    if (annualStem) {
+      const annualTenGod = tenGodForStem(chart.dayMaster.gan, annualStem);
+      const annualFamily = tenGodFamilyOf(annualTenGod);
+      if (annualFamily !== "self") {
+        add({
+          domain: "timing",
+          system: "myeongri",
+          capabilityId: "current_luck",
+          kind: "heuristic_interpretation",
+          statement: `${input.targetDate.year}년에는 ${TIMING_FAMILY_READING[annualFamily]} 관련 과제가 주요 생활 주제로 올라온다.`,
+          observations: [`세운 ${luck.seYun}의 천간 ${annualStem}=${annualTenGod}`, luck.daYunAge, luck.note],
+          timeframe: { kind: "date", value: String(input.targetDate.year) },
+          confidence: "medium",
+          limitations: ["세운 천간의 십신 역할을 현대 생활 주제로 옮긴 해석이다. 길흉·성과·사건 발생을 보장하지 않는다."]
+        });
+      }
+    }
   }
 }
 
@@ -679,6 +746,34 @@ function addCompatibilityClaim(input: LifeDossierInput, selected: ReadonlySet<En
       ...result.spousePalaceContacts.map(contactObservation),
       ...result.dayMasterContacts.map(contactObservation),
       ...result.crossPillarContacts.map(contactObservation)
+    ],
+    timeframe: { kind: "natal", value: "두 출생 원국" },
+    confidence: "medium",
+    limitations: [result.boundary]
+  });
+  const primaryReading = {
+    supportive_only: "일간과 배우자궁의 우선 접촉에는 생조·합의 근거가 확인됐다",
+    tension_only: "일간과 배우자궁의 우선 접촉에는 충·극의 긴장 근거가 확인됐다",
+    mixed: "일간과 배우자궁의 우선 접촉에는 생조·합과 충·극이 함께 있다",
+    undetermined: "일간과 배우자궁만으로는 지지와 긴장 중 한 방향을 고르기 어렵다",
+  }[result.primaryStatus];
+  const wholeReading = {
+    supportive_only: "원국 전체 접촉도 지지 근거만 확인됐다",
+    tension_only: "원국 전체 접촉도 긴장 근거만 확인됐다",
+    mixed: "원국 전체에는 지지와 긴장이 함께 있다",
+    undetermined: "원국 전체 접촉에서도 한 방향을 고르기 어렵다",
+  }[result.status];
+  add({
+    domain: "relationship",
+    system: "myeongri",
+    capabilityId: "compatibility",
+    kind: "heuristic_interpretation",
+    statement: `${primaryReading}. ${wholeReading}.`,
+    observations: [
+      `일간·배우자궁 우선 접촉 ${result.primaryStatus}`,
+      `양 원국 전체 교차 ${result.status}`,
+      ...result.spousePalaceContacts.map(contactObservation),
+      ...result.dayMasterContacts.map(contactObservation)
     ],
     timeframe: { kind: "natal", value: "두 출생 원국" },
     confidence: "medium",

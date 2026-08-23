@@ -14,12 +14,13 @@ import {
   type LegendSajuResolution,
   type LegendSajuResolveInput,
 } from "./engine/public-entry";
+import { buildConsumerReading } from "./engine/consumer-reading";
 
 const dateSchema = z.object({
   year: z.number().int(),
   month: z.number().int().min(1).max(12),
   day: z.number().int().min(1).max(31),
-  hour: z.number().int().min(0).max(23).optional(),
+  hour: z.number().int().min(0).max(23).optional().describe("Local civil time in 24-hour notation. Korean 오후 12시는 12 (noon), 오전 12시는 0 (midnight). Do not guess when the wording is ambiguous."),
   minute: z.number().int().min(0).max(59).optional(),
 });
 
@@ -27,7 +28,7 @@ const birthSchema = dateSchema.extend({
   calendar: z.enum(["solar", "lunar"]).optional().describe("Defaults to solar."),
   isLeapMonth: z.boolean().optional(),
   gender: z.enum(["남", "여"]).optional(),
-  birthTimeAccuracy: z.enum(["recorded", "family_memory", "estimated", "unknown"]).optional(),
+  birthTimeAccuracy: z.enum(["recorded", "family_memory", "estimated", "unknown"]).optional().describe("Use recorded only when the user explicitly says the time comes from an official or written record. Use family_memory for family recollection, estimated for inference, and unknown or omission when unclear."),
   timezone: z.string().optional().describe("Birthplace time-zone metadata. Birth clock time must already be local civil time; no automatic conversion is applied."),
   longitudeE: z.number().min(-180).max(180).optional().describe("Birthplace longitude metadata. The default chart does not silently apply true-solar-time correction."),
   latitudeN: z.number().min(-90).max(90).optional(),
@@ -58,8 +59,8 @@ const koreanNameSchema = z.object({
 
 const outputModeSchema = z.enum(["consumer", "compact", "evidence", "debug"]);
 const outputControlFields = {
-  outputMode: outputModeSchema.optional().describe("consumer is the default. Use evidence or debug only when the user asks for raw methodology."),
-  maxClaims: z.number().int().min(1).max(100).optional().describe("Maximum claims returned outside debug mode."),
+  outputMode: outputModeSchema.optional().describe("consumer is the default and returns bounded interpretations linked to evidence claim IDs. Use evidence or debug only when the user asks for raw methodology."),
+  maxClaims: z.number().int().min(1).max(100).optional().describe("Maximum interpretation points and raw claims returned outside debug mode."),
 };
 
 const resolveSchema = z.object({
@@ -88,7 +89,7 @@ const resolveSchema = z.object({
 const readingSchema = z.object({
   question: z.string().min(1).describe("The user's original request, such as 올해 재물운과 사업운을 봐줘."),
   birth: birthSchema,
-  targetDate: dateSchema.optional().describe("The date whose current or future fortune is being read."),
+  targetDate: dateSchema.optional().describe("The date whose current or future fortune is being read. Supply the current local date for requests such as 올해 운세 or 현재 운세."),
   timelineRange: z.object({ startYear: z.number().int(), endYear: z.number().int() }).optional(),
   lifeEvents: z.array(lifeEventSchema).optional(),
   asOfYear: z.number().int().optional(),
@@ -176,9 +177,13 @@ function compactText(value: string, max = 700): string {
   return value.length <= max ? value : `${value.slice(0, max - 1)}…`;
 }
 
-function claimPriority(kind: string, evidenceRole: string): number {
-  const kindScore = kind === "calculated_fact" ? 0 : kind === "structural_observation" ? 1 : kind === "heuristic_interpretation" ? 2 : 3;
-  return kindScore + (evidenceRole === "primary" ? 0 : evidenceRole === "support" ? 4 : 8);
+function claimPriority(kind: string, evidenceRole: string, mode: LegendSajuOutputMode): number {
+  const meaningFirst = mode === "consumer" || mode === "compact";
+  const kindScore = meaningFirst
+    ? kind === "heuristic_interpretation" ? 0 : kind === "structural_observation" ? 1 : kind === "calculated_fact" ? 2 : 3
+    : kind === "calculated_fact" ? 0 : kind === "structural_observation" ? 1 : kind === "heuristic_interpretation" ? 2 : 3;
+  const roleScore = evidenceRole === "primary" ? 0 : evidenceRole === "support" ? 1 : 2;
+  return kindScore * 10 + roleScore;
 }
 
 export function formatLegendSajuResolution(
@@ -204,11 +209,14 @@ export function formatLegendSajuResolution(
       groupedClaims.set(signature, { claim, domains: [claim.domain] });
     }
   }
-  const allClaims = [...groupedClaims.values()].sort((a, b) =>
-    Math.min(...a.domains.map((domain) => domainOrder.get(domain) ?? 99)) -
-      Math.min(...b.domains.map((domain) => domainOrder.get(domain) ?? 99)) ||
-    claimPriority(a.claim.kind, a.claim.evidenceRole) - claimPriority(b.claim.kind, b.claim.evidenceRole)
-  );
+  const allClaims = [...groupedClaims.values()].sort((a, b) => {
+    const domainDelta = Math.min(...a.domains.map((domain) => domainOrder.get(domain) ?? 99)) -
+      Math.min(...b.domains.map((domain) => domainOrder.get(domain) ?? 99));
+    const priorityDelta = claimPriority(a.claim.kind, a.claim.evidenceRole, mode) - claimPriority(b.claim.kind, b.claim.evidenceRole, mode);
+    return mode === "consumer" || mode === "compact"
+      ? priorityDelta || domainDelta
+      : domainDelta || priorityDelta;
+  });
   const selectedClaims = allClaims.slice(0, maxClaims);
   const claimCapabilityIds = new Set(rawClaims.map((claim) => claim.capabilityId));
   const limitationIds = new Map<string, string>();
@@ -256,12 +264,48 @@ export function formatLegendSajuResolution(
     };
   });
   const sourceById = new Map(Object.values(ENGINE_SOURCES).map((source) => [source.id, source]));
-  const sources = [...sourceIds].map((id) => sourceById.get(id) ?? { id, title: id, uri: "", kind: "local_audit", scope: "", checkedAt: "" });
-  const limitations = [...limitationIds].map(([text, id]) => ({ id, text }));
+  const consumerReading = buildConsumerReading(result, mode, maxClaims);
+  consumerReading.sourceIds.forEach((id) => sourceIds.add(id));
+  const serializePoint = (point: (typeof consumerReading.sections)[number]["interpretations"][number]) => ({
+    text: point.text,
+    timeframe: point.timeframe,
+    confidence: point.confidence,
+    evidenceClaimIds: point.evidenceClaimIds,
+    counterClaimIds: point.counterClaimIds,
+    sourceRefs: point.sourceIds,
+    limitationRefs: point.limitations.map(registerLimitation),
+  });
+  const sections = Object.fromEntries(consumerReading.sections.map((section) => [section.domain, {
+    interpretations: section.interpretations.map(serializePoint),
+    evidenceClaimIds: section.evidenceClaimIds,
+    sourceRefs: section.sourceIds,
+  }]));
+  const timeline = consumerReading.timeline.map((entry) => ({
+    period: entry.period,
+    summary: entry.summary,
+    domains: entry.domains,
+    confidence: entry.confidence,
+    evidenceClaimIds: entry.evidenceClaimIds,
+    sourceRefs: entry.sourceIds,
+    limitationRefs: entry.limitations.map(registerLimitation),
+  }));
+  const sourcesWithReading = [...sourceIds].map((id) => sourceById.get(id) ?? { id, title: id, uri: "", kind: "local_audit", scope: "", checkedAt: "" });
+  const limitationsWithReading = [...limitationIds].map(([text, id]) => ({ id, text }));
   const highlights = [...new Set([
-    ...claims.filter((claim) => claim.kind !== "limitation").map((claim) => claim.statement),
-    ...legacyEvidence.filter((item) => item.ok).map((item) => compactText(item.groundingText, 500)),
+    ...consumerReading.highlights,
+    ...(consumerReading.highlights.length
+      ? []
+      : legacyEvidence.filter((item) => item.ok).map((item) => compactText(item.groundingText, 500))),
   ])].slice(0, 6);
+  const readingSummaryText = consumerReading.sections.length || consumerReading.timeline.length
+    ? consumerReading.summary
+    : legacyEvidence.find((item) => item.ok)?.groundingText
+      ? compactText(legacyEvidence.find((item) => item.ok)!.groundingText, 700)
+      : result.nameAnalysis
+        ? `공식 인명용 한자 스냅샷으로 성과 이름 ${result.nameAnalysis.surname.length + result.nameAnalysis.givenName.length}자를 분석했다.`
+        : consumerReading.summary;
+  const inputNotes = [...new Map(result.routes.flatMap((route) => route.inputAudit?.issues ?? [])
+    .map((issue) => [`${issue.code}:${issue.field}:${issue.message}`, issue])).values()];
   const blocked = result.routes
     .filter((route) => route.status === "blocked")
     .map((route) => ({
@@ -276,10 +320,21 @@ export function formatLegendSajuResolution(
     question: result.question,
     readingSummary: {
       focus: result.executionPlan.domains,
+      summary: readingSummaryText,
       highlights,
       returnedClaimCount: claims.length,
       uniqueInternalClaimCount: allClaims.length,
       totalInternalClaimCount: rawClaims.length,
+    },
+    sections,
+    timeline,
+    omittedTimelineYears: consumerReading.omittedTimelineYears,
+    inputNotes,
+    calculationSummary: {
+      selectedCapabilities: result.executionPlan.selected,
+      internalClaimCount: rawClaims.length,
+      returnedClaimCount: claims.length,
+      deterministic: result.noModelCalls,
     },
     executionPlan: {
       entryIntent: result.executionPlan.entryIntent,
@@ -293,8 +348,8 @@ export function formatLegendSajuResolution(
     claims,
     evidence: legacyEvidence,
     nameAnalysis: result.nameAnalysis,
-    sources,
-    limitations,
+    sources: sourcesWithReading,
+    limitations: limitationsWithReading,
     blocked,
     conflicts: result.dossier?.conflicts ?? [],
     interpretationBoundary: result.interpretationBoundary,

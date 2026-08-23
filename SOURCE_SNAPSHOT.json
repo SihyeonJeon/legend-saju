@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-23T10:03:40.575Z",
+  "generatedAt": "2026-08-23T10:45:57.772Z",
   "scope": [
     "src",
     "tests",
     "data"
   ],
-  "fileCount": 62,
-  "totalBytes": 9027671,
+  "fileCount": 63,
+  "totalBytes": 9047925,
   "files": [
     {
       "path": "data/dreams/artemidorus-1644-primary.json",
@@ -80,6 +80,11 @@
       "sha256": "ee4aba4dc84419d4e213cffeb961d2853f10088da0ed97041c3a038dda18a643"
     },
     {
+      "path": "src/engine/consumer-reading.ts",
+      "bytes": 8956,
+      "sha256": "e35eda0591dd15aa02dc772fa957f53ca0de38496887917a06375df1be53806c"
+    },
+    {
       "path": "src/engine/data/cheolpan-standard-numeric-tables.json",
       "bytes": 104226,
       "sha256": "32dc8890df50ca943befa681a31738d3f86b16cb5f20ad7eeed250b63dd9a6ec"
@@ -101,8 +106,8 @@
     },
     {
       "path": "src/engine/engine-v2.ts",
-      "bytes": 45282,
-      "sha256": "99e01f80c4b3d2a2ef0d766158b9e98cc779aba0bc340e964550cb1116ddaf9c"
+      "bytes": 50389,
+      "sha256": "4dfdcc5860611c3f77fa316816b41a5cd6135c957bfaec776c8fe5fa0f22a554"
     },
     {
       "path": "src/engine/gimun-engine.ts",
@@ -142,7 +147,7 @@
     {
       "path": "src/engine/public-entry.ts",
       "bytes": 2984,
-      "sha256": "b9a4de65169e5ee56ec1193fd5049a798955caf57d12b8187cf50f33c3126610"
+      "sha256": "bf21df688d15b36b510c19c0f0b4d7f010f52b44c6b210cb730d4748352bde71"
     },
     {
       "path": "src/engine/qiongtong-month-rules.ts",
@@ -166,8 +171,8 @@
     },
     {
       "path": "src/engine/resolver.ts",
-      "bytes": 22064,
-      "sha256": "69d102f28a65b57f695c5048f5bc3443483d94a8b183f651b44dae84da64e505"
+      "bytes": 22139,
+      "sha256": "e5387b59b8282b6cf9889dbef7c0bc76876bb167111262a7509430e11d480e91"
     },
     {
       "path": "src/engine/saju-engine-advanced.ts",
@@ -246,8 +251,8 @@
     },
     {
       "path": "src/mcp.ts",
-      "bytes": 21440,
-      "sha256": "05a49434dcc511a7b1625034b7be919f5362b4265a7ab0d8bbf7701b2d5c2853"
+      "bytes": 24726,
+      "sha256": "260aa896639ee8f181ed5ed0ba3344f8811b2277747786ab66b163adbf6b23ff"
     },
     {
       "path": "src/naming/data/cjk-decomp.LICENSE",
@@ -292,7 +297,7 @@
     {
       "path": "tests/mcp-http.test.ts",
       "bytes": 4792,
-      "sha256": "88a1e779ba8aea775c63a3939284791010b8b0b9d970430dea496003addba0b7"
+      "sha256": "a17a3f9357c25e9548c450a6bebca85e6311647edbfc5c1ffefb3e9c21cce225"
     },
     {
       "path": "tests/name-engine.test.ts",
@@ -301,13 +306,13 @@
     },
     {
       "path": "tests/resolver.test.ts",
-      "bytes": 9145,
-      "sha256": "e243126e8297bc54612459d9042365bded3652f2a2a19891572468aa39011ed1"
+      "bytes": 11982,
+      "sha256": "dbd660ce49941c33d7339dad5feea526f0b71dcbc97ad5953266d4100a90d559"
     },
     {
       "path": "tests/saju-engine-v2.test.ts",
-      "bytes": 57602,
-      "sha256": "98da410ef802e4b3be87a9c3f841bc3adf2b068774322b9973adcbb15e254e32"
+      "bytes": 57595,
+      "sha256": "4f902f7a6e93dd91d0909b7996b6505576bbea4cb53b4c7cf55daf6687e337c1"
     },
     {
       "path": "tests/saju-engine.test.ts",

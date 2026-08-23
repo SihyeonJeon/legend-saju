@@ -42,7 +42,7 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(await response.json()).toEqual({
       status: "ok",
       service: "legend-saju",
-      version: "0.2.0",
+      version: "0.3.0",
     });
   });
 
@@ -68,7 +68,7 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(initialize.status).toBe(200);
     const initialization = ssePayload(await initialize.text());
     expect(initialization).toMatchObject({
-      result: { serverInfo: { name: "legend-saju", version: "0.2.0" } },
+      result: { serverInfo: { name: "legend-saju", version: "0.3.0" } },
       id: 1,
     });
 

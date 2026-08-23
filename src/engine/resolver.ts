@@ -194,6 +194,7 @@ const EXPLICIT_CAPABILITY_TERMS: Partial<Record<EngineCapabilityId, string[]>> =
 
 const ACTION_TERMS = ["개운", "행동", "무엇을 해야", "뭘 해야", "어떻게 해야", "조심할", "주의할", "구체적 액션", "실천"];
 const DEEP_READING_TERMS = ["종합", "전체", "깊게", "상세", "교차", "자미", "원전", "관법", "유파"];
+const BROAD_READING_TERMS = ["사주 봐", "운세 봐", "전체 운세", "종합 운세", "전반 운세", "총운"];
 
 function normalize(value: string): string {
   return value.normalize("NFKC").toLocaleLowerCase().replace(/[_/.,:;()[\]{}|]+/g, " ").replace(/\s+/g, " ").trim();
@@ -373,12 +374,11 @@ function generalReadingCapabilities(input: LegendSajuResolveInput, domains: Life
   if (input.timelineRange) core.push("life_timeline");
   if (includesAny(question, ACTION_TERMS)) core.push("recommend");
   if (includesAny(question, ["궁통보감", "고전", "원전", "조후", "격국", "용신"])) supporting.push("myeongri_doctrine");
-  if (input.birth?.hour !== undefined && input.birth.gender && includesAny(question, DEEP_READING_TERMS)) {
-    supporting.push("ziwei_topology");
+  if (input.birth?.hour !== undefined && input.birth.gender && (includesAny(question, DEEP_READING_TERMS) || includesAny(question, BROAD_READING_TERMS))) {
+    supporting.push("ziwei_topology", "ziwei_doctrine");
     if (domains.includes("timing") && input.targetDate) supporting.push("ziwei_horoscope");
     if (includesAny(question, ["비성", "궁간사화", "흠천", "자화"])) supporting.push("ziwei_palace_flying");
     if (includesAny(question, ["유파", "중주", "배치 비교"])) supporting.push("ziwei_lineage_compare");
-    if (includesAny(question, ["고전", "원전", "자미두수전서"])) supporting.push("ziwei_doctrine");
   }
   if (input.lifeEvents?.length && input.birth) {
     supporting.push(input.birth.hour === undefined ? "event_rectification_matrix" : "event_validation_matrix");
