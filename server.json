@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sihyeonjeon/legend-saju",
+  "title": "Legend Saju",
+  "description": "Source-traceable Saju, Zi Wei, Qimen, Daliuren, Tieban, naming, and related calculations",
+  "repository": {
+    "url": "https://github.com/SihyeonJeon/legend-saju",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/SihyeonJeon/legend-saju#readme",
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://legend-saju-mcp-production.up.railway.app/mcp"
+    }
+  ]
+}

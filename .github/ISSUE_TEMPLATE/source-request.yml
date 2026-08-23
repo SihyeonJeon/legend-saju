@@ -1,0 +1,45 @@
+name: Source or method proposal
+description: Propose a source-backed rule, table, lineage, or correction.
+title: "[Source] "
+labels: [source-review]
+body:
+  - type: input
+    id: system
+    attributes:
+      label: System and lineage
+      placeholder: "Example: Zi Wei Dou Shu, named flying-transformation lineage"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source locator
+      description: Give the title, edition, page or section, URL, archive, or pinned implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Proposed bounded rule
+      description: State required inputs, predicates, output, exceptions, and omitted dimensions.
+    validations:
+      required: true
+  - type: dropdown
+    id: redistribution
+    attributes:
+      label: Redistribution status
+      options:
+        - Public domain
+        - Open license
+        - Government or court open data
+        - Link or citation only
+        - Unknown and needs review
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: The proposal contains no real person's identifying or consultation data.
+          required: true

@@ -1,3 +1,5 @@
+<!-- mcp-name: io.github.sihyeonjeon/legend-saju -->
+
 <div align="center">
   <img src="assets/og-social-1280x640.png" alt="Legend Saju — 출처와 유파를 추적하는 동양 역학 엔진" width="100%" />
 
@@ -9,6 +11,8 @@
 [![CI](https://github.com/SihyeonJeon/legend-saju/actions/workflows/ci.yml/badge.svg)](https://github.com/SihyeonJeon/legend-saju/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6.svg)](https://www.typescriptlang.org/)
+
+[English](README.en.md) · [기여하기](CONTRIBUTING.md) · [원격 MCP](https://legend-saju-mcp-production.up.railway.app/mcp)
 
 </div>
 
