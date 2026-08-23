@@ -120,11 +120,11 @@ describe("open-ended resolver", () => {
       targetDate: { year: 2026, month: 8, day: 23 },
       timelineRange: { startYear: 2026, endYear: 2028 },
       detailLevel: "expert",
+      outputMode: "evidence",
     });
     const plan = result.structuredContent.executionPlan as { selected: string[] };
     const methodAnalysis = result.structuredContent.methodAnalysis as {
       methodResults?: Record<string, unknown>;
-      myeongriJudgment?: unknown;
     };
 
     expect(plan.selected).toEqual(expect.arrayContaining([
@@ -137,7 +137,6 @@ describe("open-ended resolver", () => {
       "ziwei_doctrine",
       "ziwei_horoscope",
     ]));
-    expect(methodAnalysis.myeongriJudgment).toBeDefined();
     expect(methodAnalysis.methodResults).toMatchObject({
       myeongri_judgment: expect.any(Object),
       myeongri_doctrine: expect.any(Object),
@@ -277,7 +276,7 @@ describe("token-free MCP handlers", () => {
       maxAutoCapabilities: 0,
     });
     expect(result.isError).not.toBe(true);
-    expect(result.structuredContent.noModelCalls).toBe(true);
+    expect((result.structuredContent.calculationSummary as { deterministic: boolean }).deterministic).toBe(true);
   });
 
   it("returns a bounded consumer payload while retaining a full debug mode", async () => {
@@ -288,14 +287,89 @@ describe("token-free MCP handlers", () => {
     };
     const consumer = await runLegendSajuResolveTool({ ...input, maxClaims: 4 });
     const debug = await runLegendSajuResolveTool({ ...input, outputMode: "debug" });
-    const consumerClaims = consumer.structuredContent.claims as unknown[];
+    const readingSummary = consumer.structuredContent.readingSummary as { returnedItemCount: number; highlights: string[] };
     const highlights = (consumer.structuredContent.readingSummary as { highlights: string[] }).highlights;
 
-    expect(consumerClaims.length).toBeLessThanOrEqual(4);
+    expect(readingSummary.returnedItemCount).toBeLessThanOrEqual(4);
+    expect(consumer.structuredContent.claims).toBeUndefined();
+    expect(consumer.structuredContent.sources).toBeUndefined();
+    expect(consumer.structuredContent.limitations).toBeUndefined();
     expect(new Set(highlights).size).toBe(highlights.length);
     expect(JSON.stringify(consumer.structuredContent).length).toBeLessThan(50_000);
     expect(debug.structuredContent.dossier).toBeDefined();
     expect(JSON.stringify(debug.structuredContent).length).toBeGreaterThan(JSON.stringify(consumer.structuredContent).length);
+  });
+
+  it("keeps action, consumer, evidence, and debug projections structurally distinct", async () => {
+    const input = {
+      question: "올해 재물운과 사업운을 보고 구체적 액션도 알려줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+      detailLevel: "expert" as const,
+      maxClaims: 5,
+    };
+    const action = await runLegendSajuResolveTool({ ...input, outputMode: "action_only" });
+    const consumer = await runLegendSajuResolveTool({ ...input, outputMode: "consumer" });
+    const evidence = await runLegendSajuResolveTool({ ...input, outputMode: "evidence" });
+    const debug = await runLegendSajuResolveTool({ ...input, outputMode: "debug" });
+
+    expect(action.structuredContent.recommendations).toBeDefined();
+    expect(action.structuredContent.readingSummary).toBeUndefined();
+    expect(action.structuredContent.sections).toBeUndefined();
+    expect(action.structuredContent.timeline).toBeUndefined();
+    expect(action.structuredContent.claims).toBeUndefined();
+
+    expect(consumer.structuredContent.sections).toBeDefined();
+    expect(consumer.structuredContent.timeline).toBeDefined();
+    expect(consumer.structuredContent.claims).toBeUndefined();
+    expect(consumer.structuredContent.methodAnalysis).toBeUndefined();
+    expect(consumer.structuredContent.sources).toBeUndefined();
+
+    expect(evidence.structuredContent.readingSummary).toBeUndefined();
+    expect(evidence.structuredContent.sections).toBeUndefined();
+    expect(evidence.structuredContent.claims).toBeDefined();
+    expect(evidence.structuredContent.methodAnalysis).toBeDefined();
+    expect(evidence.structuredContent.sources).toBeDefined();
+    expect(evidence.structuredContent.limitations).toBeUndefined();
+    expect(evidence.structuredContent.interpretationBoundary).toBeUndefined();
+    expect(JSON.stringify(evidence.structuredContent)).not.toMatch(/"(?:boundary|boundaries|disclaimer|interpretationBoundary|limitation|limitations|limitationRefs)":/);
+
+    expect(debug.structuredContent.dossier).toBeDefined();
+    expect(debug.structuredContent.interpretationBoundary).toBeUndefined();
+    expect(JSON.stringify(debug.structuredContent)).not.toMatch(/"(?:boundary|boundaries|disclaimer|interpretationBoundary|limitation|limitations|limitationRefs)":/);
+    expect(debug.structuredContent.calculationSummary).toBeUndefined();
+  });
+
+  it("uses maxClaims as one budget across each non-debug projection", async () => {
+    const input = {
+      question: "직업과 재물, 연애 결혼, 앞으로 3년과 구체적 액션을 종합해줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+      timelineRange: { startYear: 2026, endYear: 2028 },
+      detailLevel: "expert" as const,
+      maxClaims: 4,
+    };
+    const consumer = await runLegendSajuResolveTool({ ...input, outputMode: "consumer" });
+    const reading = consumer.structuredContent.readingSummary as { returnedItemCount: number };
+    const sectionCount = Object.values(consumer.structuredContent.sections as Record<string, { interpretations: unknown[] }>)
+      .reduce((sum, section) => sum + section.interpretations.length, 0);
+    const actionCount = ((consumer.structuredContent.recommendations as { items: unknown[] } | null)?.items.length ?? 0);
+    const timelineCount = (consumer.structuredContent.timeline as unknown[]).length;
+    expect(sectionCount + actionCount + timelineCount).toBe(reading.returnedItemCount);
+    expect(reading.returnedItemCount).toBeLessThanOrEqual(4);
+
+    const evidence = await runLegendSajuResolveTool({ ...input, outputMode: "evidence" });
+    const evidenceSummary = evidence.structuredContent.calculationSummary as { returnedItemCount: number };
+    const methodAnalysis = evidence.structuredContent.methodAnalysis as { synthesis: unknown[]; methodResults: Record<string, unknown> };
+    const evidenceCount = (evidence.structuredContent.claims as unknown[]).length
+      + (evidence.structuredContent.evidence as unknown[]).length
+      + Object.keys(methodAnalysis.methodResults).length
+      + methodAnalysis.synthesis.length
+      + (evidence.structuredContent.conflicts as unknown[]).length
+      + (evidence.structuredContent.blocked as unknown[]).length;
+    expect(evidenceCount).toBe(evidenceSummary.returnedItemCount);
+    expect(evidenceSummary.returnedItemCount).toBeLessThanOrEqual(4);
+    expect(Object.keys(evidence.structuredContent.omittedItemsByKind as Record<string, number>).length).toBeGreaterThan(0);
   });
 
   it("returns meaning-first consumer sections linked to evidence claims", async () => {
@@ -308,16 +382,14 @@ describe("token-free MCP handlers", () => {
     const summary = result.structuredContent.readingSummary as { summary: string; highlights: string[] };
     const sections = result.structuredContent.sections as Record<string, { interpretations: Array<{ text: string; evidenceClaimIds: string[]; sourceRefs: string[] }> }>;
     const timeline = result.structuredContent.timeline as Array<{ period: string; summary: string; evidenceClaimIds: string[] }>;
-    const claims = result.structuredContent.claims as Array<{ kind: string; statement: string }>;
 
     expect(summary.summary).not.toMatch(/계산했다|기록했다|보존했다/);
     expect(summary.highlights.every((text) => !/계산했다|기록했다|보존했다/.test(text))).toBe(true);
     expect(Object.keys(sections)).toEqual(expect.arrayContaining(["career", "wealth", "relationship", "timing"]));
     expect(sections.wealth.interpretations[0].evidenceClaimIds.length).toBeGreaterThan(0);
-    expect(sections.wealth.interpretations[0].sourceRefs.length).toBeGreaterThan(0);
     expect(timeline).toHaveLength(3);
     expect(timeline.every((entry) => entry.evidenceClaimIds.length > 0 && entry.summary.includes(entry.period))).toBe(true);
-    expect(claims[0].kind).toBe("heuristic_interpretation");
+    expect(result.structuredContent.claims).toBeUndefined();
   });
 
   it("returns deterministic actions instead of only abstract consumer labels", async () => {
@@ -325,17 +397,18 @@ describe("token-free MCP handlers", () => {
       question: "올해 재물운과 직업운을 보고 내가 할 구체적 액션도 알려줘",
       birth,
       targetDate: { year: 2026, month: 8, day: 23 },
+      outputMode: "action_only",
     });
     const recommendations = result.structuredContent.recommendations as {
-      items: Array<{ actions: string[]; caution: string; sourceRefs: string[] }>;
+      items: Array<{ actions: string[]; caution: string }>;
     };
-    const summary = result.structuredContent.readingSummary as { summary: string };
 
     expect(recommendations.items.length).toBeGreaterThan(0);
     expect(recommendations.items[0].actions.length).toBeGreaterThan(0);
     expect(recommendations.items[0].caution.length).toBeGreaterThan(0);
-    expect(recommendations.items[0].sourceRefs.length).toBeGreaterThan(0);
-    expect(summary.summary.startsWith(recommendations.items[0].actions[0])).toBe(true);
+    expect(result.structuredContent.readingSummary).toBeUndefined();
+    expect(result.structuredContent.sections).toBeUndefined();
+    expect(result.structuredContent.timeline).toBeUndefined();
   });
 
   it("surfaces input assumptions without silently upgrading birth-time certainty", async () => {

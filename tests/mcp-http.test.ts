@@ -70,7 +70,7 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(initialization).toMatchObject({
       result: {
         serverInfo: { name: "legend-saju", version: "0.4.0" },
-        instructions: expect.stringContaining("structuredContent"),
+        instructions: expect.stringContaining("outputMode"),
       },
       id: 1,
     });
@@ -99,6 +99,7 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     ]);
     const readingTool = toolsPayload.result?.tools?.find((tool) => tool.name === "legend_saju_read_fortune");
     expect(readingTool?.inputSchema?.properties?.detailLevel?.enum).toEqual(["brief", "standard", "expert", "raw"]);
+    expect(readingTool?.inputSchema?.properties?.outputMode?.enum).toEqual(["action_only", "consumer", "evidence", "debug"]);
     expect(readingTool?.outputSchema?.properties?.methodAnalysis).toBeDefined();
     expect(readingTool?.outputSchema?.properties?.recommendations).toBeDefined();
   });

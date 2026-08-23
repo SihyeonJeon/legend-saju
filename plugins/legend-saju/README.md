@@ -18,9 +18,9 @@
 - `legend_saju_capabilities`: 전문 계산법 탐색
 - `legend_saju_run_methods`: 여러 유파·계산법을 한 계획으로 묶는 전문가용 실행
 
-평소 운세는 목적별 도구가 질문에 필요한 계산만 실행한다. 깊은 종합 분석은 `legend_saju_read_fortune`에 `detailLevel: expert`를 주면 명리·자미와 관련 보조 엔진을 한 번에 조합한다. 기본 출력에는 요약·영역별 해석·행동 제안·시간축과 각 문장의 근거 ID가 함께 들어 있다. `raw`는 개발자가 전체 실행 기록을 점검할 때만 사용한다.
+`detailLevel`은 계산 범위, `outputMode`는 반환 형식이다. `action_only`는 행동, `consumer`는 읽기 좋은 해석, `evidence`는 claim·계산 결과·지식·원문·출처, `debug`는 내부 실행 기록을 반환한다.
 
-MCP 응답의 짧은 `content`는 계산 완료 알림이다. 실제 답변은 `structuredContent`의 `readingSummary`, `sections`, `recommendations`, `timeline`을 사용하고, 전문가 모드에서는 `methodAnalysis.methodResults`, 출처, 충돌, 누락 범위까지 확인한다.
+MCP 응답의 짧은 `content`는 완료 알림이다. 실제 답변은 `structuredContent`를 사용하며, 근거가 필요한 경우 같은 입력을 `evidence`로 다시 호출한다.
 
 한국 이름을 분석할 때는 실제 성과 이름 한자를 입력의 `name` 필드로 전달한다. 이 경로는 인명용 한자 관측 9,495건 전체에 접근한다. 출생 정보만으로 이름을 제안하는 기존 기능은 범위가 더 작은 별도 방법이다.
 

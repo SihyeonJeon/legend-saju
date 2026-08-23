@@ -142,7 +142,7 @@ MCP 서버는 사용자의 목적이 이름에 드러나는 읽기 전용 도구
 | `legend_saju_capabilities` | 전문적인 질문에 맞는 세부 계산법을 찾는다 |
 | `legend_saju_run_methods` | 이름을 지정한 유파·계산법이나 복합 계산을 한 실행 계획으로 묶는다 |
 
-일상적인 운세 요청은 목적별 도구가 필요한 계산만 고른다. 예컨대 재물·사업운에 택일 계산을 자동으로 섞지 않는다. 깊은 종합 분석은 `legend_saju_read_fortune`에 `detailLevel: "expert"`를 한 번 주면 명리 원국·판단·원전 규칙·자미 구조·운한과 질문에 맞는 보조 계산을 함께 조합한다. 세부 유파나 계산법을 직접 지목한 경우에만 capability 검색과 `legend_saju_run_methods`를 사용한다.
+일상적인 운세 요청은 목적별 도구가 필요한 계산만 고른다. `detailLevel`은 계산 범위를 정하고 `outputMode`는 반환 형식을 정한다. 깊은 종합 분석은 `detailLevel: "expert"`로 계산하되 기본 응답은 읽기 좋은 `consumer` 형식을 유지한다. 지식 자산·원문·출처가 필요할 때 같은 입력을 `outputMode: "evidence"`로 호출한다.
 
 ```text
 사용자의 자연어 질문
@@ -235,11 +235,10 @@ console.log(result.routes);
   evidence: SajuEvidence[];
   nameAnalysis?: KoreanNameAnalysis;
   noModelCalls: true;
-  interpretationBoundary: string;
 }
 ```
 
-MCP는 `brief`, `standard`, `expert`, `raw` 네 상세도를 제공한다. 기본 `standard` 응답은 `readingSummary`, 영역별 `sections`, 행동 요청의 `recommendations`, 연도별 `timeline`을 반환하고 모든 해석 문장을 `evidenceClaimIds`, `sourceRefs`, `counterClaimIds`, `limitationRefs`에 연결한다. `expert`는 관련 엔진의 전체 결과를 `methodAnalysis.methodResults`에 보존한다. `raw`는 개발자 실행 기록을 점검할 때 사용한다. 모든 도구는 명시적인 `outputSchema`를 제공하므로 호스트 모델은 짧은 완료 메시지 대신 `structuredContent`의 필드를 호출 전에 알 수 있다.
+상세도는 `brief`, `standard`, `expert`, `raw`이고 출력은 `action_only`, `consumer`, `evidence`, `debug`다. `action_only`는 행동 제안만, `consumer`는 요약·영역별 해석·시간축, `evidence`는 claim·계산 결과·지식 자산·원문·출처, `debug`는 내부 실행 기록을 반환한다. `maxClaims`는 debug를 제외한 응답에서 해석·행동·시간축·claim·계산 결과에 하나의 공통 예산으로 적용된다.
 
 ## 왜 만들었나
 

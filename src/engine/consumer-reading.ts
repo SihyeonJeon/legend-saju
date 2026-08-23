@@ -134,41 +134,18 @@ function readingPoint(result: LegendSajuResolution, claim: EngineClaim): Consume
 
 function buildSections(
   result: LegendSajuResolution,
-  mode: LegendSajuOutputMode,
-  maxPoints: number,
 ): ConsumerReadingSection[] {
   const claims = result.dossier?.claims ?? [];
   const focus = result.executionPlan.domains.filter((domain) => domain !== "methodology" && domain !== "decision");
-  const perDomain = mode === "consumer" ? 2 : 3;
-  const candidates = new Map<LifeDomain, EngineClaim[]>();
-
-  for (const domain of focus) {
-    candidates.set(domain, claims
+  return focus.flatMap((domain): ConsumerReadingSection[] => {
+    const domainClaims = claims
       .filter((claim) => claim.domain === domain && claim.kind === "heuristic_interpretation")
       .sort((a, b) => {
         const aDoctrine = a.capabilityId.endsWith("_doctrine") ? 0 : 1;
         const bDoctrine = b.capabilityId.endsWith("_doctrine") ? 0 : 1;
         return aDoctrine - bDoctrine || (a.evidenceRole === "primary" ? -1 : 0) - (b.evidenceRole === "primary" ? -1 : 0);
-      }));
-  }
-
-  const picked = new Map<LifeDomain, EngineClaim[]>();
-  let used = 0;
-  for (let pass = 0; pass < perDomain && used < maxPoints; pass += 1) {
-    for (const domain of focus) {
-      if (used >= maxPoints) break;
-      const claim = candidates.get(domain)?.[pass];
-      if (!claim) continue;
-      const rows = picked.get(domain) ?? [];
-      if (rows.some((row) => row.statement === claim.statement)) continue;
-      rows.push(claim);
-      picked.set(domain, rows);
-      used += 1;
-    }
-  }
-
-  return focus.flatMap((domain): ConsumerReadingSection[] => {
-    const domainClaims = picked.get(domain) ?? [];
+      })
+      .filter((claim, index, rows) => rows.findIndex((row) => row.statement === claim.statement) === index);
     if (!domainClaims.length) return [];
     return [{
       domain,
@@ -181,14 +158,12 @@ function buildSections(
 
 function buildTimeline(
   result: LegendSajuResolution,
-  mode: LegendSajuOutputMode,
 ): { entries: ConsumerTimelineEntry[]; omitted: number } {
   const timeline = result.dossier?.timeline;
   if (!timeline) return { entries: [], omitted: 0 };
   const timelineClaim = result.dossier?.claims.find((claim) => claim.capabilityId === "life_timeline");
   const topicalDomains = result.executionPlan.domains.filter((domain) => !["timing", "methodology", "decision"].includes(domain));
-  const yearLimit = mode === "consumer" ? 6 : mode === "compact" ? 12 : timeline.years.length;
-  const years = timeline.years.slice(0, yearLimit);
+  const years = timeline.years;
 
   const entries = years.map((year): ConsumerTimelineEntry => {
     const windows = year.domainWindows.filter((window) => !topicalDomains.length || topicalDomains.includes(window.domain as LifeDomain));
@@ -249,7 +224,6 @@ function actionGuidanceFromResult(result: LegendSajuResolution): { guidance: Mye
 
 function buildRecommendations(
   result: LegendSajuResolution,
-  mode: LegendSajuOutputMode,
 ): ConsumerRecommendations | null {
   const extracted = actionGuidanceFromResult(result);
   if (!extracted) return null;
@@ -284,9 +258,8 @@ function buildRecommendations(
     }
   }
 
-  const limit = mode === "consumer" ? 8 : mode === "compact" ? 12 : Number.POSITIVE_INFINITY;
   return {
-    items: [...grouped.values()].slice(0, limit),
+    items: [...grouped.values()],
     safeguards: guidance.mechanismGuardrails.map((item) => ({
       id: item.mechanismId,
       label: item.label,
@@ -300,37 +273,133 @@ function buildRecommendations(
   };
 }
 
+function applyProjectionBudget(
+  sections: ConsumerReadingSection[],
+  recommendations: ConsumerRecommendations | null,
+  timeline: ConsumerTimelineEntry[],
+  maxItems: number,
+  actionOnly: boolean,
+): {
+  sections: ConsumerReadingSection[];
+  recommendations: ConsumerRecommendations | null;
+  timeline: ConsumerTimelineEntry[];
+  omittedTimelineYears: number;
+} {
+  if (actionOnly) {
+    const items = recommendations?.items.slice(0, maxItems) ?? [];
+    return {
+      sections: [],
+      recommendations: recommendations ? { ...recommendations, items } : null,
+      timeline: [],
+      omittedTimelineYears: timeline.length,
+    };
+  }
+
+  const sectionBuckets = sections.map((section) => ({
+    section,
+    values: [...section.interpretations],
+    selected: [] as ConsumerReadingPoint[],
+  }));
+  const recommendationValues = [...(recommendations?.items ?? [])];
+  const selectedRecommendations: ConsumerRecommendation[] = [];
+  const timelineValues = [...timeline];
+  const selectedTimeline: ConsumerTimelineEntry[] = [];
+  const buckets: Array<{ take: () => boolean }> = [
+    ...sectionBuckets.map((bucket) => ({
+      take: () => {
+        const value = bucket.values.shift();
+        if (!value) return false;
+        bucket.selected.push(value);
+        return true;
+      },
+    })),
+    {
+      take: () => {
+        const value = recommendationValues.shift();
+        if (!value) return false;
+        selectedRecommendations.push(value);
+        return true;
+      },
+    },
+    {
+      take: () => {
+        const value = timelineValues.shift();
+        if (!value) return false;
+        selectedTimeline.push(value);
+        return true;
+      },
+    },
+  ];
+
+  let used = 0;
+  while (used < maxItems) {
+    let progressed = false;
+    for (const bucket of buckets) {
+      if (used >= maxItems) break;
+      if (!bucket.take()) continue;
+      used += 1;
+      progressed = true;
+    }
+    if (!progressed) break;
+  }
+
+  const selectedSections = sectionBuckets.flatMap(({ section, selected }): ConsumerReadingSection[] => {
+    if (!selected.length) return [];
+    return [{
+      ...section,
+      interpretations: selected,
+      evidenceClaimIds: unique(selected.flatMap((item) => item.evidenceClaimIds)),
+      sourceIds: unique(selected.flatMap((item) => item.sourceIds)),
+    }];
+  });
+
+  return {
+    sections: selectedSections,
+    recommendations: recommendations ? { ...recommendations, items: selectedRecommendations } : null,
+    timeline: selectedTimeline,
+    omittedTimelineYears: Math.max(0, timeline.length - selectedTimeline.length),
+  };
+}
+
 export function buildConsumerReading(
   result: LegendSajuResolution,
   mode: LegendSajuOutputMode,
   requestedMaxPoints?: number,
 ): ConsumerReadingProjection {
-  const defaultMax = mode === "consumer" ? 8 : mode === "compact" ? 16 : 100;
+  const defaultMax = mode === "action_only" ? 6 : 12;
   const maxPoints = Math.max(1, Math.min(requestedMaxPoints ?? defaultMax, 100));
-  const sections = buildSections(result, mode, maxPoints);
-  const recommendations = buildRecommendations(result, mode);
-  const timeline = buildTimeline(result, mode);
+  const allSections = buildSections(result);
+  const allRecommendations = buildRecommendations(result);
+  const allTimeline = buildTimeline(result);
+  const projection = applyProjectionBudget(
+    allSections,
+    allRecommendations,
+    allTimeline.entries,
+    maxPoints,
+    mode === "action_only",
+  );
+  const { sections, recommendations, timeline } = projection;
   const highlights = unique([
     ...(recommendations?.items.flatMap((item) => item.actions.slice(0, 1)) ?? []),
     ...sections.flatMap((section) => section.interpretations.map((item) => item.text)),
-    ...timeline.entries.slice(0, 2).map((entry) => entry.summary),
-  ]).slice(0, 6);
+    ...timeline.slice(0, 2).map((entry) => entry.summary),
+  ]);
   const firstByDomain = sections.map((section) => section.interpretations[0]?.text).filter((text): text is string => Boolean(text));
   const firstAction = recommendations?.items[0]?.actions[0];
-  const summary = firstAction
-    ? [firstAction, recommendations?.items[0]?.caution, firstByDomain[0]].filter(Boolean).join(" ")
-    : firstByDomain.slice(0, 3).join(" ") || timeline.entries[0]?.summary || "현재 입력과 검증 범위에서 소비자용 해석 문장을 만들 근거가 부족하다.";
+  const summary = mode === "action_only"
+    ? [firstAction, recommendations?.items[0]?.caution].filter(Boolean).join(" ")
+    : firstByDomain.slice(0, 3).join(" ") || timeline[0]?.summary || firstAction || "현재 입력과 검증 범위에서 소비자용 해석 문장을 만들 근거가 부족하다.";
   return {
     summary,
     highlights,
     sections,
     recommendations,
-    timeline: timeline.entries,
-    omittedTimelineYears: timeline.omitted,
+    timeline,
+    omittedTimelineYears: projection.omittedTimelineYears,
     sourceIds: unique([
       ...sections.flatMap((section) => section.sourceIds),
       ...(recommendations?.sourceIds ?? []),
-      ...timeline.entries.flatMap((entry) => entry.sourceIds),
+      ...timeline.flatMap((entry) => entry.sourceIds),
     ]),
   };
 }

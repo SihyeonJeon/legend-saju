@@ -1,7 +1,6 @@
 import { z } from "zod/v4";
 
 const sourceRefs = z.array(z.string());
-const limitationRefs = z.array(z.string());
 const timeframeSchema = z.object({
   kind: z.enum(["natal", "range", "date", "method"]),
   value: z.string(),
@@ -13,8 +12,6 @@ const interpretationSchema = z.object({
   confidence: z.enum(["high", "medium", "low"]),
   evidenceClaimIds: z.array(z.string()),
   counterClaimIds: z.array(z.string()),
-  sourceRefs,
-  limitationRefs,
 });
 
 const recommendationSchema = z.object({
@@ -24,99 +21,9 @@ const recommendationSchema = z.object({
     domains: z.array(z.string()),
     actions: z.array(z.string()),
     caution: z.string(),
-    basis: z.array(z.object({
-      lensId: z.string(),
-      school: z.string(),
-      status: z.string(),
-      candidateElements: z.array(z.string()),
-      candidateFunctions: z.array(z.string()),
-    })),
-    sourceRefs,
   })),
-  safeguards: z.array(z.object({
-    id: z.string(),
-    label: z.string(),
-    action: z.string(),
-    evidence: z.array(z.string()),
-  })),
-  timing: z.object({
-    asOfYear: z.number().int(),
-    daYunAge: z.string(),
-    contacts: z.array(z.object({
-      layer: z.enum(["da_yun", "se_yun"]),
-      pillar: z.string(),
-      stem: z.string(),
-      element: z.string(),
-      tenGod: z.string(),
-      family: z.string(),
-      contactedLensIds: z.array(z.string()),
-      interpretation: z.string(),
-    })),
-    boundary: z.string(),
-  }).nullable(),
   evidenceIntents: z.array(z.string()),
-  sourceRefs,
-  boundary: z.string(),
 }).nullable();
-
-const judgmentSchema = z.object({
-  strength: z.object({
-    status: z.enum(["support_leaning", "weak_leaning", "contested", "extreme_structure_candidate"]),
-    monthCommandTenGod: z.string(),
-    exactRoots: z.array(z.object({
-      position: z.string(),
-      branch: z.string(),
-      stage: z.string(),
-      grade: z.enum(["substantial", "residual"]),
-    })),
-    sameElementRoots: z.array(z.object({ position: z.string(), branch: z.string(), stage: z.string() })),
-    axes: z.array(z.object({
-      id: z.enum(["month_command", "root", "visible_support", "visible_drain_control"]),
-      direction: z.enum(["supports_day_master", "drains_or_controls_day_master", "mixed", "neutral"]),
-      observations: z.array(z.string()),
-    })),
-    followingCandidate: z.enum(["follow_output", "follow_wealth", "follow_officer"]).nullable(),
-    policy: z.string(),
-    boundary: z.string(),
-  }).passthrough(),
-  pattern: z.object({
-    pattern: z.string(),
-    monthMainStem: z.string(),
-    monthMainTenGod: z.string(),
-    mechanisms: z.array(z.object({
-      id: z.string(),
-      label: z.string(),
-      polarity: z.enum(["supporting", "damaging"]),
-      grade: z.enum(["exposed", "rooted", "structural"]),
-      evidence: z.array(z.string()),
-    })),
-    monthBranchClashes: z.array(z.string()),
-    status: z.enum(["supported", "contested", "damaged", "unresolved"]),
-    boundary: z.string(),
-  }).passthrough(),
-  usefulGods: z.object({
-    lenses: z.array(z.object({
-      id: z.enum(["climate", "pattern_function", "support_control"]),
-      school: z.string(),
-      candidateStems: z.array(z.string()),
-      candidateFamilies: z.array(z.string()),
-      candidateElements: z.array(z.string()),
-      observations: z.array(z.string()),
-      sourceIds: z.array(z.string()),
-      status: z.enum(["active", "conflicted", "withheld"]),
-    })),
-    conflicts: z.array(z.string()),
-    boundary: z.string(),
-  }),
-  tenGodPresences: z.array(z.object({
-    tenGod: z.string(),
-    family: z.string(),
-    visibleAt: z.array(z.string()),
-    rootedAt: z.array(z.string()),
-  })),
-  sourceIds: z.array(z.string()),
-  boundary: z.string(),
-});
 
 const executionPlanSchema = z.object({
   entryIntent: z.string(),
@@ -131,21 +38,19 @@ const executionPlanSchema = z.object({
 /** Stable model-facing result contract. Raw dossier fields remain optional developer payloads. */
 export const legendSajuResultOutputSchema = z.object({
   error: z.string().optional(),
-  mode: z.enum(["consumer", "compact", "evidence", "debug"]).optional(),
+  mode: z.enum(["action_only", "consumer", "evidence", "debug"]).optional(),
   detailLevel: z.enum(["brief", "standard", "expert", "raw"]).optional(),
   question: z.string().optional(),
   readingSummary: z.object({
     focus: z.array(z.string()),
     summary: z.string(),
     highlights: z.array(z.string()),
-    returnedClaimCount: z.number().int(),
-    uniqueInternalClaimCount: z.number().int(),
+    returnedItemCount: z.number().int(),
     totalInternalClaimCount: z.number().int(),
   }).optional(),
   sections: z.record(z.string(), z.object({
     interpretations: z.array(interpretationSchema),
     evidenceClaimIds: z.array(z.string()),
-    sourceRefs,
   })).optional(),
   recommendations: recommendationSchema.optional(),
   timeline: z.array(z.object({
@@ -160,8 +65,6 @@ export const legendSajuResultOutputSchema = z.object({
     })),
     confidence: z.enum(["high", "medium", "low"]),
     evidenceClaimIds: z.array(z.string()),
-    sourceRefs,
-    limitationRefs,
   })).optional(),
   omittedTimelineYears: z.number().int().optional(),
   inputNotes: z.array(z.object({
@@ -171,11 +74,12 @@ export const legendSajuResultOutputSchema = z.object({
     message: z.string(),
   }).passthrough()).optional(),
   calculationSummary: z.object({
-    selectedCapabilities: z.array(z.string()),
+    selectedCapabilityCount: z.number().int(),
     internalClaimCount: z.number().int(),
-    returnedClaimCount: z.number().int(),
+    returnedItemCount: z.number().int(),
     deterministic: z.boolean(),
   }).optional(),
+  omittedItemsByKind: z.record(z.string(), z.number().int()).optional(),
   executionPlan: executionPlanSchema.optional(),
   claims: z.array(z.object({
     id: z.string(),
@@ -190,7 +94,6 @@ export const legendSajuResultOutputSchema = z.object({
     timeframe: timeframeSchema,
     confidence: z.string(),
     sourceRefs,
-    limitationRefs,
   })).optional(),
   evidence: z.array(z.unknown()).optional(),
   dreamAnalysis: z.object({
@@ -222,11 +125,8 @@ export const legendSajuResultOutputSchema = z.object({
       broaderPrimaryCorpusSemanticallyNormalized: z.literal(false),
     }),
     sourceIds: z.array(z.string()),
-    limitations: z.array(z.string()),
-    boundary: z.string(),
   }).optional(),
   methodAnalysis: z.object({
-    myeongriJudgment: judgmentSchema.optional(),
     synthesis: z.array(z.object({
       domain: z.string(),
       claimIds: z.array(z.string()),
@@ -235,7 +135,27 @@ export const legendSajuResultOutputSchema = z.object({
       note: z.string(),
     })),
     methodResults: z.record(z.string(), z.unknown()).optional(),
-    knowledgeAssets: z.unknown().optional(),
+  }).optional(),
+  dreamSummary: z.object({
+    status: z.enum(["matched", "outside_active_scope"]),
+    matches: z.array(z.object({
+      concept: z.string(),
+      sharedMotif: z.string(),
+      conflict: z.string(),
+      interpretation: z.string(),
+      clarificationQuestions: z.array(z.string()),
+    })),
+  }).optional(),
+  nameSummary: z.object({
+    legalIdentityStatus: z.enum(["all_official_eligible", "contains_unresolved_character"]),
+    characters: z.array(z.object({
+      character: z.string().nullable(),
+      officialReadings: z.array(z.string()),
+      readingStatus: z.string(),
+      nameMeanings: z.array(z.string()),
+    })),
+    fiveGridStatus: z.string(),
+    eightyOneNumbersStatus: z.string(),
   }).optional(),
   nameAnalysis: z.unknown().optional(),
   sources: z.array(z.object({
@@ -246,7 +166,6 @@ export const legendSajuResultOutputSchema = z.object({
     scope: z.string(),
     checkedAt: z.string(),
   })).optional(),
-  limitations: z.array(z.object({ id: z.string(), text: z.string() })).optional(),
   blocked: z.array(z.object({
     capabilityId: z.string(),
     missingRequired: z.array(z.string()),
@@ -254,7 +173,6 @@ export const legendSajuResultOutputSchema = z.object({
     inputIssues: z.array(z.unknown()),
   })).optional(),
   conflicts: z.array(z.unknown()).optional(),
-  interpretationBoundary: z.string().optional(),
   noModelCalls: z.boolean().optional(),
   publicationSideEffects: z.boolean().optional(),
   selection: z.unknown().optional(),

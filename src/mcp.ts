@@ -16,7 +16,6 @@ import {
   type LegendSajuResolveInput,
 } from "./engine/public-entry";
 import { buildConsumerReading } from "./engine/consumer-reading";
-import type { MyeongriJudgment } from "./engine/myeongri-judgment";
 import {
   capabilitySearchOutputSchema,
   legendSajuResultOutputSchema,
@@ -64,12 +63,12 @@ const koreanNameSchema = z.object({
   declaredStrokeStandard: z.string().optional().describe("Required before caller-declared five-grid arithmetic is run."),
 });
 
-const outputModeSchema = z.enum(["consumer", "compact", "evidence", "debug"]);
+const outputModeSchema = z.enum(["action_only", "consumer", "evidence", "debug"]);
 const detailLevelSchema = z.enum(["brief", "standard", "expert", "raw"]);
 const outputControlFields = {
-  detailLevel: detailLevelSchema.optional().describe("Preferred depth. brief is shortest, standard is the default readable answer, expert automatically composes question-relevant deep methods and evidence in one call, and raw is the complete developer record."),
-  outputMode: outputModeSchema.optional().describe("Backward-compatible developer projection override. Ordinary callers should use detailLevel instead."),
-  maxClaims: z.number().int().min(1).max(100).optional().describe("Maximum interpretation points and raw claims returned outside debug mode."),
+  detailLevel: detailLevelSchema.optional().describe("Calculation breadth. This does not choose the response projection."),
+  outputMode: outputModeSchema.optional().describe("Response projection: action_only returns actions, consumer returns a readable interpretation, evidence returns claims and source-linked method data, and debug returns the internal resolver record."),
+  maxClaims: z.number().int().min(1).max(100).optional().describe("Global item budget outside debug mode. It limits interpretations, actions, timeline entries, claims, legacy evidence, and method results together."),
 };
 
 const resolveSchema = z.object({
@@ -175,30 +174,39 @@ function toolError(prefix: string, error: unknown): ToolResult {
 }
 
 function resolutionSummary(result: LegendSajuResolution, formatted: Record<string, unknown>): string {
-  const available = result.routes.filter((route) => route.status !== "blocked").length;
-  const blocked = result.routes.filter((route) => route.status === "blocked").length;
-  const claims = result.dossier?.claims.length ?? 0;
-  const nameSummary = result.nameAnalysis
-    ? `Analyzed ${result.nameAnalysis.surname.length + result.nameAnalysis.givenName.length} name characters against the official-entry snapshot.`
-    : "";
-  const readingSummary = formatted.readingSummary as { highlights?: string[] } | undefined;
-  const excerpts = (readingSummary?.highlights ?? []).slice(0, 4).map((item) => `- ${item}`).join("\n");
-  return [
-    `Legend Saju selected ${result.selection.selected.length} focused calculations; ${available} available/partial and ${blocked} blocked.`,
-    `Produced ${claims} internal claims and returned a ${String(formatted.mode ?? "consumer")} view.`,
-    nameSummary,
-    result.selection.unsupported.length ? `Unsupported IDs: ${result.selection.unsupported.join(", ")}` : "",
-    excerpts,
-    "No model call, API key lookup, network request, or publication occurred inside Legend Saju.",
-  ].filter(Boolean).join("\n");
+  const mode = String(formatted.mode ?? "consumer");
+  const calculation = formatted.calculationSummary as { returnedItemCount?: number } | undefined;
+  const returned = calculation?.returnedItemCount;
+  if (mode === "debug") return `Returned the full resolver record for ${result.selection.selected.length} calculations.`;
+  if (mode === "evidence") return `Returned ${returned ?? 0} source-linked evidence items.`;
+  if (mode === "action_only") return `Returned ${returned ?? 0} action items.`;
+  return `Returned ${returned ?? 0} readable interpretation items.`;
 }
 
 function compactText(value: string, max = 700): string {
   return value.length <= max ? value : `${value.slice(0, max - 1)}…`;
 }
 
+const EVIDENCE_LIMIT_KEYS = new Set([
+  "boundary",
+  "boundaries",
+  "disclaimer",
+  "interpretationBoundary",
+  "limitation",
+  "limitations",
+  "limitationRefs",
+]);
+
+function withoutEvidenceLimits(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(withoutEvidenceLimits);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(Object.entries(value as Record<string, unknown>)
+    .filter(([key]) => !EVIDENCE_LIMIT_KEYS.has(key))
+    .map(([key, item]) => [key, withoutEvidenceLimits(item)]));
+}
+
 function claimPriority(kind: string, evidenceRole: string, mode: LegendSajuOutputMode): number {
-  const meaningFirst = mode === "consumer" || mode === "compact";
+  const meaningFirst = mode === "consumer" || mode === "action_only";
   const kindScore = meaningFirst
     ? kind === "heuristic_interpretation" ? 0 : kind === "structural_observation" ? 1 : kind === "calculated_fact" ? 2 : 3
     : kind === "calculated_fact" ? 0 : kind === "structural_observation" ? 1 : kind === "heuristic_interpretation" ? 2 : 3;
@@ -212,29 +220,17 @@ type ResolvedOutputControls = {
   maxClaims: number | undefined;
 };
 
-function resolvedOutputControls(input: LegendSajuResolveInput): ResolvedOutputControls {
-  const inferredDetail: LegendSajuDetailLevel = input.outputMode === "debug"
-    ? "raw"
-    : input.outputMode === "evidence"
-      ? "expert"
-      : "standard";
-  const detailLevel = input.detailLevel ?? inferredDetail;
-  const mode = input.outputMode ?? (detailLevel === "raw" ? "debug" : detailLevel === "expert" ? "evidence" : "consumer");
-  const defaultClaims = detailLevel === "brief" ? 4 : detailLevel === "expert" ? 40 : detailLevel === "raw" ? 100 : undefined;
-  return { detailLevel, mode, maxClaims: input.maxClaims ?? defaultClaims };
+function defaultOutputBudget(mode: LegendSajuOutputMode, detailLevel: LegendSajuDetailLevel): number | undefined {
+  if (mode === "debug") return undefined;
+  if (mode === "action_only") return 6;
+  if (mode === "consumer") return detailLevel === "brief" ? 4 : 12;
+  return detailLevel === "brief" ? 8 : detailLevel === "expert" || detailLevel === "raw" ? 40 : 20;
 }
 
-function extractMyeongriJudgment(result: LegendSajuResolution): MyeongriJudgment | undefined {
-  for (const evidence of result.evidence) {
-    if (!evidence.ok || !evidence.data || typeof evidence.data !== "object") continue;
-    const data = evidence.data as Record<string, unknown>;
-    if (data.judgment) return data.judgment as MyeongriJudgment;
-    const recommendation = data.recommend as { judgment?: MyeongriJudgment } | undefined;
-    if (recommendation?.judgment) return recommendation.judgment;
-    const prescription = (data.gaeun ?? data.gaeunPro) as { actionGuidance?: { judgment?: MyeongriJudgment } } | undefined;
-    if (prescription?.actionGuidance?.judgment) return prescription.actionGuidance.judgment;
-  }
-  return undefined;
+function resolvedOutputControls(input: LegendSajuResolveInput): ResolvedOutputControls {
+  const detailLevel = input.detailLevel ?? "standard";
+  const mode = input.outputMode ?? "consumer";
+  return { detailLevel, mode, maxClaims: input.maxClaims ?? defaultOutputBudget(mode, detailLevel) };
 }
 
 export function formatLegendSajuResolution(
@@ -243,8 +239,10 @@ export function formatLegendSajuResolution(
   requestedMaxClaims?: number,
   detailLevel: LegendSajuDetailLevel = "standard",
 ): Record<string, unknown> {
-  if (mode === "debug") return jsonObject({ mode, detailLevel, ...result });
-  const defaultMax = detailLevel === "brief" ? 4 : detailLevel === "expert" ? 40 : mode === "consumer" ? 8 : mode === "compact" ? 16 : 100;
+  if (mode === "debug") {
+    return jsonObject({ mode, detailLevel, ...(withoutEvidenceLimits(result) as Record<string, unknown>) });
+  }
+  const defaultMax = defaultOutputBudget(mode, detailLevel) ?? 100;
   const maxClaims = Math.max(1, Math.min(requestedMaxClaims ?? defaultMax, 100));
   const domainOrder = new Map(result.executionPlan.domains.map((domain, index) => [domain, index]));
   const rawClaims = result.dossier?.claims ?? [];
@@ -265,23 +263,167 @@ export function formatLegendSajuResolution(
     const domainDelta = Math.min(...a.domains.map((domain) => domainOrder.get(domain) ?? 99)) -
       Math.min(...b.domains.map((domain) => domainOrder.get(domain) ?? 99));
     const priorityDelta = claimPriority(a.claim.kind, a.claim.evidenceRole, mode) - claimPriority(b.claim.kind, b.claim.evidenceRole, mode);
-    return mode === "consumer" || mode === "compact"
+    return mode === "consumer" || mode === "action_only"
       ? priorityDelta || domainDelta
       : domainDelta || priorityDelta;
   });
-  const selectedClaims = allClaims.slice(0, maxClaims);
-  const claimCapabilityIds = new Set(rawClaims.map((claim) => claim.capabilityId));
-  const limitationIds = new Map<string, string>();
-  const registerLimitation = (value: string): string => {
-    const existing = limitationIds.get(value);
-    if (existing) return existing;
-    const id = `limit-${limitationIds.size + 1}`;
-    limitationIds.set(value, id);
-    return id;
-  };
+  const inputNotes = [...new Map(result.routes.flatMap((route) => route.inputAudit?.issues ?? [])
+    .map((issue) => [`${issue.code}:${issue.field}:${issue.message}`, issue])).values()];
+  const blockedCandidates = result.routes
+    .filter((route) => route.status === "blocked")
+    .map((route) => ({
+      capabilityId: route.capability.id,
+      missingRequired: route.missingRequired,
+      reasons: route.reasons,
+      inputIssues: route.inputAudit?.issues ?? [],
+    }));
+
+  if (mode === "action_only" || mode === "consumer") {
+    const reading = buildConsumerReading(result, mode, maxClaims);
+    const primaryItemCount = reading.sections.reduce((sum, section) => sum + section.interpretations.length, 0)
+      + (reading.recommendations?.items.length ?? 0)
+      + reading.timeline.length;
+    let remaining = Math.max(0, maxClaims - primaryItemCount);
+    const dreamMatches = mode === "consumer" ? result.dreamAnalysis?.matches.slice(0, remaining) ?? [] : [];
+    remaining -= dreamMatches.length;
+    const nameCharacters = mode === "consumer" && result.nameAnalysis
+      ? [...result.nameAnalysis.surname, ...result.nameAnalysis.givenName].slice(0, remaining)
+      : [];
+    const sections = Object.fromEntries(reading.sections.map((section) => [section.domain, {
+      interpretations: section.interpretations.map((point) => ({
+        text: point.text,
+        timeframe: point.timeframe,
+        confidence: point.confidence,
+        evidenceClaimIds: point.evidenceClaimIds,
+        counterClaimIds: point.counterClaimIds,
+      })),
+      evidenceClaimIds: section.evidenceClaimIds,
+    }]));
+    const recommendations = reading.recommendations ? {
+      items: reading.recommendations.items.map((item) => ({
+        id: item.id,
+        title: item.title,
+        domains: item.domains,
+        actions: item.actions,
+        caution: item.caution,
+      })),
+      evidenceIntents: reading.recommendations.evidenceIntents,
+    } : null;
+    const timeline = reading.timeline.map((entry) => ({
+      period: entry.period,
+      summary: entry.summary,
+      domains: entry.domains,
+      confidence: entry.confidence,
+      evidenceClaimIds: entry.evidenceClaimIds,
+    }));
+    const dreamSummary = mode === "consumer" && result.dreamAnalysis ? {
+      status: result.dreamAnalysis.status,
+      matches: dreamMatches.map((match) => ({
+        concept: match.concept,
+        sharedMotif: match.sharedMotif,
+        conflict: match.conflict,
+        interpretation: match.safeGeneralization,
+        clarificationQuestions: match.clarificationQuestions,
+      })),
+    } : undefined;
+    const nameSummary = mode === "consumer" && result.nameAnalysis ? {
+      legalIdentityStatus: result.nameAnalysis.legalIdentityStatus,
+      characters: nameCharacters.map((item) => ({
+        character: item.identity.character,
+        officialReadings: item.reading.official,
+        readingStatus: item.reading.status,
+        nameMeanings: item.officialLabels.nameMeanings,
+      })),
+      fiveGridStatus: result.nameAnalysis.fiveGrid.status,
+      eightyOneNumbersStatus: result.nameAnalysis.eightyOneNumbers.status,
+    } : undefined;
+    const specialHighlights = dreamMatches.map((match) => match.safeGeneralization);
+    const highlights = [...new Set([...specialHighlights, ...reading.highlights])].slice(0, Math.min(maxClaims, 6));
+    const summary = mode === "action_only"
+      ? reading.summary
+      : result.dreamAnalysis?.status === "matched"
+      ? dreamMatches.map((match) => match.safeGeneralization).join(" ")
+      : result.nameAnalysis
+        ? `성과 이름 ${result.nameAnalysis.surname.length + result.nameAnalysis.givenName.length}자의 인명용 한자 정보를 확인했다.`
+        : reading.summary;
+    const common = {
+      mode,
+      detailLevel,
+      question: result.question,
+      inputNotes,
+      calculationSummary: {
+        selectedCapabilityCount: result.executionPlan.selected.length,
+        internalClaimCount: rawClaims.length,
+        returnedItemCount: primaryItemCount + dreamMatches.length + nameCharacters.length,
+        deterministic: result.noModelCalls,
+      },
+    };
+    if (mode === "action_only") {
+      return jsonObject({ ...common, recommendations });
+    }
+    return jsonObject({
+      ...common,
+      readingSummary: {
+        focus: result.executionPlan.domains,
+        summary,
+        highlights,
+        returnedItemCount: primaryItemCount + dreamMatches.length + nameCharacters.length,
+        totalInternalClaimCount: rawClaims.length,
+      },
+      recommendations,
+      ...(dreamSummary ? { dreamSummary } : {}),
+      ...(nameSummary ? { nameSummary } : {}),
+      sections,
+      timeline,
+      omittedTimelineYears: reading.omittedTimelineYears,
+    });
+  }
+
+  type EvidenceUnit =
+    | { kind: "claim"; value: (typeof allClaims)[number] }
+    | { kind: "legacy"; value: (typeof result.evidence)[number] }
+    | { kind: "method"; value: [string, unknown] }
+    | { kind: "synthesis"; value: NonNullable<typeof result.dossier>["synthesis"][number] }
+    | { kind: "conflict"; value: NonNullable<typeof result.dossier>["conflicts"][number] }
+    | { kind: "blocked"; value: (typeof blockedCandidates)[number] }
+    | { kind: "dream"; value: NonNullable<typeof result.dreamAnalysis>["matches"][number] }
+    | { kind: "name"; value: NonNullable<typeof result.nameAnalysis> };
+  const methodEntries = Object.entries(result.dossier?.methodResults ?? {});
+  const methodIds = new Set(methodEntries.map(([id]) => id));
+  const legacyCandidates = result.evidence.filter((item) => !methodIds.has(item.intent));
+  const groups: EvidenceUnit[][] = [
+    [
+      ...(result.nameAnalysis ? [{ kind: "name" as const, value: result.nameAnalysis }] : []),
+      ...(result.dreamAnalysis?.matches.map((value) => ({ kind: "dream" as const, value })) ?? []),
+    ],
+    allClaims.map((value) => ({ kind: "claim" as const, value })),
+    legacyCandidates.map((value) => ({ kind: "legacy" as const, value })),
+    methodEntries.map((value) => ({ kind: "method" as const, value })),
+    (result.dossier?.synthesis ?? []).map((value) => ({ kind: "synthesis" as const, value })),
+    (result.dossier?.conflicts ?? []).map((value) => ({ kind: "conflict" as const, value })),
+    blockedCandidates.map((value) => ({ kind: "blocked" as const, value })),
+  ];
+  const units: EvidenceUnit[] = [];
+  const availableItemsByKind = Object.fromEntries(groups.flat().reduce((counts, unit) => {
+    counts.set(unit.kind, (counts.get(unit.kind) ?? 0) + 1);
+    return counts;
+  }, new Map<EvidenceUnit["kind"], number>()));
+  while (units.length < maxClaims) {
+    let progressed = false;
+    for (const group of groups) {
+      if (units.length >= maxClaims) break;
+      const value = group.shift();
+      if (!value) continue;
+      units.push(value);
+      progressed = true;
+    }
+    if (!progressed) break;
+  }
+
   const sourceIds = new Set<string>();
-  const observationLimit = mode === "consumer" ? 6 : mode === "compact" ? 12 : Number.POSITIVE_INFINITY;
-  const claims = selectedClaims.map(({ claim, domains }) => {
+  const selectedClaims = units.filter((unit): unit is Extract<EvidenceUnit, { kind: "claim" }> => unit.kind === "claim");
+  const observationLimit = Math.max(1, Math.min(12, Math.ceil(maxClaims / Math.max(1, selectedClaims.length))));
+  const claims = selectedClaims.map(({ value: { claim, domains } }) => {
     claim.sourceIds.forEach((id) => sourceIds.add(id));
     return {
       id: claim.id,
@@ -296,149 +438,76 @@ export function formatLegendSajuResolution(
       timeframe: claim.timeframe,
       confidence: claim.confidence,
       sourceRefs: claim.sourceIds,
-      limitationRefs: claim.limitations.map(registerLimitation),
     };
   });
-  const legacyEvidence = result.evidence
-    .filter((item) => mode === "evidence" || !claimCapabilityIds.has(item.intent))
-    .map((item) => {
-    item.capability.capability.sourceIds.forEach((id) => sourceIds.add(id));
-    item.capability.capability.omittedDimensions.forEach(registerLimitation);
-    return {
-      intent: item.intent,
-      ok: item.ok,
-      groundingText: compactText(item.groundingText, mode === "consumer" ? 1200 : 4000),
-      vaultRefs: item.vaultRefs,
-      status: item.capability.status,
-      sourceRefs: item.capability.capability.sourceIds,
-      limitationRefs: item.capability.capability.omittedDimensions.map(registerLimitation),
-      ...(mode === "evidence" ? { data: item.data } : {}),
-    };
-  });
+  const evidence = units
+    .filter((unit): unit is Extract<EvidenceUnit, { kind: "legacy" }> => unit.kind === "legacy")
+    .map(({ value: item }) => {
+      item.capability.capability.sourceIds.forEach((id) => sourceIds.add(id));
+      return {
+        intent: item.intent,
+        ok: item.ok,
+        groundingText: compactText(item.groundingText, 4000),
+        vaultRefs: item.vaultRefs,
+        status: item.capability.status,
+        sourceRefs: item.capability.capability.sourceIds,
+        data: withoutEvidenceLimits(item.data),
+      };
+    });
+  const selectedMethodEntries = units
+    .filter((unit): unit is Extract<EvidenceUnit, { kind: "method" }> => unit.kind === "method")
+    .map((unit) => unit.value);
+  for (const [id] of selectedMethodEntries) {
+    const route = result.routes.find((item) => item.capability.id === id);
+    route?.capability.sourceIds.forEach((sourceId) => sourceIds.add(sourceId));
+  }
+  const selectedDreamMatches = units
+    .filter((unit): unit is Extract<EvidenceUnit, { kind: "dream" }> => unit.kind === "dream")
+    .map((unit) => unit.value);
+  if (result.dreamAnalysis) {
+    result.dreamAnalysis.sourceIds.forEach((id) => sourceIds.add(id));
+  }
+  const nameAnalysis = units.find((unit): unit is Extract<EvidenceUnit, { kind: "name" }> => unit.kind === "name")?.value;
   const sourceById = new Map(Object.values(ENGINE_SOURCES).map((source) => [source.id, source]));
-  const consumerReading = buildConsumerReading(result, mode, maxClaims);
-  consumerReading.sourceIds.forEach((id) => sourceIds.add(id));
-  result.dreamAnalysis?.sourceIds.forEach((id) => sourceIds.add(id));
-  result.dreamAnalysis?.limitations.forEach(registerLimitation);
-  const serializePoint = (point: (typeof consumerReading.sections)[number]["interpretations"][number]) => ({
-    text: point.text,
-    timeframe: point.timeframe,
-    confidence: point.confidence,
-    evidenceClaimIds: point.evidenceClaimIds,
-    counterClaimIds: point.counterClaimIds,
-    sourceRefs: point.sourceIds,
-    limitationRefs: point.limitations.map(registerLimitation),
+  const sources = [...sourceIds].flatMap((id) => {
+    const source = sourceById.get(id);
+    return source ? [source] : [];
   });
-  const sections = Object.fromEntries(consumerReading.sections.map((section) => [section.domain, {
-    interpretations: section.interpretations.map(serializePoint),
-    evidenceClaimIds: section.evidenceClaimIds,
-    sourceRefs: section.sourceIds,
-  }]));
-  const recommendations = consumerReading.recommendations ? {
-    items: consumerReading.recommendations.items.map((item) => ({
-      ...item,
-      sourceRefs: item.sourceIds,
-      sourceIds: undefined,
-    })),
-    safeguards: consumerReading.recommendations.safeguards,
-    timing: consumerReading.recommendations.timing,
-    evidenceIntents: consumerReading.recommendations.evidenceIntents,
-    sourceRefs: consumerReading.recommendations.sourceIds,
-    boundary: consumerReading.recommendations.boundary,
-  } : null;
-  const timeline = consumerReading.timeline.map((entry) => ({
-    period: entry.period,
-    summary: entry.summary,
-    domains: entry.domains,
-    confidence: entry.confidence,
-    evidenceClaimIds: entry.evidenceClaimIds,
-    sourceRefs: entry.sourceIds,
-    limitationRefs: entry.limitations.map(registerLimitation),
-  }));
-  const sourcesWithReading = [...sourceIds].map((id) => sourceById.get(id) ?? { id, title: id, uri: "", kind: "local_audit", scope: "", checkedAt: "" });
-  const limitationsWithReading = [...limitationIds].map(([text, id]) => ({ id, text }));
-  const highlights = [...new Set([
-    ...(result.dreamAnalysis?.matches.map((match) => match.safeGeneralization) ?? []),
-    ...consumerReading.highlights,
-    ...(consumerReading.highlights.length
-      ? []
-      : legacyEvidence.filter((item) => item.ok).map((item) => compactText(item.groundingText, 500))),
-  ])].slice(0, 6);
-  const readingSummaryText = consumerReading.sections.length || consumerReading.timeline.length
-    ? consumerReading.summary
-    : result.dreamAnalysis?.status === "matched"
-      ? result.dreamAnalysis.matches.map((match) => match.safeGeneralization).join(" ")
-      : result.dreamAnalysis
-        ? "현재 의미 감사가 끝난 5개 교차 전승 개념 밖이므로 원문 존재만으로 해석하지 않는다."
-    : legacyEvidence.find((item) => item.ok)?.groundingText
-      ? compactText(legacyEvidence.find((item) => item.ok)!.groundingText, 700)
-      : result.nameAnalysis
-        ? `공식 인명용 한자 스냅샷으로 성과 이름 ${result.nameAnalysis.surname.length + result.nameAnalysis.givenName.length}자를 분석했다.`
-        : consumerReading.summary;
-  const inputNotes = [...new Map(result.routes.flatMap((route) => route.inputAudit?.issues ?? [])
-    .map((issue) => [`${issue.code}:${issue.field}:${issue.message}`, issue])).values()];
-  const blocked = result.routes
-    .filter((route) => route.status === "blocked")
-    .map((route) => ({
-      capabilityId: route.capability.id,
-      missingRequired: route.missingRequired,
-      reasons: route.reasons,
-      inputIssues: route.inputAudit?.issues ?? [],
-    }));
-  const myeongriJudgment = extractMyeongriJudgment(result);
-  const methodAnalysis = result.dossier ? {
-    ...(myeongriJudgment ? { myeongriJudgment } : {}),
-    synthesis: result.dossier.synthesis,
-    ...((detailLevel === "expert" || detailLevel === "raw")
-      ? { methodResults: result.dossier.methodResults }
-      : {}),
-    ...((detailLevel === "expert" || detailLevel === "raw") && result.dossier.knowledgeAssets
-      ? { knowledgeAssets: result.dossier.knowledgeAssets }
-      : {}),
-  } : undefined;
-
+  const synthesis = units.filter((unit): unit is Extract<EvidenceUnit, { kind: "synthesis" }> => unit.kind === "synthesis").map((unit) => unit.value);
+  const conflicts = units.filter((unit): unit is Extract<EvidenceUnit, { kind: "conflict" }> => unit.kind === "conflict").map((unit) => unit.value);
+  const blocked = units.filter((unit): unit is Extract<EvidenceUnit, { kind: "blocked" }> => unit.kind === "blocked").map((unit) => unit.value);
+  const returnedItemsByKind = Object.fromEntries(units.reduce((counts, unit) => {
+    counts.set(unit.kind, (counts.get(unit.kind) ?? 0) + 1);
+    return counts;
+  }, new Map<EvidenceUnit["kind"], number>()));
+  const omittedItemsByKind = Object.fromEntries(Object.entries(availableItemsByKind)
+    .map(([kind, count]) => [kind, count - (returnedItemsByKind[kind] ?? 0)] as const)
+    .filter(([, count]) => count > 0));
   return jsonObject({
     mode,
     detailLevel,
     question: result.question,
-    readingSummary: {
-      focus: result.executionPlan.domains,
-      summary: readingSummaryText,
-      highlights,
-      returnedClaimCount: claims.length,
-      uniqueInternalClaimCount: allClaims.length,
-      totalInternalClaimCount: rawClaims.length,
-    },
-    sections,
-    recommendations,
-    timeline,
-    omittedTimelineYears: consumerReading.omittedTimelineYears,
-    inputNotes,
     calculationSummary: {
-      selectedCapabilities: result.executionPlan.selected,
+      selectedCapabilityCount: result.executionPlan.selected.length,
       internalClaimCount: rawClaims.length,
-      returnedClaimCount: claims.length,
+      returnedItemCount: units.length,
       deterministic: result.noModelCalls,
     },
-    executionPlan: {
-      entryIntent: result.executionPlan.entryIntent,
-      domains: result.executionPlan.domains,
-      core: result.executionPlan.core,
-      supporting: result.executionPlan.supporting,
-      selected: result.executionPlan.selected,
-      omitted: result.executionPlan.omitted,
-      unsupported: result.executionPlan.unsupported,
-    },
+    omittedItemsByKind,
+    executionPlan: result.executionPlan,
     claims,
-    evidence: legacyEvidence,
-    dreamAnalysis: result.dreamAnalysis,
-    methodAnalysis,
-    nameAnalysis: result.nameAnalysis,
-    sources: sourcesWithReading,
-    limitations: limitationsWithReading,
+    evidence,
+    methodAnalysis: {
+      synthesis,
+      methodResults: withoutEvidenceLimits(Object.fromEntries(selectedMethodEntries)),
+    },
+    ...(result.dreamAnalysis ? {
+      dreamAnalysis: withoutEvidenceLimits({ ...result.dreamAnalysis, matches: selectedDreamMatches }),
+    } : {}),
+    ...(nameAnalysis ? { nameAnalysis: withoutEvidenceLimits(nameAnalysis) } : {}),
+    sources,
     blocked,
-    conflicts: result.dossier?.conflicts ?? [],
-    interpretationBoundary: result.interpretationBoundary,
+    conflicts,
     noModelCalls: result.noModelCalls,
     publicationSideEffects: result.publicationSideEffects,
   });
@@ -514,7 +583,7 @@ export function createLegendSajuMcpServer(): McpServer {
     name: "legend-saju",
     version: LEGEND_SAJU_ENGINE_VERSION,
   }, {
-    instructions: "일반 운세는 legend_saju_read_fortune을 호출한다. content의 계산 완료 요약만으로 답하지 말고 structuredContent의 readingSummary, sections, recommendations, timeline을 사용한다. 깊은 종합 분석은 같은 도구에 detailLevel=expert를 주며 capability ID를 먼저 찾게 하지 않는다. 특정 유파·산법·복합 체계를 지목한 요청은 legend_saju_capabilities로 필요한 ID를 한 번 찾은 뒤 legend_saju_run_methods에 함께 전달한다. expert 결과는 methodAnalysis.methodResults와 충돌·출처·누락 범위도 읽는다. raw는 개발자 요청에만 쓴다. 각 해석은 evidenceClaimIds·sourceRefs·limitationRefs의 범위를 지킨다.",
+    instructions: "일반 운세는 legend_saju_read_fortune을 호출한다. detailLevel은 계산 범위, outputMode는 반환 형식을 정한다. 기본 consumer는 readingSummary·sections·recommendations·timeline을 사용하고, 행동만 필요하면 action_only를 쓴다. 계산 근거·지식 자산·원문·출처가 필요할 때만 evidence로 다시 호출한다. 특정 유파나 산법을 지목한 요청은 legend_saju_capabilities에서 ID를 찾은 뒤 legend_saju_run_methods에 함께 전달한다. debug는 개발자 점검용이다.",
   });
 
   server.registerTool("legend_saju_manifest", {
@@ -539,7 +608,7 @@ export function createLegendSajuMcpServer(): McpServer {
 
   server.registerTool("legend_saju_read_fortune", {
     title: "Read a Saju fortune",
-    description: "Use this when the user says 사주 봐줘, 운세 봐줘, 올해 운세, 재물운, 사업운, 직업운, 연애운, 결혼운, 건강운, 개운법, 구체적 액션, or asks what to do over a future period. Read structuredContent, especially recommendations for action requests. Use detailLevel=expert for a deep one-call analysis; do not search capability IDs first.",
+    description: "Use this for natal, current, annual, career, wealth, relationship, health, and action readings. Use detailLevel for calculation breadth and outputMode for action, readable, evidence, or debug results.",
     inputSchema: readingSchema,
     outputSchema: legendSajuResultOutputSchema,
     annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },

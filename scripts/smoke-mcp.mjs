@@ -106,6 +106,7 @@ lines.on("line", (line) => {
         name: "legend_saju_analyze_name",
         arguments: {
           question: "합성 이름 한자 출처를 확인해줘",
+          outputMode: "evidence",
           name: {
             surname: [{ character: "洪", expectedReading: "홍" }],
             givenName: [{ character: "哲", expectedReading: "철" }, { character: "榮", expectedReading: "영" }],
@@ -129,6 +130,7 @@ lines.on("line", (line) => {
         arguments: {
           question: "이 불꿈을 해몽해줘",
           dream: "집에 불이 크게 났고 불빛은 밝았으며 연기는 거의 없었다",
+          outputMode: "evidence",
         },
       },
     });

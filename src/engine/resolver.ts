@@ -74,7 +74,7 @@ export type LegendSajuEntryIntent =
   | "dream"
   | "expert";
 
-export type LegendSajuOutputMode = "consumer" | "compact" | "evidence" | "debug";
+export type LegendSajuOutputMode = "action_only" | "consumer" | "evidence" | "debug";
 
 export type LegendSajuDetailLevel = "brief" | "standard" | "expert" | "raw";
 
@@ -436,7 +436,7 @@ function generalReadingCapabilities(input: LegendSajuResolveInput, domains: Life
   }
   if (domains.includes("timing") && input.targetDate && input.birth?.gender) core.push("current_luck");
   if (input.timelineRange) core.push("life_timeline");
-  if (includesAny(question, ACTION_TERMS)) core.push("recommend");
+  if (input.outputMode === "action_only" || includesAny(question, ACTION_TERMS)) core.push("recommend");
   if (includesAny(question, ["궁통보감", "고전", "원전", "조후", "격국", "용신"])) supporting.push("myeongri_doctrine");
   if (deepDetail && input.birth) {
     supporting.push("strength_yongsin", "myeongri_doctrine", "knowledge_asset_router", "cross_system_life_dossier");

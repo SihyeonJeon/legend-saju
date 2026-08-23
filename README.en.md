@@ -91,14 +91,11 @@ The MCP exposes read-only tools whose names match the user's goal:
 | `legend_saju_capabilities` | Discover specialized calculations for an expert request |
 | `legend_saju_run_methods` | Execute named or mixed traditional methods in one expert plan |
 
-Ordinary readings now execute a bounded plan. A wealth or business question does
-not silently add date selection or remedy calculators. MCP responses default to a
-readable `standard` view. A single `legend_saju_read_fortune` call with
-`detailLevel: "expert"` composes question-relevant Myeongri, Zi Wei, knowledge,
-and timing methods and preserves their complete outputs under
-`methodAnalysis.methodResults`. The four levels are `brief`, `standard`, `expert`,
-and developer-oriented `raw`. Every tool declares an `outputSchema`; clients should
-read `structuredContent`, not only the short completion digest in `content`.
+`detailLevel` controls calculation breadth; `outputMode` controls the response.
+Use `action_only` for actions, `consumer` for a readable interpretation,
+`evidence` for claims, method results, knowledge assets, excerpts, and sources,
+and `debug` for the internal resolver record. `maxClaims` is one shared item
+budget across every non-debug projection.
 
 ## Auditable scope
 
