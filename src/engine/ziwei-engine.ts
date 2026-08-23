@@ -656,7 +656,9 @@ export function computeZiweiPalaceFlyingGraph(
     if (!localizedPalace) continue;
     const canonicalStars = [...(canonicalPalace.majorStars ?? []), ...(canonicalPalace.minorStars ?? [])];
     const localizedStars = [...(localizedPalace.majorStars ?? []), ...(localizedPalace.minorStars ?? [])];
-    canonicalStars.forEach((star, index) => localizedStarNames.set(star.name, localizedStars[index]?.name ?? star.name));
+    canonicalStars.forEach((star, index) => {
+      localizedStarNames.set(star.name, localizedStars[index]?.name ?? star.name);
+    });
   }
   const edges = astrolabe.palaces.flatMap((sourcePalace) => {
     const canonicalSource = canonical.palaces.find((palace) => palace.index === sourcePalace.index);
@@ -925,7 +927,7 @@ function palaceLine(palace: ZiweiPalace): string {
   const major = palace.majorStars.map((star) => star.name + (star.brightness ? `(${star.brightness})` : "") + (star.mutagen ? `화${star.mutagen}` : "")).join("·") || "무주성";
   const support = [...palace.minorStars.map((star) => star.name), ...palace.adjectiveStars].join(",");
   const topology = palace.sanfangSizheng;
-  return `${palace.name}[${palace.heavenlyStem}${palace.earthlyBranch}]${palace.isBodyPalace ? "(신궁)" : ""} 주:${major}${support ? " 보좌살:" + support : ""} | 삼방사정 ${topology.target}·${topology.opposite}·${topology.wealth}·${topology.career}`;
+  return `${palace.name}[${palace.heavenlyStem}${palace.earthlyBranch}]${palace.isBodyPalace ? "(신궁)" : ""} 주:${major}${support ? ` 보좌살:${support}` : ""} | 삼방사정 ${topology.target}·${topology.opposite}·${topology.wealth}·${topology.career}`;
 }
 
 /** 명반을 근거 텍스트로 직렬화한다. 해석 규칙이 아니라 계산 결과다. */

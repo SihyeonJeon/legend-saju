@@ -89,11 +89,11 @@ export function castYukim(year: number, month: number, day: number, hour: number
   const dayKey = `${dayGan}${dayBranch}`;
   const tableIndex = idx(l1t);
   const entry = CLOSED_SAN_CHUAN_TABLE[dayKey]?.[tableIndex];
-  if (!entry || entry["干支组合"].length !== 3) {
+  if (entry?.干支组合.length !== 3) {
     throw new Error(`YUKIM_SAN_CHUAN_TABLE_MISSING: ${dayKey}/${l1t}/${tableIndex}`);
   }
-  const [chojeon, jung, mal] = [...entry["干支组合"]];
-  const methodCode = entry["格局"];
+  const [chojeon, jung, mal] = [...entry.干支组合];
+  const methodCode = entry.格局;
 
   // 12천장: 귀인 위치(천반지지)에서 시작, 亥~辰=순행, 巳~戌=역행
   const guiin = (dayNight === "주(晝)") ? GUIIN_DAY[dayGan] : GUIIN_NIGHT[dayGan];

@@ -78,7 +78,9 @@ function tenGodPresence(chart: SajuChart): TenGodPresence[] {
   const roles = new Set<TenGod>();
   for (const key of PILLAR_KEYS) {
     roles.add(normalizeTenGod(chart.pillars[key].shiShenGan));
-    chart.pillars[key].shiShenZhi.forEach((role) => roles.add(normalizeTenGod(role)));
+    chart.pillars[key].shiShenZhi.forEach((role) => {
+      roles.add(normalizeTenGod(role));
+    });
   }
   roles.delete("일주");
   return [...roles].map((tenGod) => ({

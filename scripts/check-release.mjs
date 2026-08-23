@@ -48,7 +48,7 @@ const forbiddenCaseBirthDates = [
 ];
 
 const forbiddenCaseDatePatterns = forbiddenCaseBirthDates.flatMap(([year, month, day]) => [
-  new RegExp(`year\\s*['\"]?\\s*:\\s*${year}[\\s\\S]{0,80}month\\s*['\"]?\\s*:\\s*${month}[\\s\\S]{0,80}day\\s*['\"]?\\s*:\\s*${day}(?!\\d)`, "u"),
+  new RegExp(`year\\s*['"]?\\s*:\\s*${year}[\\s\\S]{0,80}month\\s*['"]?\\s*:\\s*${month}[\\s\\S]{0,80}day\\s*['"]?\\s*:\\s*${day}(?!\\d)`, "u"),
   new RegExp(`${year}\\s*년\\s*0?${month}\\s*월\\s*0?${day}\\s*일`, "u"),
   new RegExp(`${year}\\s*[-./]\\s*0?${month}\\s*[-./]\\s*0?${day}(?!\\d)`, "u"),
 ]);

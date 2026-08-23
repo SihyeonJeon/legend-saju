@@ -268,7 +268,7 @@ function systemsForFilter(values: readonly string[] | undefined): Set<EngineSyst
 }
 
 export function isEngineCapabilityId(value: string): value is EngineCapabilityId {
-  return Object.prototype.hasOwnProperty.call(ENGINE_CAPABILITIES, value);
+  return  Object.hasOwn(ENGINE_CAPABILITIES, value);
 }
 
 /** Search the live registry. Results are derived from metadata, not a closed user-facing enum. */

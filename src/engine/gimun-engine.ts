@@ -104,7 +104,9 @@ function rotateRing<T>(values: Map<number, T>, from: number, to: number): Map<nu
 
 function earthPlate(dun: GimunResult["dun"], gukSu: number): Map<number, string> {
   const result = new Map<number, string>();
-  SANQI_LIUYI.forEach((stem, index) => result.set(moveBy(gukSu, index, dun), stem));
+  SANQI_LIUYI.forEach((stem, index) => {
+    result.set(moveBy(gukSu, index, dun), stem);
+  });
   return result;
 }
 
@@ -152,14 +154,18 @@ export function castGimun(year: number, month: number, day: number, hour: number
   const hiddenStemHome = new Map(earth);
 
   const starsAtHome = new Map<number, string>();
-  LUOSHU_RING.forEach((palace) => starsAtHome.set(palace, palace === 2 ? "금예" : STAR_HOME[palace]));
+  LUOSHU_RING.forEach((palace) => {
+    starsAtHome.set(palace, palace === 2 ? "금예" : STAR_HOME[palace]);
+  });
   const stars = rotateRing(starsAtHome, originalEffective, hourEffective);
 
   const marchSteps = duty.timeIndex % 10;
   const zhiShiPalace = moveBy(originalPalace, marchSteps, setup.dun);
   const zhiShiEffective = projectCenter(zhiShiPalace);
   const doorsAtHome = new Map<number, string>();
-  LUOSHU_RING.forEach((palace) => doorsAtHome.set(palace, DOOR_HOME[palace]));
+  LUOSHU_RING.forEach((palace) => {
+    doorsAtHome.set(palace, DOOR_HOME[palace]);
+  });
   const doors = rotateRing(doorsAtHome, originalEffective, zhiShiEffective);
   const hidden = rotateRing(hiddenStemHome, originalEffective, zhiShiEffective);
 

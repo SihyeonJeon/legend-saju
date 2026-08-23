@@ -424,7 +424,9 @@ export function formatLegendSajuResolution(
   const selectedClaims = units.filter((unit): unit is Extract<EvidenceUnit, { kind: "claim" }> => unit.kind === "claim");
   const observationLimit = Math.max(1, Math.min(12, Math.ceil(maxClaims / Math.max(1, selectedClaims.length))));
   const claims = selectedClaims.map(({ value: { claim, domains } }) => {
-    claim.sourceIds.forEach((id) => sourceIds.add(id));
+    claim.sourceIds.forEach((id) => {
+      sourceIds.add(id);
+    });
     return {
       id: claim.id,
       domain: claim.domain,
@@ -443,7 +445,9 @@ export function formatLegendSajuResolution(
   const evidence = units
     .filter((unit): unit is Extract<EvidenceUnit, { kind: "legacy" }> => unit.kind === "legacy")
     .map(({ value: item }) => {
-      item.capability.capability.sourceIds.forEach((id) => sourceIds.add(id));
+      item.capability.capability.sourceIds.forEach((id) => {
+        sourceIds.add(id);
+      });
       return {
         intent: item.intent,
         ok: item.ok,
@@ -459,13 +463,17 @@ export function formatLegendSajuResolution(
     .map((unit) => unit.value);
   for (const [id] of selectedMethodEntries) {
     const route = result.routes.find((item) => item.capability.id === id);
-    route?.capability.sourceIds.forEach((sourceId) => sourceIds.add(sourceId));
+    route?.capability.sourceIds.forEach((sourceId) => {
+      sourceIds.add(sourceId);
+    });
   }
   const selectedDreamMatches = units
     .filter((unit): unit is Extract<EvidenceUnit, { kind: "dream" }> => unit.kind === "dream")
     .map((unit) => unit.value);
   if (result.dreamAnalysis) {
-    result.dreamAnalysis.sourceIds.forEach((id) => sourceIds.add(id));
+    result.dreamAnalysis.sourceIds.forEach((id) => {
+      sourceIds.add(id);
+    });
   }
   const nameAnalysis = units.find((unit): unit is Extract<EvidenceUnit, { kind: "name" }> => unit.kind === "name")?.value;
   const sourceById = new Map(Object.values(ENGINE_SOURCES).map((source) => [source.id, source]));

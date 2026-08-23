@@ -2,7 +2,7 @@
  * 개운 요청을 관법별 행동 후보와 선택적 상징 대응으로 분리한다.
  * 상징표는 전통 대응 자료이며 행동의 원인이나 효과 근거가 아니다.
  */
-import { type SajuInput, type Element } from "./saju-engine";
+import type { SajuInput, Element } from "./saju-engine";
 import {
   buildMyeongriActionGuidanceForInput,
   serializeMyeongriActionGuidance,

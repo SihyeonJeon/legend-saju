@@ -241,7 +241,7 @@ describe("대육임 닫힌 720국 사과삼전", () => {
     expect(rows).toHaveLength(60);
     expect(rows.every((row) => row.length === 12)).toBe(true);
     expect(rows.flat()).toHaveLength(720);
-    expect(rows.flat().every((entry) => entry["干支组合"].length === 3 && entry["格局"].length > 0)).toBe(true);
+    expect(rows.flat().every((entry) => entry.干支组合.length === 3 && entry.格局.length > 0)).toBe(true);
   });
 
   it("구종문의 통상과와 특수과를 임의 대체 없이 실제 삼전으로 찾는다", () => {

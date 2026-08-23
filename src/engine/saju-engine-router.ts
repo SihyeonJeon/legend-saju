@@ -88,7 +88,7 @@ export function querySajuEngine(q: SajuQuery): SajuEvidence {
         }
         const c = computeSajuChart(q.birth!);
         const el = analyzeElements(c);
-        return wrap({ chart: c, elements: el }, `${chartLines(c)} | 오행 강약 강:${el.strongest} 약:${el.weakest}${el.missing.length ? " 무:" + el.missing.join("") : ""}`, vaultRefsFor(["일간", c.dayMaster.ko, "오행", p0(c)]));
+        return wrap({ chart: c, elements: el }, `${chartLines(c)} | 오행 강약 강:${el.strongest} 약:${el.weakest}${el.missing.length ? ` 무:${el.missing.join("")}` : ""}`, vaultRefsFor(["일간", c.dayMaster.ko, "오행", p0(c)]));
       }
       case "strength_yongsin": {
         const c = computeSajuChart(q.birth!);

@@ -322,10 +322,11 @@ export function compatibility(a: SajuInput, b: SajuInput): { dayPillarA: string;
 }
 
 export { pillarKo, STEM_KO, BR_KO, EL_COLOR, EL_DIR };
-export type { };
 // vault 연결 헬퍼 재노출(라우터에서 사용)
 export function vaultRefsFor(terms: string[]): string[] {
   const refs = new Set<string>();
-  for (const t of terms) lookupMyeongriTerm(t, 2).forEach((f) => refs.add(`${f.termKr}(${f.hanja})`));
+  for (const t of terms) {
+    for (const f of lookupMyeongriTerm(t, 2)) refs.add(`${f.termKr}(${f.hanja})`);
+  }
   return [...refs];
 }
