@@ -30,6 +30,8 @@ Legend Saju는 사주·명리, 자미두수, 기문둔갑, 대육임, 철판신�
 https://legend-saju-mcp-production.up.railway.app/mcp
 ```
 
+공식 MCP Registry 이름은 `io.github.SihyeonJeon/legend-saju`다.
+
 ### Claude Code
 
 아래 명령은 모든 프로젝트에서 쓸 수 있도록 사용자 범위에 연결한다.

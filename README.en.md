@@ -30,6 +30,8 @@ Connect any Streamable HTTP MCP client to:
 https://legend-saju-mcp-production.up.railway.app/mcp
 ```
 
+Official MCP Registry name: `io.github.SihyeonJeon/legend-saju`
+
 ### Claude Code
 
 ```bash
