@@ -1,0 +1,491 @@
+{
+ "schema_version": "hanja-naming.v2-research-boundary",
+ "note": "출처 페이지가 확정되지 않은 작명 연구 subset. 각 획수·자원오행은 현지 주장일 뿐이며, 대한민국 인명용 한자 적격성·지정 음·허용 자형·뜻·획수 자전을 검증하지 않았다. 대법원 전자가족관계등록시스템 조회 전에는 추천 후보로 쓰지 않는다.",
+ "count": 121,
+ "chars": {
+  "木": {
+   "strokes": 4,
+   "element": "목"
+  },
+  "林": {
+   "strokes": 8,
+   "element": "목"
+  },
+  "森": {
+   "strokes": 12,
+   "element": "목"
+  },
+  "植": {
+   "strokes": 12,
+   "element": "목"
+  },
+  "榮": {
+   "strokes": 14,
+   "element": "목"
+  },
+  "權": {
+   "strokes": 22,
+   "element": "목"
+  },
+  "杰": {
+   "strokes": 8,
+   "element": "목"
+  },
+  "東": {
+   "strokes": 8,
+   "element": "목"
+  },
+  "松": {
+   "strokes": 8,
+   "element": "목"
+  },
+  "柱": {
+   "strokes": 9,
+   "element": "목"
+  },
+  "根": {
+   "strokes": 10,
+   "element": "목"
+  },
+  "桓": {
+   "strokes": 10,
+   "element": "목"
+  },
+  "梅": {
+   "strokes": 11,
+   "element": "목"
+  },
+  "健": {
+   "strokes": 11,
+   "element": "목"
+  },
+  "敬": {
+   "strokes": 13,
+   "element": "목"
+  },
+  "楨": {
+   "strokes": 13,
+   "element": "목"
+  },
+  "槿": {
+   "strokes": 15,
+   "element": "목"
+  },
+  "樹": {
+   "strokes": 16,
+   "element": "목"
+  },
+  "芸": {
+   "strokes": 10,
+   "element": "목"
+  },
+  "花": {
+   "strokes": 10,
+   "element": "목"
+  },
+  "英": {
+   "strokes": 11,
+   "element": "목"
+  },
+  "茂": {
+   "strokes": 11,
+   "element": "목"
+  },
+  "蓮": {
+   "strokes": 17,
+   "element": "목"
+  },
+  "竹": {
+   "strokes": 6,
+   "element": "목"
+  },
+  "和": {
+   "strokes": 8,
+   "element": "목"
+  },
+  "火": {
+   "strokes": 4,
+   "element": "화"
+  },
+  "炅": {
+   "strokes": 8,
+   "element": "화"
+  },
+  "炫": {
+   "strokes": 9,
+   "element": "화"
+  },
+  "昭": {
+   "strokes": 9,
+   "element": "화"
+  },
+  "映": {
+   "strokes": 9,
+   "element": "화"
+  },
+  "晙": {
+   "strokes": 11,
+   "element": "화"
+  },
+  "晛": {
+   "strokes": 11,
+   "element": "화"
+  },
+  "晟": {
+   "strokes": 11,
+   "element": "화"
+  },
+  "晳": {
+   "strokes": 12,
+   "element": "화"
+  },
+  "暎": {
+   "strokes": 13,
+   "element": "화"
+  },
+  "煐": {
+   "strokes": 13,
+   "element": "화"
+  },
+  "煜": {
+   "strokes": 13,
+   "element": "화"
+  },
+  "熙": {
+   "strokes": 13,
+   "element": "화"
+  },
+  "燦": {
+   "strokes": 17,
+   "element": "화"
+  },
+  "燁": {
+   "strokes": 16,
+   "element": "화"
+  },
+  "炳": {
+   "strokes": 9,
+   "element": "화"
+  },
+  "丁": {
+   "strokes": 2,
+   "element": "화"
+  },
+  "南": {
+   "strokes": 9,
+   "element": "화"
+  },
+  "日": {
+   "strokes": 4,
+   "element": "화"
+  },
+  "明": {
+   "strokes": 8,
+   "element": "화"
+  },
+  "昊": {
+   "strokes": 8,
+   "element": "화"
+  },
+  "旻": {
+   "strokes": 8,
+   "element": "화"
+  },
+  "志": {
+   "strokes": 7,
+   "element": "화"
+  },
+  "念": {
+   "strokes": 8,
+   "element": "화"
+  },
+  "土": {
+   "strokes": 3,
+   "element": "토"
+  },
+  "在": {
+   "strokes": 6,
+   "element": "토"
+  },
+  "地": {
+   "strokes": 6,
+   "element": "토"
+  },
+  "圭": {
+   "strokes": 6,
+   "element": "토"
+  },
+  "城": {
+   "strokes": 10,
+   "element": "토"
+  },
+  "基": {
+   "strokes": 11,
+   "element": "토"
+  },
+  "培": {
+   "strokes": 11,
+   "element": "토"
+  },
+  "執": {
+   "strokes": 11,
+   "element": "토"
+  },
+  "堂": {
+   "strokes": 11,
+   "element": "토"
+  },
+  "報": {
+   "strokes": 12,
+   "element": "토"
+  },
+  "塤": {
+   "strokes": 13,
+   "element": "토"
+  },
+  "墺": {
+   "strokes": 16,
+   "element": "토"
+  },
+  "山": {
+   "strokes": 3,
+   "element": "토"
+  },
+  "岩": {
+   "strokes": 8,
+   "element": "토"
+  },
+  "峻": {
+   "strokes": 10,
+   "element": "토"
+  },
+  "嵐": {
+   "strokes": 12,
+   "element": "토"
+  },
+  "石": {
+   "strokes": 5,
+   "element": "토"
+  },
+  "延": {
+   "strokes": 7,
+   "element": "토"
+  },
+  "垠": {
+   "strokes": 9,
+   "element": "토"
+  },
+  "宇": {
+   "strokes": 6,
+   "element": "토"
+  },
+  "安": {
+   "strokes": 6,
+   "element": "토"
+  },
+  "完": {
+   "strokes": 7,
+   "element": "토"
+  },
+  "宙": {
+   "strokes": 8,
+   "element": "토"
+  },
+  "容": {
+   "strokes": 10,
+   "element": "토"
+  },
+  "金": {
+   "strokes": 8,
+   "element": "금"
+  },
+  "鈞": {
+   "strokes": 12,
+   "element": "금"
+  },
+  "鉉": {
+   "strokes": 13,
+   "element": "금"
+  },
+  "銀": {
+   "strokes": 14,
+   "element": "금"
+  },
+  "鋒": {
+   "strokes": 15,
+   "element": "금"
+  },
+  "錫": {
+   "strokes": 16,
+   "element": "금"
+  },
+  "鎬": {
+   "strokes": 18,
+   "element": "금"
+  },
+  "鎭": {
+   "strokes": 18,
+   "element": "금"
+  },
+  "鐘": {
+   "strokes": 20,
+   "element": "금"
+  },
+  "鑫": {
+   "strokes": 24,
+   "element": "금"
+  },
+  "玉": {
+   "strokes": 5,
+   "element": "금"
+  },
+  "珍": {
+   "strokes": 10,
+   "element": "금"
+  },
+  "珉": {
+   "strokes": 10,
+   "element": "금"
+  },
+  "班": {
+   "strokes": 11,
+   "element": "금"
+  },
+  "現": {
+   "strokes": 12,
+   "element": "금"
+  },
+  "理": {
+   "strokes": 12,
+   "element": "금"
+  },
+  "瑞": {
+   "strokes": 14,
+   "element": "금"
+  },
+  "瑛": {
+   "strokes": 14,
+   "element": "금"
+  },
+  "璇": {
+   "strokes": 16,
+   "element": "금"
+  },
+  "鎰": {
+   "strokes": 18,
+   "element": "금"
+  },
+  "瑢": {
+   "strokes": 15,
+   "element": "금"
+  },
+  "剛": {
+   "strokes": 10,
+   "element": "금"
+  },
+  "利": {
+   "strokes": 7,
+   "element": "금"
+  },
+  "成": {
+   "strokes": 7,
+   "element": "금"
+  },
+  "水": {
+   "strokes": 4,
+   "element": "수"
+  },
+  "永": {
+   "strokes": 5,
+   "element": "수"
+  },
+  "求": {
+   "strokes": 7,
+   "element": "수"
+  },
+  "汝": {
+   "strokes": 7,
+   "element": "수"
+  },
+  "沇": {
+   "strokes": 8,
+   "element": "수"
+  },
+  "沅": {
+   "strokes": 8,
+   "element": "수"
+  },
+  "洙": {
+   "strokes": 10,
+   "element": "수"
+  },
+  "泰": {
+   "strokes": 9,
+   "element": "수"
+  },
+  "海": {
+   "strokes": 11,
+   "element": "수"
+  },
+  "浩": {
+   "strokes": 11,
+   "element": "수"
+  },
+  "涉": {
+   "strokes": 11,
+   "element": "수"
+  },
+  "淳": {
+   "strokes": 12,
+   "element": "수"
+  },
+  "淵": {
+   "strokes": 12,
+   "element": "수"
+  },
+  "湖": {
+   "strokes": 13,
+   "element": "수"
+  },
+  "源": {
+   "strokes": 14,
+   "element": "수"
+  },
+  "潤": {
+   "strokes": 16,
+   "element": "수"
+  },
+  "澤": {
+   "strokes": 17,
+   "element": "수"
+  },
+  "濟": {
+   "strokes": 18,
+   "element": "수"
+  },
+  "雨": {
+   "strokes": 8,
+   "element": "수"
+  },
+  "雲": {
+   "strokes": 12,
+   "element": "수"
+  },
+  "霖": {
+   "strokes": 16,
+   "element": "수"
+  },
+  "民": {
+   "strokes": 5,
+   "element": "수"
+  },
+  "洪": {
+   "strokes": 10,
+   "element": "수"
+  },
+  "潭": {
+   "strokes": 16,
+   "element": "수"
+  }
+ }
+}

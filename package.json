@@ -1,0 +1,95 @@
+{
+  "name": "legend-saju",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Source-traceable East Asian metaphysics engine for Saju, Zi Wei Dou Shu, Qimen, Daliuren, and bounded traditional systems.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SihyeonJeon/legend-saju.git"
+  },
+  "homepage": "https://github.com/SihyeonJeon/legend-saju#readme",
+  "bugs": {
+    "url": "https://github.com/SihyeonJeon/legend-saju/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin/*.js",
+    "dist/*.js",
+    "dist/*.d.ts",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "DATA_LICENSES.md"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "legend-saju-mcp": "./bin/legend-saju-mcp.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./naming": {
+      "types": "./dist/naming.d.ts",
+      "import": "./dist/naming.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp.d.ts",
+      "import": "./dist/mcp.js"
+    },
+    "./http": {
+      "types": "./dist/http.d.ts",
+      "import": "./dist/http.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "benchmark": "npm run build && node --expose-gc scripts/benchmark.mjs",
+    "demo": "npm run build && node scripts/demo.mjs",
+    "mcp": "npm run build && node bin/legend-saju-mcp.js",
+    "mcp:http": "npm run build && node dist/http.js",
+    "mcp:smoke": "npm run build && node scripts/smoke-mcp.mjs -- node bin/legend-saju-mcp.js",
+    "start": "node dist/http.js",
+    "prepare": "npm run build",
+    "data:check": "node scripts/check-data-assets.mjs",
+    "snapshot:update": "node scripts/update-source-snapshot.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "release:check:code": "npm run data:check && node scripts/check-release.mjs --code",
+    "release:check": "npm run data:check && node scripts/check-release.mjs --github"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "iztro": "^2.5.8",
+    "lunar-typescript": "^1.8.6",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "keywords": [
+    "saju",
+    "bazi",
+    "four-pillars",
+    "ziwei-doushu",
+    "qimen-dunjia",
+    "daliuren",
+    "mcp",
+    "typescript"
+  ]
+}

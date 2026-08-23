@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1200, initial-scale=1" />
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        color: #f2efe7;
+        font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        background: #0b111a url("./og-background.png") center / cover no-repeat;
+      }
+      .shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(6, 11, 18, .40) 0%, rgba(6, 11, 18, .08) 63%, rgba(6, 11, 18, .04) 100%);
+      }
+      main {
+        position: relative;
+        width: 760px;
+        height: 100%;
+        padding: 76px 0 64px 78px;
+        display: flex;
+        flex-direction: column;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: #cfc5ad;
+        font-size: 17px;
+        font-weight: 650;
+        letter-spacing: .18em;
+      }
+      .seal {
+        width: 13px;
+        height: 13px;
+        border: 2px solid #a9483e;
+        background: rgba(169, 72, 62, .24);
+      }
+      h1 {
+        margin: 34px 0 18px;
+        font-size: 90px;
+        line-height: .92;
+        letter-spacing: -.055em;
+        font-weight: 760;
+      }
+      h1 span { color: #c5ab77; }
+      .subtitle {
+        width: 700px;
+        color: #f1eee5;
+        font-size: 28px;
+        line-height: 1.22;
+        letter-spacing: -.016em;
+        font-weight: 500;
+      }
+      .systems {
+        margin-top: 40px;
+        display: flex;
+        gap: 10px;
+      }
+      .systems span {
+        border: 1px solid rgba(197, 171, 119, .45);
+        border-radius: 999px;
+        padding: 8px 13px 7px;
+        color: #d8cfbd;
+        font-size: 13px;
+        line-height: 1;
+        letter-spacing: .08em;
+        background: rgba(10, 16, 25, .38);
+      }
+      footer {
+        margin-top: auto;
+        color: #9da6ab;
+        font-size: 15px;
+        font-weight: 520;
+        letter-spacing: .055em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shade"></div>
+    <main>
+      <div class="eyebrow"><span class="seal"></span>OPEN SOURCE · TYPESCRIPT</div>
+      <h1>LEGEND <span>SAJU</span></h1>
+      <div class="subtitle">Source-traceable East Asian metaphysics engine</div>
+      <div class="systems">
+        <span>SAJU</span>
+        <span>ZI WEI DOU SHU</span>
+        <span>QIMEN</span>
+        <span>DALIUREN</span>
+      </div>
+      <footer>DETERMINISTIC CORE · LINEAGE-AWARE · UNKNOWN-TIME SAFE</footer>
+    </main>
+  </body>
+</html>

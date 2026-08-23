@@ -1,0 +1,29 @@
+{
+  "name": "legend-saju",
+  "version": "0.1.1",
+  "description": "Deterministic, source-traceable East Asian metaphysics calculations for Codex and ChatGPT.",
+  "author": {
+    "name": "Jeon Sihyeon",
+    "url": "https://github.com/SihyeonJeon"
+  },
+  "homepage": "https://github.com/SihyeonJeon/legend-saju#readme",
+  "repository": "https://github.com/SihyeonJeon/legend-saju",
+  "license": "Apache-2.0",
+  "keywords": ["saju", "bazi", "ziwei-doushu", "qimen", "daliuren", "mcp"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legend Saju",
+    "shortDescription": "Traceable Saju calculations without another API key.",
+    "longDescription": "Ask in ordinary language, then route the question through deterministic Saju, Myeongri, Zi Wei Dou Shu, Qimen, Daliuren, Tieban, naming, and related calculators with school and source boundaries intact.",
+    "developerName": "Jeon Sihyeon",
+    "category": "Lifestyle",
+    "capabilities": ["Read-only", "Deterministic calculation", "Source traceability"],
+    "defaultPrompt": [
+      "이 사주를 원국과 앞으로 3년 운으로 나눠서 봐줘.",
+      "두 사람의 궁합에서 계산 가능한 부분과 단정할 수 없는 부분을 구분해줘.",
+      "이 질문에 맞는 역학 계산법을 찾아서 근거와 같이 실행해줘."
+    ],
+    "brandColor": "#B99447"
+  },
+  "mcpServers": "./.mcp.json"
+}

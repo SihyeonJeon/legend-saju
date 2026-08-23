@@ -1,0 +1,2479 @@
+{
+  "schemaVersion": 1,
+  "status": "source_bounded_non_aggregate_interpretation",
+  "generatedAt": "2026-08-23",
+  "sources": {
+    "primary1930": {
+      "id": "kumazaki-unmei-no-shinpi-1930",
+      "title": "運命の神秘 : 附録・撰名字引",
+      "author": "熊崎健翁",
+      "publicationYear": 1930,
+      "ndlBibliographicUri": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000604672",
+      "iiifManifest": "https://dl.ndl.go.jp/api/iiif/1025965/manifest.json",
+      "ocrApi": "https://lab.ndl.go.jp/dl/api/book/fulltext-json/1025965",
+      "rights": "Public Domain Mark",
+      "scope": "인쇄 66~81쪽의 1~81 상세 서술과 81 초과 수의 환원 규칙"
+    },
+    "authorRestatement1939": {
+      "id": "kumazaki-saishin-seimeigaku-1939",
+      "title": "最新姓名学 : 開運の礎",
+      "author": "熊崎健翁",
+      "publicationYear": 1939,
+      "ndlBibliographicUri": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000651672",
+      "iiifManifest": "https://dl.ndl.go.jp/api/iiif/1107089/manifest.json",
+      "ocrApi": "https://lab.ndl.go.jp/dl/api/book/fulltext-json/1107089",
+      "rights": "Public Domain Mark",
+      "scope": "디지털 코마 33~36의 간명 81수 표와 코마 109~121의 상세 재서술"
+    },
+    "laterKoreanLineage": {
+      "id": "later-korean-suri81-summary",
+      "scope": "후대 한국어 격명·길흉·단문 요약; 원전 표제 또는 직역이 아님"
+    }
+  },
+  "reductionRule": {
+    "status": "primary_verified",
+    "rule": "81을 넘는 수는 80을 빼서 1~81의 같은 수리로 되돌린다.",
+    "primary1930PrintedPage": 81,
+    "primary1930NdlCanvas": 62,
+    "authorRestatement1939NdlPage": 121
+  },
+  "boundaries": [
+    "이 표는 구마사키 계열 안의 역사적 해석을 대조하며 보편적 사실을 증명하지 않는다.",
+    "원전의 질병·장애·단명·성별 문구는 역사적 주장으로만 보존하고 현대의 의학·안전·성별 판단으로 확정하지 않는다.",
+    "후대 한국어 격명은 검색과 계보 비교용이며 원전 표제로 표시하지 않는다.",
+    "다섯 격의 수리를 더하거나 길흉 개수를 세어 종합 등급·개명 결론을 만들지 않는다.",
+    "획수 자전과 원획이 명시되지 않으면 이 해석을 적용하지 않는다."
+  ],
+  "entries": [
+    {
+      "number": 1,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "큰 성취와 부귀·명예·행복을 함께 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "太初格·두령운",
+        "meaning": "만물의 시작, 부귀명예 두령의 수",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 2,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "독립력이 약해지고 혼란·불안·재난·파괴를 겪는다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "分離格·분리운",
+        "meaning": "분열·동요·좌절",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 3,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "명민함과 경사가 있어 명예·이익·수명을 두루 누린다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "名譽格·명예운",
+        "meaning": "지달·복록·명예 성취",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 4,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "파괴·불완전·병난·가문의 쇠퇴와 상실을 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "破滅格·부정운",
+        "meaning": "파괴·변동·곤고",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 5,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "심신의 조화와 복수·장수를 바탕으로 명예와 이익이 따른다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "成功格·정성운",
+        "meaning": "음양화합 부귀번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 6,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "복이 크고 쇠퇴의 단서도 있으나 생애의 행복을 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "繼成格·계승운",
+        "meaning": "조상덕·풍요·안태",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 7,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "독립과 권위, 강한 자아로 난관을 넘어 성공한다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "獨立格·발달운",
+        "meaning": "강건·독립·돌파",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 8,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "진취성·인내·절제로 성공하되 재난 가능성도 함께 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "健暢格·전진운",
+        "meaning": "의지·인내로 발전",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "성공 서술과 재난 가능성이 한 항목 안에 함께 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 9,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "궁핍·병난·고독·재해와 단명 가능성을 경고한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "窮迫格·궁박운",
+        "meaning": "재화·역경·불운",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 10,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "공허·역경·실의·병약과 비명횡사를 가장 강한 흉의로 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "空虛格·단명운",
+        "meaning": "공허·종말·암흑",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 11,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "온화하고 성실한 전진, 집안의 재흥과 번영을 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "興家格·신성운",
+        "meaning": "재흥·온건·번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 12,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "박약하고 힘이 모자라 무리하면 실패한다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "薄弱格·박약운",
+        "meaning": "박약·무력·고독",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 13,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "지략과 인내로 일을 이루고 부귀와 행복에 이른다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "智謀格·지모운",
+        "meaning": "지략·학문·통솔",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 14,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "가족 인연이 엷고 고독·번민·역경을 겪는다고 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "離散格·이산운",
+        "meaning": "파괴·이별·실의",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 15,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "번영과 덕, 복수의 충만, 윗사람의 도움을 말한다.",
+        "ndlPage": 33,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/33",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "統率格·통솔운",
+        "meaning": "덕망·인망·대성",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 16,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "사람들 위에 서서 신망을 얻고 성공과 부를 이룬다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "德望格·덕망운",
+        "meaning": "두령·신망·재부",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 17,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "권위와 고집으로 불화를 빚을 수 있으나 성공 가능성도 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "健暢格·용진운",
+        "meaning": "강건돌파·권위",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "성공 가능성과 강정으로 인한 불화가 함께 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 18,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "지략과 발전성이 있으나 지나친 강경함과 재난을 경계한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "發展格·발전운",
+        "meaning": "의지관철·융창",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "발전 가능성과 과강으로 인한 재난 경계가 함께 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 19,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "장애·다난·중도 좌절·고독·이별과 단명 가능성을 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "苦難格·고난운",
+        "meaning": "재능있으나 좌절·병난",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 20,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "재난·흉화·병약·참담함과 단명 가능성을 가장 강하게 경고한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "虛妄格·허망운",
+        "meaning": "공허·파란·단명",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 21,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "큰 지도력과 존경·부귀를 말하며 여성에 대한 시대적 단서를 덧붙인다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "頭領格·자립운",
+        "meaning": "두령·독립·존경",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "여성에게 흉하다는 문구는 1930년대 저자의 시대적 성별관을 반영한 역사적 주장이다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 22,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "박약·불만·역경과 일의 좌절을 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "中折格·중절운",
+        "meaning": "중도좌절·박약",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 23,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "매우 왕성한 지도력을 말하며 여성에 대한 시대적 단서를 덧붙인다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "隆昌格·혁신운",
+        "meaning": "융창·공명·발전",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "여성에게 흉하다는 문구는 1930년대 저자의 시대적 성별관을 반영한 역사적 주장이다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 24,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "재지와 재물이 넉넉하고 경사가 있으며 후손의 번영을 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "立身格·축재운",
+        "meaning": "재략·축재·번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 25,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "영민함 속에 굽히지 않는 면이 있으나 성공과 행복을 누린다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "健暢格·안전운",
+        "meaning": "영민·재능·성공",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 26,
+      "primary1930": {
+        "direction": "흉우세혼합",
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "변화가 극단적이고 길흉이 크게 오가며 대체로 흉이 우세하다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉반",
+        "name": "變怪格·영웅운",
+        "meaning": "파란만장·영웅 또는 변괴",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "길과 흉 어느 한쪽으로 고정하지 않고 극단적인 변화를 핵심으로 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 27,
+      "primary1930": {
+        "direction": "흉우세혼합",
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "중도 좌절과 비난, 분투에도 불화와 실패가 생길 수 있다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉반",
+        "name": "中折格·중단운",
+        "meaning": "중도좌절·비방",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "분투력이 있어도 비난·불화·중절 가능성을 함께 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 28,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "재난·병난·배우자와 자녀의 고생, 생애의 불안을 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "破亂格·조난운",
+        "meaning": "파란·조난·불화",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 29,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "지략과 활동으로 성공할 수 있으나 기만과 불만의 가능성도 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "成功格·성공운",
+        "meaning": "지모·재력·성취",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "성공 가능성과 사모·불평 가능성을 함께 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 30,
+      "primary1930": {
+        "direction": "길흉혼합",
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "부침이 일정하지 않고 투기성이 있어 길흉이 엇갈린다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉반",
+        "name": "浮夢格·부몽운",
+        "meaning": "길흉상반·투기",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "투기성과 부침 때문에 길흉이 반반으로 움직인다고 서술한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 31,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "의지가 굳고 큰 뜻을 이루며 부귀와 행복을 오래 누린다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "興盛格·융창운",
+        "meaning": "지용겸비·대성",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 32,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "뜻밖의 행운과 기대, 윗사람의 도움으로 성공하는 경우가 많다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "僥倖格·순풍운",
+        "meaning": "요행·후원·성공",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 33,
+      "primary1930": {
+        "direction": "대길·여성 조건부",
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "융성이 극에 이르러 뜻밖의 위험도 함께 생길 수 있다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "昇天格·등룡운",
+        "meaning": "승천·왕성·과강(여성주의)",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "융성 자체가 위험으로 뒤집힐 수 있으며 여성에 대한 시대적 단서도 원 상세문에 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 34,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "파괴와 멸망, 큰 재난과 수난, 단명 가능성을 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "破滅格·변란운",
+        "meaning": "파멸·재화·파란",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 35,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "총명하고 재능이 있으나 위세는 약해 평범한 안락에 머문다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "平安格·태평운",
+        "meaning": "온화·평안·문예",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 36,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "의협심과 큰 부침이 함께 있어 재화가 많다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "義俠格·파란운",
+        "meaning": "의협·파란·풍파",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 37,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "충실하고 열성적이며 큰 성과와 덕·부를 이룬다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "仁德格·인덕운",
+        "meaning": "충실·인덕·권위",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 38,
+      "primary1930": {
+        "direction": "조건부길",
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "평범하고 힘과 신망은 약하나 기예에는 강하다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반길",
+        "name": "福壽格·문예운",
+        "meaning": "문예·기예·평범한 성공",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "위세와 성취력은 약하나 문예·기예의 장점을 별도로 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 39,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "권위·장수·재물이 있으나 극심한 쇠퇴의 위험도 함께 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "安樂格·부영운",
+        "meaning": "권위·부귀·장수",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "권위·장수·재물과 극쇠 위험을 동시에 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 40,
+      "primary1930": {
+        "direction": "길흉혼합",
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "지략과 담력이 있으나 비난과 부침, 잦은 변화를 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉반",
+        "name": "無常格·변화운",
+        "meaning": "지모있으나 투기·부침",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "지략과 담력은 있으나 비난·부침·변전 가능성을 함께 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 41,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "지모·건강·화합으로 큰 뜻과 명예·부를 이룬다고 말한다.",
+        "ndlPage": 34,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/34",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "大功格·고명운",
+        "meaning": "덕망·실력·대성",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 42,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "박학하고 재능이 있으나 고독·산만·비애와 실패를 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "苦行格·고행운",
+        "meaning": "박식하나 박약·고행",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 43,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "소극성과 임시방편, 박약함, 재물의 흩어짐과 실의를 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "散財格·산재운",
+        "meaning": "외화내빈·산재",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 44,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "가문의 파괴와 상실, 중병·재난·역경을 매우 강하게 경고한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "魔障格·마장운",
+        "meaning": "파괴·역경·재난",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 45,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "경륜으로 난관을 넘어 성공과 번영을 얻는다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "順風格·대지운",
+        "meaning": "순조·통달·대성",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 46,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "기력이 약해 고생·병약·고독을 겪으며 드물게 성공한다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "悲哀格·비애운",
+        "meaning": "고난·박약·부침",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 47,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "꽃이 피듯 행복이 열리고 공동의 일이 이루어지며 후손이 번영한다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "出世格·전개운",
+        "meaning": "천우·출세·번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 48,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "굳셈과 덕·영민함으로 성공·명예·이익을 얻는다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "有德格·제중운",
+        "meaning": "지덕겸비·고문",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 49,
+      "primary1930": {
+        "direction": "길흉교차",
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "길흉이 엇갈리고 변화가 많아 손실·재해·비난을 겪을 수 있다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "變化格·은퇴운",
+        "meaning": "길흉기로·변화",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "later_summary_conflicts_with_primary_condition",
+        "conditionNote": "원전은 단순 흉이 아니라 길흉 교차와 큰 변화를 핵심으로 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "local_direction_requires_revision"
+      }
+    },
+    {
+      "number": 50,
+      "primary1930": {
+        "direction": "흉우세혼합",
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "한 번 이루고 한 번 잃는 부침 속에 큰 재액이 올 수 있다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉반",
+        "name": "不和格·소실운",
+        "meaning": "일성일패·말로불행",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "성공과 실패가 교차하고 흉이 크게 번질 수 있다고 서술한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 51,
+      "primary1930": {
+        "direction": "성쇠혼합",
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "성쇠가 교차해 한때 명예와 이익을 얻은 뒤 곤궁해질 수 있다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반",
+        "name": "盛衰格·길흉운",
+        "meaning": "성쇠교차·말운주의",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "한때의 성취 뒤 쇠퇴하는 시간 순서를 보존해야 한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 52,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "강한 세력과 선견·기략으로 공명과 이익을 이룬다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "躍進格·약진운",
+        "meaning": "선견·약진·대성",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 53,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "겉으로는 경사가 있어도 안에는 장애가 많고 후반에 재화가 올 수 있다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "內憂格·장애운",
+        "meaning": "외화내빈·전반후반차",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "겉의 경사와 안의 장애, 전반과 후반을 구분한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 54,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "불화·손실·근심과 단명·횡사·형상의 위험을 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "多難格·절망운",
+        "meaning": "고독·신고·다난",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 55,
+      "primary1930": {
+        "direction": "흉우세·배치 조건부",
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "극성 안에 극쇠가 있어 뜻이 약하면 실패하기 쉽다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉반",
+        "name": "不忍格·미달운",
+        "meaning": "외길내흉·인내요",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "극성 안에 극쇠가 있고 삼재 배치에 따라 달라질 수 있다고 서술한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 56,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "진취성이 약해 손실·파산·재액과 여러 어긋남을 겪는다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "浮沈格·부침운",
+        "meaning": "의지박약·실패",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 57,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "기질이 굳고 부귀를 누리나 한 차례 큰 난관을 겪는다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "努力格·노력운",
+        "meaning": "곤란후 영달·강건",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "부귀와 한 차례 큰 난관이 함께 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 58,
+      "primary1930": {
+        "direction": "선고후길",
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "부침과 변화가 많으나 만년에 복이 이른다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반길",
+        "name": "後福格·후복운",
+        "meaning": "선고후락·만년부귀",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "앞선 고생과 뒤의 복이라는 시간 순서를 보존해야 한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 59,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "인내와 용기가 약해 실의·역경과 평생의 고생을 겪는다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "失意格·실망운",
+        "meaning": "무기력·역경·불운",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 60,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "암흑·동요·불안과 고통, 형상·병약·단명 가능성을 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "動搖格·암흑운",
+        "meaning": "동요·암흑·재난",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 61,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "명예·이익·번영·부귀를 얻으나 오만과 불손을 경계한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "榮華格·재리운",
+        "meaning": "명리쌍전·번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "부귀 서술과 오만·불손 경계를 함께 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 62,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "불화와 낮은 신뢰, 쇠퇴와 고생으로 생애가 불안하다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "衰退格·고독운",
+        "meaning": "내외불화·쇠퇴",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 63,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "목적을 이루고 근심이 적으며 후손이 번영하고 몸이 평안하다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "順成格·발전운",
+        "meaning": "순조·부귀·자손번창",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 64,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "부침·파괴·이별과 병난·비명횡사의 재화를 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "沈滯格·침체운",
+        "meaning": "파멸·부침·고난",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 65,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "집안이 융성하고 장수·번영하여 오래 경사롭다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "興家格·완미운",
+        "meaning": "부귀장수·가운융창",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 66,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "진퇴의 자유를 잃고 고난·쇠퇴·절망에 빠질 수 있다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "逆難格·진퇴운",
+        "meaning": "내외불화·곤란",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 67,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "막힘 없이 통달하고 화목하며 집안이 크게 번성한다고 말한다.",
+        "ndlPage": 35,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/35",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "通達格·천복운",
+        "meaning": "천부독립·번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 68,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "생각이 치밀하고 지조가 굳어 발전하며 명성과 실리를 얻는다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "明智格·흥가운",
+        "meaning": "지려·발명·창의성공",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 69,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "궁박과 막힘, 병재·비명·폐질·단명 가능성을 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "停止格·정지운",
+        "meaning": "불안·정체·병약·부진",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 70,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "험난과 멸망, 평생의 고통과 이별을 강하게 경고한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "暗難格·공허운",
+        "meaning": "공허·암흑·멸망",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 71,
+      "primary1930": {
+        "direction": "조건부평온",
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "끝까지 실행하는 힘은 약하나 한편의 복도 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반",
+        "name": "堅志格·견실운",
+        "meaning": "견실하나 추진력부족",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "실행력 부족과 한편의 복이 함께 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 72,
+      "primary1930": {
+        "direction": "선길후흉",
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "겉은 길해 보여도 안은 흉하고 길흉이 엇갈려 만년에 가운을 해칠 수 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "相半格·후곤운",
+        "meaning": "선길후흉·말로주의",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "겉과 안, 전반과 후반의 방향이 다르다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 73,
+      "primary1930": {
+        "direction": "성취난·만년평안",
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "진취성이 약하고 뜻만 높아 성취가 어렵지만 만년의 평안을 함께 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "平吉格·평복운",
+        "meaning": "무난·평안·천복",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "later_summary_conflicts_with_primary_condition",
+        "conditionNote": "성취가 어렵다는 앞부분과 자연복·만년 평안이라는 뒷부분을 모두 보존해야 한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "local_direction_requires_revision"
+      }
+    },
+    {
+      "number": 74,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "능력을 펼치지 못하고 의존적으로 지내 노년에 불우할 수 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "不交格·우매운",
+        "meaning": "무능·번민·고독",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 75,
+      "primary1930": {
+        "direction": "수성길·진취흉",
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "어긋남과 실의가 있으며 무리해 나아가면 크게 패할 수 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반",
+        "name": "退守格·정수운",
+        "meaning": "수성길·진취흉",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "물러나 지키면 길하고 무리해 나아가면 흉하다는 행동 조건이 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 76,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "내외 불화와 가족의 이산, 병약·단명·배우자나 자녀의 상실을 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "離散格·후패운",
+        "meaning": "파산·이별·신고",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 77,
+      "primary1930": {
+        "direction": "전길후흉",
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "윗사람의 원조로 전반은 좋으나 후반에는 실의가 올 수 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반",
+        "name": "前吉格·불행운",
+        "meaning": "전반길·후반흉",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "전반 길·후반 흉이며 전반이 흉하면 후반이 길 수 있다는 역전 조건이 있다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 78,
+      "primary1930": {
+        "direction": "전길후흉",
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "길흉이 엇갈리며 중년 뒤 쇠퇴해 만년에 고생할 수 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "반",
+        "name": "晩苦格·무력운",
+        "meaning": "중년까지길·만년쇠",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "중년 전의 성취와 중년 뒤 쇠퇴를 구분한다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 79,
+      "primary1930": {
+        "direction": "흉",
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "마음이 안정되지 않고 절의와 신용을 잃어 역운에 놓일 수 있다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "不伸格·궁극운",
+        "meaning": "무기력·궁핍·부진",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    },
+    {
+      "number": 80,
+      "primary1930": {
+        "direction": "흉·종교생활 예외",
+        "printedPage": 81,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "평생의 고생과 병약·장애가 잦다고 말하며 은둔 생활의 예외도 덧붙인다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "흉",
+        "name": "終結格·은둔운",
+        "meaning": "파란·종결·은둔길",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned_but_condition_sensitive",
+        "conditionNote": "강한 흉의와 함께 일찍 은둔·정신생활에 든 경우의 예외를 둔다.",
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches_with_condition"
+      }
+    },
+    {
+      "number": 81,
+      "primary1930": {
+        "direction": "길",
+        "printedPage": 81,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg",
+        "reviewStatus": "primary_scan_direction_and_core_motif_reviewed"
+      },
+      "authorRestatement1939": {
+        "summaryKo": "경사가 왕성하고 융복이 겹쳐 귀중하며 한 생이 안락하다고 말한다.",
+        "ndlPage": 36,
+        "pageUri": "https://dl.ndl.go.jp/pid/1107089/1/36",
+        "sourceTextMode": "non_verbatim_korean_paraphrase",
+        "reviewStatus": "concise_table_scan_and_ndl_ocr_reviewed"
+      },
+      "laterKoreanLineage": {
+        "fortune": "길",
+        "name": "還元格·성대운",
+        "meaning": "최극수 1로 환원, 부귀번영",
+        "primaryHeading": false
+      },
+      "comparison": {
+        "status": "broadly_aligned",
+        "conditionNote": null,
+        "primaryToAuthorRestatement": "direction_and_core_motif_consistent",
+        "localAuditStatus": "direction_matches"
+      }
+    }
+  ]
+}

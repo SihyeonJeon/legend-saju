@@ -1,0 +1,2220 @@
+{
+  "schemaVersion": 1,
+  "status": "primary_direction_and_locator_audit_not_full_translation",
+  "auditedAt": "2026-08-21",
+  "source": {
+    "source_id": "kumazaki-unmei-no-shinpi-1930",
+    "title": "運命の神秘 附録 選名字彙",
+    "author": "熊崎健翁",
+    "publication_year": 1930,
+    "ndl_bibliographic_uri": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000604672",
+    "iiif_manifest": "https://dl.ndl.go.jp/api/iiif/1025965/manifest.json",
+    "rights": "Public Domain Mark",
+    "five_grid_formula_locator": {
+      "printed_pages": "47-51",
+      "ndl_canvases": [
+        45,
+        46,
+        47
+      ],
+      "status": "visually_validated_against_examples",
+      "validated_rules": [
+        "천격은 성 획수 합에 단성일 때 가상 1을 더한다.",
+        "인격은 성의 끝 글자와 이름의 첫 글자를 더한다.",
+        "지격은 이름 획수 합에 외자 이름일 때 가상 1을 더한다.",
+        "총격은 실제 성명 전체 획수 합이다.",
+        "외격은 총격에서 인격을 빼고 단성·외자 이름의 가상 1을 각각 반영한다."
+      ]
+    },
+    "number_table_locator": {
+      "printed_pages": "66-81",
+      "ndl_canvases": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "status": "all_81_numbers_located_local_korean_rows_not_yet_line_by_line_validated"
+    },
+    "comparison_findings": [
+      "원전은 숫자별 본문을 직접 서술하며 현지 표의 太初格·두령운 같은 짧은 격명 체계를 같은 형태로 싣지 않는다.",
+      "1~10의 길흉 방향과 핵심 모티프는 대체로 대응하지만 현지 명칭과 압축 문구를 원전 문구라고 부를 수 없다.",
+      "따라서 현재 numbers의 fortune·name·meaning은 후대 계열 요약으로 유지하고 원전 대조 완료 표시는 하지 않는다."
+    ]
+  },
+  "method": {
+    "scope": "81개 항목의 정확한 원전 면과 길흉 방향을 육안 대조한다.",
+    "excluded": "후대 한국어 격명을 원전 표제로 인정하거나 원문 전체를 번역했다고 주장하지 않는다.",
+    "pageRanges": [
+      {
+        "printedPage": 66,
+        "canvas": 55,
+        "from": 1,
+        "to": 7
+      },
+      {
+        "printedPage": 67,
+        "canvas": 55,
+        "from": 8,
+        "to": 11
+      },
+      {
+        "printedPage": 68,
+        "canvas": 56,
+        "from": 12,
+        "to": 17
+      },
+      {
+        "printedPage": 69,
+        "canvas": 56,
+        "from": 18,
+        "to": 21
+      },
+      {
+        "printedPage": 70,
+        "canvas": 57,
+        "from": 22,
+        "to": 26
+      },
+      {
+        "printedPage": 71,
+        "canvas": 57,
+        "from": 27,
+        "to": 31
+      },
+      {
+        "printedPage": 72,
+        "canvas": 58,
+        "from": 32,
+        "to": 36
+      },
+      {
+        "printedPage": 73,
+        "canvas": 58,
+        "from": 37,
+        "to": 41
+      },
+      {
+        "printedPage": 74,
+        "canvas": 59,
+        "from": 42,
+        "to": 46
+      },
+      {
+        "printedPage": 75,
+        "canvas": 59,
+        "from": 47,
+        "to": 51
+      },
+      {
+        "printedPage": 76,
+        "canvas": 60,
+        "from": 52,
+        "to": 57
+      },
+      {
+        "printedPage": 77,
+        "canvas": 60,
+        "from": 58,
+        "to": 61
+      },
+      {
+        "printedPage": 78,
+        "canvas": 61,
+        "from": 62,
+        "to": 67
+      },
+      {
+        "printedPage": 79,
+        "canvas": 61,
+        "from": 68,
+        "to": 73
+      },
+      {
+        "printedPage": 80,
+        "canvas": 62,
+        "from": 74,
+        "to": 79
+      },
+      {
+        "printedPage": 81,
+        "canvas": 62,
+        "from": 80,
+        "to": 81
+      }
+    ]
+  },
+  "findings": {
+    "locatedRows": 81,
+    "directionReviewedRows": 81,
+    "conditionalRows": [
+      26,
+      27,
+      30,
+      33,
+      38,
+      40,
+      50,
+      51,
+      55,
+      58,
+      71,
+      72,
+      75,
+      77,
+      78,
+      80
+    ],
+    "localDirectionRevisionRows": [
+      49,
+      73
+    ],
+    "revisions": [
+      {
+        "number": 49,
+        "finding": "원전은 길운과 흉운 어느 쪽으로도 크게 움직이는 갈림을 서술하므로 단순 흉으로 고정하면 조건을 잃는다."
+      },
+      {
+        "number": 73,
+        "finding": "원전은 뜻만 높고 성취가 어렵다는 면과 자연복·만년평안을 함께 두므로 단순 길로 고정하면 앞부분을 잃는다."
+      }
+    ]
+  },
+  "activation": {
+    "engineCapability": false,
+    "laneRouting": false,
+    "promptInjection": false,
+    "productionUse": false
+  },
+  "rows": [
+    {
+      "number": 1,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "太初格·두령운",
+        "laterLineageMeaning": "만물의 시작, 부귀명예 두령의 수"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 2,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "分離格·분리운",
+        "laterLineageMeaning": "분열·동요·좌절"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 3,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "名譽格·명예운",
+        "laterLineageMeaning": "지달·복록·명예 성취"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 4,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "破滅格·부정운",
+        "laterLineageMeaning": "파괴·변동·곤고"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 5,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "成功格·정성운",
+        "laterLineageMeaning": "음양화합 부귀번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 6,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "繼成格·계승운",
+        "laterLineageMeaning": "조상덕·풍요·안태"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 7,
+      "primaryLocator": {
+        "printedPage": 66,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "獨立格·발달운",
+        "laterLineageMeaning": "강건·독립·돌파"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 8,
+      "primaryLocator": {
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "健暢格·전진운",
+        "laterLineageMeaning": "의지·인내로 발전"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 9,
+      "primaryLocator": {
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "窮迫格·궁박운",
+        "laterLineageMeaning": "재화·역경·불운"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 10,
+      "primaryLocator": {
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "空虛格·단명운",
+        "laterLineageMeaning": "공허·종말·암흑"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 11,
+      "primaryLocator": {
+        "printedPage": 67,
+        "ndlCanvas": 55,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/55",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000055/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "興家格·신성운",
+        "laterLineageMeaning": "재흥·온건·번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 12,
+      "primaryLocator": {
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "薄弱格·박약운",
+        "laterLineageMeaning": "박약·무력·고독"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 13,
+      "primaryLocator": {
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "智謀格·지모운",
+        "laterLineageMeaning": "지략·학문·통솔"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 14,
+      "primaryLocator": {
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "離散格·이산운",
+        "laterLineageMeaning": "파괴·이별·실의"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 15,
+      "primaryLocator": {
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "統率格·통솔운",
+        "laterLineageMeaning": "덕망·인망·대성"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 16,
+      "primaryLocator": {
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "德望格·덕망운",
+        "laterLineageMeaning": "두령·신망·재부"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 17,
+      "primaryLocator": {
+        "printedPage": 68,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "健暢格·용진운",
+        "laterLineageMeaning": "강건돌파·권위"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 18,
+      "primaryLocator": {
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "發展格·발전운",
+        "laterLineageMeaning": "의지관철·융창"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 19,
+      "primaryLocator": {
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "苦難格·고난운",
+        "laterLineageMeaning": "재능있으나 좌절·병난"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 20,
+      "primaryLocator": {
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "虛妄格·허망운",
+        "laterLineageMeaning": "공허·파란·단명"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 21,
+      "primaryLocator": {
+        "printedPage": 69,
+        "ndlCanvas": 56,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/56",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000056/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "頭領格·자립운",
+        "laterLineageMeaning": "두령·독립·존경"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 22,
+      "primaryLocator": {
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "中折格·중절운",
+        "laterLineageMeaning": "중도좌절·박약"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 23,
+      "primaryLocator": {
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "隆昌格·혁신운",
+        "laterLineageMeaning": "융창·공명·발전"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 24,
+      "primaryLocator": {
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "立身格·축재운",
+        "laterLineageMeaning": "재략·축재·번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 25,
+      "primaryLocator": {
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "健暢格·안전운",
+        "laterLineageMeaning": "영민·재능·성공"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 26,
+      "primaryLocator": {
+        "printedPage": 70,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉우세혼합",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉반",
+        "laterLineageName": "變怪格·영웅운",
+        "laterLineageMeaning": "파란만장·영웅 또는 변괴"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 27,
+      "primaryLocator": {
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉우세혼합",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉반",
+        "laterLineageName": "中折格·중단운",
+        "laterLineageMeaning": "중도좌절·비방"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 28,
+      "primaryLocator": {
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "破亂格·조난운",
+        "laterLineageMeaning": "파란·조난·불화"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 29,
+      "primaryLocator": {
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "成功格·성공운",
+        "laterLineageMeaning": "지모·재력·성취"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 30,
+      "primaryLocator": {
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길흉혼합",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉반",
+        "laterLineageName": "浮夢格·부몽운",
+        "laterLineageMeaning": "길흉상반·투기"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 31,
+      "primaryLocator": {
+        "printedPage": 71,
+        "ndlCanvas": 57,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/57",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000057/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "興盛格·융창운",
+        "laterLineageMeaning": "지용겸비·대성"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 32,
+      "primaryLocator": {
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "僥倖格·순풍운",
+        "laterLineageMeaning": "요행·후원·성공"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 33,
+      "primaryLocator": {
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "대길·여성 조건부",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "昇天格·등룡운",
+        "laterLineageMeaning": "승천·왕성·과강(여성주의)"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 34,
+      "primaryLocator": {
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "破滅格·변란운",
+        "laterLineageMeaning": "파멸·재화·파란"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 35,
+      "primaryLocator": {
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "平安格·태평운",
+        "laterLineageMeaning": "온화·평안·문예"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 36,
+      "primaryLocator": {
+        "printedPage": 72,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "義俠格·파란운",
+        "laterLineageMeaning": "의협·파란·풍파"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 37,
+      "primaryLocator": {
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "仁德格·인덕운",
+        "laterLineageMeaning": "충실·인덕·권위"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 38,
+      "primaryLocator": {
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "조건부길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반길",
+        "laterLineageName": "福壽格·문예운",
+        "laterLineageMeaning": "문예·기예·평범한 성공"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 39,
+      "primaryLocator": {
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "安樂格·부영운",
+        "laterLineageMeaning": "권위·부귀·장수"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 40,
+      "primaryLocator": {
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길흉혼합",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉반",
+        "laterLineageName": "無常格·변화운",
+        "laterLineageMeaning": "지모있으나 투기·부침"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 41,
+      "primaryLocator": {
+        "printedPage": 73,
+        "ndlCanvas": 58,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/58",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000058/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "大功格·고명운",
+        "laterLineageMeaning": "덕망·실력·대성"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 42,
+      "primaryLocator": {
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "苦行格·고행운",
+        "laterLineageMeaning": "박식하나 박약·고행"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 43,
+      "primaryLocator": {
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "散財格·산재운",
+        "laterLineageMeaning": "외화내빈·산재"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 44,
+      "primaryLocator": {
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "魔障格·마장운",
+        "laterLineageMeaning": "파괴·역경·재난"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 45,
+      "primaryLocator": {
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "順風格·대지운",
+        "laterLineageMeaning": "순조·통달·대성"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 46,
+      "primaryLocator": {
+        "printedPage": 74,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "悲哀格·비애운",
+        "laterLineageMeaning": "고난·박약·부침"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 47,
+      "primaryLocator": {
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "出世格·전개운",
+        "laterLineageMeaning": "천우·출세·번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 48,
+      "primaryLocator": {
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "有德格·제중운",
+        "laterLineageMeaning": "지덕겸비·고문"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 49,
+      "primaryLocator": {
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길흉교차",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "變化格·은퇴운",
+        "laterLineageMeaning": "길흉기로·변화"
+      },
+      "comparison": {
+        "status": "local_direction_requires_revision",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 50,
+      "primaryLocator": {
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉우세혼합",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉반",
+        "laterLineageName": "不和格·소실운",
+        "laterLineageMeaning": "일성일패·말로불행"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 51,
+      "primaryLocator": {
+        "printedPage": 75,
+        "ndlCanvas": 59,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/59",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000059/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "성쇠혼합",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반",
+        "laterLineageName": "盛衰格·길흉운",
+        "laterLineageMeaning": "성쇠교차·말운주의"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 52,
+      "primaryLocator": {
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "躍進格·약진운",
+        "laterLineageMeaning": "선견·약진·대성"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 53,
+      "primaryLocator": {
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "內憂格·장애운",
+        "laterLineageMeaning": "외화내빈·전반후반차"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 54,
+      "primaryLocator": {
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "多難格·절망운",
+        "laterLineageMeaning": "고독·신고·다난"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 55,
+      "primaryLocator": {
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉우세·배치 조건부",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉반",
+        "laterLineageName": "不忍格·미달운",
+        "laterLineageMeaning": "외길내흉·인내요"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 56,
+      "primaryLocator": {
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "浮沈格·부침운",
+        "laterLineageMeaning": "의지박약·실패"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 57,
+      "primaryLocator": {
+        "printedPage": 76,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "努力格·노력운",
+        "laterLineageMeaning": "곤란후 영달·강건"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 58,
+      "primaryLocator": {
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "선고후길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반길",
+        "laterLineageName": "後福格·후복운",
+        "laterLineageMeaning": "선고후락·만년부귀"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 59,
+      "primaryLocator": {
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "失意格·실망운",
+        "laterLineageMeaning": "무기력·역경·불운"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 60,
+      "primaryLocator": {
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "動搖格·암흑운",
+        "laterLineageMeaning": "동요·암흑·재난"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 61,
+      "primaryLocator": {
+        "printedPage": 77,
+        "ndlCanvas": 60,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/60",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000060/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "榮華格·재리운",
+        "laterLineageMeaning": "명리쌍전·번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 62,
+      "primaryLocator": {
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "衰退格·고독운",
+        "laterLineageMeaning": "내외불화·쇠퇴"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 63,
+      "primaryLocator": {
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "順成格·발전운",
+        "laterLineageMeaning": "순조·부귀·자손번창"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 64,
+      "primaryLocator": {
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "沈滯格·침체운",
+        "laterLineageMeaning": "파멸·부침·고난"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 65,
+      "primaryLocator": {
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "興家格·완미운",
+        "laterLineageMeaning": "부귀장수·가운융창"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 66,
+      "primaryLocator": {
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "逆難格·진퇴운",
+        "laterLineageMeaning": "내외불화·곤란"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 67,
+      "primaryLocator": {
+        "printedPage": 78,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "通達格·천복운",
+        "laterLineageMeaning": "천부독립·번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 68,
+      "primaryLocator": {
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "明智格·흥가운",
+        "laterLineageMeaning": "지려·발명·창의성공"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 69,
+      "primaryLocator": {
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "停止格·정지운",
+        "laterLineageMeaning": "불안·정체·병약·부진"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 70,
+      "primaryLocator": {
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "暗難格·공허운",
+        "laterLineageMeaning": "공허·암흑·멸망"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 71,
+      "primaryLocator": {
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "조건부평온",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반",
+        "laterLineageName": "堅志格·견실운",
+        "laterLineageMeaning": "견실하나 추진력부족"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 72,
+      "primaryLocator": {
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "선길후흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "相半格·후곤운",
+        "laterLineageMeaning": "선길후흉·말로주의"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 73,
+      "primaryLocator": {
+        "printedPage": 79,
+        "ndlCanvas": 61,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/61",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000061/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "성취난·만년평안",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "平吉格·평복운",
+        "laterLineageMeaning": "무난·평안·천복"
+      },
+      "comparison": {
+        "status": "local_direction_requires_revision",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 74,
+      "primaryLocator": {
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "不交格·우매운",
+        "laterLineageMeaning": "무능·번민·고독"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 75,
+      "primaryLocator": {
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "수성길·진취흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반",
+        "laterLineageName": "退守格·정수운",
+        "laterLineageMeaning": "수성길·진취흉"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 76,
+      "primaryLocator": {
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "離散格·후패운",
+        "laterLineageMeaning": "파산·이별·신고"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 77,
+      "primaryLocator": {
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "전길후흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반",
+        "laterLineageName": "前吉格·불행운",
+        "laterLineageMeaning": "전반길·후반흉"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 78,
+      "primaryLocator": {
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "전길후흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "반",
+        "laterLineageName": "晩苦格·무력운",
+        "laterLineageMeaning": "중년까지길·만년쇠"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 79,
+      "primaryLocator": {
+        "printedPage": 80,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "不伸格·궁극운",
+        "laterLineageMeaning": "무기력·궁핍·부진"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 80,
+      "primaryLocator": {
+        "printedPage": 81,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "흉·종교생활 예외",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "흉",
+        "laterLineageName": "終結格·은둔운",
+        "laterLineageMeaning": "파란·종결·은둔길"
+      },
+      "comparison": {
+        "status": "direction_matches_with_condition",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    },
+    {
+      "number": 81,
+      "primaryLocator": {
+        "printedPage": 81,
+        "ndlCanvas": 62,
+        "canvasUri": "https://dl.ndl.go.jp/api/iiif/1025965/canvas/62",
+        "imageUri": "https://dl.ndl.go.jp/api/iiif/1025965/R0000062/full/full/0/default.jpg"
+      },
+      "primaryReview": {
+        "reviewMethod": "visual_review_of_ndl_primary_scan",
+        "direction": "길",
+        "directionStatus": "visually_reviewed",
+        "fullTranscription": null,
+        "transcriptionStatus": "not_transcribed_line_by_line"
+      },
+      "localSummary": {
+        "fortune": "길",
+        "laterLineageName": "還元格·성대운",
+        "laterLineageMeaning": "최극수 1로 환원, 부귀번영"
+      },
+      "comparison": {
+        "status": "direction_matches",
+        "laterLineageNameIsPrimaryHeading": false
+      }
+    }
+  ]
+}

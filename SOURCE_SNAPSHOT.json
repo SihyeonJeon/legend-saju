@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-23T08:23:21.961Z",
+  "scope": [
+    "src",
+    "tests",
+    "data"
+  ],
+  "fileCount": 62,
+  "totalBytes": 9001046,
+  "files": [
+    {
+      "path": "data/dreams/artemidorus-1644-primary.json",
+      "bytes": 231659,
+      "sha256": "8468c6933ac9f2ef9bea630c3270c5276e8a349f15bc5b24bf6f02e64ff3229b"
+    },
+    {
+      "path": "data/dreams/cross-culture-seed-audit.json",
+      "bytes": 5404,
+      "sha256": "f2184da86f78f87ff58b17959e85ae16770aaa33d3698142c81805d23f434bc3"
+    },
+    {
+      "path": "data/dreams/source-manifest.json",
+      "bytes": 11274,
+      "sha256": "c69e9e8ddb3153f9302c7c1e78a8adae98a48574c33dbe0cefc947876cd33a07"
+    },
+    {
+      "path": "data/dreams/zhougong-primary.json",
+      "bytes": 317019,
+      "sha256": "160e3cf7b8796507f4f034a6f0b60045574d2cedc1bf7e60f76dbb9ee5c9a8f5"
+    },
+    {
+      "path": "data/knowledge/hanja-naming-research-subset.json",
+      "bytes": 6915,
+      "sha256": "90b3cc2f6c4b663e049188d3fa9b7bd526309fe5e15859907be7b8aadf44d201"
+    },
+    {
+      "path": "data/knowledge/juyeok-64.json",
+      "bytes": 5362,
+      "sha256": "e1bde01aa02d6b82c3fe85e0b4049db5448b5acc019843ffbb194ef4ba681258"
+    },
+    {
+      "path": "data/knowledge/myeongri-trilingual-glossary.json",
+      "bytes": 210506,
+      "sha256": "438eab67d42d33a2988b1024007c661fd84e53d7f3fb143762a7f9b32e473c31"
+    },
+    {
+      "path": "data/knowledge/myeongri-vault-trilingual.json",
+      "bytes": 984260,
+      "sha256": "9209e596988df37fd86c715436a61648903df68c58729af250bd8312286ca34c"
+    },
+    {
+      "path": "data/knowledge/sipsin-ilgan-matrix.json",
+      "bytes": 3306,
+      "sha256": "ef7e7a01df5830d7acf15c383c2e1b070ac04b69a191ebd04d49010f90353e3d"
+    },
+    {
+      "path": "data/knowledge/suri-81-primary-row-audit.json",
+      "bytes": 73396,
+      "sha256": "ad83bebcb0426bebefa5da1ef32054b305d71ee8270c26466b97f7df33e14ade"
+    },
+    {
+      "path": "data/knowledge/ziwei-trilingual-glossary.json",
+      "bytes": 22835,
+      "sha256": "f577655222fb39b3c7d5459d855ab009798444e04c7e50f2630ba241819f2e46"
+    },
+    {
+      "path": "data/naming/korean-court-name-snapshot.json.gz",
+      "bytes": 363031,
+      "sha256": "32ae621099b332c0b946338c1d57f9731d5fc614d28d1e7326cce6733464a139"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 2696,
+      "sha256": "3cd19a5ab91080bb5f9c16ea3ac57a52affff90c3f7cbd047512fa1429810b38"
+    },
+    {
+      "path": "src/engine/cheolpan-engine.ts",
+      "bytes": 25138,
+      "sha256": "ee4aba4dc84419d4e213cffeb961d2853f10088da0ed97041c3a038dda18a643"
+    },
+    {
+      "path": "src/engine/data/cheolpan-standard-numeric-tables.json",
+      "bytes": 104226,
+      "sha256": "32dc8890df50ca943befa681a31738d3f86b16cb5f20ad7eeed250b63dd9a6ec"
+    },
+    {
+      "path": "src/engine/divination-engines.ts",
+      "bytes": 13567,
+      "sha256": "4486fa0d50be5e3dca4de1a4c04fb813d2ef24c0f06f9d67710ba58f6a8ed5a1"
+    },
+    {
+      "path": "src/engine/doctrine-engine.ts",
+      "bytes": 20051,
+      "sha256": "fcf8e8ad36f956acc5aaf514bdec8c8114c3cae6ad3bb2138eecc1df1ad38fde"
+    },
+    {
+      "path": "src/engine/engine-capabilities.ts",
+      "bytes": 39685,
+      "sha256": "ceddb13b58bef87097509f4bfb98afd23a0b087e6a3af7cac0f54a106f292122"
+    },
+    {
+      "path": "src/engine/engine-v2.ts",
+      "bytes": 42326,
+      "sha256": "3b562a545f85202874d61d6037812bc5fc9fefc1982591ace6cf15c79cd0ee2c"
+    },
+    {
+      "path": "src/engine/gimun-engine.ts",
+      "bytes": 9861,
+      "sha256": "589135837056b2f256799d782ea5e6638e51908daeba7f9662e75852aa7a6876"
+    },
+    {
+      "path": "src/engine/knowledge-asset-router.ts",
+      "bytes": 8638,
+      "sha256": "ea242f440292d91e4513ade830e432f557ee2b865ae7bae62bc9eebf13f8005f"
+    },
+    {
+      "path": "src/engine/life-timeline.ts",
+      "bytes": 21631,
+      "sha256": "fbf999ba11491a7dc57d3e88cada835fac96f3a02f01bc9f6552a73dd3ddecde"
+    },
+    {
+      "path": "src/engine/myeongri-action-guidance.ts",
+      "bytes": 10067,
+      "sha256": "4ed2625804e2dfbda713ec4440fee33db3f1e30e022fcc92b8bfd32c1853eae5"
+    },
+    {
+      "path": "src/engine/myeongri-judgment.ts",
+      "bytes": 31477,
+      "sha256": "f7a9772269dc892f77c09b4974a110d8f3816cb19b8dca842b2fd2f750f6e028"
+    },
+    {
+      "path": "src/engine/myeongri-knowledge-trilingual.ts",
+      "bytes": 992399,
+      "sha256": "a36ed1c22d1179fd273797aaefda46b0d01359c21e2f2035c3561d1755d42221"
+    },
+    {
+      "path": "src/engine/myeongri-structure.ts",
+      "bytes": 10015,
+      "sha256": "40c4050dc536922afa20bb13f81f6b56faf2858c7273ee556fcd45615df7b4b4"
+    },
+    {
+      "path": "src/engine/public-entry.ts",
+      "bytes": 2817,
+      "sha256": "5c309a93019412826cd316c4b8049951f6d3e8ceb1b8464a652e6a6657baf336"
+    },
+    {
+      "path": "src/engine/qiongtong-month-rules.ts",
+      "bytes": 7894,
+      "sha256": "f4bb6ed76f01a4aac990c39d2dda155f5767eadd57619c2208ab4d6c6c232088"
+    },
+    {
+      "path": "src/engine/qiongtong-seasonal-rules.ts",
+      "bytes": 10768,
+      "sha256": "aa5c3ae709f66b5594ed9b9558be419b648acac2a0fa055590458077bdfb34e2"
+    },
+    {
+      "path": "src/engine/qiongtong-subclauses.ts",
+      "bytes": 24346,
+      "sha256": "ab13134720bd2fa9197ce0b60b992476d4fe124ab00340c76464a2daaadd91aa"
+    },
+    {
+      "path": "src/engine/README.md",
+      "bytes": 1366,
+      "sha256": "23b7ce3614f1da01ca1f031b59cc60e4e84dfe75d9a25292746bddff28910397"
+    },
+    {
+      "path": "src/engine/resolver.ts",
+      "bytes": 13941,
+      "sha256": "066281b51e3c56bf411f6d596ad7900666b167d9784f93ac14c380dda692d95a"
+    },
+    {
+      "path": "src/engine/saju-engine-advanced.ts",
+      "bytes": 7753,
+      "sha256": "b0e4089e42b5e114044a52ec7c59c04ab1c58c14dcc1ec5d47c8bb22a64d169c"
+    },
+    {
+      "path": "src/engine/saju-engine-closure.ts",
+      "bytes": 13163,
+      "sha256": "658b85a2916797e6705b405967e5537339b2875b16c6f9336dc8ae0452319ce2"
+    },
+    {
+      "path": "src/engine/saju-engine-gaeun.ts",
+      "bytes": 7004,
+      "sha256": "f0429fa71b68f48a1b6bf780511ed5de786f153e9637f84e75defd05659c14ed"
+    },
+    {
+      "path": "src/engine/saju-engine-gusung.ts",
+      "bytes": 3078,
+      "sha256": "8f73b46809b62dbc3f3a95c3a9414798c6d6b9cd415b6b9be35b27ba9e8d0ce8"
+    },
+    {
+      "path": "src/engine/saju-engine-router.ts",
+      "bytes": 19149,
+      "sha256": "9f78e5d6def34c40ac6b795f5ceec82e7784ae7922cc400039de8d987a501453"
+    },
+    {
+      "path": "src/engine/saju-engine-suri.ts",
+      "bytes": 23334,
+      "sha256": "c5c8c2a6e68d6f5f02d4af1559f29afc8a7613df7eb6ba7f7e5fa579e1a54201"
+    },
+    {
+      "path": "src/engine/saju-engine.ts",
+      "bytes": 22396,
+      "sha256": "2cb78edaae0b16e1bcf508340e16a59f3acb8f9158339d9e8759c70d6dc573c1"
+    },
+    {
+      "path": "src/engine/YUKIM_SANCHUAN_PROVENANCE.md",
+      "bytes": 889,
+      "sha256": "5787cfa3ddcef96b404b303fa1c3ea9b59c9fd4e7dbabe43ff787512d4c8d9e8"
+    },
+    {
+      "path": "src/engine/yukim-engine.ts",
+      "bytes": 6360,
+      "sha256": "84e969b7f9dffe7290647afbea332fc8b07708d1b14656e7ca9c09f19c5d3f0e"
+    },
+    {
+      "path": "src/engine/yukim-sanchuan-table.json",
+      "bytes": 68283,
+      "sha256": "3bc339601a3b01327047411f0fc8947c51d8b3e0ecd0f86e12a7adf690876868"
+    },
+    {
+      "path": "src/engine/ziwei-engine.ts",
+      "bytes": 39350,
+      "sha256": "ebc885c8edc1a77075caf321d009f4561d53c8ef309514dfc6a291daf903d931"
+    },
+    {
+      "path": "src/engine/ziwei-palace-doctrine-rules-remaining.ts",
+      "bytes": 38168,
+      "sha256": "44597bd6dcf257cf414bf2f7e06ce9de9006a4bccc395d67320e5167cd4a3e12"
+    },
+    {
+      "path": "src/engine/ziwei-palace-doctrine-rules.ts",
+      "bytes": 22048,
+      "sha256": "87e6ebc08b9f643329c2eff5bc5c368c92e0509074ec566090ef6f310962ee5b"
+    },
+    {
+      "path": "src/http.ts",
+      "bytes": 8706,
+      "sha256": "f3705b6476afd2373c0a2bf9fffc9a9b11d93a9d1542ef3e2d5b4a20156dbced"
+    },
+    {
+      "path": "src/index.ts",
+      "bytes": 734,
+      "sha256": "338090ad4de10eb30f5bb923cdf03956bea352ec29ab0b2e37dfb3bf906615cb"
+    },
+    {
+      "path": "src/mcp.ts",
+      "bytes": 9732,
+      "sha256": "b76e0fe131355338984f4921dfa9c244158f29af84306cdde8553d01ce910ad3"
+    },
+    {
+      "path": "src/naming/data/cjk-decomp.LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/naming/data/kumazaki-81-source-comparison.json",
+      "bytes": 98874,
+      "sha256": "5a192a419074cf5c24349136aac10a60639f3c8e63f44e0f428d1d42430d59b8"
+    },
+    {
+      "path": "src/naming/data/name-hanja-support.json",
+      "bytes": 4866115,
+      "sha256": "012ab687644bff9b8a9bb78cd65c0096fc0ebdadf394ec1fb7f1ba55c9ade128"
+    },
+    {
+      "path": "src/naming/data/unicode-data.LICENSE",
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    {
+      "path": "src/naming/eighty-one-numbers.ts",
+      "bytes": 3740,
+      "sha256": "4ad6c6fe8ab190fd5bc0cf30a2ccd43ad3691f5c3722de38fbbc40146fd48451"
+    },
+    {
+      "path": "src/naming/five-grid.ts",
+      "bytes": 2982,
+      "sha256": "bdf64889bcb5aead9b6a9c3415a3b6e158aa5260696ed903902f716bd6318103"
+    },
+    {
+      "path": "src/naming/index.ts",
+      "bytes": 98,
+      "sha256": "9fa653cbcd6651a7e42bfb254ca53d27ece66acac60eb47a341d23e89db9a039"
+    },
+    {
+      "path": "src/naming/name-engine.ts",
+      "bytes": 11547,
+      "sha256": "ddfa9c510b198ccb2cb8d8033cc2e59d5795fab435d5934c726bd5ec54135f82"
+    },
+    {
+      "path": "tests/mcp-http.test.ts",
+      "bytes": 4610,
+      "sha256": "82146406ecaaacd0502ba5f38b134fedbb0eacc36b934ce0812395eb50b9364e"
+    },
+    {
+      "path": "tests/name-engine.test.ts",
+      "bytes": 7355,
+      "sha256": "6261807f562976311a56d0ad2ef4ad7d60bf2384314ddb05dfd39668ce98104e"
+    },
+    {
+      "path": "tests/resolver.test.ts",
+      "bytes": 5656,
+      "sha256": "ddb6e568d8f451f722bd43663cecd003e870fe2f5d249f7be53e8c4de2a32870"
+    },
+    {
+      "path": "tests/saju-engine-v2.test.ts",
+      "bytes": 57602,
+      "sha256": "e7a06acb0049d73e3b8e9c782f63390d4494df26a14f5860a10239a87b1e0e80"
+    },
+    {
+      "path": "tests/saju-engine.test.ts",
+      "bytes": 9302,
+      "sha256": "b26b7d63b4c86c2ed45ef7668c3e3047a9204562efd9c624123156c4a6cc87d8"
+    },
+    {
+      "path": "tests/saju-public-entry.test.ts",
+      "bytes": 1789,
+      "sha256": "49743a30384a6a3772ad6697061189a45c5e038494aec47bc51d7f4c9ce933bd"
+    }
+  ]
+}

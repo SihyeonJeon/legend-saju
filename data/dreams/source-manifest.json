@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "status": "source_rights_audit_with_five_concept_lane_active",
+  "asOf": "2026-08-21",
+  "purpose": "상업 서비스에 넣을 수 있는 전통 해몽 원문과 계보 연구 자료를 선별한다. 이 파일 자체는 해몽 규칙이나 출력 코퍼스가 아니다.",
+  "activation": {
+    "engineCapability": false,
+    "laneRouting": true,
+    "promptInjection": true,
+    "productionUse": true,
+    "activeCorpus": "DREAM_CROSS_CULTURE_SEED_AUDIT.json의 정리 완료 5건",
+    "excludedFromDirectRouting": [
+      "DREAM_ZHOUGONG_PRIMARY.json",
+      "DREAM_ARTEMIDORUS_1644_PRIMARY.json"
+    ],
+    "requirementsBeforeBroaderActivation": [
+      "항목 단위 원문 위치와 판본 고정",
+      "원문 전사 또는 번역의 별도 권리 확인",
+      "전승 계보와 차용 관계 표기",
+      "상징·행동·정서·배경·꿈꾼 사람의 맥락을 분리한 스키마",
+      "상충 해석과 해석 보류 보존",
+      "복권·질병·죽음·임신 등 고위험 확정 표현 차단",
+      "전문가와 실제 상담 사례 기반 검토"
+    ]
+  },
+  "rightsPolicy": {
+    "commerciallyUsableValues": [
+      "yes",
+      "conditional",
+      "no",
+      "permission_required"
+    ],
+    "rules": [
+      "공신력과 이용 허락은 별도 축이다. 편집 품질이 높아도 비상업 조건이면 상업 코퍼스에 복제하지 않는다.",
+      "사실이나 전승의 존재를 조사하는 것과 현대 문장·번역·분류표·데이터베이스 구조를 복제하는 것을 구분한다.",
+      "공개 도메인 원전과 공개 라이선스 전사본을 우선하고 출처·판본·영구 링크를 보존한다.",
+      "현대 번역은 원전이 공개 도메인이어도 별도 저작권이 있으므로 허락 없이 가져오지 않는다.",
+      "사이트 전체 정책보다 개별 자료에 붙은 권리 표시가 우선한다. 표시가 없으면 보류한다."
+    ]
+  },
+  "consensusPolicy": {
+    "minimumIndependentSourceFamilies": 2,
+    "independenceRule": "같은 원전의 번역·재편집, 알려진 차용 관계, 서로 베낀 현대 사전은 독립 계보로 세지 않는다.",
+    "outputRule": "맞물리는 뜻은 공통 모티프로 요약할 수 있으나 객관적 예언 정답이라고 부르지 않는다.",
+    "conflictRule": "지역·시대·꿈꾼 사람의 신분이나 상황에 따라 반대 해석이 있으면 하나로 평균내지 않고 나란히 보존한다.",
+    "proposedRecordShape": {
+      "symbol": "꿈에 나온 대상",
+      "action": "대상이 하거나 당한 일",
+      "emotion": "꿈에서 느낀 정서",
+      "setting": "장소·시간·날씨·색",
+      "dreamerContext": "관계·직업·임신 여부 등 해석에 실제로 쓰인 조건",
+      "interpretations": "출처 계보별 해석 배열",
+      "crossCultureConsensus": "독립 계보 두 개 이상에서 확인된 공통 모티프와 예외"
+    }
+  },
+  "sources": [
+    {
+      "id": "nfm-korean-folk-encyclopedia",
+      "title": "한국민속대백과사전",
+      "culture": "한국 민속",
+      "sourceFamily": "korean_folk_edited_reference",
+      "kind": "official_edited_reference",
+      "uri": "https://folkency.nfm.go.kr/kr/",
+      "rightsUri": "https://www.nfm.go.kr/home/subIndex/726.do",
+      "license": "공공누리 제2유형으로 표시된 사전 자료: 출처표시·상업적 이용금지",
+      "commerciallyUsable": "permission_required",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "ingestDecision": "exclude_text_and_taxonomy_until_written_permission",
+      "allowedCurrentUse": "전승명·관련 원전·조사 키워드를 찾는 발견용 참고",
+      "authorityNote": "개인의 임의 주장이라서 제외한 것이 아니다. 국립민속박물관의 편집 자료지만 현재 표시된 이용 조건이 상업 재사용을 막는다.",
+      "scientificStatus": "민속 전승 기록이며 임상적 예측 검증 자료가 아니다."
+    },
+    {
+      "id": "wikisource-zhougong-jiemeng",
+      "title": "주공해몽(周公解夢)",
+      "culture": "중국 한문권",
+      "sourceFamily": "zhougong_dreambook_tradition",
+      "kind": "public_domain_traditional_text_transcription",
+      "uri": "https://zh.wikisource.org/zh-hans/%E5%91%A8%E5%85%AC%E8%A7%A3%E5%A4%A2",
+      "license": "원저작물 공개 도메인; 위키문헌 전사·편집분은 CC BY-SA 4.0",
+      "commerciallyUsable": "yes",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "shareAlikeRequiredForAdaptedTranscription": true,
+      "ingestDecision": "revision_pinned_primary_text_extracted_semantic_mapping_pending",
+      "localCorpus": "data/dreams/zhougong-primary.json",
+      "localCorpusEntryCount": 988,
+      "lineageCaution": "주공 개인의 직접 저술로 단정하지 않고 주공에 가탁된 해몽 전승으로 기록한다.",
+      "scientificStatus": "전통 점몽 문헌"
+    },
+    {
+      "id": "wikisource-menglin-xuanjie",
+      "title": "몽림현해(夢林玄解)",
+      "culture": "중국 한문권",
+      "sourceFamily": "menglin_xuanjie_tradition",
+      "kind": "public_domain_traditional_text_transcription",
+      "uri": "https://zh.wikisource.org/zh/%E5%A4%A2%E6%9E%97%E7%8E%84%E8%A7%A3/%E5%A4%A2%E6%9E%97%E7%8E%84%E8%A7%A3%E5%8D%B7%E4%B9%8B%E9%A6%96",
+      "license": "위키문헌 텍스트 CC BY-SA 4.0; 원전 권리와 판본은 항목별 확인",
+      "commerciallyUsable": "yes",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "shareAlikeRequiredForAdaptedTranscription": true,
+      "ingestDecision": "candidate_for_method_and_item_extraction_after_edition_audit",
+      "lineageCaution": "오행·절기·간지와 꿈꾼 때를 함께 보는 자체 관법을 단순 상징 사전으로 잘라내지 않는다.",
+      "scientificStatus": "전통 점몽 문헌"
+    },
+    {
+      "id": "eebo-tcp-artemidorus-1644",
+      "title": "The Interpretation of Dreams, Digested into Five Books",
+      "culture": "고대 그리스 전승의 17세기 영어 수용",
+      "sourceFamily": "artemidorus_oneirocritica",
+      "kind": "keyboarded_primary_translation",
+      "uri": "https://quod.lib.umich.edu/e/eebo/A25906.0001.001?view=toc",
+      "license": "EEBO Text Creation Partnership 전사·인코딩 CC0 1.0; 부가 이미지 제외",
+      "commerciallyUsable": "yes",
+      "modificationAllowed": true,
+      "attributionRequired": false,
+      "ingestDecision": "commit_pinned_cc0_text_extracted_semantic_mapping_pending",
+      "localCorpus": "data/dreams/artemidorus-1644-primary.json",
+      "localCorpusSectionCount": 211,
+      "lineageCaution": "1644년 영어 번역과 편집의 표현을 고대 그리스 원문 자체와 동일시하지 않는다.",
+      "scientificStatus": "고대 점몽 전통의 역사 문헌"
+    },
+    {
+      "id": "erara-oneirocritica-achmet-1603",
+      "title": "Artemidori Daldiani & Achmetis Sereimi F. Oneirocritica",
+      "culture": "그리스·라틴·비잔틴·아랍 전승",
+      "sourceFamily": "artemidorus_achmet_compilation",
+      "kind": "digitized_primary_edition",
+      "uri": "https://doi.org/10.3931/e-rara-4317",
+      "iiifManifest": "https://www.e-rara.ch/i3f/v20/1348258/manifest",
+      "license": "Public Domain Mark; 소장기관은 통상적 출처표시와 이용 통지를 요청",
+      "commerciallyUsable": "yes",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "ingestDecision": "primary_page_crosscheck_and_manual_ocr_candidate",
+      "lineageCaution": "서로 다른 저자·언어·시대의 문헌을 합친 판본이므로 항목의 실제 소속을 분리한다.",
+      "scientificStatus": "역사적 점몽 문헌"
+    },
+    {
+      "id": "loc-arabic-explanation-of-dreams-800-900",
+      "title": "The Explanation of Dreams (Tafsīr al-manāmāt)",
+      "culture": "초기 이슬람권",
+      "sourceFamily": "early_arabic_dreambook_fragment",
+      "kind": "digitized_primary_manuscript_fragment",
+      "uri": "https://www.loc.gov/item/2021667370/",
+      "license": "미국 의회도서관 World Digital Library 자료: 알려진 저작권 제한 없음",
+      "commerciallyUsable": "yes",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "ingestDecision": "rights_cleared_source_capture_translation_and_cataloging_pending",
+      "lineageCaution": "원제와 저자 불명, 3장부터 22장 일부만 남은 단편이다. Ibn Sirin 저작으로 붙이지 않는다.",
+      "scientificStatus": "역사적 이슬람 점몽 문헌"
+    },
+    {
+      "id": "loc-mavroudi-byzantine-dreambook-2002",
+      "title": "A Byzantine Book on Dream Interpretation: The Oneirocriticon of Achmet and Its Arabic Sources",
+      "culture": "비잔틴·아랍 전승 연구",
+      "sourceFamily": "modern_lineage_scholarship",
+      "kind": "modern_scholarly_secondary_source",
+      "uri": "https://www.loc.gov/item/2021758623/",
+      "license": "CC BY 4.0",
+      "commerciallyUsable": "yes",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "ingestDecision": "lineage_map_and_source_criticism_only_not_a_second_independent_dreambook",
+      "lineageCaution": "현대 연구서의 분석과 번역을 사용할 때 페이지 인용과 저자 표시가 필요하다.",
+      "scientificStatus": "문헌학·역사학 연구"
+    },
+    {
+      "id": "gutenberg-miller-10000-dreams",
+      "title": "Ten Thousand Dreams Interpreted",
+      "culture": "20세기 초 미국 대중 오컬트",
+      "sourceFamily": "miller_popular_dream_dictionary",
+      "kind": "public_domain_era_popular_compilation",
+      "uri": "https://www.gutenberg.org/ebooks/926",
+      "license": "Project Gutenberg License; 미국 밖에서는 현지 저작권 확인 필요",
+      "commerciallyUsable": "conditional",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "ingestDecision": "hold_until_korean_term_and_gutenberg_trademark_boilerplate_review",
+      "lineageCaution": "제목의 scientific이라는 표현은 현대 과학적 검증을 뜻하지 않는다. 서구 대중 해몽 계보 하나로만 취급한다.",
+      "scientificStatus": "역사적 대중 오컬트 편찬물"
+    },
+    {
+      "id": "korean-annals-dream-records",
+      "title": "조선왕조실록의 꿈·해몽 기록",
+      "culture": "조선 왕실 기록",
+      "sourceFamily": "joseon_historical_dream_records",
+      "kind": "official_historical_primary_records",
+      "uri": "https://sillok.history.go.kr/",
+      "rightsUri": "https://contents.history.go.kr/front/about/use.do?tabId=04",
+      "license": "개별 자료의 공공누리 유형과 원소장처 권리를 항목별 확인",
+      "commerciallyUsable": "conditional",
+      "modificationAllowed": true,
+      "attributionRequired": true,
+      "ingestDecision": "candidate_for_korean_case_records_only_after_item_level_rights_check",
+      "lineageCaution": "상징 사전이 아니라 실제 기록 사례다. 사건 뒤에 붙은 후대적 의미 부여와 당시 해석을 구분한다.",
+      "scientificStatus": "역사 사료"
+    }
+  ]
+}

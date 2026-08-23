@@ -1,0 +1,20 @@
+{
+  "name": "legend-saju",
+  "interface": {
+    "displayName": "Legend Saju"
+  },
+  "plugins": [
+    {
+      "name": "legend-saju",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legend-saju"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Lifestyle"
+    }
+  ]
+}

@@ -1,0 +1,7778 @@
+{
+ "schema_version": "myeongri.glossary.trilingual.v4",
+ "generated_at": "2026-06-27",
+ "note": "동양 점술·무속 전반 트릴링구얼 용어표(명리·자미·작명·개운 + 주역·육효·삼식·풍수·상학·토정·당사주·구성·무속).",
+ "count": 777,
+ "entries": [
+  {
+   "termKr": "격국과 직업적성",
+   "hanja": "格局",
+   "cnTerm": "格局",
+   "cnPinyin": "gé jú",
+   "jpTerm": "格局",
+   "jpReading": "かっきょく",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "관성과 직업·여명 배우자",
+   "hanja": "官星",
+   "cnTerm": "官星",
+   "cnPinyin": "guān xīng",
+   "jpTerm": "官星",
+   "jpReading": "かんせい",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "궁합 보는 틀",
+   "hanja": "宮合",
+   "cnTerm": "合婚",
+   "cnPinyin": "hé hūn",
+   "jpTerm": "相性·合婚",
+   "jpReading": "あいしょう・ごうこん",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "남명 재성과 처궁",
+   "hanja": "財爲妻",
+   "cnTerm": "财为妻",
+   "cnPinyin": "cái wéi qī",
+   "jpTerm": "財は妻星",
+   "jpReading": "ざいはさいせい",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "도화살(응용)",
+   "hanja": "桃花",
+   "cnTerm": "桃花·咸池",
+   "cnPinyin": "táo huā · xián chí",
+   "jpTerm": "桃花·咸池",
+   "jpReading": "とうか・かんち",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "배우자궁 일지",
+   "hanja": "配偶宮日支",
+   "cnTerm": "夫妻宫·日支",
+   "cnPinyin": "fū qī gōng · rì zhī",
+   "jpTerm": "配偶者の宮·日支",
+   "jpReading": "はいぐうしゃのみや・にっし",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "비겁과 경쟁·동업운",
+   "hanja": "比劫",
+   "cnTerm": "比劫",
+   "cnPinyin": "bǐ jié",
+   "jpTerm": "比肩·劫財",
+   "jpReading": "ひけん・ごうざい",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "식상생재",
+   "hanja": "食傷生財",
+   "cnTerm": "食伤生财",
+   "cnPinyin": "shí shāng shēng cái",
+   "jpTerm": "食傷生財",
+   "jpReading": "しょくしょうせいざい",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "신왕재왕",
+   "hanja": "身旺財旺",
+   "cnTerm": "身旺财旺",
+   "cnPinyin": "shēn wàng cái wàng",
+   "jpTerm": "身旺財旺",
+   "jpReading": "しんおうざいおう",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "십성별 직업 배속",
+   "hanja": "十星職業",
+   "cnTerm": "十神职业取向",
+   "cnPinyin": "shí shén zhí yè qǔ xiàng",
+   "jpTerm": "通変星の職業適性",
+   "jpReading": "つうへんせいのしょくぎょうてきせい",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "역마살(응용)",
+   "hanja": "驛馬",
+   "cnTerm": "驿马",
+   "cnPinyin": "yì mǎ",
+   "jpTerm": "駅馬",
+   "jpReading": "えきば",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "오행 건강 배속",
+   "hanja": "五行臟腑",
+   "cnTerm": "五行配脏腑",
+   "cnPinyin": "wǔ xíng pèi zàng fǔ",
+   "jpTerm": "五行配当",
+   "jpReading": "ごぎょうはいとう",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "용신 개운법",
+   "hanja": "用神開運",
+   "cnTerm": "用神·喜用方位色",
+   "cnPinyin": "yòng shén · xǐ yòng fāng wèi sè",
+   "jpTerm": "用神·開運",
+   "jpReading": "ようじん・かいうん",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "인성과 학문·문서운",
+   "hanja": "印星",
+   "cnTerm": "印星",
+   "cnPinyin": "yìn xīng",
+   "jpTerm": "印星",
+   "jpReading": "いんせい",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "일간 오행과 직업 성향",
+   "hanja": "日干五行",
+   "cnTerm": "日主五行性情",
+   "cnPinyin": "rì zhǔ wǔ xíng xìng qíng",
+   "jpTerm": "日干の五行",
+   "jpReading": "にっかんのごぎょう",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "자녀궁 시주",
+   "hanja": "子女宮時柱",
+   "cnTerm": "子女宫·时柱",
+   "cnPinyin": "zǐ nǚ gōng · shí zhù",
+   "jpTerm": "子女の宮·時柱",
+   "jpReading": "しじょのみや・じちゅう",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "작명 오행보완",
+   "hanja": "姓名五行",
+   "cnTerm": "起名补五行",
+   "cnPinyin": "qǐ míng bǔ wǔ xíng",
+   "jpTerm": "姓名判断·五行補完",
+   "jpReading": "せいめいはんだん・ごぎょうほかん",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "재다신약",
+   "hanja": "財多身弱",
+   "cnTerm": "财多身弱",
+   "cnPinyin": "cái duō shēn ruò",
+   "jpTerm": "財多身弱",
+   "jpReading": "ざいたしんじゃく",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "재성과 재물운",
+   "hanja": "財星",
+   "cnTerm": "财星",
+   "cnPinyin": "cái xīng",
+   "jpTerm": "財星",
+   "jpReading": "ざいせい",
+   "area": "application",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "택일 기초",
+   "hanja": "擇日",
+   "cnTerm": "择日·选吉",
+   "cnPinyin": "zé rì · xuǎn jí",
+   "jpTerm": "選日·吉日選び",
+   "jpReading": "せんじつ・きちじつえらび",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "홍염살(응용)",
+   "hanja": "紅艶",
+   "cnTerm": "红艳煞",
+   "cnPinyin": "hóng yàn shà",
+   "jpTerm": "紅艶",
+   "jpReading": "こうえん",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "화개살(응용)",
+   "hanja": "華蓋",
+   "cnTerm": "华盖",
+   "cnPinyin": "huá gài",
+   "jpTerm": "華蓋",
+   "jpReading": "かがい",
+   "area": "application",
+   "school": "공통"
+  },
+  {
+   "termKr": "갑목",
+   "hanja": "甲木",
+   "cnTerm": "甲木",
+   "cnPinyin": "jiǎ mù",
+   "jpTerm": "甲（木の兄）",
+   "jpReading": "きのえ（kinoe）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "경금",
+   "hanja": "庚金",
+   "cnTerm": "庚金",
+   "cnPinyin": "gēng jīn",
+   "jpTerm": "庚（金の兄）",
+   "jpReading": "かのえ（kanoe）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "계수",
+   "hanja": "癸水",
+   "cnTerm": "癸水",
+   "cnPinyin": "guǐ shuǐ",
+   "jpTerm": "癸（水の弟）",
+   "jpReading": "みずのと（mizunoto）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "기토",
+   "hanja": "己土",
+   "cnTerm": "己土",
+   "cnPinyin": "jǐ tǔ",
+   "jpTerm": "己（土の弟）",
+   "jpReading": "つちのと（tsuchinoto）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "무토",
+   "hanja": "戊土",
+   "cnTerm": "戊土",
+   "cnPinyin": "wù tǔ",
+   "jpTerm": "戊（土の兄）",
+   "jpReading": "つちのえ（tsuchinoe）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "병화",
+   "hanja": "丙火",
+   "cnTerm": "丙火",
+   "cnPinyin": "bǐng huǒ",
+   "jpTerm": "丙（火の兄）",
+   "jpReading": "ひのえ（hinoe）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "신금",
+   "hanja": "辛金",
+   "cnTerm": "辛金",
+   "cnPinyin": "xīn jīn",
+   "jpTerm": "辛（金の弟）",
+   "jpReading": "かのと（kanoto）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "을목",
+   "hanja": "乙木",
+   "cnTerm": "乙木",
+   "cnPinyin": "yǐ mù",
+   "jpTerm": "乙（木の弟）",
+   "jpReading": "きのと（kinoto）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "일간",
+   "hanja": "日干",
+   "cnTerm": "日主／日元",
+   "cnPinyin": "rì zhǔ／rì yuán",
+   "jpTerm": "日干（日主）",
+   "jpReading": "にっかん（nikkan）",
+   "area": "cheongan",
+   "school": "자평통설(맹파는 日主 강조, 일본은 日干 표기)"
+  },
+  {
+   "termKr": "임수",
+   "hanja": "壬水",
+   "cnTerm": "壬水",
+   "cnPinyin": "rén shuǐ",
+   "jpTerm": "壬（水の兄）",
+   "jpReading": "みずのえ（mizunoe）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "정화",
+   "hanja": "丁火",
+   "cnTerm": "丁火",
+   "cnPinyin": "dīng huǒ",
+   "jpTerm": "丁（火の弟）",
+   "jpReading": "ひのと（hinoto）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "천간",
+   "hanja": "天干",
+   "cnTerm": "天干",
+   "cnPinyin": "tiān gān",
+   "jpTerm": "天干",
+   "jpReading": "てんかん（tenkan）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "천간 방위·계절",
+   "hanja": "天干方位（季節配屬）",
+   "cnTerm": "天干方位／天干配五方",
+   "cnPinyin": "tiān gān fāng wèi／tiān gān pèi wǔ fāng",
+   "jpTerm": "天干の方位・季節",
+   "jpReading": "てんかんのほうい・きせつ（tenkan no hōi・kisetsu）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "천간 생극",
+   "hanja": "天干生剋",
+   "cnTerm": "天干生克",
+   "cnPinyin": "tiān gān shēng kè",
+   "jpTerm": "天干の生剋",
+   "jpReading": "てんかんのせいこく（tenkan no seikoku）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "천간 음양오행",
+   "hanja": "天干陰陽五行",
+   "cnTerm": "天干阴阳五行",
+   "cnPinyin": "tiān gān yīn yáng wǔ xíng",
+   "jpTerm": "天干の陰陽五行",
+   "jpReading": "てんかんのいんようごぎょう（tenkan no inyō gogyō）",
+   "area": "cheongan",
+   "school": "공통"
+  },
+  {
+   "termKr": "천간합(오합)",
+   "hanja": "天干合（五合）",
+   "cnTerm": "天干五合／合化",
+   "cnPinyin": "tiān gān wǔ hé／hé huà",
+   "jpTerm": "干合",
+   "jpReading": "かんごう（kangō）",
+   "area": "cheongan",
+   "school": "공통(일본 四柱推命도 干合으로 동일하게 다룸)"
+  },
+  {
+   "termKr": "통근·투출",
+   "hanja": "通根（透干）",
+   "cnTerm": "通根／透干（透出）",
+   "cnPinyin": "tōng gēn／tòu gān（tòu chū）",
+   "jpTerm": "通根／透干（透出）",
+   "jpReading": "つうこん／とうかん（tsūkon／tōkan）",
+   "area": "cheongan",
+   "school": "공통(일본 四柱推命도 通根·透干 용어 사용)"
+  },
+  {
+   "termKr": "12절(節)과 월지 배속",
+   "hanja": "十二節·月支",
+   "cnTerm": "十二节令·月支",
+   "cnPinyin": "shí èr jié lìng · yuè zhī",
+   "jpTerm": "十二節・月支",
+   "jpReading": "じゅうにせつ・げっし",
+   "area": "daeun_seun",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "간지·육십갑자(干支 60주기)",
+   "hanja": "干支·六十甲子",
+   "cnTerm": "干支·六十甲子",
+   "cnPinyin": "gān zhī · liù shí jiǎ zǐ",
+   "jpTerm": "干支・六十干支",
+   "jpReading": "かんし・ろくじっかんし",
+   "area": "daeun_seun",
+   "school": "공통"
+  },
+  {
+   "termKr": "근묘화실(네 기둥의 위치 상징)",
+   "hanja": "根苗花實",
+   "cnTerm": "根苗花实",
+   "cnPinyin": "gēn miáo huā shí",
+   "jpTerm": "根苗花実",
+   "jpReading": "こんびょうかじつ",
+   "area": "daeun_seun",
+   "school": "공통(자평 위치론)"
+  },
+  {
+   "termKr": "대운 순행·역행(양남음녀 순행)",
+   "hanja": "大運 順行·逆行",
+   "cnTerm": "大运 顺排·逆排",
+   "cnPinyin": "dà yùn shùn pái · nì pái",
+   "jpTerm": "順行・逆行",
+   "jpReading": "じゅんこう・ぎゃっこう",
+   "area": "daeun_seun",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "대운(월주에서 흐르는 10년 단위 운로)",
+   "hanja": "大運",
+   "cnTerm": "大运",
+   "cnPinyin": "dà yùn",
+   "jpTerm": "大運",
+   "jpReading": "たいうん",
+   "area": "daeun_seun",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "대운수·기운(대운 시작 나이 산출)",
+   "hanja": "大運數·起運",
+   "cnTerm": "大运数·起运",
+   "cnPinyin": "dà yùn shù · qǐ yùn",
+   "jpTerm": "立運(運の数え)",
+   "jpReading": "りつうん",
+   "area": "daeun_seun",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "만세력(사주 환산 책력)",
+   "hanja": "萬歲曆",
+   "cnTerm": "万年历",
+   "cnPinyin": "wàn nián lì",
+   "jpTerm": "万年暦",
+   "jpReading": "まんねんれき",
+   "area": "daeun_seun",
+   "school": "공통"
+  },
+  {
+   "termKr": "사주팔자(네 기둥 여덟 글자)",
+   "hanja": "四柱八字",
+   "cnTerm": "四柱八字",
+   "cnPinyin": "sì zhù bā zì",
+   "jpTerm": "四柱八字",
+   "jpReading": "しちゅうはちじ",
+   "area": "daeun_seun",
+   "school": "공통(한·중·일 자평 공통 기본 틀; 일본은 命式(めいしき)·八字(はちじ)로도 부름)"
+  },
+  {
+   "termKr": "세운(해마다 바뀌는 그해의 운)",
+   "hanja": "歲運",
+   "cnTerm": "流年",
+   "cnPinyin": "liú nián",
+   "jpTerm": "歳運(年運)",
+   "jpReading": "さいうん(ねんうん)",
+   "area": "daeun_seun",
+   "school": "공통(한 세운/중 流年/일 歳運 동일 개념, 명칭만 분기)"
+  },
+  {
+   "termKr": "소운(대운 들기 전 어린 시절 운)",
+   "hanja": "小運",
+   "cnTerm": "小运",
+   "cnPinyin": "xiǎo yùn",
+   "jpTerm": "小運",
+   "jpReading": "しょううん",
+   "area": "daeun_seun",
+   "school": "자평통설(소운 활용론) vs 경시·생략론 분립"
+  },
+  {
+   "termKr": "야자시·조자시(자시의 날짜 처리)",
+   "hanja": "夜子時·朝子時",
+   "cnTerm": "夜子时·早子时",
+   "cnPinyin": "yè zǐ shí · zǎo zǐ shí",
+   "jpTerm": "夜子刻・朝子刻",
+   "jpReading": "やしこく・あさしこく",
+   "area": "daeun_seun",
+   "school": "자평통설(야자시/조자시설) vs 일부 학파(23시 환일설) 분립; 일본 四柱推命에서도 夜子刻 논쟁 존재"
+  },
+  {
+   "termKr": "연주 세우기(입춘 기준)",
+   "hanja": "年柱(立春爲準)",
+   "cnTerm": "年柱(以立春为界)",
+   "cnPinyin": "nián zhù (yǐ lì chūn wéi jiè)",
+   "jpTerm": "年柱(立春正月節)",
+   "jpReading": "ねんちゅう(りっしゅん)",
+   "area": "daeun_seun",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "오자둔(일간으로 시간 정하기)",
+   "hanja": "五鼠遁",
+   "cnTerm": "五鼠遁",
+   "cnPinyin": "wǔ shǔ dùn",
+   "jpTerm": "時干の遁法(日上起時)",
+   "jpReading": "じかんのとんぽう",
+   "area": "daeun_seun",
+   "school": "공통"
+  },
+  {
+   "termKr": "오호둔(연간으로 월간 정하기)",
+   "hanja": "五虎遁",
+   "cnTerm": "五虎遁",
+   "cnPinyin": "wǔ hǔ dùn",
+   "jpTerm": "月干の遁法(年上起月)",
+   "jpReading": "げっかんのとんぽう",
+   "area": "daeun_seun",
+   "school": "공통"
+  },
+  {
+   "termKr": "운 해석 원리(원국·대운·세운의 합참 판단)",
+   "hanja": "運 解析 原理(原局·大運·歲運)",
+   "cnTerm": "命运合参(原局·大运·流年)",
+   "cnPinyin": "mìng yùn hé cān",
+   "jpTerm": "命式と運の総合判断",
+   "jpReading": "めいしきとうんのそうごうはんだん",
+   "area": "daeun_seun",
+   "school": "공통(자평통설); 맹파(盲派)는 체용·궁위·빈주(賓主)로 시점 발동을 더 강조"
+  },
+  {
+   "termKr": "월운(그달의 운)",
+   "hanja": "月運",
+   "cnTerm": "流月",
+   "cnPinyin": "liú yuè",
+   "jpTerm": "月運",
+   "jpReading": "げつうん",
+   "area": "daeun_seun",
+   "school": "공통"
+  },
+  {
+   "termKr": "월주 세우기(절기 기준)",
+   "hanja": "月柱(節氣爲準)",
+   "cnTerm": "月柱(以节为界)",
+   "cnPinyin": "yuè zhù (yǐ jié wéi jiè)",
+   "jpTerm": "月柱(節入り)",
+   "jpReading": "げっちゅう(せついり)",
+   "area": "daeun_seun",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "일주 세우기(일간이 곧 나)",
+   "hanja": "日柱(日干爲主)",
+   "cnTerm": "日柱(日元/日主)",
+   "cnPinyin": "rì zhù (rì yuán / rì zhǔ)",
+   "jpTerm": "日柱(日主)",
+   "jpReading": "にっちゅう(にっしゅ)",
+   "area": "daeun_seun",
+   "school": "공통(자평통설, 일간 중심론)"
+  },
+  {
+   "termKr": "진태양시(실제 태양 기준 시각 보정)",
+   "hanja": "眞太陽時",
+   "cnTerm": "真太阳时",
+   "cnPinyin": "zhēn tài yáng shí",
+   "jpTerm": "真太陽時",
+   "jpReading": "しんたいようじ",
+   "area": "daeun_seun",
+   "school": "공통(현대 정밀 통설)"
+  },
+  {
+   "termKr": "개띠",
+   "hanja": "戌",
+   "cnTerm": "狗/戌",
+   "cnPinyin": "gǒu / xū",
+   "jpTerm": "戌(いぬ)・狗",
+   "jpReading": "いぬ / じゅつ",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "닭띠",
+   "hanja": "酉",
+   "cnTerm": "鸡/酉",
+   "cnPinyin": "jī / yǒu",
+   "jpTerm": "酉(とり)・鶏",
+   "jpReading": "とり / ゆう",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "돼지띠",
+   "hanja": "亥",
+   "cnTerm": "猪/亥",
+   "cnPinyin": "zhū / hài",
+   "jpTerm": "亥(い)・猪",
+   "jpReading": "い / がい",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "말띠",
+   "hanja": "午",
+   "cnTerm": "马/午",
+   "cnPinyin": "mǎ / wǔ",
+   "jpTerm": "午(うま)・馬",
+   "jpReading": "うま / ご",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "방합·형·해·파(보조 띠 관계)",
+   "hanja": "方合·刑·害·破",
+   "cnTerm": "方局/三刑/六害/六破",
+   "cnPinyin": "fāng jú / sān xíng / liù hài / liù pò",
+   "jpTerm": "方合(ほうごう)・刑(けい)・害(がい)・破(は)",
+   "jpReading": "ほうごう・けい・がい・は",
+   "area": "ddi",
+   "school": "공통(자평통설), 명칭 일본=方合으로 동일·세부 분기"
+  },
+  {
+   "termKr": "뱀띠",
+   "hanja": "巳",
+   "cnTerm": "蛇/巳",
+   "cnPinyin": "shé / sì",
+   "jpTerm": "巳(み)・蛇",
+   "jpReading": "み / し",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "삼합(띠 궁합의 핵심)",
+   "hanja": "三合",
+   "cnTerm": "三合局",
+   "cnPinyin": "sān hé jú",
+   "jpTerm": "三合(さんごう)",
+   "jpReading": "さんごう",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "소띠",
+   "hanja": "丑",
+   "cnTerm": "牛/丑",
+   "cnPinyin": "niú / chǒu",
+   "jpTerm": "丑(うし)・牛",
+   "jpReading": "うし / ちゅう",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "십이지 띠(연지)",
+   "hanja": "十二支",
+   "cnTerm": "生肖/属相",
+   "cnPinyin": "shēng xiào / shǔ xiàng",
+   "jpTerm": "十二支・干支(えと)",
+   "jpReading": "じゅうにし・えと",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "양띠",
+   "hanja": "未",
+   "cnTerm": "羊/未",
+   "cnPinyin": "yáng / wèi",
+   "jpTerm": "未(ひつじ)・羊",
+   "jpReading": "ひつじ / び",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "용띠",
+   "hanja": "辰",
+   "cnTerm": "龙/辰",
+   "cnPinyin": "lóng / chén",
+   "jpTerm": "辰(たつ)・龍",
+   "jpReading": "たつ / しん",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "원숭이띠",
+   "hanja": "申",
+   "cnTerm": "猴/申",
+   "cnPinyin": "hóu / shēn",
+   "jpTerm": "申(さる)・猿",
+   "jpReading": "さる / しん",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "원진(怨嗔)",
+   "hanja": "怨嗔",
+   "cnTerm": "六害(穿)／元辰",
+   "cnPinyin": "liù hài(chuān) / yuán chén",
+   "jpTerm": "害(がい)・鬼門",
+   "jpReading": "がい / きもん",
+   "area": "ddi",
+   "school": "한국 통속 신살(중=六害/元辰, 일=害/鬼門로 분기)"
+  },
+  {
+   "termKr": "육합(지지 짝합)",
+   "hanja": "六合",
+   "cnTerm": "六合/支合",
+   "cnPinyin": "liù hé / zhī hé",
+   "jpTerm": "支合(しごう)",
+   "jpReading": "しごう",
+   "area": "ddi",
+   "school": "공통(자평통설), 명칭은 일본=支合으로 분기"
+  },
+  {
+   "termKr": "쥐띠",
+   "hanja": "子",
+   "cnTerm": "鼠/子",
+   "cnPinyin": "shǔ / zǐ",
+   "jpTerm": "子(ね)・鼠",
+   "jpReading": "ね / し",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "충(띠 충돌)",
+   "hanja": "沖(冲)",
+   "cnTerm": "六冲/相冲",
+   "cnPinyin": "liù chōng / xiāng chōng",
+   "jpTerm": "冲(ちゅう)・七冲(しちちゅう)",
+   "jpReading": "ちゅう・しちちゅう",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "토끼띠",
+   "hanja": "卯",
+   "cnTerm": "兔/卯",
+   "cnPinyin": "tù / mǎo",
+   "jpTerm": "卯(う)・兎",
+   "jpReading": "う / ぼう",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "호랑이띠",
+   "hanja": "寅",
+   "cnTerm": "虎/寅",
+   "cnPinyin": "hǔ / yín",
+   "jpTerm": "寅(とら)・虎",
+   "jpReading": "とら / いん",
+   "area": "ddi",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "갑술 일주",
+   "hanja": "甲戌",
+   "cnTerm": "甲戌",
+   "cnPinyin": "jiǎxū",
+   "jpTerm": "甲戌",
+   "jpReading": "きのえいぬ／こうじゅつ",
+   "area": "gapja60_a",
+   "school": "자평 잡기·일주론, 대만 雜氣 논의"
+  },
+  {
+   "termKr": "갑신 일주",
+   "hanja": "甲申",
+   "cnTerm": "甲申",
+   "cnPinyin": "jiǎshēn",
+   "jpTerm": "甲申",
+   "jpReading": "きのえさる／こうしん",
+   "area": "gapja60_a",
+   "school": "자평 절처봉생 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "갑자 일주(gapja60_a)",
+   "hanja": "甲子",
+   "cnTerm": "甲子",
+   "cnPinyin": "jiǎzǐ",
+   "jpTerm": "甲子",
+   "jpReading": "きのえね／こうし",
+   "area": "gapja60_a",
+   "school": "자평 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "경오 일주",
+   "hanja": "庚午",
+   "cnTerm": "庚午",
+   "cnPinyin": "gēngwǔ",
+   "jpTerm": "庚午",
+   "jpReading": "かのえうま／こうご",
+   "area": "gapja60_a",
+   "school": "자평 관인상생 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "경인 일주",
+   "hanja": "庚寅",
+   "cnTerm": "庚寅",
+   "cnPinyin": "gēngyín",
+   "jpTerm": "庚寅",
+   "jpReading": "かのえとら／こういん",
+   "area": "gapja60_a",
+   "school": "자평 절지·일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "경진 일주",
+   "hanja": "庚辰",
+   "cnTerm": "庚辰",
+   "cnPinyin": "gēngchén",
+   "jpTerm": "庚辰",
+   "jpReading": "かのえたつ／こうしん",
+   "area": "gapja60_a",
+   "school": "자평 괴강·신살 일주론, 대만 신살 보조"
+  },
+  {
+   "termKr": "계미 일주",
+   "hanja": "癸未",
+   "cnTerm": "癸未",
+   "cnPinyin": "guǐwèi",
+   "jpTerm": "癸未",
+   "jpReading": "みずのとひつじ／きび",
+   "area": "gapja60_a",
+   "school": "자평 잡기·화개 일주론, 대만 雜氣 논의; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "계사 일주",
+   "hanja": "癸巳",
+   "cnTerm": "癸巳",
+   "cnPinyin": "guǐsì",
+   "jpTerm": "癸巳",
+   "jpReading": "みずのとみ／きし",
+   "area": "gapja60_a",
+   "school": "자평 재관인 동림 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "계유 일주",
+   "hanja": "癸酉",
+   "cnTerm": "癸酉",
+   "cnPinyin": "guǐyǒu",
+   "jpTerm": "癸酉",
+   "jpReading": "みずのととり／きゆう",
+   "area": "gapja60_a",
+   "school": "자평 편인 일주론, 대만 八字 心理 학파; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "기묘 일주",
+   "hanja": "己卯",
+   "cnTerm": "己卯",
+   "cnPinyin": "jǐmǎo",
+   "jpTerm": "己卯",
+   "jpReading": "つちのとう／きぼう",
+   "area": "gapja60_a",
+   "school": "자평 칠살 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "기사 일주",
+   "hanja": "己巳",
+   "cnTerm": "己巳",
+   "cnPinyin": "jǐsì",
+   "jpTerm": "己巳",
+   "jpReading": "つちのとみ／きし",
+   "area": "gapja60_a",
+   "school": "자평 일주론, 대만 八字 학파; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "기축 일주",
+   "hanja": "己丑",
+   "cnTerm": "己丑",
+   "cnPinyin": "jǐchǒu",
+   "jpTerm": "己丑",
+   "jpReading": "つちのとうし／きちゅう",
+   "area": "gapja60_a",
+   "school": "자평 잡기·화개 일주론, 대만 雜氣 논의; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "무인 일주",
+   "hanja": "戊寅",
+   "cnTerm": "戊寅",
+   "cnPinyin": "wùyín",
+   "jpTerm": "戊寅",
+   "jpReading": "つちのえとら／ぼいん",
+   "area": "gapja60_a",
+   "school": "자평 살인상생 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "무자 일주",
+   "hanja": "戊子",
+   "cnTerm": "戊子",
+   "cnPinyin": "wùzǐ",
+   "jpTerm": "戊子",
+   "jpReading": "つちのえね／ぼし",
+   "area": "gapja60_a",
+   "school": "자평 정재 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "무진 일주",
+   "hanja": "戊辰",
+   "cnTerm": "戊辰",
+   "cnPinyin": "wùchén",
+   "jpTerm": "戊辰",
+   "jpReading": "つちのえたつ／ぼしん",
+   "area": "gapja60_a",
+   "school": "자평 잡기·신살 일주론, 대만 신살 보조론"
+  },
+  {
+   "termKr": "병술 일주",
+   "hanja": "丙戌",
+   "cnTerm": "丙戌",
+   "cnPinyin": "bǐngxū",
+   "jpTerm": "丙戌",
+   "jpReading": "ひのえいぬ／へいじゅつ",
+   "area": "gapja60_a",
+   "school": "자평 잡기·신살 일주론, 대만 雜氣·신살"
+  },
+  {
+   "termKr": "병인 일주",
+   "hanja": "丙寅",
+   "cnTerm": "丙寅",
+   "cnPinyin": "bǐngyín",
+   "jpTerm": "丙寅",
+   "jpReading": "ひのえとら／へいいん",
+   "area": "gapja60_a",
+   "school": "자평 목화통명 일주론, 대만 調候(궁통보감) 중시"
+  },
+  {
+   "termKr": "병자 일주",
+   "hanja": "丙子",
+   "cnTerm": "丙子",
+   "cnPinyin": "bǐngzǐ",
+   "jpTerm": "丙子",
+   "jpReading": "ひのえね／へいし",
+   "area": "gapja60_a",
+   "school": "자평 정관 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "신묘 일주",
+   "hanja": "辛卯",
+   "cnTerm": "辛卯",
+   "cnPinyin": "xīnmǎo",
+   "jpTerm": "辛卯",
+   "jpReading": "かのとう／しんぼう",
+   "area": "gapja60_a",
+   "school": "자평 편재 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "신미 일주",
+   "hanja": "辛未",
+   "cnTerm": "辛未",
+   "cnPinyin": "xīnwèi",
+   "jpTerm": "辛未",
+   "jpReading": "かのとひつじ／しんび",
+   "area": "gapja60_a",
+   "school": "자평 화개·잡기 일주론, 대만 雜氣 논의; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "신사 일주",
+   "hanja": "辛巳",
+   "cnTerm": "辛巳",
+   "cnPinyin": "xīnsì",
+   "jpTerm": "辛巳",
+   "jpReading": "かのとみ／しんし",
+   "area": "gapja60_a",
+   "school": "자평 관인 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "을유 일주",
+   "hanja": "乙酉",
+   "cnTerm": "乙酉",
+   "cnPinyin": "yǐyǒu",
+   "jpTerm": "乙酉",
+   "jpReading": "きのととり／いつゆう",
+   "area": "gapja60_a",
+   "school": "자평 칠살 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "을축 일주",
+   "hanja": "乙丑",
+   "cnTerm": "乙丑",
+   "cnPinyin": "yǐchǒu",
+   "jpTerm": "乙丑",
+   "jpReading": "きのとうし／いっちゅう",
+   "area": "gapja60_a",
+   "school": "자평 잡기 일주론, 대만 雜氣格 논의; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "을해 일주",
+   "hanja": "乙亥",
+   "cnTerm": "乙亥",
+   "cnPinyin": "yǐhài",
+   "jpTerm": "乙亥",
+   "jpReading": "きのとい／いつがい",
+   "area": "gapja60_a",
+   "school": "자평 정인 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "임신 일주",
+   "hanja": "壬申",
+   "cnTerm": "壬申",
+   "cnPinyin": "rénshēn",
+   "jpTerm": "壬申",
+   "jpReading": "みずのえさる／じんしん",
+   "area": "gapja60_a",
+   "school": "자평 학당·일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "임오 일주",
+   "hanja": "壬午",
+   "cnTerm": "壬午",
+   "cnPinyin": "rénwǔ",
+   "jpTerm": "壬午",
+   "jpReading": "みずのえうま／じんご",
+   "area": "gapja60_a",
+   "school": "자평 재관·재관쌍미 일주론, 대만 八字 일주론"
+  },
+  {
+   "termKr": "임진 일주",
+   "hanja": "壬辰",
+   "cnTerm": "壬辰",
+   "cnPinyin": "rénchén",
+   "jpTerm": "壬辰",
+   "jpReading": "みずのえたつ／じんしん",
+   "area": "gapja60_a",
+   "school": "자평 괴강·신살 일주론, 대만 신살 보조"
+  },
+  {
+   "termKr": "정묘 일주",
+   "hanja": "丁卯",
+   "cnTerm": "丁卯",
+   "cnPinyin": "dīngmǎo",
+   "jpTerm": "丁卯",
+   "jpReading": "ひのとう／ていぼう",
+   "area": "gapja60_a",
+   "school": "자평 편인 일주론, 대만 八字 心理 학파; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "정축 일주",
+   "hanja": "丁丑",
+   "cnTerm": "丁丑",
+   "cnPinyin": "dīngchǒu",
+   "jpTerm": "丁丑",
+   "jpReading": "ひのとうし／ていちゅう",
+   "area": "gapja60_a",
+   "school": "자평 잡기·신살 일주론, 대만 雜氣·신살; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "정해 일주",
+   "hanja": "丁亥",
+   "cnTerm": "丁亥",
+   "cnPinyin": "dīnghài",
+   "jpTerm": "丁亥",
+   "jpReading": "ひのとい／ていがい",
+   "area": "gapja60_a",
+   "school": "자평 관인·귀인 일주론, 대만 八字 일주론; 陰干 12운성은 학파별 이견(일부 대만·맹파는 陰干에 별도 포태를 세우지 않음)"
+  },
+  {
+   "termKr": "갑오 일주",
+   "hanja": "甲午",
+   "cnTerm": "甲午",
+   "cnPinyin": "jiǎwǔ",
+   "jpTerm": "甲午",
+   "jpReading": "きのえうま",
+   "area": "gapja60_b",
+   "school": "자평 일주론, 적천수 통명론 계열"
+  },
+  {
+   "termKr": "갑인 일주",
+   "hanja": "甲寅",
+   "cnTerm": "甲寅",
+   "cnPinyin": "jiǎyín",
+   "jpTerm": "甲寅",
+   "jpReading": "きのえとら",
+   "area": "gapja60_b",
+   "school": "건록격·간여지동 통설, 자평 녹겁론"
+  },
+  {
+   "termKr": "갑진 일주",
+   "hanja": "甲辰",
+   "cnTerm": "甲辰",
+   "cnPinyin": "jiǎchén",
+   "jpTerm": "甲辰",
+   "jpReading": "きのえたつ",
+   "area": "gapja60_b",
+   "school": "잡기재관 통설 + 한국 백호론, 대만은 백호 경시"
+  },
+  {
+   "termKr": "경술 일주",
+   "hanja": "庚戌",
+   "cnTerm": "庚戌",
+   "cnPinyin": "gēngxū",
+   "jpTerm": "庚戌",
+   "jpReading": "かのえいぬ",
+   "area": "gapja60_b",
+   "school": "괴강 통설(한중일대만 공통), 자평 화개론"
+  },
+  {
+   "termKr": "경신 일주(gapja60_b)",
+   "hanja": "庚申",
+   "cnTerm": "庚申",
+   "cnPinyin": "gēngshēn",
+   "jpTerm": "庚申",
+   "jpReading": "かのえさる",
+   "area": "gapja60_b",
+   "school": "건록격·간여지동·역마 통설"
+  },
+  {
+   "termKr": "경자 일주",
+   "hanja": "庚子",
+   "cnTerm": "庚子",
+   "cnPinyin": "gēngzǐ",
+   "jpTerm": "庚子",
+   "jpReading": "かのえね",
+   "area": "gapja60_b",
+   "school": "금수상관 통설(한중일대만 공통), 궁통보감 조후"
+  },
+  {
+   "termKr": "계묘 일주",
+   "hanja": "癸卯",
+   "cnTerm": "癸卯",
+   "cnPinyin": "guǐmǎo",
+   "jpTerm": "癸卯",
+   "jpReading": "みずのとう",
+   "area": "gapja60_b",
+   "school": "자평 음간 장생론(이설), 문창·식신 통설"
+  },
+  {
+   "termKr": "계축 일주",
+   "hanja": "癸丑",
+   "cnTerm": "癸丑",
+   "cnPinyin": "guǐchǒu",
+   "jpTerm": "癸丑",
+   "jpReading": "みずのとうし",
+   "area": "gapja60_b",
+   "school": "한국 백호론 + 자평 칠살·습토론, 대만 백호 경시"
+  },
+  {
+   "termKr": "계해 일주",
+   "hanja": "癸亥",
+   "cnTerm": "癸亥",
+   "cnPinyin": "guǐhài",
+   "jpTerm": "癸亥",
+   "jpReading": "みずのとい",
+   "area": "gapja60_b",
+   "school": "자평 간여지동·왕수론, 60갑자 종결주"
+  },
+  {
+   "termKr": "기미 일주",
+   "hanja": "己未",
+   "cnTerm": "己未",
+   "cnPinyin": "jǐwèi",
+   "jpTerm": "己未",
+   "jpReading": "つちのとひつじ",
+   "area": "gapja60_b",
+   "school": "자평 간여지동·화개론, 조후 계열"
+  },
+  {
+   "termKr": "기유 일주",
+   "hanja": "己酉",
+   "cnTerm": "己酉",
+   "cnPinyin": "jǐyǒu",
+   "jpTerm": "己酉",
+   "jpReading": "つちのととり",
+   "area": "gapja60_b",
+   "school": "자평 식신·문창 통설"
+  },
+  {
+   "termKr": "기해 일주",
+   "hanja": "己亥",
+   "cnTerm": "己亥",
+   "cnPinyin": "jǐhài",
+   "jpTerm": "己亥",
+   "jpReading": "つちのとい",
+   "area": "gapja60_b",
+   "school": "자평 재관 동주론, 잡기 관재 계열"
+  },
+  {
+   "termKr": "무술 일주",
+   "hanja": "戊戌",
+   "cnTerm": "戊戌",
+   "cnPinyin": "wùxū",
+   "jpTerm": "戊戌",
+   "jpReading": "つちのえいぬ",
+   "area": "gapja60_b",
+   "school": "괴강 확장설(戊戌·戊辰 포함 여부 학파 이견), 자평 조후론"
+  },
+  {
+   "termKr": "무신 일주",
+   "hanja": "戊申",
+   "cnTerm": "戊申",
+   "cnPinyin": "wùshēn",
+   "jpTerm": "戊申",
+   "jpReading": "つちのえさる",
+   "area": "gapja60_b",
+   "school": "문창·식신생재·역마 통설, 자평 재론"
+  },
+  {
+   "termKr": "무오 일주",
+   "hanja": "戊午",
+   "cnTerm": "戊午",
+   "cnPinyin": "wùwǔ",
+   "jpTerm": "戊午",
+   "jpReading": "つちのえうま",
+   "area": "gapja60_b",
+   "school": "양인격 통설, 자평 조후론"
+  },
+  {
+   "termKr": "병신 일주",
+   "hanja": "丙申",
+   "cnTerm": "丙申",
+   "cnPinyin": "bǐngshēn",
+   "jpTerm": "丙申",
+   "jpReading": "ひのえさる",
+   "area": "gapja60_b",
+   "school": "문창귀인 통설(한중일대만 공통), 자평 재살론"
+  },
+  {
+   "termKr": "병오 일주",
+   "hanja": "丙午",
+   "cnTerm": "丙午",
+   "cnPinyin": "bǐngwǔ",
+   "jpTerm": "丙午",
+   "jpReading": "ひのえうま",
+   "area": "gapja60_b",
+   "school": "양인격 통설(한중일대만 공통), 자평 양인론"
+  },
+  {
+   "termKr": "병진 일주",
+   "hanja": "丙辰",
+   "cnTerm": "丙辰",
+   "cnPinyin": "bǐngchén",
+   "jpTerm": "丙辰",
+   "jpReading": "ひのえたつ",
+   "area": "gapja60_b",
+   "school": "자평 잡기·화개론, 식신정관 통설"
+  },
+  {
+   "termKr": "신유 일주",
+   "hanja": "辛酉",
+   "cnTerm": "辛酉",
+   "cnPinyin": "xīnyǒu",
+   "jpTerm": "辛酉",
+   "jpReading": "かのととり",
+   "area": "gapja60_b",
+   "school": "건록격·간여지동 통설"
+  },
+  {
+   "termKr": "신축 일주",
+   "hanja": "辛丑",
+   "cnTerm": "辛丑",
+   "cnPinyin": "xīnchǒu",
+   "jpTerm": "辛丑",
+   "jpReading": "かのとうし",
+   "area": "gapja60_b",
+   "school": "자평 금고·습토론, 조후 계열"
+  },
+  {
+   "termKr": "신해 일주",
+   "hanja": "辛亥",
+   "cnTerm": "辛亥",
+   "cnPinyin": "xīnhài",
+   "jpTerm": "辛亥",
+   "jpReading": "かのとい",
+   "area": "gapja60_b",
+   "school": "금수상관 통설, 자평 상관생재론"
+  },
+  {
+   "termKr": "을묘 일주",
+   "hanja": "乙卯",
+   "cnTerm": "乙卯",
+   "cnPinyin": "yǐmǎo",
+   "jpTerm": "乙卯",
+   "jpReading": "きのとう",
+   "area": "gapja60_b",
+   "school": "건록격·간여지동 통설"
+  },
+  {
+   "termKr": "을미 일주",
+   "hanja": "乙未",
+   "cnTerm": "乙未",
+   "cnPinyin": "yǐwèi",
+   "jpTerm": "乙未",
+   "jpReading": "きのとひつじ",
+   "area": "gapja60_b",
+   "school": "한국 신살론(백호) + 자평 재고론, 대만은 백호를 경시"
+  },
+  {
+   "termKr": "을사 일주",
+   "hanja": "乙巳",
+   "cnTerm": "乙巳",
+   "cnPinyin": "yǐsì",
+   "jpTerm": "乙巳",
+   "jpReading": "きのとみ",
+   "area": "gapja60_b",
+   "school": "목화상관 통설, 자평 상관론"
+  },
+  {
+   "termKr": "임술 일주",
+   "hanja": "壬戌",
+   "cnTerm": "壬戌",
+   "cnPinyin": "rénxū",
+   "jpTerm": "壬戌",
+   "jpReading": "みずのえいぬ",
+   "area": "gapja60_b",
+   "school": "한국 백호 강조(괴강 편입은 학파 이견), 자평 잡기 재관론"
+  },
+  {
+   "termKr": "임인 일주",
+   "hanja": "壬寅",
+   "cnTerm": "壬寅",
+   "cnPinyin": "rényín",
+   "jpTerm": "壬寅",
+   "jpReading": "みずのえとら",
+   "area": "gapja60_b",
+   "school": "문창·식신생재 통설, 자평 제살론"
+  },
+  {
+   "termKr": "임자 일주",
+   "hanja": "壬子",
+   "cnTerm": "壬子",
+   "cnPinyin": "rénzǐ",
+   "jpTerm": "壬子",
+   "jpReading": "みずのえね",
+   "area": "gapja60_b",
+   "school": "양인격 통설, 자평 왕수 제방론"
+  },
+  {
+   "termKr": "정미 일주",
+   "hanja": "丁未",
+   "cnTerm": "丁未",
+   "cnPinyin": "dīngwèi",
+   "jpTerm": "丁未",
+   "jpReading": "ひのとひつじ",
+   "area": "gapja60_b",
+   "school": "자평 화개·편인론, 조후 계열"
+  },
+  {
+   "termKr": "정사 일주",
+   "hanja": "丁巳",
+   "cnTerm": "丁巳",
+   "cnPinyin": "dīngsì",
+   "jpTerm": "丁巳",
+   "jpReading": "ひのとみ",
+   "area": "gapja60_b",
+   "school": "자평 간여지동·왕화론"
+  },
+  {
+   "termKr": "정유 일주",
+   "hanja": "丁酉",
+   "cnTerm": "丁酉",
+   "cnPinyin": "dīngyǒu",
+   "jpTerm": "丁酉",
+   "jpReading": "ひのととり",
+   "area": "gapja60_b",
+   "school": "자평 음간 장생론(이설 존재), 문창·도화 통설"
+  },
+  {
+   "termKr": "간여지동 일주",
+   "hanja": "干與支同",
+   "cnTerm": "干支同 / 干支一氣",
+   "cnPinyin": "gān zhī tóng / gān zhī yī qì",
+   "jpTerm": "干支同",
+   "jpReading": "かんしどう",
+   "area": "gapja_eumnap",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "갑자 일주",
+   "hanja": "甲子",
+   "cnTerm": "甲子日",
+   "cnPinyin": "jiǎ zǐ rì",
+   "jpTerm": "甲子",
+   "jpReading": "きのえね",
+   "area": "gapja_eumnap",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "경신 일주",
+   "hanja": "庚申",
+   "cnTerm": "庚申日",
+   "cnPinyin": "gēng shēn rì",
+   "jpTerm": "庚申",
+   "jpReading": "かのえさる",
+   "area": "gapja_eumnap",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "고란일(고란살)",
+   "hanja": "孤鸞日 / 孤鸞煞",
+   "cnTerm": "孤鸞日 / 孤鸞煞",
+   "cnPinyin": "gū luán rì / gū luán shà",
+   "jpTerm": "孤鸞日",
+   "jpReading": "こらんにち",
+   "area": "gapja_eumnap",
+   "school": "통설(神殺)"
+  },
+  {
+   "termKr": "괴강 일주",
+   "hanja": "魁罡",
+   "cnTerm": "魁罡",
+   "cnPinyin": "kuí gāng",
+   "jpTerm": "魁罡",
+   "jpReading": "かいごう",
+   "area": "gapja_eumnap",
+   "school": "통설(神殺)"
+  },
+  {
+   "termKr": "납음오행",
+   "hanja": "納音五行",
+   "cnTerm": "納音 / 納音五行",
+   "cnPinyin": "nà yīn / nà yīn wǔ xíng",
+   "jpTerm": "納音",
+   "jpReading": "なっちん",
+   "area": "gapja_eumnap",
+   "school": "古法 중시 / 子平 경시(갈림)"
+  },
+  {
+   "termKr": "백호대살 일주",
+   "hanja": "白虎大煞",
+   "cnTerm": "白虎大煞",
+   "cnPinyin": "bái hǔ dà shà",
+   "jpTerm": "白虎大殺",
+   "jpReading": "びゃっこたいさつ",
+   "area": "gapja_eumnap",
+   "school": "통설(神殺)"
+  },
+  {
+   "termKr": "순중공망(공망)",
+   "hanja": "旬中空亡 / 空亡",
+   "cnTerm": "空亡 / 旬空",
+   "cnPinyin": "kōng wáng / xún kōng",
+   "jpTerm": "空亡 / 天中殺",
+   "jpReading": "くうぼう / てんちゅうさつ",
+   "area": "gapja_eumnap",
+   "school": "공통(일본은 天中殺 명칭)"
+  },
+  {
+   "termKr": "십악대패일",
+   "hanja": "十惡大敗日",
+   "cnTerm": "十惡大敗",
+   "cnPinyin": "shí è dà bài",
+   "jpTerm": "十悪大敗日",
+   "jpReading": "じゅうあくたいはいにち",
+   "area": "gapja_eumnap",
+   "school": "통설(神殺), 子平은 비판적"
+  },
+  {
+   "termKr": "양인 일주",
+   "hanja": "羊刃",
+   "cnTerm": "羊刃 / 陽刃",
+   "cnPinyin": "yáng rèn",
+   "jpTerm": "羊刃",
+   "jpReading": "ようじん",
+   "area": "gapja_eumnap",
+   "school": "자평통설(神殺)"
+  },
+  {
+   "termKr": "육순·순수(旬)",
+   "hanja": "旬 / 六旬",
+   "cnTerm": "旬 / 六甲旬",
+   "cnPinyin": "xún / liù jiǎ xún",
+   "jpTerm": "旬",
+   "jpReading": "じゅん",
+   "area": "gapja_eumnap",
+   "school": "공통"
+  },
+  {
+   "termKr": "육십갑자(60갑자)",
+   "hanja": "六十甲子",
+   "cnTerm": "六十甲子 / 六十花甲子",
+   "cnPinyin": "liù shí jiǎ zǐ",
+   "jpTerm": "六十干支",
+   "jpReading": "ろくじっかんし",
+   "area": "gapja_eumnap",
+   "school": "공통"
+  },
+  {
+   "termKr": "육십납음(30종 분류)",
+   "hanja": "六十納音",
+   "cnTerm": "六十甲子納音",
+   "cnPinyin": "liù shí jiǎ zǐ nà yīn",
+   "jpTerm": "六十納音",
+   "jpReading": "ろくじゅうなっちん",
+   "area": "gapja_eumnap",
+   "school": "古法 납음"
+  },
+  {
+   "termKr": "음양차착일",
+   "hanja": "陰陽差錯日",
+   "cnTerm": "陰陽差錯",
+   "cnPinyin": "yīn yáng chā cuò",
+   "jpTerm": "陰陽差錯日",
+   "jpReading": "いんようささくにち",
+   "area": "gapja_eumnap",
+   "school": "통설(神殺)"
+  },
+  {
+   "termKr": "일주론(일주)",
+   "hanja": "日柱 / 日元 · 日主",
+   "cnTerm": "日柱 / 日元 / 日主",
+   "cnPinyin": "rì zhù / rì yuán / rì zhǔ",
+   "jpTerm": "日柱 / 日主",
+   "jpReading": "にっちゅう / にっしゅ",
+   "area": "gapja_eumnap",
+   "school": "子平 핵심"
+  },
+  {
+   "termKr": "해중금",
+   "hanja": "海中金",
+   "cnTerm": "海中金",
+   "cnPinyin": "hǎi zhōng jīn",
+   "jpTerm": "海中金",
+   "jpReading": "かいちゅうきん",
+   "area": "gapja_eumnap",
+   "school": "古法 납음"
+  },
+  {
+   "termKr": "격국(gimun)",
+   "hanja": "格局",
+   "cnTerm": "格局",
+   "cnPinyin": "géjú",
+   "jpTerm": "格局",
+   "jpReading": "かくきょく",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "구궁",
+   "hanja": "九宮",
+   "cnTerm": "九宫",
+   "cnPinyin": "jiǔgōng",
+   "jpTerm": "九宮",
+   "jpReading": "きゅうきゅう",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "구성",
+   "hanja": "九星",
+   "cnTerm": "九星",
+   "cnPinyin": "jiǔxīng",
+   "jpTerm": "九星",
+   "jpReading": "きゅうせい",
+   "area": "gimun",
+   "school": "구성"
+  },
+  {
+   "termKr": "기문둔갑",
+   "hanja": "奇門遁甲",
+   "cnTerm": "奇门遁甲",
+   "cnPinyin": "qímén dùnjiǎ",
+   "jpTerm": "奇門遁甲",
+   "jpReading": "きもんとんこう",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "길흉방위",
+   "hanja": "吉凶方位",
+   "cnTerm": "吉凶方位",
+   "cnPinyin": "jíxiōng fāngwèi",
+   "jpTerm": "吉凶方位",
+   "jpReading": "きっきょうほうい",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "둔갑",
+   "hanja": "遁甲",
+   "cnTerm": "遁甲",
+   "cnPinyin": "dùnjiǎ",
+   "jpTerm": "遁甲",
+   "jpReading": "とんこう",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "삼기",
+   "hanja": "三奇",
+   "cnTerm": "三奇",
+   "cnPinyin": "sānqí",
+   "jpTerm": "三奇",
+   "jpReading": "さんき",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "연국기문",
+   "hanja": "煙局奇門",
+   "cnTerm": "烟局奇门",
+   "cnPinyin": "yānjú qímén",
+   "jpTerm": "煙局奇門",
+   "jpReading": "えんきょくきもん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "용신(gimun)",
+   "hanja": "用神",
+   "cnTerm": "用神",
+   "cnPinyin": "yòngshén",
+   "jpTerm": "用神",
+   "jpReading": "ようじん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "육의",
+   "hanja": "六儀",
+   "cnTerm": "六仪",
+   "cnPinyin": "liùyí",
+   "jpTerm": "六儀",
+   "jpReading": "りくぎ",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "음양둔",
+   "hanja": "陰陽遁",
+   "cnTerm": "阴阳遁",
+   "cnPinyin": "yīnyáng dùn",
+   "jpTerm": "陰陽遁",
+   "jpReading": "いんようとん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "절기삼원",
+   "hanja": "節氣三元",
+   "cnTerm": "节气三元",
+   "cnPinyin": "jiéqì sānyuán",
+   "jpTerm": "節氣三元",
+   "jpReading": "せっきさんげん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "정국",
+   "hanja": "定局",
+   "cnTerm": "定局",
+   "cnPinyin": "dìngjú",
+   "jpTerm": "定局",
+   "jpReading": "ていきょく",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "직부직사",
+   "hanja": "直符直使",
+   "cnTerm": "直符直使",
+   "cnPinyin": "zhífú zhíshǐ",
+   "jpTerm": "直符直使",
+   "jpReading": "ちょくふちょくし",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "천반지반",
+   "hanja": "天盤地盤",
+   "cnTerm": "天盘地盘",
+   "cnPinyin": "tiānpán dìpán",
+   "jpTerm": "天盤地盤",
+   "jpReading": "てんばんちばん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "팔문",
+   "hanja": "八門",
+   "cnTerm": "八门",
+   "cnPinyin": "bāmén",
+   "jpTerm": "八門",
+   "jpReading": "はちもん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "팔신",
+   "hanja": "八神",
+   "cnTerm": "八神",
+   "cnPinyin": "bāshén",
+   "jpTerm": "八神",
+   "jpReading": "はっしん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "포국",
+   "hanja": "布局",
+   "cnTerm": "布局",
+   "cnPinyin": "bùjú",
+   "jpTerm": "布局",
+   "jpReading": "ふきょく",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "홍국기문",
+   "hanja": "洪局奇門",
+   "cnTerm": "洪局奇门(한국 고유 계열)",
+   "cnPinyin": "hóngjú qímén",
+   "jpTerm": "洪局奇門(韓国独自系)",
+   "jpReading": "こうきょくきもん",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "홍연진결",
+   "hanja": "洪煙眞訣",
+   "cnTerm": "洪烟真诀(한국 고유 비결서)",
+   "cnPinyin": "hóngyān zhēnjué",
+   "jpTerm": "洪煙眞訣(韓国の秘訣書)",
+   "jpReading": "こうえんしんけつ",
+   "area": "gimun",
+   "school": "기문"
+  },
+  {
+   "termKr": "개두·절각(천간을 덮음·지지를 자름)",
+   "hanja": "蓋頭·截腳",
+   "cnTerm": "盖头·截脚",
+   "cnPinyin": "gài tóu · jié jiǎo",
+   "jpTerm": "蓋頭·截脚",
+   "jpReading": "がいとう・せっきゃく",
+   "area": "gungwi",
+   "school": "자평"
+  },
+  {
+   "termKr": "궁위 배속(자리 고정 원리)",
+   "hanja": "宮位配屬",
+   "cnTerm": "宫位配属",
+   "cnPinyin": "gōng wèi pèi shǔ",
+   "jpTerm": "宮位の配当",
+   "jpReading": "きゅういのはいとう",
+   "area": "gungwi",
+   "school": "공통(자평 통설; 맹파는 궁성동참으로 심화)"
+  },
+  {
+   "termKr": "근묘화실 운기 응용(시기 읽기)",
+   "hanja": "根苗花實 運期",
+   "cnTerm": "根苗花实 运期",
+   "cnPinyin": "gēn miáo huā shí · yùn qī",
+   "jpTerm": "根苗花実の運期",
+   "jpReading": "こんびょうかじつのうんき",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "길흉신의 좌궁(길신·흉신이 앉은 자리)",
+   "hanja": "吉凶神坐宮",
+   "cnTerm": "吉凶神坐宫",
+   "cnPinyin": "jí xiōng shén zuò gōng",
+   "jpTerm": "吉凶神の坐宮",
+   "jpReading": "きっきょうしんのざきゅう",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "사주 연한(기둥별 인생 시기 배속)",
+   "hanja": "四柱年限",
+   "cnTerm": "四柱年限",
+   "cnPinyin": "sì zhù nián xiàn",
+   "jpTerm": "四柱の年限",
+   "jpReading": "しちゅうのねんげん",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "시주궁(자식·말년의 자리)",
+   "hanja": "時柱宮",
+   "cnTerm": "时柱宫",
+   "cnPinyin": "shí zhù gōng",
+   "jpTerm": "時柱の宮",
+   "jpReading": "じちゅうのみや",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "연주궁(조상·초년의 자리)",
+   "hanja": "年柱宮",
+   "cnTerm": "年柱宫",
+   "cnPinyin": "nián zhù gōng",
+   "jpTerm": "年柱の宮",
+   "jpReading": "ねんちゅうのみや",
+   "area": "gungwi",
+   "school": "공통(한·중·일 자평 공통)"
+  },
+  {
+   "termKr": "월령·제강(달의 명령, 사주의 벼리)",
+   "hanja": "月令·提綱",
+   "cnTerm": "月令·提纲",
+   "cnPinyin": "yuè lìng · tí gāng",
+   "jpTerm": "月令·提綱",
+   "jpReading": "げつれい・ていこう",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "월주궁(부모·형제·청년의 자리)",
+   "hanja": "月柱宮",
+   "cnTerm": "月柱宫",
+   "cnPinyin": "yuè zhù gōng",
+   "jpTerm": "月柱の宮",
+   "jpReading": "げっちゅうのみや",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "일주궁(자기 자신의 자리)",
+   "hanja": "日柱宮",
+   "cnTerm": "日柱宫",
+   "cnPinyin": "rì zhù gōng",
+   "jpTerm": "日柱の宮",
+   "jpReading": "にっちゅうのみや",
+   "area": "gungwi",
+   "school": "공통"
+  },
+  {
+   "termKr": "자좌 통근(천간이 제 지지에 뿌리내림)",
+   "hanja": "坐支通根",
+   "cnTerm": "坐支通根",
+   "cnPinyin": "zuò zhī tōng gēn",
+   "jpTerm": "坐支通根",
+   "jpReading": "ざしつうこん",
+   "area": "gungwi",
+   "school": "자평"
+  },
+  {
+   "termKr": "자좌(일간이 깔고 앉은 자리)",
+   "hanja": "自坐",
+   "cnTerm": "自坐",
+   "cnPinyin": "zì zuò",
+   "jpTerm": "自坐",
+   "jpReading": "じざ",
+   "area": "gungwi",
+   "school": "자평"
+  },
+  {
+   "termKr": "좌하 십성(앉은 자리의 십성)",
+   "hanja": "坐下十神",
+   "cnTerm": "坐下十神",
+   "cnPinyin": "zuò xià shí shén",
+   "jpTerm": "坐下の十神",
+   "jpReading": "ざかのじゅっしん",
+   "area": "gungwi",
+   "school": "자평"
+  },
+  {
+   "termKr": "지지 물상(열두 지지의 계절·형상)",
+   "hanja": "地支物象",
+   "cnTerm": "地支物象",
+   "cnPinyin": "dì zhī wù xiàng",
+   "jpTerm": "地支の物象",
+   "jpReading": "ちしのぶっしょう",
+   "area": "gungwi",
+   "school": "자평(窮通寶鑑 조후·물상 계열)"
+  },
+  {
+   "termKr": "천간 물상(열 천간의 자연 형상)",
+   "hanja": "天干物象",
+   "cnTerm": "天干物象",
+   "cnPinyin": "tiān gān wù xiàng",
+   "jpTerm": "天干の物象",
+   "jpReading": "てんかんのぶっしょう",
+   "area": "gungwi",
+   "school": "자평(滴天髓·窮通寶鑑 계열 물상론)"
+  },
+  {
+   "termKr": "감정선",
+   "hanja": "感情線",
+   "cnTerm": "感情线",
+   "cnPinyin": "gǎnqíngxiàn",
+   "jpTerm": "感情線",
+   "jpReading": "かんじょうせん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "결혼선",
+   "hanja": "結婚線",
+   "cnTerm": "结婚线",
+   "cnPinyin": "jiéhūnxiàn",
+   "jpTerm": "結婚線",
+   "jpReading": "けっこんせん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "골상",
+   "hanja": "骨相",
+   "cnTerm": "骨相",
+   "cnPinyin": "gǔxiàng",
+   "jpTerm": "骨相",
+   "jpReading": "こっそう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "관록궁(gwansang)",
+   "hanja": "官祿宮",
+   "cnTerm": "官禄宫",
+   "cnPinyin": "guānlù gōng",
+   "jpTerm": "官祿宮",
+   "jpReading": "かんろくきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "귀(채청관)",
+   "hanja": "耳",
+   "cnTerm": "耳",
+   "cnPinyin": "ěr",
+   "jpTerm": "耳",
+   "jpReading": "じ",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "금성구·목성구",
+   "hanja": "金星丘",
+   "cnTerm": "金星丘",
+   "cnPinyin": "jīnxīngqiū",
+   "jpTerm": "金星丘",
+   "jpReading": "きんせいきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "기색(찰색)",
+   "hanja": "氣色",
+   "cnTerm": "气色",
+   "cnPinyin": "qìsè",
+   "jpTerm": "気色",
+   "jpReading": "きしょく",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "눈(감찰관)",
+   "hanja": "眼",
+   "cnTerm": "眼",
+   "cnPinyin": "yǎn",
+   "jpTerm": "眼",
+   "jpReading": "がん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "두뇌선(지혜선)",
+   "hanja": "頭腦線",
+   "cnTerm": "头脑线",
+   "cnPinyin": "tóunǎoxiàn",
+   "jpTerm": "頭脳線",
+   "jpReading": "ずのうせん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "막쥔선(단장)",
+   "hanja": "斷掌",
+   "cnTerm": "断掌",
+   "cnPinyin": "duànzhǎng",
+   "jpTerm": "斷掌",
+   "jpReading": "だんしょう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "면상 십이궁",
+   "hanja": "面相十二宮",
+   "cnTerm": "面相十二宫",
+   "cnPinyin": "miànxiàng shí'èr gōng",
+   "jpTerm": "面相十二宮",
+   "jpReading": "めんそうじゅうにきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "명궁(gwansang)",
+   "hanja": "命宮",
+   "cnTerm": "命宫",
+   "cnPinyin": "mìnggōng",
+   "jpTerm": "命宮",
+   "jpReading": "めいきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "법령",
+   "hanja": "法令",
+   "cnTerm": "法令",
+   "cnPinyin": "fǎlìng",
+   "jpTerm": "法令",
+   "jpReading": "ほうれい",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "산근(질액궁)",
+   "hanja": "山根",
+   "cnTerm": "山根",
+   "cnPinyin": "shāngēn",
+   "jpTerm": "山根",
+   "jpReading": "さんこん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "삼정",
+   "hanja": "三停",
+   "cnTerm": "三停",
+   "cnPinyin": "sāntíng",
+   "jpTerm": "三停",
+   "jpReading": "さんてい",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "상술(관상학)",
+   "hanja": "相術",
+   "cnTerm": "相术",
+   "cnPinyin": "xiàngshù",
+   "jpTerm": "観相術",
+   "jpReading": "かんそうじゅつ",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "생명선",
+   "hanja": "生命線",
+   "cnTerm": "生命线",
+   "cnPinyin": "shēngmìngxiàn",
+   "jpTerm": "生命線",
+   "jpReading": "せいめいせん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "손모양 오행",
+   "hanja": "手形五行",
+   "cnTerm": "手形五行",
+   "cnPinyin": "shǒuxíng wǔxíng",
+   "jpTerm": "手形五行",
+   "jpReading": "てがたごぎょう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "수상",
+   "hanja": "手相",
+   "cnTerm": "手相",
+   "cnPinyin": "shǒuxiàng",
+   "jpTerm": "手相",
+   "jpReading": "てそう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "오관",
+   "hanja": "五官",
+   "cnTerm": "五官",
+   "cnPinyin": "wǔguān",
+   "jpTerm": "五官",
+   "jpReading": "ごかん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "오악",
+   "hanja": "五嶽",
+   "cnTerm": "五岳",
+   "cnPinyin": "wǔyuè",
+   "jpTerm": "五岳",
+   "jpReading": "ごがく",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "와잠",
+   "hanja": "臥蠶",
+   "cnTerm": "卧蚕",
+   "cnPinyin": "wòcán",
+   "jpTerm": "臥蠶",
+   "jpReading": "がさん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "운명선",
+   "hanja": "命運線",
+   "cnTerm": "命运线",
+   "cnPinyin": "mìngyùnxiàn",
+   "jpTerm": "運命線",
+   "jpReading": "うんめいせん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "인중",
+   "hanja": "人中",
+   "cnTerm": "人中",
+   "cnPinyin": "rénzhōng",
+   "jpTerm": "人中",
+   "jpReading": "じんちゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "입·눈썹(출납관·보수관)",
+   "hanja": "口眉",
+   "cnTerm": "口眉",
+   "cnPinyin": "kǒu méi",
+   "jpTerm": "口眉",
+   "jpReading": "こうび",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "장구(손바닥 구릉)",
+   "hanja": "掌丘",
+   "cnTerm": "掌丘",
+   "cnPinyin": "zhǎngqiū",
+   "jpTerm": "掌丘",
+   "jpReading": "しょうきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "재백궁(gwansang)",
+   "hanja": "財帛宮",
+   "cnTerm": "财帛宫",
+   "cnPinyin": "cáibó gōng",
+   "jpTerm": "財帛宮",
+   "jpReading": "ざいはくきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "전택궁(gwansang)",
+   "hanja": "田宅宮",
+   "cnTerm": "田宅宫",
+   "cnPinyin": "tiánzhái gōng",
+   "jpTerm": "田宅宮",
+   "jpReading": "でんたくきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "처첩궁(부부궁)",
+   "hanja": "妻妾宮",
+   "cnTerm": "妻妾宫",
+   "cnPinyin": "qīqiè gōng",
+   "jpTerm": "妻妾宮",
+   "jpReading": "さいしょうきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "천이궁(gwansang)",
+   "hanja": "遷移宮",
+   "cnTerm": "迁移宫",
+   "cnPinyin": "qiānyí gōng",
+   "jpTerm": "遷移宮",
+   "jpReading": "せんいきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "코(심변관)",
+   "hanja": "鼻",
+   "cnTerm": "鼻",
+   "cnPinyin": "bí",
+   "jpTerm": "鼻",
+   "jpReading": "び",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "태양선",
+   "hanja": "太陽線",
+   "cnTerm": "太阳线",
+   "cnPinyin": "tàiyángxiàn",
+   "jpTerm": "太陽線",
+   "jpReading": "たいようせん",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "형제궁(gwansang)",
+   "hanja": "兄弟宮",
+   "cnTerm": "兄弟宫",
+   "cnPinyin": "xiōngdì gōng",
+   "jpTerm": "兄弟宮",
+   "jpReading": "けいていきゅう",
+   "area": "gwansang",
+   "school": "상학"
+  },
+  {
+   "termKr": "건록격",
+   "hanja": "建祿格",
+   "cnTerm": "建禄格",
+   "cnPinyin": "jiàn lù gé",
+   "jpTerm": "建禄格",
+   "jpReading": "けんろくかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "격국",
+   "hanja": "格局",
+   "cnTerm": "格局",
+   "cnPinyin": "gé jú",
+   "jpTerm": "格局",
+   "jpReading": "かっきょく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "내격·외격(정격·변격)",
+   "hanja": "內格·外格(正格·變格)",
+   "cnTerm": "内格·外格(正格/变格)",
+   "cnPinyin": "nèi gé · wài gé",
+   "jpTerm": "内格·外格",
+   "jpReading": "ないかく・がいかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "상관격",
+   "hanja": "傷官格",
+   "cnTerm": "伤官格",
+   "cnPinyin": "shāng guān gé",
+   "jpTerm": "傷官格",
+   "jpReading": "しょうかんかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "성격·파격",
+   "hanja": "成格·破格",
+   "cnTerm": "成格·破格",
+   "cnPinyin": "chéng gé · pò gé",
+   "jpTerm": "成格·破格",
+   "jpReading": "せいかく・はかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "식신격",
+   "hanja": "食神格",
+   "cnTerm": "食神格",
+   "cnPinyin": "shí shén gé",
+   "jpTerm": "食神格",
+   "jpReading": "しょくしんかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "양인격",
+   "hanja": "羊刃格",
+   "cnTerm": "羊刃格",
+   "cnPinyin": "yáng rèn gé",
+   "jpTerm": "羊刃格(陽刃·月刃)",
+   "jpReading": "ようじんかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "일행득기격(전왕격)",
+   "hanja": "一行得氣格(專旺格)",
+   "cnTerm": "一行得气格(专旺格)",
+   "cnPinyin": "yī xíng dé qì gé",
+   "jpTerm": "一行得気格",
+   "jpReading": "いちぎょうとっきかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "잡기격(잡기재관격)",
+   "hanja": "雜氣格(雜氣財官格)",
+   "cnTerm": "杂气格(杂气财官格)",
+   "cnPinyin": "zá qì gé",
+   "jpTerm": "雑気格",
+   "jpReading": "ざっきかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "정관격",
+   "hanja": "正官格",
+   "cnTerm": "正官格",
+   "cnPinyin": "zhèng guān gé",
+   "jpTerm": "正官格",
+   "jpReading": "せいかんかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "정인격(인수격)",
+   "hanja": "正印格(印綬格)",
+   "cnTerm": "正印格",
+   "cnPinyin": "zhèng yìn gé",
+   "jpTerm": "印綬格",
+   "jpReading": "いんじゅかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "정재격",
+   "hanja": "正財格",
+   "cnTerm": "正财格",
+   "cnPinyin": "zhèng cái gé",
+   "jpTerm": "正財格",
+   "jpReading": "せいざいかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종강격",
+   "hanja": "從強格",
+   "cnTerm": "从强格",
+   "cnPinyin": "cóng qiáng gé",
+   "jpTerm": "従強格",
+   "jpReading": "じゅうきょうかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종살격",
+   "hanja": "從殺格",
+   "cnTerm": "从杀格",
+   "cnPinyin": "cóng shā gé",
+   "jpTerm": "従殺格",
+   "jpReading": "じゅうさつかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종세격",
+   "hanja": "從勢格",
+   "cnTerm": "从势格",
+   "cnPinyin": "cóng shì gé",
+   "jpTerm": "従勢格",
+   "jpReading": "じゅうせいかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종아격",
+   "hanja": "從兒格",
+   "cnTerm": "从儿格",
+   "cnPinyin": "cóng ér gé",
+   "jpTerm": "従児格",
+   "jpReading": "じゅうじかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종왕격",
+   "hanja": "從旺格",
+   "cnTerm": "从旺格",
+   "cnPinyin": "cóng wàng gé",
+   "jpTerm": "従旺格",
+   "jpReading": "じゅうおうかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종재격",
+   "hanja": "從財格",
+   "cnTerm": "从财格",
+   "cnPinyin": "cóng cái gé",
+   "jpTerm": "従財格",
+   "jpReading": "じゅうざいかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "편관격(칠살격)",
+   "hanja": "偏官格(七殺格)",
+   "cnTerm": "七杀格",
+   "cnPinyin": "qī shā gé",
+   "jpTerm": "偏官格(七殺)",
+   "jpReading": "へんかんかく(しちさつ)",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "편인격",
+   "hanja": "偏印格",
+   "cnTerm": "偏印格",
+   "cnPinyin": "piān yìn gé",
+   "jpTerm": "偏印格(梟神)",
+   "jpReading": "へんいんかく(きょうしん)",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "편재격",
+   "hanja": "偏財格",
+   "cnTerm": "偏财格",
+   "cnPinyin": "piān cái gé",
+   "jpTerm": "偏財格",
+   "jpReading": "へんざいかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "화기격",
+   "hanja": "化氣格",
+   "cnTerm": "化气格",
+   "cnPinyin": "huà qì gé",
+   "jpTerm": "化気格",
+   "jpReading": "かきかく",
+   "area": "gyeokguk",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "가색격",
+   "hanja": "稼穡格",
+   "cnTerm": "稼穑格",
+   "cnPinyin": "jià sè gé",
+   "jpTerm": "稼穡格",
+   "jpReading": "かしょくかく",
+   "area": "gyeokguk_ex",
+   "school": "일행득기격 토격. 진술축미 사고가 두루 갖춰질수록 진격으로 보는 견해가 대만·중국 교본에 있음."
+  },
+  {
+   "termKr": "갑기합화토격",
+   "hanja": "甲己合化土格",
+   "cnTerm": "甲己合化土格",
+   "cnPinyin": "jiǎ jǐ hé huà tǔ gé",
+   "jpTerm": "甲己合化土格",
+   "jpReading": "こうきごうかどかく",
+   "area": "gyeokguk_ex",
+   "school": "화기격 갑기합화. 서락오(徐樂吾, 민국) 「자평진전평주」가 화신 통근을 엄격 요구, 대만 통설이 이를 수용."
+  },
+  {
+   "termKr": "건록격(심화)",
+   "hanja": "建祿格",
+   "cnTerm": "建禄格",
+   "cnPinyin": "jiàn lù gé",
+   "jpTerm": "建禄格",
+   "jpReading": "けんろくかく",
+   "area": "gyeokguk_ex",
+   "school": "건록·월겁 별론. 심효첨 자평진전이 '용신을 월령 밖에서 구함'을 명시, 대만 교본 표준."
+  },
+  {
+   "termKr": "곡직격",
+   "hanja": "曲直格",
+   "cnTerm": "曲直格",
+   "cnPinyin": "qū zhí gé",
+   "jpTerm": "曲直格",
+   "jpReading": "きょくちょくかく",
+   "area": "gyeokguk_ex",
+   "school": "일행득기격 목격. 대만 종의명(鍾義明) 등 현대 명리서도 표준 분류로 수록."
+  },
+  {
+   "termKr": "괴강격",
+   "hanja": "魁罡格",
+   "cnTerm": "魁罡格",
+   "cnPinyin": "kuí gāng gé",
+   "jpTerm": "魁罡格",
+   "jpReading": "かいごうかく",
+   "area": "gyeokguk_ex",
+   "school": "외격·특수 일주격. 괴강일 구성(庚辰·庚戌·壬辰·戊戌)에 무진(戊辰)·임술(壬戌) 포함 여부가 학파별로 갈림."
+  },
+  {
+   "termKr": "도충격",
+   "hanja": "倒沖格",
+   "cnTerm": "倒冲格",
+   "cnPinyin": "dào chōng gé",
+   "jpTerm": "倒沖格",
+   "jpReading": "とうちゅうかく",
+   "area": "gyeokguk_ex",
+   "school": "고전 잡격(飛天祿馬·倒沖). 청대 이후 정통 자평론은 신뢰도를 낮게 보아 신중 적용, 대만 현대 명리도 보조 참고로만 취급."
+  },
+  {
+   "termKr": "무계합화화격",
+   "hanja": "戊癸合化火格",
+   "cnTerm": "戊癸合化火格",
+   "cnPinyin": "wù guǐ hé huà huǒ gé",
+   "jpTerm": "戊癸合化火格",
+   "jpReading": "ぼきごうかかかく",
+   "area": "gyeokguk_ex",
+   "school": "화기격 무계합화. 대만·중국 통설 모두 화신의 당령을 진화의 필수 조건으로 봄."
+  },
+  {
+   "termKr": "병신합화수격",
+   "hanja": "丙辛合化水格",
+   "cnTerm": "丙辛合化水格",
+   "cnPinyin": "bǐng xīn hé huà shuǐ gé",
+   "jpTerm": "丙辛合化水格",
+   "jpReading": "へいしんごうかすいかく",
+   "area": "gyeokguk_ex",
+   "school": "화기격 병신합화. 대만·일본 사주추명 공통 분류."
+  },
+  {
+   "termKr": "시상일위귀격",
+   "hanja": "時上一位貴格",
+   "cnTerm": "时上一位贵格",
+   "cnPinyin": "shí shàng yī wèi guì gé",
+   "jpTerm": "時上一位貴格",
+   "jpReading": "じじょういちいきかく",
+   "area": "gyeokguk_ex",
+   "school": "외격 중 시상 칠살론. 시상일위귀격은 시상편관격과 함께 자평·『삼명통회』 계열에서 다룸, 대만 교본도 수록."
+  },
+  {
+   "termKr": "양신성상격",
+   "hanja": "兩神成象格",
+   "cnTerm": "两神成象格",
+   "cnPinyin": "liǎng shén chéng xiàng gé",
+   "jpTerm": "両神成象格",
+   "jpReading": "りょうしんせいしょうかく",
+   "area": "gyeokguk_ex",
+   "school": "임철초 『적천수천미』 양신성상 전론. 대만 양상윤(梁湘潤)도 청격 사례로 해설."
+  },
+  {
+   "termKr": "양인격(심화)",
+   "hanja": "羊刃格",
+   "cnTerm": "羊刃格",
+   "cnPinyin": "yáng rèn gé",
+   "jpTerm": "羊刃格",
+   "jpReading": "ようじんかく",
+   "area": "gyeokguk_ex",
+   "school": "양인격 정론. 대만은 양일간 한정(통설)과 음간 포함설(일부)이 갈림 — 한·중·일 다수설은 양간 한정."
+  },
+  {
+   "termKr": "염상격",
+   "hanja": "炎上格",
+   "cnTerm": "炎上格",
+   "cnPinyin": "yán shàng gé",
+   "jpTerm": "炎上格",
+   "jpReading": "えんじょうかく",
+   "area": "gyeokguk_ex",
+   "school": "일행득기격 화격. 한·중·일·대만 공통 분류, 명칭·표기 동일."
+  },
+  {
+   "termKr": "윤하격",
+   "hanja": "潤下格",
+   "cnTerm": "润下格",
+   "cnPinyin": "rùn xià gé",
+   "jpTerm": "潤下格",
+   "jpReading": "じゅんげかく",
+   "area": "gyeokguk_ex",
+   "school": "일행득기격 수격. 한·중·일·대만 공통, 표기 동일."
+  },
+  {
+   "termKr": "을경합화금격",
+   "hanja": "乙庚合化金格",
+   "cnTerm": "乙庚合化金格",
+   "cnPinyin": "yǐ gēng hé huà jīn gé",
+   "jpTerm": "乙庚合化金格",
+   "jpReading": "おつこうごうかきんかく",
+   "area": "gyeokguk_ex",
+   "school": "화기격 을경합화. 대만 통설은 화신 금의 좌하 통근을 중시."
+  },
+  {
+   "termKr": "일행득기격(전왕격)(gyeokguk_ex)",
+   "hanja": "一行得氣格",
+   "cnTerm": "一行得气格",
+   "cnPinyin": "yī xíng dé qì gé",
+   "jpTerm": "一行得気格",
+   "jpReading": "いちぎょうとっきかく",
+   "area": "gyeokguk_ex",
+   "school": "전왕격(專旺格)=일행득기격 5종 총강. 한·중·일·대만 공통 분류, 대만 현대서는 專旺格 명칭을 즐겨 씀."
+  },
+  {
+   "termKr": "잡기재관격",
+   "hanja": "雜氣財官格",
+   "cnTerm": "杂气财官格",
+   "cnPinyin": "zá qì cái guān gé",
+   "jpTerm": "雑気財官格",
+   "jpReading": "ざっきざいかんかく",
+   "area": "gyeokguk_ex",
+   "school": "잡기격 정론. 대만·일본은 '묘고봉충' 해석에서 개고(開庫)와 손상(損傷) 양설이 병존."
+  },
+  {
+   "termKr": "정란차격",
+   "hanja": "井欄叉格",
+   "cnTerm": "井栏叉格",
+   "cnPinyin": "jǐng lán chā gé",
+   "jpTerm": "井欄叉格",
+   "jpReading": "せいらんさかく",
+   "area": "gyeokguk_ex",
+   "school": "고전 잡격. 정통 자평은 조건 까다로워 희소격으로 봄, 대만·일본 명리서도 사례 위주 소개."
+  },
+  {
+   "termKr": "정임합화목격",
+   "hanja": "丁壬合化木格",
+   "cnTerm": "丁壬合化木格",
+   "cnPinyin": "dīng rén hé huà mù gé",
+   "jpTerm": "丁壬合化木格",
+   "jpReading": "ていじんごうかもくかく",
+   "area": "gyeokguk_ex",
+   "school": "화기격 정임합화. 대만 명리는 정임합의 별칭보다 화신 성립 조건을 우선시."
+  },
+  {
+   "termKr": "종강격(gyeokguk_ex)",
+   "hanja": "從強格",
+   "cnTerm": "从强格",
+   "cnPinyin": "cóng qiáng gé",
+   "jpTerm": "従強格",
+   "jpReading": "じゅうきょうかく",
+   "area": "gyeokguk_ex",
+   "school": "종격 세분론. 종왕·종강 분리는 청대 이후 정밀화, 대만 명리 교본 표준."
+  },
+  {
+   "termKr": "종살격(gyeokguk_ex)",
+   "hanja": "從殺格",
+   "cnTerm": "从杀格",
+   "cnPinyin": "cóng shā gé",
+   "jpTerm": "従殺格",
+   "jpReading": "じゅうさつかく",
+   "area": "gyeokguk_ex",
+   "school": "종격 중 관살종. 진종 조건 강조는 위천리(韋千里, 민국·홍콩 명가) 「명학강의」에서 정밀화, 대만 교본도 이를 표준으로 수용."
+  },
+  {
+   "termKr": "종세격(gyeokguk_ex)",
+   "hanja": "從勢格",
+   "cnTerm": "从势格",
+   "cnPinyin": "cóng shì gé",
+   "jpTerm": "従勢格",
+   "jpReading": "じゅうせいかく",
+   "area": "gyeokguk_ex",
+   "school": "임철초 『적천수천미』 창안 개념. 대만 명리 교본은 종세를 가종 논의의 핵심 사례로 다룸."
+  },
+  {
+   "termKr": "종아격(gyeokguk_ex)",
+   "hanja": "從兒格",
+   "cnTerm": "从儿格",
+   "cnPinyin": "cóng ér gé",
+   "jpTerm": "従児格",
+   "jpReading": "じゅうじかく",
+   "area": "gyeokguk_ex",
+   "school": "종격 중 식상종. 자평 정통, 대만 양상윤(梁湘潤) 강의에서 식상생재 연결을 중시."
+  },
+  {
+   "termKr": "종왕격(gyeokguk_ex)",
+   "hanja": "從旺格",
+   "cnTerm": "从旺格",
+   "cnPinyin": "cóng wàng gé",
+   "jpTerm": "従旺格",
+   "jpReading": "じゅうおうかく",
+   "area": "gyeokguk_ex",
+   "school": "자평 격국론, 종격 분류. 서락오(徐樂吾, 민국) 평주를 따르는 대만 통설은 종왕·종강을 엄격히 분리."
+  },
+  {
+   "termKr": "종재격(gyeokguk_ex)",
+   "hanja": "從財格",
+   "cnTerm": "从财格",
+   "cnPinyin": "cóng cái gé",
+   "jpTerm": "従財格",
+   "jpReading": "じゅうざいかく",
+   "area": "gyeokguk_ex",
+   "school": "종격 정통론. 한·중·일·대만 공통이나, 대만은 가종(假從)·진종(眞從) 판별을 특히 세밀화."
+  },
+  {
+   "termKr": "종혁격",
+   "hanja": "從革格",
+   "cnTerm": "从革格",
+   "cnPinyin": "cóng gé gé",
+   "jpTerm": "従革格",
+   "jpReading": "じゅうかくかく",
+   "area": "gyeokguk_ex",
+   "school": "일행득기격 금격. 명칭의 '종(從)'을 종격과 혼동 주의, 대만 교본도 별도 항목으로 구분."
+  },
+  {
+   "termKr": "화기격(gyeokguk_ex)",
+   "hanja": "化氣格",
+   "cnTerm": "化气格",
+   "cnPinyin": "huà qì gé",
+   "jpTerm": "化気格",
+   "jpReading": "かきかく",
+   "area": "gyeokguk_ex",
+   "school": "화기격 5종의 총강. 대만·일본 모두 진화/가화 판별을 핵심으로 다룸."
+  },
+  {
+   "termKr": "갑기합화토",
+   "hanja": "甲己合化土",
+   "cnTerm": "甲己合化土",
+   "cnPinyin": "jiǎ jǐ hé huà tǔ",
+   "jpTerm": "甲己の合(化土)",
+   "jpReading": "こうき の ごう(かど)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "무계합화화",
+   "hanja": "戊癸合化火",
+   "cnTerm": "戊癸合化火",
+   "cnPinyin": "wù guǐ hé huà huǒ",
+   "jpTerm": "戊癸の合(化火)",
+   "jpReading": "ぼき の ごう(かか)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "반음·복음",
+   "hanja": "反吟·伏吟",
+   "cnTerm": "反吟·伏吟",
+   "cnPinyin": "fǎnyín·fúyín",
+   "jpTerm": "反吟·伏吟",
+   "jpReading": "はんぎん・ふくぎん",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "반합",
+   "hanja": "半合",
+   "cnTerm": "半合",
+   "cnPinyin": "bànhé",
+   "jpTerm": "半合",
+   "jpReading": "はんごう",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "방합",
+   "hanja": "方合(三會)",
+   "cnTerm": "方合(三會局)",
+   "cnPinyin": "fānghé (sānhuìjú)",
+   "jpTerm": "方合",
+   "jpReading": "ほうごう",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "병신합화수",
+   "hanja": "丙辛合化水",
+   "cnTerm": "丙辛合化水",
+   "cnPinyin": "bǐng xīn hé huà shuǐ",
+   "jpTerm": "丙辛の合(化水)",
+   "jpReading": "へいしん の ごう(かすい)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "사유축 금국",
+   "hanja": "巳酉丑金局",
+   "cnTerm": "巳酉丑三合金局",
+   "cnPinyin": "sì yǒu chǒu sānhé jīnjú",
+   "jpTerm": "巳酉丑三合金局",
+   "jpReading": "しゆうちゅう さんごう きんきょく",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "삼형",
+   "hanja": "三刑",
+   "cnTerm": "三刑",
+   "cnPinyin": "sānxíng",
+   "jpTerm": "三刑",
+   "jpReading": "さんけい",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "신자진 수국",
+   "hanja": "申子辰水局",
+   "cnTerm": "申子辰三合水局",
+   "cnPinyin": "shēn zǐ chén sānhé shuǐjú",
+   "jpTerm": "申子辰三合水局",
+   "jpReading": "しんしちん さんごう すいきょく",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "암합",
+   "hanja": "暗合",
+   "cnTerm": "暗合(干支暗合)",
+   "cnPinyin": "ànhé (gānzhī ànhé)",
+   "jpTerm": "暗合",
+   "jpReading": "あんごう",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "육파",
+   "hanja": "六破",
+   "cnTerm": "六破",
+   "cnPinyin": "liùpò",
+   "jpTerm": "破(六破)",
+   "jpReading": "は(ろくは)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "육해(천)",
+   "hanja": "六害(穿)",
+   "cnTerm": "六害(盲派稱穿)",
+   "cnPinyin": "liùhài (mángpài chēng chuān)",
+   "jpTerm": "六害",
+   "jpReading": "ろくがい",
+   "area": "hapchung",
+   "school": "공통(자평/맹파 용어 갈림)"
+  },
+  {
+   "termKr": "을경합화금",
+   "hanja": "乙庚合化金",
+   "cnTerm": "乙庚合化金",
+   "cnPinyin": "yǐ gēng hé huà jīn",
+   "jpTerm": "乙庚の合(化金)",
+   "jpReading": "おつこう の ごう(かきん)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "인오술 화국",
+   "hanja": "寅午戌火局",
+   "cnTerm": "寅午戌三合火局",
+   "cnPinyin": "yín wǔ xū sānhé huǒjú",
+   "jpTerm": "寅午戌三合火局",
+   "jpReading": "いんごじゅつ さんごう かきょく",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "자형·상형",
+   "hanja": "自刑·相刑",
+   "cnTerm": "自刑·相刑(子卯刑)",
+   "cnPinyin": "zìxíng·xiāngxíng (zǐ mǎo xíng)",
+   "jpTerm": "自刑·相刑",
+   "jpReading": "じけい・そうけい",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "쟁합·투합·합이불화",
+   "hanja": "爭合·妒合·合而不化",
+   "cnTerm": "爭合·妒合·合而不化",
+   "cnPinyin": "zhēnghé·dùhé·hé ér bù huà",
+   "jpTerm": "争合·妬合·合して化せず",
+   "jpReading": "そうごう・とごう・ごうしてかせず",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "정임합화목",
+   "hanja": "丁壬合化木",
+   "cnTerm": "丁壬合化木",
+   "cnPinyin": "dīng rén hé huà mù",
+   "jpTerm": "丁壬の合(化木)",
+   "jpReading": "ていじん の ごう(かもく)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "지지삼합",
+   "hanja": "地支三合",
+   "cnTerm": "地支三合(三合局)",
+   "cnPinyin": "dìzhī sānhé (sānhéjú)",
+   "jpTerm": "三合",
+   "jpReading": "さんごう",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "지지육충",
+   "hanja": "地支六沖",
+   "cnTerm": "地支六冲",
+   "cnPinyin": "dìzhī liùchōng",
+   "jpTerm": "六冲(沖)",
+   "jpReading": "ろくちゅう(ちゅう)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "지지육합",
+   "hanja": "地支六合",
+   "cnTerm": "地支六合",
+   "cnPinyin": "dìzhī liùhé",
+   "jpTerm": "支合(六合)",
+   "jpReading": "しごう(りくごう)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "천간오합",
+   "hanja": "天干五合",
+   "cnTerm": "天干五合(天干合)",
+   "cnPinyin": "tiāngān wǔhé",
+   "jpTerm": "干合(五合)",
+   "jpReading": "かんごう(ごごう)",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "천간충",
+   "hanja": "天干相沖",
+   "cnTerm": "天干四冲(七冲)",
+   "cnPinyin": "tiāngān sìchōng (qīchōng)",
+   "jpTerm": "干冲",
+   "jpReading": "かんちゅう",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "천극지충",
+   "hanja": "天剋地沖",
+   "cnTerm": "天克地冲",
+   "cnPinyin": "tiānkè dìchōng",
+   "jpTerm": "天剋地冲",
+   "jpReading": "てんこくちちゅう",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "해묘미 목국",
+   "hanja": "亥卯未木局",
+   "cnTerm": "亥卯未三合木局",
+   "cnPinyin": "hài mǎo wèi sānhé mùjú",
+   "jpTerm": "亥卯未三合木局",
+   "jpReading": "がいぼうび さんごう もっきょく",
+   "area": "hapchung",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "공망(공망살)",
+   "hanja": "空亡",
+   "cnTerm": "空亡(旬空)",
+   "cnPinyin": "kōng wáng (kong1 wang2) / xún kōng",
+   "jpTerm": "天中殺(てんちゅうさつ)·空亡(くうぼう)",
+   "jpReading": "てんちゅうさつ / くうぼう",
+   "area": "jiji",
+   "school": "공통(일본은 天中殺으로 호칭·이론이 분기)"
+  },
+  {
+   "termKr": "묘(토끼)",
+   "hanja": "卯",
+   "cnTerm": "卯",
+   "cnPinyin": "mǎo (mao3)",
+   "jpTerm": "卯(う)",
+   "jpReading": "う / ぼう",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "미(양)",
+   "hanja": "未",
+   "cnTerm": "未",
+   "cnPinyin": "wèi (wei4)",
+   "jpTerm": "未(ひつじ)",
+   "jpReading": "ひつじ / び",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "사(뱀)",
+   "hanja": "巳",
+   "cnTerm": "巳",
+   "cnPinyin": "sì (si4)",
+   "jpTerm": "巳(み)",
+   "jpReading": "み / し",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "술(개)",
+   "hanja": "戌",
+   "cnTerm": "戌",
+   "cnPinyin": "xū (xu1)",
+   "jpTerm": "戌(いぬ)",
+   "jpReading": "いぬ / じゅつ",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "신(원숭이)",
+   "hanja": "申",
+   "cnTerm": "申",
+   "cnPinyin": "shēn (shen1)",
+   "jpTerm": "申(さる)",
+   "jpReading": "さる / しん",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "오(말)",
+   "hanja": "午",
+   "cnTerm": "午",
+   "cnPinyin": "wǔ (wu3)",
+   "jpTerm": "午(うま)",
+   "jpReading": "うま / ご",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "유(닭)",
+   "hanja": "酉",
+   "cnTerm": "酉",
+   "cnPinyin": "yǒu (you3)",
+   "jpTerm": "酉(とり)",
+   "jpReading": "とり / ゆう",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "인(호랑이)",
+   "hanja": "寅",
+   "cnTerm": "寅",
+   "cnPinyin": "yín (yin2)",
+   "jpTerm": "寅(とら)",
+   "jpReading": "とら / いん",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "자(쥐)",
+   "hanja": "子",
+   "cnTerm": "子",
+   "cnPinyin": "zǐ (zi3)",
+   "jpTerm": "子(ね)",
+   "jpReading": "ね / し",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "지장간(여기·중기·정기)",
+   "hanja": "地藏干",
+   "cnTerm": "藏干(人元)",
+   "cnPinyin": "cáng gān (cang2 gan1) / rén yuán",
+   "jpTerm": "蔵干(ぞうかん)",
+   "jpReading": "ぞうかん",
+   "area": "jiji",
+   "school": "자평통설(일본은 蔵干, 중국은 人元으로 호칭이 갈린다)"
+  },
+  {
+   "termKr": "지지 상호관계(합·충·형·해·파·원진)",
+   "hanja": "地支關係(合沖刑害破怨嗔)",
+   "cnTerm": "地支关系(三合·六合·方合·冲·刑·害·破·相穿)",
+   "cnPinyin": "dì zhī guān xì (di4 zhi1 guan1 xi4)",
+   "jpTerm": "地支の合冲刑害(さんごう·ろくごう·ちゅう·けい·がい·は)",
+   "jpReading": "ちしのごうちゅうけいがい",
+   "area": "jiji",
+   "school": "공통(자평통설)"
+  },
+  {
+   "termKr": "지지(12지)",
+   "hanja": "地支",
+   "cnTerm": "地支(十二地支)",
+   "cnPinyin": "dì zhī (di4 zhi1)",
+   "jpTerm": "地支(十二支)",
+   "jpReading": "ちし(じゅうにし)",
+   "area": "jiji",
+   "school": "공통"
+  },
+  {
+   "termKr": "진(용)",
+   "hanja": "辰",
+   "cnTerm": "辰",
+   "cnPinyin": "chén (chen2)",
+   "jpTerm": "辰(たつ)",
+   "jpReading": "たつ / しん",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "축(소)",
+   "hanja": "丑",
+   "cnTerm": "丑",
+   "cnPinyin": "chǒu (chou3)",
+   "jpTerm": "丑(うし)",
+   "jpReading": "うし / ちゅう",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "해(돼지)",
+   "hanja": "亥",
+   "cnTerm": "亥",
+   "cnPinyin": "hài (hai4)",
+   "jpTerm": "亥(い)",
+   "jpReading": "い / がい",
+   "area": "jiji",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "갑목 조후요결",
+   "hanja": "甲木調候",
+   "cnTerm": "甲木调候",
+   "cnPinyin": "jiǎ mù tiáo hòu",
+   "jpTerm": "甲木調候",
+   "jpReading": "こうもく ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "경금 조후요결",
+   "hanja": "庚金調候",
+   "cnTerm": "庚金调候",
+   "cnPinyin": "gēng jīn tiáo hòu",
+   "jpTerm": "庚金調候",
+   "jpReading": "こうきん ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "계수 조후요결",
+   "hanja": "癸水調候",
+   "cnTerm": "癸水调候",
+   "cnPinyin": "guǐ shuǐ tiáo hòu",
+   "jpTerm": "癸水調候",
+   "jpReading": "きすい ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "궁통보감 조후법",
+   "hanja": "窮通寶鑑 調候法",
+   "cnTerm": "穷通宝鉴 调候法",
+   "cnPinyin": "qióng tōng bǎo jiàn tiáo hòu fǎ",
+   "jpTerm": "窮通宝鑑 調候法",
+   "jpReading": "きゅうつうほうかん ちょうこうほう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑 조후학파)"
+  },
+  {
+   "termKr": "금백수청",
+   "hanja": "金白水清",
+   "cnTerm": "金白水清",
+   "cnPinyin": "jīn bái shuǐ qīng",
+   "jpTerm": "金白水清",
+   "jpReading": "きんぱくすいせい",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑·금수상관 통설)"
+  },
+  {
+   "termKr": "금한수냉",
+   "hanja": "金寒水冷",
+   "cnTerm": "金寒水冷",
+   "cnPinyin": "jīn hán shuǐ lěng",
+   "jpTerm": "金寒水冷",
+   "jpReading": "きんかんすいれい",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "기토 조후요결",
+   "hanja": "己土調候",
+   "cnTerm": "己土调候",
+   "cnPinyin": "jǐ tǔ tiáo hòu",
+   "jpTerm": "己土調候",
+   "jpReading": "きど ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "무토 조후요결",
+   "hanja": "戊土調候",
+   "cnTerm": "戊土调候",
+   "cnPinyin": "wù tǔ tiáo hòu",
+   "jpTerm": "戊土調候",
+   "jpReading": "ぼど ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "벽갑인정",
+   "hanja": "劈甲引丁",
+   "cnTerm": "劈甲引丁",
+   "cnPinyin": "pī jiǎ yǐn dīng",
+   "jpTerm": "劈甲引丁",
+   "jpReading": "へきこういんてい",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "병화 조후요결",
+   "hanja": "丙火調候",
+   "cnTerm": "丙火调候",
+   "cnPinyin": "bǐng huǒ tiáo hòu",
+   "jpTerm": "丙火調候",
+   "jpReading": "へいか ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "신금 조후요결",
+   "hanja": "辛金調候",
+   "cnTerm": "辛金调候",
+   "cnPinyin": "xīn jīn tiáo hòu",
+   "jpTerm": "辛金調候",
+   "jpReading": "しんきん ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "월령 제강",
+   "hanja": "月令提綱",
+   "cnTerm": "月令提纲",
+   "cnPinyin": "yuè lìng tí gāng",
+   "jpTerm": "月令提綱",
+   "jpReading": "げつれいていこう",
+   "area": "johoo",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "을목 조후요결",
+   "hanja": "乙木調候",
+   "cnTerm": "乙木调候",
+   "cnPinyin": "yǐ mù tiáo hòu",
+   "jpTerm": "乙木調候",
+   "jpReading": "おつもく ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "임수 조후요결",
+   "hanja": "壬水調候",
+   "cnTerm": "壬水调候",
+   "cnPinyin": "rén shuǐ tiáo hòu",
+   "jpTerm": "壬水調候",
+   "jpReading": "じんすい ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "정화 조후요결",
+   "hanja": "丁火調候",
+   "cnTerm": "丁火调候",
+   "cnPinyin": "dīng huǒ tiáo hòu",
+   "jpTerm": "丁火調候",
+   "jpReading": "ていか ちょうこう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "조후 우선 원칙",
+   "hanja": "調候先於抑扶",
+   "cnTerm": "调候先于抑扶",
+   "cnPinyin": "tiáo hòu xiān yú yì fú",
+   "jpTerm": "調候先於抑扶",
+   "jpReading": "ちょうこうせんおよくふ",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑 조후 우위설)"
+  },
+  {
+   "termKr": "조후용신(johoo)",
+   "hanja": "調候用神",
+   "cnTerm": "调候用神",
+   "cnPinyin": "tiáo hòu yòng shén",
+   "jpTerm": "調候用神",
+   "jpReading": "ちょうこうようじん",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑 중심)"
+  },
+  {
+   "termKr": "한목향양",
+   "hanja": "寒木向陽",
+   "cnTerm": "寒木向阳",
+   "cnPinyin": "hán mù xiàng yáng",
+   "jpTerm": "寒木向陽",
+   "jpReading": "かんぼくこうよう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "화염토조",
+   "hanja": "火炎土燥",
+   "cnTerm": "火炎土燥",
+   "cnPinyin": "huǒ yán tǔ zào",
+   "jpTerm": "火炎土燥",
+   "jpReading": "かえんどそう",
+   "area": "johoo",
+   "school": "자평통설(窮通寶鑑)"
+  },
+  {
+   "termKr": "간괘(소성)",
+   "hanja": "艮",
+   "cnTerm": "艮",
+   "cnPinyin": "gèn",
+   "jpTerm": "艮",
+   "jpReading": "ごん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "감괘(소성)",
+   "hanja": "坎",
+   "cnTerm": "坎",
+   "cnPinyin": "kǎn",
+   "jpTerm": "坎",
+   "jpReading": "かん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "건괘(소성)",
+   "hanja": "乾",
+   "cnTerm": "乾",
+   "cnPinyin": "qián",
+   "jpTerm": "乾",
+   "jpReading": "けん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "곤괘(소성)",
+   "hanja": "坤",
+   "cnTerm": "坤",
+   "cnPinyin": "kūn",
+   "jpTerm": "坤",
+   "jpReading": "こん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "괘사",
+   "hanja": "卦辭",
+   "cnTerm": "卦辞",
+   "cnPinyin": "guàcí",
+   "jpTerm": "卦辞",
+   "jpReading": "かじ",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "기제·미제",
+   "hanja": "既濟·未濟",
+   "cnTerm": "既济·未济",
+   "cnPinyin": "jìjì·wèijì",
+   "jpTerm": "既済·未済",
+   "jpReading": "きせい・みせい",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "리괘(소성)",
+   "hanja": "離",
+   "cnTerm": "离",
+   "cnPinyin": "lí",
+   "jpTerm": "離",
+   "jpReading": "り",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "매화역수",
+   "hanja": "梅花易數",
+   "cnTerm": "梅花易数",
+   "cnPinyin": "méihuā yìshù",
+   "jpTerm": "梅花易数",
+   "jpReading": "ばいかえきすう",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "변효",
+   "hanja": "變爻",
+   "cnTerm": "变爻",
+   "cnPinyin": "biànyáo",
+   "jpTerm": "変爻",
+   "jpReading": "へんこう",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "본괘지괘",
+   "hanja": "本卦之卦",
+   "cnTerm": "本卦之卦",
+   "cnPinyin": "běnguà zhīguà",
+   "jpTerm": "本卦之卦",
+   "jpReading": "ほんか・しか",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "비괘(천지비)",
+   "hanja": "天地否",
+   "cnTerm": "否卦",
+   "cnPinyin": "pǐguà",
+   "jpTerm": "否卦",
+   "jpReading": "ひか",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "사상",
+   "hanja": "四象",
+   "cnTerm": "四象",
+   "cnPinyin": "sìxiàng",
+   "jpTerm": "四象",
+   "jpReading": "ししょう",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "선후천팔괘",
+   "hanja": "先天後天八卦",
+   "cnTerm": "先天后天八卦",
+   "cnPinyin": "xiāntiān hòutiān bāguà",
+   "jpTerm": "先天後天八卦",
+   "jpReading": "せんてんこうてんはっけ",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "손괘(소성)",
+   "hanja": "巽",
+   "cnTerm": "巽",
+   "cnPinyin": "xùn",
+   "jpTerm": "巽",
+   "jpReading": "そん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "시초점(설시법)",
+   "hanja": "蓍草占",
+   "cnTerm": "蓍草占(大衍之數)",
+   "cnPinyin": "shīcǎozhān (dàyǎn zhī shù)",
+   "jpTerm": "筮竹占",
+   "jpReading": "ぜいちくせん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "십익",
+   "hanja": "十翼",
+   "cnTerm": "十翼",
+   "cnPinyin": "shíyì",
+   "jpTerm": "十翼",
+   "jpReading": "じゅうよく",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "육십사괘",
+   "hanja": "六十四卦",
+   "cnTerm": "六十四卦",
+   "cnPinyin": "liùshísìguà",
+   "jpTerm": "六十四卦",
+   "jpReading": "ろくじゅうしか",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "음양",
+   "hanja": "陰陽",
+   "cnTerm": "阴阳",
+   "cnPinyin": "yīnyáng",
+   "jpTerm": "陰陽",
+   "jpReading": "いんよう／おんよう",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "음효양효",
+   "hanja": "陰爻陽爻",
+   "cnTerm": "阴爻阳爻",
+   "cnPinyin": "yīnyáo yángyáo",
+   "jpTerm": "陰爻陽爻",
+   "jpReading": "いんこう・ようこう",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "응비",
+   "hanja": "應比",
+   "cnTerm": "应比",
+   "cnPinyin": "yìngbǐ",
+   "jpTerm": "応比",
+   "jpReading": "おうひ",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "중정",
+   "hanja": "中正",
+   "cnTerm": "中正",
+   "cnPinyin": "zhōngzhèng",
+   "jpTerm": "中正",
+   "jpReading": "ちゅうせい",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "진괘(소성)",
+   "hanja": "震",
+   "cnTerm": "震",
+   "cnPinyin": "zhèn",
+   "jpTerm": "震",
+   "jpReading": "しん",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "척전법(동전점)",
+   "hanja": "擲錢法",
+   "cnTerm": "掷钱法",
+   "cnPinyin": "zhìqiánfǎ",
+   "jpTerm": "擲銭法",
+   "jpReading": "てきせんほう",
+   "area": "juyeok",
+   "school": "공통"
+  },
+  {
+   "termKr": "태괘(소성)",
+   "hanja": "兌",
+   "cnTerm": "兑",
+   "cnPinyin": "duì",
+   "jpTerm": "兌",
+   "jpReading": "だ",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "태괘(지천태)",
+   "hanja": "地天泰",
+   "cnTerm": "泰卦",
+   "cnPinyin": "tàiguà",
+   "jpTerm": "泰卦",
+   "jpReading": "たいか",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "태극",
+   "hanja": "太極",
+   "cnTerm": "太极",
+   "cnPinyin": "tàijí",
+   "jpTerm": "太極",
+   "jpReading": "たいきょく",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "팔괘",
+   "hanja": "八卦",
+   "cnTerm": "八卦",
+   "cnPinyin": "bāguà",
+   "jpTerm": "八卦",
+   "jpReading": "はっけ",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "하도낙서",
+   "hanja": "河圖洛書",
+   "cnTerm": "河图洛书",
+   "cnPinyin": "hétú luòshū",
+   "jpTerm": "河図洛書",
+   "jpReading": "かと・らくしょ",
+   "area": "juyeok",
+   "school": "공통"
+  },
+  {
+   "termKr": "호괘",
+   "hanja": "互卦",
+   "cnTerm": "互卦",
+   "cnPinyin": "hùguà",
+   "jpTerm": "互卦",
+   "jpReading": "ごか",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "효",
+   "hanja": "爻",
+   "cnTerm": "爻",
+   "cnPinyin": "yáo",
+   "jpTerm": "爻",
+   "jpReading": "こう",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "효사",
+   "hanja": "爻辭",
+   "cnTerm": "爻辞",
+   "cnPinyin": "yáocí",
+   "jpTerm": "爻辞",
+   "jpReading": "こうじ",
+   "area": "juyeok",
+   "school": "주역"
+  },
+  {
+   "termKr": "간지 상의(취상)",
+   "hanja": "取象",
+   "cnTerm": "取象",
+   "cnPinyin": "qǔxiàng",
+   "jpTerm": "取象",
+   "jpReading": "しゅしょう",
+   "area": "maengpa",
+   "school": "맹파(盲派) 象法"
+  },
+  {
+   "termKr": "간지 작용(작용론)",
+   "hanja": "作用",
+   "cnTerm": "作用",
+   "cnPinyin": "zuòyòng",
+   "jpTerm": "作用",
+   "jpReading": "さよう",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "구결(맹파 비전)",
+   "hanja": "口訣",
+   "cnTerm": "口诀",
+   "cnPinyin": "kǒujué",
+   "jpTerm": "口訣",
+   "jpReading": "くけつ",
+   "area": "maengpa",
+   "school": "맹파(盲派) 사승 전통"
+  },
+  {
+   "termKr": "궁성동참",
+   "hanja": "宮星同參",
+   "cnTerm": "宫星同参",
+   "cnPinyin": "gōngxīng tóngcān",
+   "jpTerm": "宮星同参",
+   "jpReading": "きゅうせいどうさん",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "궁위론(맹파)",
+   "hanja": "宮位",
+   "cnTerm": "宫位",
+   "cnPinyin": "gōngwèi",
+   "jpTerm": "宮位",
+   "jpReading": "きゅうい",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "단건업 계보",
+   "hanja": "段建業",
+   "cnTerm": "段建业",
+   "cnPinyin": "Duàn Jiànyè",
+   "jpTerm": "段建業",
+   "jpReading": "だんけんぎょう",
+   "area": "maengpa",
+   "school": "대륙(大陸) 맹파 보급 계보"
+  },
+  {
+   "termKr": "동정(맹파)",
+   "hanja": "動靜",
+   "cnTerm": "动静",
+   "cnPinyin": "dòngjìng",
+   "jpTerm": "動静",
+   "jpReading": "どうせい",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "맹파-자평 억부 차이",
+   "hanja": "盲派抑扶之別",
+   "cnTerm": "盲派抑扶之别",
+   "cnPinyin": "mángpài yìfú zhī bié",
+   "jpTerm": "盲派抑扶之別",
+   "jpReading": "もうはよくふのべつ",
+   "area": "maengpa",
+   "school": "맹파(盲派) vs 자평(子平)"
+  },
+  {
+   "termKr": "맹파명리(maengpa)",
+   "hanja": "盲派命理",
+   "cnTerm": "盲派命理",
+   "cnPinyin": "mángpài mìnglǐ",
+   "jpTerm": "盲派命理",
+   "jpReading": "もうはめいり",
+   "area": "maengpa",
+   "school": "맹파(盲派) — 북방 맹사(盲師) 구전 계보"
+  },
+  {
+   "termKr": "묘고 개고(맹파)",
+   "hanja": "墓庫",
+   "cnTerm": "墓库",
+   "cnPinyin": "mùkù",
+   "jpTerm": "墓庫",
+   "jpReading": "ぼこ",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "빈부귀천 직단법",
+   "hanja": "富貴貧賤",
+   "cnTerm": "富贵贫贱",
+   "cnPinyin": "fùguì pínjiàn",
+   "jpTerm": "富貴貧賤",
+   "jpReading": "ふうきひんせん",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "빈주(빈위·주위)",
+   "hanja": "賓主",
+   "cnTerm": "宾主",
+   "cnPinyin": "bīnzhǔ",
+   "jpTerm": "賓主",
+   "jpReading": "ひんしゅ",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "상법(맹파 직단)",
+   "hanja": "象法",
+   "cnTerm": "象法",
+   "cnPinyin": "xiàngfǎ",
+   "jpTerm": "象法",
+   "jpReading": "しょうほう",
+   "area": "maengpa",
+   "school": "맹파(盲派) 象法 계열"
+  },
+  {
+   "termKr": "세운 작용(맹파)",
+   "hanja": "流年作用",
+   "cnTerm": "流年作用",
+   "cnPinyin": "liúnián zuòyòng",
+   "jpTerm": "流年作用",
+   "jpReading": "りゅうねんさよう",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "용신(맹파의 일·직사)",
+   "hanja": "工作",
+   "cnTerm": "工作",
+   "cnPinyin": "gōngzuò",
+   "jpTerm": "工作",
+   "jpReading": "こうさく",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "응기(시기 직단)",
+   "hanja": "應期",
+   "cnTerm": "应期",
+   "cnPinyin": "yìngqī",
+   "jpTerm": "応期",
+   "jpReading": "おうき",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "제화(맹파)",
+   "hanja": "制化",
+   "cnTerm": "制化",
+   "cnPinyin": "zhìhuà",
+   "jpTerm": "制化",
+   "jpReading": "せいか",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "주선(주축 잡기)",
+   "hanja": "主線",
+   "cnTerm": "主线",
+   "cnPinyin": "zhǔxiàn",
+   "jpTerm": "主線",
+   "jpReading": "しゅせん",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "진가(진신·가신)",
+   "hanja": "真假",
+   "cnTerm": "真假",
+   "cnPinyin": "zhēnjiǎ",
+   "jpTerm": "真仮",
+   "jpReading": "しんか",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "체용(맹파)",
+   "hanja": "體用",
+   "cnTerm": "体用",
+   "cnPinyin": "tǐyòng",
+   "jpTerm": "体用",
+   "jpReading": "たいよう",
+   "area": "maengpa",
+   "school": "맹파(盲派)"
+  },
+  {
+   "termKr": "합반(작용 묶임)",
+   "hanja": "合絆",
+   "cnTerm": "合绊",
+   "cnPinyin": "hébàn",
+   "jpTerm": "合絆",
+   "jpReading": "ごうはん",
+   "area": "maengpa",
+   "school": "맹파(盲派)·고법(古法) 공용"
+  },
+  {
+   "termKr": "호일명 상법계보",
+   "hanja": "胡一鳴",
+   "cnTerm": "胡一鸣",
+   "cnPinyin": "Hú Yīmíng",
+   "jpTerm": "胡一鳴",
+   "jpReading": "こいちめい",
+   "area": "maengpa",
+   "school": "象法 계열 거장(대륙·해외 강의 계보)"
+  },
+  {
+   "termKr": "강신무",
+   "hanja": "降神巫",
+   "cnTerm": "降神巫",
+   "cnPinyin": "jiàngshénwū",
+   "jpTerm": "降神巫",
+   "jpReading": "こうしんふ",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "고사",
+   "hanja": "告祀",
+   "cnTerm": "한국 고유: 고사(家祭/祈福)",
+   "cnPinyin": "한국 고유 — gàosì 차용",
+   "jpTerm": "한국 고유: 告祀(コサ)",
+   "jpReading": "한국 고유 — こくし",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "공수",
+   "hanja": "한국 고유어(漢字 없음)",
+   "cnTerm": "한국 고유: 공수(神托/神谕)",
+   "cnPinyin": "한국 고유 — shéntuō/shényù로 의역",
+   "jpTerm": "한국 고유: 神託(コンス)",
+   "jpReading": "한국 고유 — しんたく에 해당",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "굿",
+   "hanja": "한국 고유어(漢字 없음)",
+   "cnTerm": "한국 고유: 굿(巫祭/跳神)",
+   "cnPinyin": "한국 고유 — tiàoshén으로 의역",
+   "jpTerm": "한국 고유: クッ(巫祭)",
+   "jpReading": "한국 고유 — クッ",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "내림굿(신내림)",
+   "hanja": "한국 고유: 降神굿(神내림, 굿은 漢字 없음)",
+   "cnTerm": "한국 고유: 내림굿(降神之祭)",
+   "cnPinyin": "한국 고유 — 표준 대응어 없음",
+   "jpTerm": "한국 고유: 神降ろしの儀(내림굿)",
+   "jpReading": "한국 고유 — かみおろし로 의역",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "동제",
+   "hanja": "洞祭",
+   "cnTerm": "한국 고유: 동제(村祭)",
+   "cnPinyin": "한국 고유 — cūnjì에 대응",
+   "jpTerm": "한국 고유: 洞祭(村祭り)",
+   "jpReading": "한국 고유 — むらまつり",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "무가",
+   "hanja": "巫歌",
+   "cnTerm": "巫歌",
+   "cnPinyin": "wūgē",
+   "jpTerm": "巫歌",
+   "jpReading": "ふか",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "무당",
+   "hanja": "巫堂",
+   "cnTerm": "巫/神婆",
+   "cnPinyin": "wū / shénpó",
+   "jpTerm": "巫堂(巫女)",
+   "jpReading": "ふどう(みこ)",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "무속",
+   "hanja": "巫俗",
+   "cnTerm": "萨满教/巫俗",
+   "cnPinyin": "sàmǎnjiào / wūsú",
+   "jpTerm": "巫俗",
+   "jpReading": "ふぞく",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "무신(신령)",
+   "hanja": "巫神(神靈)",
+   "cnTerm": "神灵",
+   "cnPinyin": "shénlíng",
+   "jpTerm": "神霊",
+   "jpReading": "しんれい",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "무신도",
+   "hanja": "巫神圖",
+   "cnTerm": "巫神图",
+   "cnPinyin": "wūshéntú",
+   "jpTerm": "巫神図",
+   "jpReading": "ふしんず",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "부적",
+   "hanja": "符籍",
+   "cnTerm": "符箓",
+   "cnPinyin": "fúlù",
+   "jpTerm": "護符(お札)",
+   "jpReading": "ごふ(おふだ)",
+   "area": "musok",
+   "school": "공통"
+  },
+  {
+   "termKr": "부정(금기)",
+   "hanja": "不淨",
+   "cnTerm": "不净",
+   "cnPinyin": "bùjìng",
+   "jpTerm": "不浄",
+   "jpReading": "ふじょう",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "산신",
+   "hanja": "山神",
+   "cnTerm": "山神",
+   "cnPinyin": "shānshén",
+   "jpTerm": "山神",
+   "jpReading": "さんじん(やまがみ)",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "세습무",
+   "hanja": "世襲巫",
+   "cnTerm": "世袭巫",
+   "cnPinyin": "shìxíwū",
+   "jpTerm": "世襲巫",
+   "jpReading": "せしゅうふ",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "신병",
+   "hanja": "神病",
+   "cnTerm": "神病",
+   "cnPinyin": "shénbìng",
+   "jpTerm": "神病",
+   "jpReading": "しんびょう",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "신점",
+   "hanja": "神占",
+   "cnTerm": "神占",
+   "cnPinyin": "shénzhān",
+   "jpTerm": "神占",
+   "jpReading": "しんせん",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "쌀점",
+   "hanja": "쌀占(米占)",
+   "cnTerm": "한국 고유: 쌀점(撒米占)",
+   "cnPinyin": "한국 고유 — mǐzhān에 가까움",
+   "jpTerm": "한국 고유: 米占(コメうらない)",
+   "jpReading": "한국 고유 — べいせん",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "엽전점",
+   "hanja": "葉錢占",
+   "cnTerm": "한국 고유: 엽전점(銅錢占)",
+   "cnPinyin": "한국 고유 — tóngqiánzhān에 대응",
+   "jpTerm": "한국 고유: 葉銭占(銭占)",
+   "jpReading": "한국 고유 — ぜにうら",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "용왕",
+   "hanja": "龍王",
+   "cnTerm": "龙王",
+   "cnPinyin": "lóngwáng",
+   "jpTerm": "龍王",
+   "jpReading": "りゅうおう",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "작두타기",
+   "hanja": "한국 고유어(漢字 없음)",
+   "cnTerm": "한국 고유: 작두타기(铡刀上跳神)",
+   "cnPinyin": "한국 고유 — zhádāo로 의역",
+   "jpTerm": "한국 고유: 押し切り乗り",
+   "jpReading": "한국 고유 — おしきりのり",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "장군신",
+   "hanja": "將軍神",
+   "cnTerm": "将军神",
+   "cnPinyin": "jiāngjūnshén",
+   "jpTerm": "将軍神",
+   "jpReading": "しょうぐんしん",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "재수굿",
+   "hanja": "財數굿",
+   "cnTerm": "한국 고유: 재수굿(求財祈福之祭)",
+   "cnPinyin": "한국 고유 — cáishù 차용",
+   "jpTerm": "한국 고유: 財数クッ",
+   "jpReading": "한국 고유 — ざいすうクッ",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "진오기굿(지노귀굿)",
+   "hanja": "한국 고유(津오기굿, 굿은 漢字 없음)",
+   "cnTerm": "한국 고유: 진오기굿(亡者超度之祭)",
+   "cnPinyin": "한국 고유 — chāodù로 의역",
+   "jpTerm": "한국 고유: 死霊送りクッ",
+   "jpReading": "한국 고유 — しりょうおくり",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "칠성",
+   "hanja": "七星",
+   "cnTerm": "七星",
+   "cnPinyin": "qīxīng",
+   "jpTerm": "七星",
+   "jpReading": "しちせい",
+   "area": "musok",
+   "school": "무속"
+  },
+  {
+   "termKr": "금",
+   "hanja": "金",
+   "cnTerm": "金",
+   "cnPinyin": "jīn",
+   "jpTerm": "金",
+   "jpReading": "ごん",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "득령·득지·득세",
+   "hanja": "得令得地得勢",
+   "cnTerm": "得令得地得势",
+   "cnPinyin": "dé lìng dé dì dé shì",
+   "jpTerm": "得令得地得勢",
+   "jpReading": "とくれいとくちとくせい",
+   "area": "ohaeng",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "목",
+   "hanja": "木",
+   "cnTerm": "木",
+   "cnPinyin": "mù",
+   "jpTerm": "木",
+   "jpReading": "もく",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "상극",
+   "hanja": "相剋",
+   "cnTerm": "相克",
+   "cnPinyin": "xiāng kè",
+   "jpTerm": "相剋",
+   "jpReading": "そうこく",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "상생",
+   "hanja": "相生",
+   "cnTerm": "相生",
+   "cnPinyin": "xiāng shēng",
+   "jpTerm": "相生",
+   "jpReading": "そうじょう",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "상승·상모",
+   "hanja": "相乘相侮",
+   "cnTerm": "相乘相侮",
+   "cnPinyin": "xiāng chéng xiāng wǔ",
+   "jpTerm": "相乗相侮",
+   "jpReading": "そうじょうそうぶ",
+   "area": "ohaeng",
+   "school": "공통(의학 오행 용어 차용, 명리에서는 반극·과극 통설)"
+  },
+  {
+   "termKr": "생극제화",
+   "hanja": "生剋制化",
+   "cnTerm": "生克制化",
+   "cnPinyin": "shēng kè zhì huà",
+   "jpTerm": "生剋制化",
+   "jpReading": "せいこくせいか",
+   "area": "ohaeng",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "수",
+   "hanja": "水",
+   "cnTerm": "水",
+   "cnPinyin": "shuǐ",
+   "jpTerm": "水",
+   "jpReading": "すい",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "오행",
+   "hanja": "五行",
+   "cnTerm": "五行",
+   "cnPinyin": "wǔ xíng",
+   "jpTerm": "五行",
+   "jpReading": "ごぎょう",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "오행 불급",
+   "hanja": "五行不及",
+   "cnTerm": "五行不及",
+   "cnPinyin": "wǔ xíng bù jí",
+   "jpTerm": "五行不及",
+   "jpReading": "ごぎょうふきゅう",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "오행 색·방위·계절 배속",
+   "hanja": "五行配色方季",
+   "cnTerm": "五行配色方位季节",
+   "cnPinyin": "wǔ xíng pèi sè fāng wèi jì jié",
+   "jpTerm": "五行の色方位季節",
+   "jpReading": "ごぎょうのいろほういきせつ",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "오행 신체배속",
+   "hanja": "五行配臟腑",
+   "cnTerm": "五行配脏腑",
+   "cnPinyin": "wǔ xíng pèi zàng fǔ",
+   "jpTerm": "五行と臓腑",
+   "jpReading": "ごぎょうとぞうふ",
+   "area": "ohaeng",
+   "school": "공통(의학 오행 배속을 명리가 차용)"
+  },
+  {
+   "termKr": "오행 태과",
+   "hanja": "五行太過",
+   "cnTerm": "五行太过",
+   "cnPinyin": "wǔ xíng tài guò",
+   "jpTerm": "五行太過",
+   "jpReading": "ごぎょうたいか",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "왕상휴수사",
+   "hanja": "旺相休囚死",
+   "cnTerm": "旺相休囚死",
+   "cnPinyin": "wàng xiàng xiū qiú sǐ",
+   "jpTerm": "旺相休囚死",
+   "jpReading": "おうそうきゅうしゅうし",
+   "area": "ohaeng",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "조후",
+   "hanja": "調候",
+   "cnTerm": "调候",
+   "cnPinyin": "tiáo hòu",
+   "jpTerm": "調候",
+   "jpReading": "ちょうこう",
+   "area": "ohaeng",
+   "school": "자평통설(窮通寶鑑 중심)"
+  },
+  {
+   "termKr": "토",
+   "hanja": "土",
+   "cnTerm": "土",
+   "cnPinyin": "tǔ",
+   "jpTerm": "土",
+   "jpReading": "ど",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "통관",
+   "hanja": "通關",
+   "cnTerm": "通关",
+   "cnPinyin": "tōng guān",
+   "jpTerm": "通関",
+   "jpReading": "つうかん",
+   "area": "ohaeng",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "한난조습",
+   "hanja": "寒暖燥濕",
+   "cnTerm": "寒暖燥湿",
+   "cnPinyin": "hán nuǎn zào shī",
+   "jpTerm": "寒暖燥湿",
+   "jpReading": "かんだんそうしつ",
+   "area": "ohaeng",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "화",
+   "hanja": "火",
+   "cnTerm": "火",
+   "cnPinyin": "huǒ",
+   "jpTerm": "火",
+   "jpReading": "か",
+   "area": "ohaeng",
+   "school": "공통"
+  },
+  {
+   "termKr": "구성수법",
+   "hanja": "九星水法",
+   "cnTerm": "九星水法",
+   "cnPinyin": "jiǔxīng shuǐfǎ",
+   "jpTerm": "九星水法",
+   "jpReading": "きゅうせいすいほう (kyūsei-suihō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "나경·이십사산",
+   "hanja": "羅經·二十四山",
+   "cnTerm": "罗经·二十四山",
+   "cnPinyin": "luójīng·èrshísì shān",
+   "jpTerm": "羅経・二十四山",
+   "jpReading": "らけい・にじゅうしさん (rakei·nijūshisan)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "동기감응",
+   "hanja": "同氣感應",
+   "cnTerm": "同气感应",
+   "cnPinyin": "tóngqì gǎnyìng",
+   "jpTerm": "同気感応",
+   "jpReading": "どうきかんのう (dōki-kannō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "명당",
+   "hanja": "明堂",
+   "cnTerm": "明堂",
+   "cnPinyin": "míngtáng",
+   "jpTerm": "明堂",
+   "jpReading": "めいどう (meidō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "배산임수",
+   "hanja": "背山臨水",
+   "cnTerm": "背山临水",
+   "cnPinyin": "bèishān-línshuǐ",
+   "jpTerm": "背山臨水",
+   "jpReading": "はいざんりんすい (haizan-rinsui)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "비보풍수",
+   "hanja": "裨補風水",
+   "cnTerm": "裨补风水(개념은 中에도 있으나 체계적 발전은 한국 특색)",
+   "cnPinyin": "bìbǔ fēngshuǐ (한국 중심 발전 개념)",
+   "jpTerm": "裨補風水(한국 중심 개념)",
+   "jpReading": "한국 중심 개념 — 日 대응어는 ‘補い’의 풍수 개념으로 통용어 부재",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "사(pungsu)",
+   "hanja": "砂",
+   "cnTerm": "砂",
+   "cnPinyin": "shā",
+   "jpTerm": "砂",
+   "jpReading": "さ (sa)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "삼합",
+   "hanja": "三合",
+   "cnTerm": "三合",
+   "cnPinyin": "sānhé",
+   "jpTerm": "三合",
+   "jpReading": "さんごう (sangō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "수·득수",
+   "hanja": "水",
+   "cnTerm": "水",
+   "cnPinyin": "shuǐ",
+   "jpTerm": "水",
+   "jpReading": "すい (sui)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "수구",
+   "hanja": "水口",
+   "cnTerm": "水口",
+   "cnPinyin": "shuǐkǒu",
+   "jpTerm": "水口",
+   "jpReading": "すいこう (suikō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "안산·조산",
+   "hanja": "案山·朝山",
+   "cnTerm": "案山·朝山",
+   "cnPinyin": "ànshān·cháoshān",
+   "jpTerm": "案山・朝山",
+   "jpReading": "あんざん・ちょうざん (anzan·chōzan)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "양택삼요",
+   "hanja": "陽宅三要",
+   "cnTerm": "阳宅三要",
+   "cnPinyin": "yángzhái sānyào",
+   "jpTerm": "陽宅三要",
+   "jpReading": "ようたくさんよう (yōtaku-san'yō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "용·용맥",
+   "hanja": "龍脈",
+   "cnTerm": "龙脉",
+   "cnPinyin": "lóngmài",
+   "jpTerm": "龍脈",
+   "jpReading": "りゅうみゃく (ryūmyaku)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "음택",
+   "hanja": "陰宅",
+   "cnTerm": "阴宅",
+   "cnPinyin": "yīnzhái",
+   "jpTerm": "陰宅",
+   "jpReading": "いんたく (intaku)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "이기",
+   "hanja": "理氣",
+   "cnTerm": "理气",
+   "cnPinyin": "lǐqì",
+   "jpTerm": "理気",
+   "jpReading": "りき (riki)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "장풍득수",
+   "hanja": "藏風得水",
+   "cnTerm": "藏风得水",
+   "cnPinyin": "cángfēng-déshuǐ",
+   "jpTerm": "藏風得水",
+   "jpReading": "ぞうふうとくすい (zōfū-tokusui)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "좌향",
+   "hanja": "坐向",
+   "cnTerm": "坐向",
+   "cnPinyin": "zuòxiàng",
+   "jpTerm": "坐向",
+   "jpReading": "ざこう (zakō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "팔택",
+   "hanja": "八宅",
+   "cnTerm": "八宅",
+   "cnPinyin": "bāzhái",
+   "jpTerm": "八宅",
+   "jpReading": "はったく (hattaku)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "패철",
+   "hanja": "佩鐵",
+   "cnTerm": "佩铁(한국 고유 명칭, 中: 罗盘 luópán에 해당)",
+   "cnPinyin": "pèitiě (한국 한자음 차용어; 中 통용어는 luópán)",
+   "jpTerm": "佩鉄(한국 고유 명칭, 日 통용어는 羅盤)",
+   "jpReading": "한국 고유 용어 — 일본 통용어는 羅盤 らばん (raban)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "풍수",
+   "hanja": "風水",
+   "cnTerm": "风水",
+   "cnPinyin": "fēngshuǐ",
+   "jpTerm": "風水",
+   "jpReading": "ふうすい (fūsui)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "향법",
+   "hanja": "向法",
+   "cnTerm": "向法",
+   "cnPinyin": "xiàngfǎ",
+   "jpTerm": "向法",
+   "jpReading": "こうほう (kōhō)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "현공풍수",
+   "hanja": "玄空風水",
+   "cnTerm": "玄空风水",
+   "cnPinyin": "xuánkōng fēngshuǐ",
+   "jpTerm": "玄空風水",
+   "jpReading": "げんくうふうすい (genkū-fūsui)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "혈",
+   "hanja": "穴",
+   "cnTerm": "穴",
+   "cnPinyin": "xué",
+   "jpTerm": "穴",
+   "jpReading": "けつ (ketsu)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "형기",
+   "hanja": "形氣",
+   "cnTerm": "形势",
+   "cnPinyin": "xíngshì",
+   "jpTerm": "形勢",
+   "jpReading": "けいせい (keisei)",
+   "area": "pungsu",
+   "school": "풍수"
+  },
+  {
+   "termKr": "고법과 금법(녹명법·자평법)",
+   "hanja": "古法 / 今法",
+   "cnTerm": "古法(禄命法) / 今法(子平)",
+   "cnPinyin": "gǔfǎ (lùmìngfǎ) / jīnfǎ (zǐpíng)",
+   "jpTerm": "古法 / 今法",
+   "jpReading": "こほう / こんぽう (kohō / konpō)",
+   "area": "schools",
+   "school": "공통"
+  },
+  {
+   "termKr": "궁통보감",
+   "hanja": "窮通寶鑑",
+   "cnTerm": "穷通宝鉴 / 栏江网(拦江网)",
+   "cnPinyin": "qióngtōng bǎojiàn / lánjiāng wǎng",
+   "jpTerm": "窮通寶鑑",
+   "jpReading": "きゅうつうほうかん (kyūtsū hōkan)",
+   "area": "schools",
+   "school": "자평통설(조후파)"
+  },
+  {
+   "termKr": "당사주",
+   "hanja": "唐四柱",
+   "cnTerm": "唐四柱(韩国民间, 神煞·星宿系)",
+   "cnPinyin": "táng sìzhù",
+   "jpTerm": "唐四柱",
+   "jpReading": "とうしちゅう (tōshichū)",
+   "area": "schools",
+   "school": "한국(민간, 신살계)"
+  },
+  {
+   "termKr": "맹파명리",
+   "hanja": "盲派",
+   "cnTerm": "盲派 / 盲师命理",
+   "cnPinyin": "mángpài / mángshī mìnglǐ",
+   "jpTerm": "盲派命理",
+   "jpReading": "もうはめいり (mōha meiri)",
+   "area": "schools",
+   "school": "맹파"
+  },
+  {
+   "termKr": "명리약언",
+   "hanja": "命理約言",
+   "cnTerm": "命理约言",
+   "cnPinyin": "mìnglǐ yuēyán",
+   "jpTerm": "命理約言",
+   "jpReading": "めいりやくげん (meiri yakugen)",
+   "area": "schools",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "민국기 명리 정리(서낙오 계열)",
+   "hanja": "民國 命理(徐樂吾)",
+   "cnTerm": "徐乐吾 评注系",
+   "cnPinyin": "xú lèwú píngzhù xì",
+   "jpTerm": "徐樂吾の評註系",
+   "jpReading": "じょらくご (joragulgo)",
+   "area": "schools",
+   "school": "자평통설(현대 전승)"
+  },
+  {
+   "termKr": "산명학(일본 算命学)",
+   "hanja": "算命學",
+   "cnTerm": "算命(별개 체계, 干支術)",
+   "cnPinyin": "suànmìng",
+   "jpTerm": "算命学",
+   "jpReading": "さんめいがく (sanmeigaku)",
+   "area": "schools",
+   "school": "일본(算命学)"
+  },
+  {
+   "termKr": "삼명통회",
+   "hanja": "三命通會",
+   "cnTerm": "三命通会",
+   "cnPinyin": "sānmìng tōnghuì",
+   "jpTerm": "三命通會",
+   "jpReading": "さんめいつうかい (sanmei tsūkai)",
+   "area": "schools",
+   "school": "공통(고법+자평)"
+  },
+  {
+   "termKr": "신봉통고",
+   "hanja": "神峰通考",
+   "cnTerm": "神峰通考 / 命理正宗",
+   "cnPinyin": "shénfēng tōngkǎo / mìnglǐ zhèngzōng",
+   "jpTerm": "神峰通考",
+   "jpReading": "しんぽうつうこう (shinpō tsūkō)",
+   "area": "schools",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "신파명리(현대 심리명리)",
+   "hanja": "新派命理",
+   "cnTerm": "新派 / 八字心理学",
+   "cnPinyin": "xīnpài / bāzì xīnlǐxué",
+   "jpTerm": "新派命理",
+   "jpReading": "しんぱめいり (shinpa meiri)",
+   "area": "schools",
+   "school": "신파(현대명리)"
+  },
+  {
+   "termKr": "십이운성 한중일 명칭",
+   "hanja": "十二運星 / 胞胎法",
+   "cnTerm": "十二长生 / 长生十二宫",
+   "cnPinyin": "shí'èr chángshēng / chángshēng shí'èr gōng",
+   "jpTerm": "十二運 / 十二運星",
+   "jpReading": "じゅうにうん / じゅうにうんせい (jūni un / jūni unsei)",
+   "area": "schools",
+   "school": "공통(일본은 十二運으로 비중↑)"
+  },
+  {
+   "termKr": "연해자평",
+   "hanja": "淵海子平",
+   "cnTerm": "渊海子平",
+   "cnPinyin": "yuānhǎi zǐpíng",
+   "jpTerm": "淵海子平",
+   "jpReading": "えんかいしへい (enkai shihei)",
+   "area": "schools",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "용신 잡는 세 관점(격국·억부·조후)",
+   "hanja": "用神論(格局·抑扶·調候)",
+   "cnTerm": "用神(格局/扶抑/调候)",
+   "cnPinyin": "yòngshén (géjú / fúyì / tiáohòu)",
+   "jpTerm": "用神(格局・扶抑・調候)",
+   "jpReading": "ようじん (yōjin)",
+   "area": "schools",
+   "school": "공통(학파 비교)"
+  },
+  {
+   "termKr": "일본 사주추명(통변성 체계)",
+   "hanja": "四柱推命",
+   "cnTerm": "四柱八字(對應: 十神)",
+   "cnPinyin": "sìzhù bāzì",
+   "jpTerm": "四柱推命 / 通変星",
+   "jpReading": "しちゅうすいめい / つうへんせい (shichū suimei / tsūhensei)",
+   "area": "schools",
+   "school": "일본"
+  },
+  {
+   "termKr": "자미두수(별개 성명술)",
+   "hanja": "紫微斗數",
+   "cnTerm": "紫微斗数",
+   "cnPinyin": "zǐwēi dǒushù",
+   "jpTerm": "紫微斗数",
+   "jpReading": "しびとすう (shibi tosū)",
+   "area": "schools",
+   "school": "공통(별개 체계 구분)"
+  },
+  {
+   "termKr": "자평명리",
+   "hanja": "子平命理",
+   "cnTerm": "子平 / 子平八字",
+   "cnPinyin": "zǐpíng / zǐpíng bāzì",
+   "jpTerm": "子平(四柱推命の源流)",
+   "jpReading": "しへい (shihei)",
+   "area": "schools",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "자평진전",
+   "hanja": "子平真詮",
+   "cnTerm": "子平真诠",
+   "cnPinyin": "zǐpíng zhēnquán",
+   "jpTerm": "子平真詮",
+   "jpReading": "しへいしんせん (shihei shinsen)",
+   "area": "schools",
+   "school": "자평통설(격국파)"
+  },
+  {
+   "termKr": "적천수",
+   "hanja": "滴天髓",
+   "cnTerm": "滴天髓",
+   "cnPinyin": "dītiān suǐ",
+   "jpTerm": "滴天髓",
+   "jpReading": "てきてんずい (tekitenzui)",
+   "area": "schools",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "중국 현대 상업 팔자",
+   "hanja": "八字(現代 商業)",
+   "cnTerm": "八字 / 算命(商业化)",
+   "cnPinyin": "bāzì / suànmìng (shāngyèhuà)",
+   "jpTerm": "八字占い",
+   "jpReading": "はちじうらない (hachiji uranai)",
+   "area": "schools",
+   "school": "중국(현대 상업)"
+  },
+  {
+   "termKr": "지장간(일본 蔵干)",
+   "hanja": "藏干 / 蔵干",
+   "cnTerm": "藏干 / 人元",
+   "cnPinyin": "cánggān / rényuán",
+   "jpTerm": "蔵干",
+   "jpReading": "ぞうかん (zōkan)",
+   "area": "schools",
+   "school": "공통(한자권 공유, 일본 표기 蔵干)"
+  },
+  {
+   "termKr": "한국 현대명리",
+   "hanja": "韓國 現代命理",
+   "cnTerm": "韩国命理",
+   "cnPinyin": "hánguó mìnglǐ",
+   "jpTerm": "韓国命理",
+   "jpReading": "かんこくめいり (kankoku meiri)",
+   "area": "schools",
+   "school": "자평통설(한국)"
+  },
+  {
+   "termKr": "겁살",
+   "hanja": "劫殺",
+   "cnTerm": "劫煞",
+   "cnPinyin": "jie2 sha4",
+   "jpTerm": "劫殺",
+   "jpReading": "ごうさつ",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "고신과숙살",
+   "hanja": "孤辰寡宿殺",
+   "cnTerm": "孤辰寡宿",
+   "cnPinyin": "gu1 chen2 gua3 su4",
+   "jpTerm": "孤辰寡宿",
+   "jpReading": "こしんかしゅく",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "공망",
+   "hanja": "空亡",
+   "cnTerm": "空亡",
+   "cnPinyin": "kong1 wang2",
+   "jpTerm": "空亡(天中殺)",
+   "jpReading": "くうぼう(てんちゅうさつ)",
+   "area": "sinsal",
+   "school": "공통(자평·일본 算命学 天中殺 공유)"
+  },
+  {
+   "termKr": "괴강살",
+   "hanja": "魁罡",
+   "cnTerm": "魁罡",
+   "cnPinyin": "kui2 gang1",
+   "jpTerm": "魁罡",
+   "jpReading": "かいごう",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "귀문관살",
+   "hanja": "鬼門關殺",
+   "cnTerm": "鬼门关煞",
+   "cnPinyin": "gui3 men2 guan1 sha4",
+   "jpTerm": "鬼門殺",
+   "jpReading": "きもんさつ",
+   "area": "sinsal",
+   "school": "자평통설(한국 강조)"
+  },
+  {
+   "termKr": "금여록",
+   "hanja": "金輿祿",
+   "cnTerm": "金舆",
+   "cnPinyin": "jin1 yu2",
+   "jpTerm": "金輿",
+   "jpReading": "きんよ",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "도화살",
+   "hanja": "桃花殺",
+   "cnTerm": "咸池(桃花)",
+   "cnPinyin": "xian2 chi2 (tao2 hua1)",
+   "jpTerm": "桃花殺(咸池)",
+   "jpReading": "とうかさつ(かんち)",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "망신살",
+   "hanja": "亡神殺",
+   "cnTerm": "亡神煞",
+   "cnPinyin": "wang2 shen2 sha4",
+   "jpTerm": "亡神殺",
+   "jpReading": "ぼうしんさつ",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "문창귀인",
+   "hanja": "文昌貴人",
+   "cnTerm": "文昌贵人",
+   "cnPinyin": "wen2 chang1 gui4 ren2",
+   "jpTerm": "文昌貴人",
+   "jpReading": "ぶんしょうきじん",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "반안살",
+   "hanja": "攀鞍殺",
+   "cnTerm": "攀鞍",
+   "cnPinyin": "pan1 an1",
+   "jpTerm": "攀鞍",
+   "jpReading": "はんあん",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "백호대살",
+   "hanja": "白虎大殺",
+   "cnTerm": "白虎大煞",
+   "cnPinyin": "bai2 hu3 da4 sha4",
+   "jpTerm": "白虎大殺",
+   "jpReading": "びゃっこだいさつ",
+   "area": "sinsal",
+   "school": "자평통설(한국 강조)"
+  },
+  {
+   "termKr": "삼재",
+   "hanja": "三災",
+   "cnTerm": "三灾",
+   "cnPinyin": "san1 zai1",
+   "jpTerm": "三災",
+   "jpReading": "さんさい",
+   "area": "sinsal",
+   "school": "공통(민속·통설)"
+  },
+  {
+   "termKr": "암록",
+   "hanja": "暗祿",
+   "cnTerm": "暗禄",
+   "cnPinyin": "an4 lu4",
+   "jpTerm": "暗禄",
+   "jpReading": "あんろく",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "양인살",
+   "hanja": "羊刃殺",
+   "cnTerm": "羊刃(阳刃)",
+   "cnPinyin": "yang2 ren4",
+   "jpTerm": "羊刃",
+   "jpReading": "ようじん",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "역마살",
+   "hanja": "驛馬殺",
+   "cnTerm": "驿马",
+   "cnPinyin": "yi4 ma3",
+   "jpTerm": "駅馬",
+   "jpReading": "えきば",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "원진살",
+   "hanja": "元嗔殺",
+   "cnTerm": "元嗔(怨嗔)",
+   "cnPinyin": "yuan2 chen1 (yuan4 chen1)",
+   "jpTerm": "元嗔殺",
+   "jpReading": "げんしんさつ",
+   "area": "sinsal",
+   "school": "자평통설(한국 강조)"
+  },
+  {
+   "termKr": "월살",
+   "hanja": "月殺",
+   "cnTerm": "月煞",
+   "cnPinyin": "yue4 sha4",
+   "jpTerm": "月殺",
+   "jpReading": "げっさつ",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "육해살",
+   "hanja": "六害殺",
+   "cnTerm": "六害",
+   "cnPinyin": "liu4 hai4",
+   "jpTerm": "六害",
+   "jpReading": "ろくがい",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "장성살",
+   "hanja": "將星殺",
+   "cnTerm": "将星",
+   "cnPinyin": "jiang1 xing1",
+   "jpTerm": "将星",
+   "jpReading": "しょうせい",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "재살(수옥살)",
+   "hanja": "災殺",
+   "cnTerm": "灾煞(囚狱)",
+   "cnPinyin": "zai1 sha4 (qiu2 yu4)",
+   "jpTerm": "災殺",
+   "jpReading": "さいさつ",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "지살",
+   "hanja": "地殺",
+   "cnTerm": "地煞",
+   "cnPinyin": "di4 sha4",
+   "jpTerm": "地殺",
+   "jpReading": "ちさつ",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "천덕월덕귀인",
+   "hanja": "天德月德貴人",
+   "cnTerm": "天德月德贵人",
+   "cnPinyin": "tian1 de2 yue4 de2 gui4 ren2",
+   "jpTerm": "天徳月徳貴人",
+   "jpReading": "てんとくげっとくきじん",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "천라지망",
+   "hanja": "天羅地網",
+   "cnTerm": "天罗地网",
+   "cnPinyin": "tian1 luo2 di4 wang3",
+   "jpTerm": "天羅地網",
+   "jpReading": "てんらちもう",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "천살",
+   "hanja": "天殺",
+   "cnTerm": "天煞",
+   "cnPinyin": "tian1 sha4",
+   "jpTerm": "天殺",
+   "jpReading": "てんさつ",
+   "area": "sinsal",
+   "school": "자평통설(12신살)"
+  },
+  {
+   "termKr": "천을귀인",
+   "hanja": "天乙貴人",
+   "cnTerm": "天乙贵人",
+   "cnPinyin": "tian1 yi3 gui4 ren2",
+   "jpTerm": "天乙貴人",
+   "jpReading": "てんおつきじん",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "천의성",
+   "hanja": "天醫星",
+   "cnTerm": "天医星",
+   "cnPinyin": "tian1 yi1 xing1",
+   "jpTerm": "天醫",
+   "jpReading": "てんい",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "탕화살",
+   "hanja": "湯火殺",
+   "cnTerm": "汤火煞",
+   "cnPinyin": "tang1 huo3 sha4",
+   "jpTerm": "湯火殺",
+   "jpReading": "とうかさつ",
+   "area": "sinsal",
+   "school": "자평통설(한국 강조)"
+  },
+  {
+   "termKr": "태극귀인",
+   "hanja": "太極貴人",
+   "cnTerm": "太极贵人",
+   "cnPinyin": "tai4 ji2 gui4 ren2",
+   "jpTerm": "太極貴人",
+   "jpReading": "たいきょくきじん",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "현침살",
+   "hanja": "懸針殺",
+   "cnTerm": "悬针煞",
+   "cnPinyin": "xuan2 zhen1 sha4",
+   "jpTerm": "懸針殺",
+   "jpReading": "けんしんさつ",
+   "area": "sinsal",
+   "school": "자평통설(한국 강조)"
+  },
+  {
+   "termKr": "홍염살",
+   "hanja": "紅艷殺",
+   "cnTerm": "红艳煞",
+   "cnPinyin": "hong2 yan4 sha4",
+   "jpTerm": "紅艶殺",
+   "jpReading": "こうえんさつ",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "화개살",
+   "hanja": "華蓋殺",
+   "cnTerm": "华盖",
+   "cnPinyin": "hua2 gai4",
+   "jpTerm": "華蓋",
+   "jpReading": "かがい",
+   "area": "sinsal",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "격각살",
+   "hanja": "隔角殺",
+   "cnTerm": "隔角",
+   "cnPinyin": "gé jiǎo",
+   "jpTerm": "隔角",
+   "jpReading": "かくかく",
+   "area": "sinsal_ex",
+   "school": "당사주·택일 계열 신살. 子平 정격에선 보조. 일본 미사용."
+  },
+  {
+   "termKr": "고란살",
+   "hanja": "孤鸞殺",
+   "cnTerm": "孤鸾",
+   "cnPinyin": "gū luán",
+   "jpTerm": "孤鸞",
+   "jpReading": "こらん",
+   "area": "sinsal_ex",
+   "school": "한·중 통설. 대만 명서도 여명 간법에 인용. 일본 미약."
+  },
+  {
+   "termKr": "금여 심화",
+   "hanja": "金輿",
+   "cnTerm": "金舆",
+   "cnPinyin": "jīn yú",
+   "jpTerm": "金輿",
+   "jpReading": "きんよ",
+   "area": "sinsal_ex",
+   "school": "자평 통설. 한·중·대만 공유, 대만 명서는 혼인 길신으로 인용. 일본 미약."
+  },
+  {
+   "termKr": "급각살/단교관살",
+   "hanja": "急脚殺・斷橋關殺",
+   "cnTerm": "急脚煞/断桥关",
+   "cnPinyin": "jí jiǎo shā / duàn qiáo guān",
+   "jpTerm": "急脚殺・断橋関",
+   "jpReading": "きゅうきゃくさつ・だんきょうかん",
+   "area": "sinsal_ex",
+   "school": "당사주·관살 택일 계열. 子平 본명 길흉엔 부차. 일본 미사용."
+  },
+  {
+   "termKr": "낙정관살",
+   "hanja": "落井關殺",
+   "cnTerm": "落井关",
+   "cnPinyin": "luò jǐng guān",
+   "jpTerm": "落井関",
+   "jpReading": "らくせいかん",
+   "area": "sinsal_ex",
+   "school": "소아 관살·택일 계열. 정격 길흉엔 보조. 일본 미사용."
+  },
+  {
+   "termKr": "대장군·삼살 방위",
+   "hanja": "大將軍方・三殺方",
+   "cnTerm": "大将军/三煞",
+   "cnPinyin": "dà jiāng jūn / sān shà",
+   "jpTerm": "大将軍・三殺",
+   "jpReading": "だいしょうぐん・さんさつ",
+   "area": "sinsal_ex",
+   "school": "택일·풍수·協紀 체계로 명리 본명과 구분. 한·중·일·대만 모두 통용(일본 大将軍·金神 방위술 활발), 대만은 安太歲·制煞 풍습 병행."
+  },
+  {
+   "termKr": "비인살",
+   "hanja": "飛刃殺",
+   "cnTerm": "飞刃",
+   "cnPinyin": "fēi rèn",
+   "jpTerm": "飛刃",
+   "jpReading": "ひじん",
+   "area": "sinsal_ex",
+   "school": "子平 신살론. 한·중·대만 공유, 음인 처리에 학파차. 일본 미약."
+  },
+  {
+   "termKr": "삼재 입출",
+   "hanja": "三災",
+   "cnTerm": "三灾",
+   "cnPinyin": "sān zāi",
+   "jpTerm": "三災",
+   "jpReading": "さんさい",
+   "area": "sinsal_ex",
+   "school": "민속·택일에서 강세, 子平 정격 길흉과는 별개의 보조 체계. 한국이 특히 강조, 대만은 安太歲 풍습으로 인접."
+  },
+  {
+   "termKr": "십악대패",
+   "hanja": "十惡大敗",
+   "cnTerm": "十恶大败",
+   "cnPinyin": "shí è dà bài",
+   "jpTerm": "十悪大敗",
+   "jpReading": "じゅうあくたいはい",
+   "area": "sinsal_ex",
+   "school": "택일·당사주 계열에서 강조. 정통 子平(대만 吳俊民 등)은 영향력을 낮게 본다."
+  },
+  {
+   "termKr": "암록(sinsal_ex)",
+   "hanja": "暗祿",
+   "cnTerm": "暗禄",
+   "cnPinyin": "àn lù",
+   "jpTerm": "暗禄",
+   "jpReading": "あんろく",
+   "area": "sinsal_ex",
+   "school": "자평 통설. 한·중·대만 공유. 일본 四柱推命에선 록 중심으로 약식 처리."
+  },
+  {
+   "termKr": "양인살 심화",
+   "hanja": "羊刃殺",
+   "cnTerm": "羊刃",
+   "cnPinyin": "yáng rèn",
+   "jpTerm": "羊刃",
+   "jpReading": "ようじん",
+   "area": "sinsal_ex",
+   "school": "子平 정격론. 한·중·대만은 양간만 양인, 음간은 음인/비인으로 분별. 일본 四柱推命은 격국 핵심보다 흉살로 다루는 경향."
+  },
+  {
+   "termKr": "음양차착살",
+   "hanja": "陰陽差錯殺",
+   "cnTerm": "阴阳差错",
+   "cnPinyin": "yīn yáng chā cuò",
+   "jpTerm": "陰陽差錯",
+   "jpReading": "いんようささく",
+   "area": "sinsal_ex",
+   "school": "한·중 통설서 수록, 대만서도 채택. 일본 四柱推命에선 거의 미사용."
+  },
+  {
+   "termKr": "천라지망 심화",
+   "hanja": "天羅地網",
+   "cnTerm": "天罗地网",
+   "cnPinyin": "tiān luó dì wǎng",
+   "jpTerm": "天羅地網",
+   "jpReading": "てんらちもう",
+   "area": "sinsal_ex",
+   "school": "한·중 통설은 납음 조건을 병기, 대만 梁湘潤도 납음 전제를 강조. 일본은 단순 지지론으로 약식 사용."
+  },
+  {
+   "termKr": "천의성(sinsal_ex)",
+   "hanja": "天醫星",
+   "cnTerm": "天医",
+   "cnPinyin": "tiān yī",
+   "jpTerm": "天醫",
+   "jpReading": "てんい",
+   "area": "sinsal_ex",
+   "school": "자평·성평 통설. 대만 명서도 활인업 간법에 활용. 일본 四柱推命에선 거의 미사용."
+  },
+  {
+   "termKr": "탕화살(sinsal_ex)",
+   "hanja": "湯火殺",
+   "cnTerm": "汤火",
+   "cnPinyin": "tāng huǒ",
+   "jpTerm": "湯火",
+   "jpReading": "とうか",
+   "area": "sinsal_ex",
+   "school": "한국에서 특히 강조되는 통설 신살, 중국·대만서도 수록. 일본 미약."
+  },
+  {
+   "termKr": "학당귀인",
+   "hanja": "學堂貴人",
+   "cnTerm": "学堂贵人",
+   "cnPinyin": "xué táng guì rén",
+   "jpTerm": "学堂貴人",
+   "jpReading": "がくどうきじん",
+   "area": "sinsal_ex",
+   "school": "자평 통설. 대만 명서는 문창·학당·사관을 묶어 학업 간법을 구성. 일본 미약."
+  },
+  {
+   "termKr": "현침살·곡각살(자형 신살)",
+   "hanja": "懸針殺・曲脚殺",
+   "cnTerm": "悬针/曲脚",
+   "cnPinyin": "xuán zhēn / qū jiǎo",
+   "jpTerm": "懸針・曲脚",
+   "jpReading": "けんしん・きょくきゃく",
+   "area": "sinsal_ex",
+   "school": "한국 통변에서 특히 활용되는 자형 신살. 중국·대만서는 형상파(形象) 보조론으로 언급, 일본 四柱推命은 거의 미사용."
+  },
+  {
+   "termKr": "혈인살",
+   "hanja": "血刃殺",
+   "cnTerm": "血刃",
+   "cnPinyin": "xuè rèn",
+   "jpTerm": "血刃",
+   "jpReading": "けつじん",
+   "area": "sinsal_ex",
+   "school": "한·중 통설 신살. 대만서도 의료·외과 적성 해석에 인용. 일본 미약."
+  },
+  {
+   "termKr": "겁재",
+   "hanja": "劫財",
+   "cnTerm": "劫财",
+   "cnPinyin": "jié cái",
+   "jpTerm": "劫財(敗財)",
+   "jpReading": "ごうざい(はいざい)",
+   "area": "sipseong",
+   "school": "공통. 일본 四柱推命은 양일간의 겁재를 敗財(はいざい)로 따로 부르기도 한다(劫財 읽기는 통상 ごうざい, 일부 こうざい)."
+  },
+  {
+   "termKr": "비견",
+   "hanja": "比肩",
+   "cnTerm": "比肩",
+   "cnPinyin": "bǐ jiān",
+   "jpTerm": "比肩",
+   "jpReading": "ひけん",
+   "area": "sipseong",
+   "school": "공통. 일본 通変星에서도 比肩 명칭 동일."
+  },
+  {
+   "termKr": "상관",
+   "hanja": "傷官",
+   "cnTerm": "伤官",
+   "cnPinyin": "shāng guān",
+   "jpTerm": "傷官",
+   "jpReading": "しょうかん",
+   "area": "sipseong",
+   "school": "공통. 일본도 傷官 동일."
+  },
+  {
+   "termKr": "식신",
+   "hanja": "食神",
+   "cnTerm": "食神",
+   "cnPinyin": "shí shén",
+   "jpTerm": "食神",
+   "jpReading": "しょくじん",
+   "area": "sipseong",
+   "school": "공통. 일본도 食神 동일."
+  },
+  {
+   "termKr": "십성 무(결)",
+   "hanja": "十星 無(缺)",
+   "cnTerm": "十神缺失",
+   "cnPinyin": "shí shén quē shī",
+   "jpTerm": "通変星欠落",
+   "jpReading": "つうへんせいけつらく",
+   "area": "sipseong",
+   "school": "공통. 일본 四柱推命도 蔵干(ぞうかん) 투출로 잠복 십성을 판단한다."
+  },
+  {
+   "termKr": "십성 오대분류(비겁·식상·재성·관살·인성)",
+   "hanja": "比劫·食傷·財星·官殺·印星",
+   "cnTerm": "比劫·食伤·财星·官杀·印星",
+   "cnPinyin": "bǐ jié·shí shāng·cái xīng·guān shā·yìn xīng",
+   "jpTerm": "比劫·食傷·財星·官殺·印星",
+   "jpReading": "ひごう·しょくしょう·ざいせい·かんさつ·いんせい",
+   "area": "sipseong",
+   "school": "한·중 통용 그룹핑. 일본 四柱推命은 통변성 10개를 개별 호칭하는 경향이 있어 오대 그룹핑 명칭은 주로 한·중에서 쓴다."
+  },
+  {
+   "termKr": "십성 육친 매핑",
+   "hanja": "十星 六親",
+   "cnTerm": "六亲",
+   "cnPinyin": "liù qīn",
+   "jpTerm": "六親",
+   "jpReading": "ろくしん",
+   "area": "sipseong",
+   "school": "공통이나 세부는 갈린다. 한중 자평 통설 기준이며, 일본 四柱推命도 거의 동일한 六親 도식을 쓴다."
+  },
+  {
+   "termKr": "십성 태과(과다)",
+   "hanja": "十星 太過",
+   "cnTerm": "十神太过",
+   "cnPinyin": "shí shén tài guò",
+   "jpTerm": "通変星過多",
+   "jpReading": "つうへんせいかた",
+   "area": "sipseong",
+   "school": "공통. 중국 맹파는 태과를 '병(病)'으로 보고 그 병을 제거하는 글자를 약(藥)으로 본다(病藥用神)."
+  },
+  {
+   "termKr": "십성 핵심 상호작용(작용 키워드)",
+   "hanja": "十星 相互作用",
+   "cnTerm": "十神组合(格局用法)",
+   "cnPinyin": "shí shén zǔ hé(gé jú yòng fǎ)",
+   "jpTerm": "通変星の組み合わせ",
+   "jpReading": "つうへんせいのくみあわせ",
+   "area": "sipseong",
+   "school": "공통(자평 통설). 중국 맹파는 동일 조합을 병약·제화(制化) 관점으로 더 강조한다."
+  },
+  {
+   "termKr": "십성(십신·통변성)",
+   "hanja": "十星(十神·通變星)",
+   "cnTerm": "十神",
+   "cnPinyin": "shí shén",
+   "jpTerm": "通変星",
+   "jpReading": "つうへんせい",
+   "area": "sipseong",
+   "school": "공통(한중일 모두 동일 개념). 한국은 '십신·십성·통변성', 중국은 十神, 일본 四柱推命은 通変星으로 칭한다. 단 일본 算命学은 通変星이 아니라 별개 체계(十大主星)를 쓰므로 혼동 금지."
+  },
+  {
+   "termKr": "일본 산명학 십대주성(통변성 대조)",
+   "hanja": "算命學 十大主星",
+   "cnTerm": "(对应)十神",
+   "cnPinyin": "duì yìng shí shén",
+   "jpTerm": "十大主星",
+   "jpReading": "じゅうだいしゅせい",
+   "area": "sipseong",
+   "school": "일본(算命学). 일본 내에서도 四柱推命(通変星)과 算命学(十大主星)은 다른 유파다."
+  },
+  {
+   "termKr": "정관",
+   "hanja": "正官",
+   "cnTerm": "正官",
+   "cnPinyin": "zhèng guān",
+   "jpTerm": "正官",
+   "jpReading": "せいかん",
+   "area": "sipseong",
+   "school": "공통. 여명 정관=남편 매핑은 한중일 전통 공유."
+  },
+  {
+   "termKr": "정인(인수)",
+   "hanja": "正印(印綬)",
+   "cnTerm": "正印",
+   "cnPinyin": "zhèng yìn",
+   "jpTerm": "印綬",
+   "jpReading": "いんじゅ",
+   "area": "sipseong",
+   "school": "한중은 正印, 일본 四柱推命은 같은 별을 印綬(いんじゅ)로 칭한다. 한국에서도 정인을 '인수'라 흔히 부른다."
+  },
+  {
+   "termKr": "정재",
+   "hanja": "正財",
+   "cnTerm": "正财",
+   "cnPinyin": "zhèng cái",
+   "jpTerm": "正財",
+   "jpReading": "せいざい",
+   "area": "sipseong",
+   "school": "공통. 남명 정재=정처 매핑은 한중일 공유."
+  },
+  {
+   "termKr": "편관(칠살)",
+   "hanja": "偏官(七殺)",
+   "cnTerm": "偏官(七杀)",
+   "cnPinyin": "piān guān(qī shā)",
+   "jpTerm": "偏官(七殺)",
+   "jpReading": "へんかん(しちさつ)",
+   "area": "sipseong",
+   "school": "공통. 한중일 모두 偏官과 七殺을 같은 별의 다른 호칭으로 본다(제어되면 偏官, 흉하면 七殺로 부르는 관행)."
+  },
+  {
+   "termKr": "편인(효신·도식)",
+   "hanja": "偏印(梟神·倒食)",
+   "cnTerm": "偏印(枭神·倒食)",
+   "cnPinyin": "piān yìn(xiāo shén·dǎo shí)",
+   "jpTerm": "偏印(倒食)",
+   "jpReading": "へんいん(とうしょく)",
+   "area": "sipseong",
+   "school": "공통. 중국에서 식신을 극하는 흉작용일 때 枭神(효신), 일본 四柱推命은 倒食(とうしょく)으로 부른다."
+  },
+  {
+   "termKr": "편재",
+   "hanja": "偏財",
+   "cnTerm": "偏财",
+   "cnPinyin": "piān cái",
+   "jpTerm": "偏財",
+   "jpReading": "へんざい",
+   "area": "sipseong",
+   "school": "공통. 육친에서 편재=부친 매핑은 한중일 공유 통설."
+  },
+  {
+   "termKr": "관살혼잡",
+   "hanja": "官殺混雜",
+   "cnTerm": "官杀混杂",
+   "cnPinyin": "guānshā hùnzá",
+   "jpTerm": "官殺混雑",
+   "jpReading": "かんさつこんざつ",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 정관격·칠살격 청탁(淸濁)론."
+  },
+  {
+   "termKr": "관인상생",
+   "hanja": "官印相生",
+   "cnTerm": "官印相生",
+   "cnPinyin": "guānyìn xiāngshēng",
+   "jpTerm": "官印相生",
+   "jpReading": "かんいんそうしょう",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 정관격·인수격 공통 귀격."
+  },
+  {
+   "termKr": "군겁쟁재",
+   "hanja": "群劫爭財",
+   "cnTerm": "群劫争财",
+   "cnPinyin": "qúnjié zhēngcái",
+   "jpTerm": "群劫爭財",
+   "jpReading": "ぐんごうそうざい",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 비겁 태과·재성 약 병론."
+  },
+  {
+   "termKr": "모자멸자",
+   "hanja": "母慈滅子",
+   "cnTerm": "母慈灭子",
+   "cnPinyin": "mǔcí mièzǐ",
+   "jpTerm": "母慈滅子",
+   "jpReading": "ぼじめつし",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 인수격 태과(太過) 병론."
+  },
+  {
+   "termKr": "살인상생",
+   "hanja": "殺印相生",
+   "cnTerm": "杀印相生",
+   "cnPinyin": "shāyìn xiāngshēng",
+   "jpTerm": "殺印相生",
+   "jpReading": "さついんそうしょう",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 칠살격 대표 구제법."
+  },
+  {
+   "termKr": "살인상정",
+   "hanja": "殺刃相停",
+   "cnTerm": "杀刃相停",
+   "cnPinyin": "shārèn xiāngtíng",
+   "jpTerm": "殺刃相停",
+   "jpReading": "さつじんそうてい",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 양인격·칠살격 결합 무귀론."
+  },
+  {
+   "termKr": "상관견관",
+   "hanja": "傷官見官",
+   "cnTerm": "伤官见官",
+   "cnPinyin": "shāngguān jiànguān",
+   "jpTerm": "傷官見官",
+   "jpReading": "しょうかんけんかん",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 상관격 흉 조건론."
+  },
+  {
+   "termKr": "상관상진",
+   "hanja": "傷官傷盡",
+   "cnTerm": "伤官伤尽",
+   "cnPinyin": "shāngguān shāngjìn",
+   "jpTerm": "傷官傷盡",
+   "jpReading": "しょうかんしょうじん",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 상관격 청법(淸法)론."
+  },
+  {
+   "termKr": "상관생재",
+   "hanja": "傷官生財",
+   "cnTerm": "伤官生财",
+   "cnPinyin": "shāngguān shēngcái",
+   "jpTerm": "傷官生財",
+   "jpReading": "しょうかんせいざい",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 상관·재격 통변."
+  },
+  {
+   "termKr": "상관패인",
+   "hanja": "傷官佩印",
+   "cnTerm": "伤官佩印",
+   "cnPinyin": "shāngguān pèiyìn",
+   "jpTerm": "傷官佩印",
+   "jpReading": "しょうかんはいいん",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 상관격의 대표 구제법."
+  },
+  {
+   "termKr": "식상생재(sipsin_combo)",
+   "hanja": "食傷生財",
+   "cnTerm": "食伤生财",
+   "cnPinyin": "shíshāng shēngcái",
+   "jpTerm": "食傷生財",
+   "jpReading": "しょくしょうせいざい",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 식상·재 통변 총론."
+  },
+  {
+   "termKr": "식신생재",
+   "hanja": "食神生財",
+   "cnTerm": "食神生财",
+   "cnPinyin": "shíshén shēngcái",
+   "jpTerm": "食神生財",
+   "jpReading": "しょくじんせいざい",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 격국·통변 공통 구조."
+  },
+  {
+   "termKr": "식신제살",
+   "hanja": "食神制殺",
+   "cnTerm": "食神制杀",
+   "cnPinyin": "shíshén zhìshā",
+   "jpTerm": "食神制殺",
+   "jpReading": "しょくじんせいさつ",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 칠살격 제복(制伏) 논."
+  },
+  {
+   "termKr": "인다신왕",
+   "hanja": "印多身旺",
+   "cnTerm": "印多身旺",
+   "cnPinyin": "yìnduō shēnwàng",
+   "jpTerm": "印多身旺",
+   "jpReading": "いんたしんおう",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 인수 태과·신왕 설기론."
+  },
+  {
+   "termKr": "재다신약(sipsin_combo)",
+   "hanja": "財多身弱",
+   "cnTerm": "财多身弱",
+   "cnPinyin": "cáiduō shēnruò",
+   "jpTerm": "財多身弱",
+   "jpReading": "ざいたしんじゃく",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 일간 강약·억부(抑扶) 핵심론."
+  },
+  {
+   "termKr": "재생관",
+   "hanja": "財生官",
+   "cnTerm": "财生官",
+   "cnPinyin": "cáishēng guān",
+   "jpTerm": "財生官",
+   "jpReading": "ざいせいかん",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 정관격·재격 통변."
+  },
+  {
+   "termKr": "재자약살",
+   "hanja": "財滋弱殺",
+   "cnTerm": "财滋弱杀",
+   "cnPinyin": "cáizī ruòshā",
+   "jpTerm": "財滋弱殺",
+   "jpReading": "ざいじじゃくさつ",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 칠살격 부살(扶殺) 논."
+  },
+  {
+   "termKr": "종아격(sipsin_combo)",
+   "hanja": "從兒格",
+   "cnTerm": "从儿格",
+   "cnPinyin": "cóng'ér gé",
+   "jpTerm": "從兒格",
+   "jpReading": "じゅうじかく",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 종격(從格)·외격론."
+  },
+  {
+   "termKr": "탐재괴인",
+   "hanja": "貪財壞印",
+   "cnTerm": "贪财坏印",
+   "cnPinyin": "tāncái huàiyìn",
+   "jpTerm": "貪財壞印",
+   "jpReading": "たんざいかいいん",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 인수격 파격 병론."
+  },
+  {
+   "termKr": "효신탈식",
+   "hanja": "梟神奪食",
+   "cnTerm": "枭神夺食",
+   "cnPinyin": "xiāoshén duóshí",
+   "jpTerm": "梟神奪食",
+   "jpReading": "きょうしんだっしょく",
+   "area": "sipsin_combo",
+   "school": "자평(子平). 식신격 파격·편인 병론."
+  },
+  {
+   "termKr": "갑목 일간의 정재(己土)",
+   "hanja": "甲木日干 正財 己土",
+   "cnTerm": "甲木日干 正财",
+   "cnPinyin": "jiǎmù rìgān zhèngcái",
+   "jpTerm": "甲木日干の正財",
+   "jpReading": "こうぼくにっかんのせいざい",
+   "area": "sipsin_ilgan",
+   "school": "子平 격국론 + 何建忠 정재심리(規劃·佔有·務實)"
+  },
+  {
+   "termKr": "경금 일간 칠살(丙火) — 화련금",
+   "hanja": "庚金日干 七殺 丙火",
+   "cnTerm": "庚金日干 七杀",
+   "cnPinyin": "gēngjīn rìgān qīshā",
+   "jpTerm": "庚金日干の七殺",
+   "jpReading": "こうきんにっかんのしちさつ",
+   "area": "sipsin_ilgan",
+   "school": "子平 칠살론(食神制殺·殺印相生) + 何建忠 칠살심리(壓迫·克己·行動力)"
+  },
+  {
+   "termKr": "금수상관 — 경금 일간 상관(癸水)",
+   "hanja": "庚金日干 傷官 癸水",
+   "cnTerm": "庚金日干 伤官",
+   "cnPinyin": "gēngjīn rìgān shāngguān",
+   "jpTerm": "庚金日干の傷官",
+   "jpReading": "こうきんにっかんのしょうかん",
+   "area": "sipsin_ilgan",
+   "school": "子平 五行傷官론(金水傷官喜見官), 대만 통설"
+  },
+  {
+   "termKr": "비견·겁재의 심리상의(何建忠) — 자아·경쟁·분탈",
+   "hanja": "比肩 劫財 心理象義",
+   "cnTerm": "比肩 劫财 心理象义",
+   "cnPinyin": "bǐjiān jiécái xīnlǐ xiàngyì",
+   "jpTerm": "比肩・劫財の心理象義",
+   "jpReading": "ひけん・ごうざいのしんりしょうぎ",
+   "area": "sipsin_ilgan",
+   "school": "대만 何建忠 八字心理 학파"
+  },
+  {
+   "termKr": "상관의 심리상의(何建忠) — 표현·초월·반항",
+   "hanja": "傷官 心理象義 何建忠",
+   "cnTerm": "伤官 心理象义 何建忠",
+   "cnPinyin": "shāngguān xīnlǐ xiàngyì Hé Jiànzhōng",
+   "jpTerm": "傷官の心理象義",
+   "jpReading": "しょうかんのしんりしょうぎ",
+   "area": "sipsin_ilgan",
+   "school": "대만 何建忠 八字心理 학파"
+  },
+  {
+   "termKr": "식신의 심리상의(何建忠) — 표달·전주의 我生",
+   "hanja": "食神 心理象義 何建忠",
+   "cnTerm": "食神 心理象义 何建忠",
+   "cnPinyin": "shíshén xīnlǐ xiàngyì Hé Jiànzhōng",
+   "jpTerm": "食神の心理象義",
+   "jpReading": "しょくじんのしんりしょうぎ",
+   "area": "sipsin_ilgan",
+   "school": "대만 何建忠 八字心理 학파"
+  },
+  {
+   "termKr": "신금 일간의 정재(甲木)",
+   "hanja": "辛金日干 正財 甲木",
+   "cnTerm": "辛金日干 正财",
+   "cnPinyin": "xīnjīn rìgān zhèngcái",
+   "jpTerm": "辛金日干の正財",
+   "jpReading": "しんきんにっかんのせいざい",
+   "area": "sipsin_ilgan",
+   "school": "대만 통설(財重身輕) + 何建忠 정재심리"
+  },
+  {
+   "termKr": "십신 공망 — 십성이 좌공(坐空)할 때의 심리",
+   "hanja": "十神 空亡 坐空",
+   "cnTerm": "十神 空亡 坐空",
+   "cnPinyin": "shíshén kōngwáng zuòkōng",
+   "jpTerm": "十神の空亡",
+   "jpReading": "じっしんのくうぼう",
+   "area": "sipsin_ilgan",
+   "school": "神煞·공망론 + 子平 십신 결합, 대만 통설"
+  },
+  {
+   "termKr": "십신 태약 — 미약·무근 십신의 발현",
+   "hanja": "十神 太弱 無根",
+   "cnTerm": "十神 太弱 无根",
+   "cnPinyin": "shíshén tàiruò wúgēn",
+   "jpTerm": "十神の太弱と無根",
+   "jpReading": "じっしんのたいじゃくとむこん",
+   "area": "sipsin_ilgan",
+   "school": "子平 억부용신론, 대만 통설"
+  },
+  {
+   "termKr": "십신 태왕 — 비겁 과다와 군겁쟁재",
+   "hanja": "十神 太旺 群劫爭財",
+   "cnTerm": "十神 太旺 群劫争财",
+   "cnPinyin": "shíshén tàiwàng qúnjié zhēngcái",
+   "jpTerm": "十神の太旺と群劫爭財",
+   "jpReading": "じっしんのたいおうとぐんごうそうざい",
+   "area": "sipsin_ilgan",
+   "school": "子平 억부·통관용신론 + 何建忠 비겁심리(自我·競爭)"
+  },
+  {
+   "termKr": "을목 일간 칠살(辛金) — 종살 경향",
+   "hanja": "乙木日干 七殺 辛金",
+   "cnTerm": "乙木日干 七杀",
+   "cnPinyin": "yǐmù rìgān qīshā",
+   "jpTerm": "乙木日干の七殺",
+   "jpReading": "おつぼくにっかんのしちさつ",
+   "area": "sipsin_ilgan",
+   "school": "子平 從殺格론, 대만 통설"
+  },
+  {
+   "termKr": "일간별 식신 — 토금식신(戊→庚) 대 목화식신(甲→丙)",
+   "hanja": "土金食神 對 木火食神",
+   "cnTerm": "土金食神 对 木火食神",
+   "cnPinyin": "tǔjīn shíshén duì mùhuǒ shíshén",
+   "jpTerm": "土金食神と木火食神",
+   "jpReading": "どきんしょくじんともっかしょくじん",
+   "area": "sipsin_ilgan",
+   "school": "子平 식신론 + 何建忠 식신심리(表達·專注·我生付出)"
+  },
+  {
+   "termKr": "임수 일간 정관(己土) — 탁수의 약한 둑",
+   "hanja": "壬水日干 正官 己土",
+   "cnTerm": "壬水日干 正官",
+   "cnPinyin": "rénshuǐ rìgān zhèngguān",
+   "jpTerm": "壬水日干の正官",
+   "jpReading": "じんすいにっかんのせいかん",
+   "area": "sipsin_ilgan",
+   "school": "子平 관성론 + 《窮通寶鑑》壬水 조후, 대만 통설"
+  },
+  {
+   "termKr": "정관·칠살의 심리상의(何建忠) — 자율규범 대 외압행동",
+   "hanja": "正官 七殺 心理象義",
+   "cnTerm": "正官 七杀 心理象义",
+   "cnPinyin": "zhèngguān qīshā xīnlǐ xiàngyì",
+   "jpTerm": "正官・七殺の心理象義",
+   "jpReading": "せいかん・しちさつのしんりしょうぎ",
+   "area": "sipsin_ilgan",
+   "school": "대만 何建忠 八字心理 학파"
+  },
+  {
+   "termKr": "정인·편인의 심리상의(何建忠) — 접수·의존 대 편집·직관",
+   "hanja": "正印 偏印 心理象義",
+   "cnTerm": "正印 偏印 心理象义",
+   "cnPinyin": "zhèngyìn piānyìn xīnlǐ xiàngyì",
+   "jpTerm": "正印・偏印の心理象義",
+   "jpReading": "せいいん・へんいんのしんりしょうぎ",
+   "area": "sipsin_ilgan",
+   "school": "대만 何建忠 八字心理 학파"
+  },
+  {
+   "termKr": "정재·편재의 심리상의(何建忠) — 규획·통제 대 호방·유동",
+   "hanja": "正財 偏財 心理象義",
+   "cnTerm": "正财 偏财 心理象义",
+   "cnPinyin": "zhèngcái piāncái xīnlǐ xiàngyì",
+   "jpTerm": "正財・偏財の心理象義",
+   "jpReading": "せいざい・へんざいのしんりしょうぎ",
+   "area": "sipsin_ilgan",
+   "school": "대만 何建忠 八字心理 학파"
+  },
+  {
+   "termKr": "정화 일간 정인(甲木) — 등불의 연료",
+   "hanja": "丁火日干 正印 甲木",
+   "cnTerm": "丁火日干 正印",
+   "cnPinyin": "dīnghuǒ rìgān zhèngyìn",
+   "jpTerm": "丁火日干の正印",
+   "jpReading": "ていかにっかんのせいいん",
+   "area": "sipsin_ilgan",
+   "school": "子平 인수론 + 何建忠 정인심리(庇蔭·接納·依賴·學習)"
+  },
+  {
+   "termKr": "통근에 따른 십신 변질 — 투간 십신의 허실",
+   "hanja": "通根 十神 虛實",
+   "cnTerm": "通根 十神 虚实",
+   "cnPinyin": "tōnggēn shíshén xūshí",
+   "jpTerm": "通根による十神の虚実",
+   "jpReading": "つうこんによるじっしんのきょじつ",
+   "area": "sipsin_ilgan",
+   "school": "子平 강약·통근론, 대만 梁湘潤 계열 정리"
+  },
+  {
+   "termKr": "합거에 의한 십신 무력화 — 기반·합거·탐합",
+   "hanja": "合去 羈絆 貪合",
+   "cnTerm": "合去 羁绊 贪合",
+   "cnPinyin": "héqù jībàn tānhé",
+   "jpTerm": "合去による十神の羈絆",
+   "jpReading": "ごうきょによるじっしんのきはん",
+   "area": "sipsin_ilgan",
+   "school": "子平 干合·기반론(合去·合殺留官), 대만 통설"
+  },
+  {
+   "termKr": "화토상관 — 정화 일간 상관(戊土)",
+   "hanja": "丁火日干 傷官 戊土",
+   "cnTerm": "丁火日干 伤官",
+   "cnPinyin": "dīnghuǒ rìgān shāngguān",
+   "jpTerm": "丁火日干の傷官",
+   "jpReading": "ていかにっかんのしょうかん",
+   "area": "sipsin_ilgan",
+   "school": "子平 五行傷官론(火土傷官宜傷盡)"
+  },
+  {
+   "termKr": "겁살(sipsin_sal)",
+   "hanja": "劫煞",
+   "cnTerm": "劫煞",
+   "cnPinyin": "jié shà",
+   "jpTerm": "劫殺",
+   "jpReading": "ごうさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "년살(도화)",
+   "hanja": "年煞",
+   "cnTerm": "年煞",
+   "cnPinyin": "nián shà",
+   "jpTerm": "年殺",
+   "jpReading": "ねんさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). sinsal area의 도화살과 명칭 공유, 여기서는 삼합 위치값으로 정의"
+  },
+  {
+   "termKr": "망신살(sipsin_sal)",
+   "hanja": "亡神煞",
+   "cnTerm": "亡神煞",
+   "cnPinyin": "wáng shén shà",
+   "jpTerm": "亡神",
+   "jpReading": "ぼうしん",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "반안살(sipsin_sal)",
+   "hanja": "攀鞍煞",
+   "cnTerm": "攀鞍煞",
+   "cnPinyin": "pān ān shà",
+   "jpTerm": "攀鞍",
+   "jpReading": "はんあん",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "삼합국 십이신살 도출법(포태 대응)",
+   "hanja": "三合局 十二神煞 起例",
+   "cnTerm": "三合局 十二神煞 起例",
+   "cnPinyin": "sānhéjú shí'èr shén shà qǐlì",
+   "jpTerm": "三合局 十二神殺 起例",
+   "jpReading": "さんごうきょく じゅうにしんさつ きれい",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). 대만 현대명리도 동일 기례 사용"
+  },
+  {
+   "termKr": "십이신살(체계)",
+   "hanja": "十二神煞",
+   "cnTerm": "十二神煞",
+   "cnPinyin": "shí'èr shén shà",
+   "jpTerm": "十二神殺",
+   "jpReading": "じゅうにしんさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). 대만·한국·일본 사주에서 두루 사용"
+  },
+  {
+   "termKr": "역마살(sipsin_sal)",
+   "hanja": "驛馬煞",
+   "cnTerm": "驿马煞",
+   "cnPinyin": "yì mǎ shà",
+   "jpTerm": "駅馬",
+   "jpReading": "えきば",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). 대만·일본 사주에서도 핵심 신살"
+  },
+  {
+   "termKr": "월살(고초)",
+   "hanja": "月煞",
+   "cnTerm": "月煞",
+   "cnPinyin": "yuè shà",
+   "jpTerm": "月殺",
+   "jpReading": "げっさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). 고초살 별칭 통용"
+  },
+  {
+   "termKr": "육해살(sipsin_sal)",
+   "hanja": "六害煞",
+   "cnTerm": "六害煞",
+   "cnPinyin": "liù hài shà",
+   "jpTerm": "六害",
+   "jpReading": "ろくがい",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "장성살(sipsin_sal)",
+   "hanja": "將星煞",
+   "cnTerm": "将星煞",
+   "cnPinyin": "jiàng xīng shà",
+   "jpTerm": "将星",
+   "jpReading": "しょうせい",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "재살(수옥살)(sipsin_sal)",
+   "hanja": "災煞",
+   "cnTerm": "灾煞",
+   "cnPinyin": "zāi shà",
+   "jpTerm": "災殺",
+   "jpReading": "さいさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). 수옥살 별칭 통용"
+  },
+  {
+   "termKr": "지살(sipsin_sal)",
+   "hanja": "地煞",
+   "cnTerm": "地煞",
+   "cnPinyin": "dì shà",
+   "jpTerm": "地殺",
+   "jpReading": "ちさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "천살(sipsin_sal)",
+   "hanja": "天煞",
+   "cnTerm": "天煞",
+   "cnPinyin": "tiān shà",
+   "jpTerm": "天殺",
+   "jpReading": "てんさつ",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주)"
+  },
+  {
+   "termKr": "화개살(sipsin_sal)",
+   "hanja": "華蓋煞",
+   "cnTerm": "华盖煞",
+   "cnPinyin": "huá gài shà",
+   "jpTerm": "華蓋",
+   "jpReading": "かがい",
+   "area": "sipsin_sal",
+   "school": "공통(자평·당사주). 대만·일본 사주에서도 예술·종교 표지로 사용"
+  },
+  {
+   "termKr": "녹명법",
+   "hanja": "祿命法",
+   "cnTerm": "禄命法",
+   "cnPinyin": "lùmìng fǎ",
+   "jpTerm": "祿命法",
+   "jpReading": "ロクメイホウ",
+   "area": "taiwan",
+   "school": "고법 삼명·녹명 계보(대만 정리)"
+  },
+  {
+   "termKr": "대만식 조후용신관",
+   "hanja": "臺灣式 調候用神觀",
+   "cnTerm": "台湾式调候用神观",
+   "cnPinyin": "Táiwānshì tiáohòu yòngshén guān",
+   "jpTerm": "調候用神",
+   "jpReading": "チョウコウヨウジン",
+   "area": "taiwan",
+   "school": "대만 조후 중시 통변(서낙오 계승)"
+  },
+  {
+   "termKr": "대한",
+   "hanja": "大限",
+   "cnTerm": "大限",
+   "cnPinyin": "dàxiàn",
+   "jpTerm": "大限",
+   "jpReading": "タイゲン",
+   "area": "taiwan",
+   "school": "자미두수"
+  },
+  {
+   "termKr": "맹파명리(taiwan)",
+   "hanja": "盲派",
+   "cnTerm": "盲派",
+   "cnPinyin": "mángpài",
+   "jpTerm": "盲派",
+   "jpReading": "モウハ",
+   "area": "taiwan",
+   "school": "맹파(강호 단법 계보)"
+  },
+  {
+   "termKr": "명궁",
+   "hanja": "命宮",
+   "cnTerm": "命宫",
+   "cnPinyin": "mìnggōng",
+   "jpTerm": "命宮",
+   "jpReading": "メイキュウ",
+   "area": "taiwan",
+   "school": "자미두수"
+  },
+  {
+   "termKr": "명리신론",
+   "hanja": "命理新論",
+   "cnTerm": "命理新论",
+   "cnPinyin": "Mìnglǐ xīnlùn",
+   "jpTerm": "命理新論",
+   "jpReading": "メイリシンロン",
+   "area": "taiwan",
+   "school": "대만 현대 정통 자평 교재파"
+  },
+  {
+   "termKr": "묘왕리함",
+   "hanja": "廟旺利陷",
+   "cnTerm": "庙旺利陷",
+   "cnPinyin": "miào wàng lì xiàn",
+   "jpTerm": "廟旺利陷",
+   "jpReading": "ビョウオウリカン",
+   "area": "taiwan",
+   "school": "자미두수"
+  },
+  {
+   "termKr": "비성파",
+   "hanja": "飛星派",
+   "cnTerm": "飞星派",
+   "cnPinyin": "fēixīng pài",
+   "jpTerm": "飛星派",
+   "jpReading": "ヒセイハ",
+   "area": "taiwan",
+   "school": "자미두수 飛星派(대만 발달)"
+  },
+  {
+   "termKr": "사화",
+   "hanja": "四化",
+   "cnTerm": "四化",
+   "cnPinyin": "sìhuà",
+   "jpTerm": "四化",
+   "jpReading": "シカ",
+   "area": "taiwan",
+   "school": "자미두수(특히 대만 飛星派)"
+  },
+  {
+   "termKr": "살파랑",
+   "hanja": "殺破狼",
+   "cnTerm": "杀破狼",
+   "cnPinyin": "shā pò láng",
+   "jpTerm": "殺破狼",
+   "jpReading": "サツハロウ",
+   "area": "taiwan",
+   "school": "자미두수"
+  },
+  {
+   "termKr": "삼방사정",
+   "hanja": "三方四正",
+   "cnTerm": "三方四正",
+   "cnPinyin": "sānfāng sìzhèng",
+   "jpTerm": "三方四正",
+   "jpReading": "サンポウシセイ",
+   "area": "taiwan",
+   "school": "자미두수"
+  },
+  {
+   "termKr": "삼합파",
+   "hanja": "三合派",
+   "cnTerm": "三合派",
+   "cnPinyin": "sānhé pài",
+   "jpTerm": "三合派",
+   "jpReading": "サンゴウハ",
+   "area": "taiwan",
+   "school": "자미두수 三合派"
+  },
+  {
+   "termKr": "서낙오",
+   "hanja": "徐樂吾",
+   "cnTerm": "徐乐吾",
+   "cnPinyin": "Xú Lèwú",
+   "jpTerm": "徐樂吾",
+   "jpReading": "ジョ・ラクゴ",
+   "area": "taiwan",
+   "school": "민국 자평 주석파(대만 교본 계보)"
+  },
+  {
+   "termKr": "십신상의",
+   "hanja": "十神象義",
+   "cnTerm": "十神象义",
+   "cnPinyin": "shíshén xiàngyì",
+   "jpTerm": "十神象義",
+   "jpReading": "ジッシンショウギ",
+   "area": "taiwan",
+   "school": "대만 심리명리파(상의 확장)"
+  },
+  {
+   "termKr": "십이궁",
+   "hanja": "十二宮",
+   "cnTerm": "十二宫",
+   "cnPinyin": "shí'èr gōng",
+   "jpTerm": "十二宮",
+   "jpReading": "ジュウニキュウ",
+   "area": "taiwan",
+   "school": "자미두수"
+  },
+  {
+   "termKr": "양상윤",
+   "hanja": "梁湘潤",
+   "cnTerm": "梁湘润",
+   "cnPinyin": "Liáng Xiāngrùn",
+   "jpTerm": "梁湘潤",
+   "jpReading": "リョウ・ショウジュン",
+   "area": "taiwan",
+   "school": "맹파·녹명 정리파(대만 강호 계보)"
+  },
+  {
+   "termKr": "위천리",
+   "hanja": "韋千里",
+   "cnTerm": "韦千里",
+   "cnPinyin": "Wéi Qiānlǐ",
+   "jpTerm": "韋千里",
+   "jpReading": "イ・センリ",
+   "area": "taiwan",
+   "school": "민국 자평 정통파(대만·홍콩 표준 교본 계보)"
+  },
+  {
+   "termKr": "자미두수",
+   "hanja": "紫微斗數",
+   "cnTerm": "紫微斗数",
+   "cnPinyin": "Zǐwēi dǒushù",
+   "jpTerm": "紫微斗数",
+   "jpReading": "シビトスウ",
+   "area": "taiwan",
+   "school": "자미두수(대만 발달, 三合派·飛星派 분화)"
+  },
+  {
+   "termKr": "자미성",
+   "hanja": "紫微星",
+   "cnTerm": "紫微星",
+   "cnPinyin": "Zǐwēixīng",
+   "jpTerm": "紫微星",
+   "jpReading": "シビセイ",
+   "area": "taiwan",
+   "school": "자미두수(紫微星系)"
+  },
+  {
+   "termKr": "자평수언",
+   "hanja": "子平粹言",
+   "cnTerm": "子平粹言",
+   "cnPinyin": "Zǐpíng cuìyán",
+   "jpTerm": "子平粹言",
+   "jpReading": "シヘイスイゲン",
+   "area": "taiwan",
+   "school": "민국 자평 이론파"
+  },
+  {
+   "termKr": "적천수보주",
+   "hanja": "滴天髓補註",
+   "cnTerm": "滴天髓补注",
+   "cnPinyin": "Dītiānsuǐ bǔzhù",
+   "jpTerm": "滴天髓補註",
+   "jpReading": "テキテンズイホチュウ",
+   "area": "taiwan",
+   "school": "민국 자평 주석파(고급)"
+  },
+  {
+   "termKr": "조화원약",
+   "hanja": "造化元鑰",
+   "cnTerm": "造化元钥",
+   "cnPinyin": "Zàohuà yuányào",
+   "jpTerm": "造化元鑰",
+   "jpReading": "ゾウカゲンヤク",
+   "area": "taiwan",
+   "school": "조후파(調候)·민국 자평 주석파"
+  },
+  {
+   "termKr": "종의명",
+   "hanja": "鍾義明",
+   "cnTerm": "钟义明",
+   "cnPinyin": "Zhōng Yìmíng",
+   "jpTerm": "鍾義明",
+   "jpReading": "ショウ・ギメイ",
+   "area": "taiwan",
+   "school": "대만 실증·고증파(팔자·자미 겸수)"
+  },
+  {
+   "termKr": "중주파",
+   "hanja": "中州派",
+   "cnTerm": "中州派",
+   "cnPinyin": "Zhōngzhōu pài",
+   "jpTerm": "中州派",
+   "jpReading": "チュウシュウハ",
+   "area": "taiwan",
+   "school": "자미두수 中州派(홍콩 계보)"
+  },
+  {
+   "termKr": "천부성",
+   "hanja": "天府星",
+   "cnTerm": "天府星",
+   "cnPinyin": "Tiānfǔxīng",
+   "jpTerm": "天府星",
+   "jpReading": "テンプセイ",
+   "area": "taiwan",
+   "school": "자미두수(天府星系)"
+  },
+  {
+   "termKr": "철판신수",
+   "hanja": "鐵板神數",
+   "cnTerm": "铁板神数",
+   "cnPinyin": "Tiěbǎn shénshù",
+   "jpTerm": "鐵板神數",
+   "jpReading": "テッパンシンスウ",
+   "area": "taiwan",
+   "school": "철판신수(수리 술수, 대만·홍콩 비전)"
+  },
+  {
+   "termKr": "팔자·자미 병용",
+   "hanja": "八字紫微並用",
+   "cnTerm": "八字紫微并用",
+   "cnPinyin": "Bāzì Zǐwēi bìngyòng",
+   "jpTerm": "八字紫微併用",
+   "jpReading": "ハチジシビヘイヨウ",
+   "area": "taiwan",
+   "school": "대만 겸수 통변(팔자+자미)"
+  },
+  {
+   "termKr": "팔자심리추명학",
+   "hanja": "八字心理推命學",
+   "cnTerm": "八字心理推命学",
+   "cnPinyin": "Bāzì xīnlǐ tuīmìngxué",
+   "jpTerm": "八字心理推命學",
+   "jpReading": "ハチジシンリスイメイガク",
+   "area": "taiwan",
+   "school": "대만 심리명리파"
+  },
+  {
+   "termKr": "팔자제요",
+   "hanja": "八字提要",
+   "cnTerm": "八字提要",
+   "cnPinyin": "Bāzì tíyào",
+   "jpTerm": "八字提要",
+   "jpReading": "ハチジテイヨウ",
+   "area": "taiwan",
+   "school": "민국 자평 정통파"
+  },
+  {
+   "termKr": "하건충",
+   "hanja": "何建忠",
+   "cnTerm": "何建忠",
+   "cnPinyin": "Hé Jiànzhōng",
+   "jpTerm": "何建忠",
+   "jpReading": "カ・ケンチュウ",
+   "area": "taiwan",
+   "school": "대만 심리명리파(현대 혁신)"
+  },
+  {
+   "termKr": "혜심재주",
+   "hanja": "慧心齋主",
+   "cnTerm": "慧心斋主",
+   "cnPinyin": "Huìxīn zhāizhǔ",
+   "jpTerm": "慧心齋主",
+   "jpReading": "ケイシンサイシュ",
+   "area": "taiwan",
+   "school": "대만 현대 자미두수 보급파"
+  },
+  {
+   "termKr": "구성기학",
+   "hanja": "九星氣學",
+   "cnTerm": "九星气学",
+   "cnPinyin": "jiǔxīng qìxué",
+   "jpTerm": "九星気学",
+   "jpReading": "きゅうせいきがく",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "구자화성",
+   "hanja": "九紫火星",
+   "cnTerm": "九紫火星",
+   "cnPinyin": "jiǔzǐ huǒxīng",
+   "jpTerm": "九紫火星",
+   "jpReading": "きゅうしかせい",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "당사주(toklore)",
+   "hanja": "唐四柱",
+   "cnTerm": "唐四柱",
+   "cnPinyin": "Táng sìzhù",
+   "jpTerm": "唐四柱(韓国通行)",
+   "jpReading": "とうしちゅう",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "백사십사괘",
+   "hanja": "百四十四卦",
+   "cnTerm": "百四十四卦",
+   "cnPinyin": "bǎi sìshísì guà",
+   "jpTerm": "百四十四卦",
+   "jpReading": "ひゃくよんじゅうよんか",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "본명성",
+   "hanja": "本命星",
+   "cnTerm": "本命星",
+   "cnPinyin": "běnmìng xīng",
+   "jpTerm": "本命星",
+   "jpReading": "ほんめいせい",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "삼한",
+   "hanja": "三限",
+   "cnTerm": "三限",
+   "cnPinyin": "sānxiàn",
+   "jpTerm": "三限",
+   "jpReading": "さんげん",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "상괘",
+   "hanja": "上卦",
+   "cnTerm": "上卦",
+   "cnPinyin": "shàngguà",
+   "jpTerm": "上卦",
+   "jpReading": "じょうか",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "세파",
+   "hanja": "歲破",
+   "cnTerm": "岁破",
+   "cnPinyin": "suìpò",
+   "jpTerm": "歳破",
+   "jpReading": "さいは",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "신수",
+   "hanja": "身數",
+   "cnTerm": "身数",
+   "cnPinyin": "shēnshù",
+   "jpTerm": "身数",
+   "jpReading": "しんすう",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "십이성",
+   "hanja": "十二星",
+   "cnTerm": "十二星",
+   "cnPinyin": "shí'èr xīng",
+   "jpTerm": "十二星",
+   "jpReading": "じゅうにせい",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "암검살",
+   "hanja": "暗劍殺",
+   "cnTerm": "暗剑杀",
+   "cnPinyin": "ànjiàn shā",
+   "jpTerm": "暗剣殺",
+   "jpReading": "あんけんさつ",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "오황살",
+   "hanja": "五黃殺",
+   "cnTerm": "五黄杀",
+   "cnPinyin": "wǔhuáng shā",
+   "jpTerm": "五黄殺",
+   "jpReading": "ごおうさつ",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "오황토성",
+   "hanja": "五黃土星",
+   "cnTerm": "五黄土星",
+   "cnPinyin": "wǔhuáng tǔxīng",
+   "jpTerm": "五黄土星",
+   "jpReading": "ごおうどせい",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "월명성",
+   "hanja": "月命星",
+   "cnTerm": "月命星",
+   "cnPinyin": "yuèmìng xīng",
+   "jpTerm": "月命星",
+   "jpReading": "げつめいせい",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "월별신수",
+   "hanja": "月別身數",
+   "cnTerm": "月别身数",
+   "cnPinyin": "yuèbié shēnshù",
+   "jpTerm": "月別身数(韓国固有)",
+   "jpReading": "げつべつしんすう",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "이사방위",
+   "hanja": "移徙方位",
+   "cnTerm": "移徙方位",
+   "cnPinyin": "yíxǐ fāngwèi",
+   "jpTerm": "移徙方位",
+   "jpReading": "いしほうい",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "일백수성",
+   "hanja": "一白水星",
+   "cnTerm": "一白水星",
+   "cnPinyin": "yìbái shuǐxīng",
+   "jpTerm": "一白水星",
+   "jpReading": "いっぱくすいせい",
+   "area": "toklore",
+   "school": "구성"
+  },
+  {
+   "termKr": "작괘법",
+   "hanja": "作卦法",
+   "cnTerm": "作卦法",
+   "cnPinyin": "zuòguà fǎ",
+   "jpTerm": "作卦法",
+   "jpReading": "さっかほう",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "중괘",
+   "hanja": "中卦",
+   "cnTerm": "中卦",
+   "cnPinyin": "zhōngguà",
+   "jpTerm": "中卦",
+   "jpReading": "ちゅうか",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "천권성",
+   "hanja": "天權星",
+   "cnTerm": "天权星",
+   "cnPinyin": "tiānquán xīng",
+   "jpTerm": "天權星",
+   "jpReading": "てんけんせい",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "천귀성",
+   "hanja": "天貴星",
+   "cnTerm": "天贵星",
+   "cnPinyin": "tiānguì xīng",
+   "jpTerm": "天貴星",
+   "jpReading": "てんきせい",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "천복성",
+   "hanja": "天福星",
+   "cnTerm": "天福星",
+   "cnPinyin": "tiānfú xīng",
+   "jpTerm": "天福星",
+   "jpReading": "てんぷくせい",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "천액성",
+   "hanja": "天厄星",
+   "cnTerm": "天厄星",
+   "cnPinyin": "tiān'è xīng",
+   "jpTerm": "天厄星",
+   "jpReading": "てんやくせい",
+   "area": "toklore",
+   "school": "공통"
+  },
+  {
+   "termKr": "토정비결",
+   "hanja": "土亭祕訣",
+   "cnTerm": "土亭秘诀(韩国固有)",
+   "cnPinyin": "Tǔtíng mìjué",
+   "jpTerm": "土亭秘訣(韓国固有)",
+   "jpReading": "トジョンビギョル",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "하괘",
+   "hanja": "下卦",
+   "cnTerm": "下卦",
+   "cnPinyin": "xiàguà",
+   "jpTerm": "下卦",
+   "jpReading": "げか",
+   "area": "toklore",
+   "school": "주역"
+  },
+  {
+   "termKr": "건록(임관)",
+   "hanja": "建祿(臨官)",
+   "cnTerm": "临官（建禄）",
+   "cnPinyin": "línguān (jiànlù)",
+   "jpTerm": "建禄（臨官）",
+   "jpReading": "けんろく（りんかん）",
+   "area": "twelve_unseong",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "관대",
+   "hanja": "冠帶",
+   "cnTerm": "冠带",
+   "cnPinyin": "guāndài",
+   "jpTerm": "冠帯",
+   "jpReading": "かんたい",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "목욕",
+   "hanja": "沐浴",
+   "cnTerm": "沐浴",
+   "cnPinyin": "mùyù",
+   "jpTerm": "沐浴",
+   "jpReading": "もくよく",
+   "area": "twelve_unseong",
+   "school": "자평통설(도화 연결은 통설, 길흉은 구조의존)"
+  },
+  {
+   "termKr": "묘(고)",
+   "hanja": "墓(庫)",
+   "cnTerm": "墓库",
+   "cnPinyin": "mùkù",
+   "jpTerm": "墓",
+   "jpReading": "ぼ",
+   "area": "twelve_unseong",
+   "school": "자평통설/맹파(개고 활용은 맹파에서 비중이 큼)"
+  },
+  {
+   "termKr": "병",
+   "hanja": "病",
+   "cnTerm": "病",
+   "cnPinyin": "bìng",
+   "jpTerm": "病",
+   "jpReading": "びょう",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "사",
+   "hanja": "死",
+   "cnTerm": "死",
+   "cnPinyin": "sǐ",
+   "jpTerm": "死",
+   "jpReading": "し",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "사생·사왕·사고(생지·왕지·고지)",
+   "hanja": "四生·四旺·四庫",
+   "cnTerm": "四生四旺四库（四孟四仲四季）",
+   "cnPinyin": "sì shēng sì wàng sì kù (sì mèng sì zhòng sì jì)",
+   "jpTerm": "四生・四旺・四庫（四孟・四仲・四季）",
+   "jpReading": "しせい・しおう・しこ（しもう・しちゅう・しき）",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "쇠",
+   "hanja": "衰",
+   "cnTerm": "衰",
+   "cnPinyin": "shuāi",
+   "jpTerm": "衰",
+   "jpReading": "すい",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "십이대종성(일본 산명학)",
+   "hanja": "十二大從星",
+   "cnTerm": "（对应）十二长生",
+   "cnPinyin": "shí'èr chángshēng",
+   "jpTerm": "十二大従星",
+   "jpReading": "じゅうにだいじゅうせい",
+   "area": "twelve_unseong",
+   "school": "일본(算命学). 일본 四柱推命은 子平과 동일하게 長生·沐浴…十二運 명칭을 그대로 쓴다."
+  },
+  {
+   "termKr": "십이운성(포태법)",
+   "hanja": "十二運星(胞胎法)",
+   "cnTerm": "十二长生",
+   "cnPinyin": "shí'èr chángshēng",
+   "jpTerm": "十二運（十二運星）",
+   "jpReading": "じゅうにうん（じゅうにうんせい）",
+   "area": "twelve_unseong",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "양",
+   "hanja": "養",
+   "cnTerm": "养",
+   "cnPinyin": "yǎng",
+   "jpTerm": "養",
+   "jpReading": "よう",
+   "area": "twelve_unseong",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "양순음역(양포태·음포태)",
+   "hanja": "陽順陰逆",
+   "cnTerm": "阳顺阴逆",
+   "cnPinyin": "yáng shùn yīn nì",
+   "jpTerm": "陽順陰逆（陽干順行・陰干逆行）",
+   "jpReading": "ようじゅんいんぎゃく",
+   "area": "twelve_unseong",
+   "school": "자평통설(단, 음간 역행의 실효성은 子平真詮·일부 실파에서 이견)"
+  },
+  {
+   "termKr": "왕상휴수사와 12운성 구분",
+   "hanja": "旺相休囚死",
+   "cnTerm": "旺相休囚死",
+   "cnPinyin": "wàng xiàng xiū qiú sǐ",
+   "jpTerm": "旺相休囚死",
+   "jpReading": "おうそうきゅうしゅうし",
+   "area": "twelve_unseong",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "음포태(음간 12운성 도출)",
+   "hanja": "陰胞胎(陰干逆行)",
+   "cnTerm": "阴干逆行",
+   "cnPinyin": "yīn gàn nì xíng",
+   "jpTerm": "陰干逆行（十二運）",
+   "jpReading": "いんかんぎゃっこう",
+   "area": "twelve_unseong",
+   "school": "자평통설(단, 음간 역행·음간 묘의 실효성은 子平真詮 등에서 이견)"
+  },
+  {
+   "termKr": "일간별 포태 기준(생·왕·묘)",
+   "hanja": "日干胞胎 生旺墓",
+   "cnTerm": "五行寄生十二宫",
+   "cnPinyin": "wǔxíng jìshēng shí'èr gōng",
+   "jpTerm": "十二運の早見（日干基準）",
+   "jpReading": "じゅうにうんのはやみ（にっかんきじゅん）",
+   "area": "twelve_unseong",
+   "school": "자평통설(火土同根: 戊土를 丙火처럼 寅장생으로 봄. 戊를 별도 배치하는 학파차 있음)"
+  },
+  {
+   "termKr": "장생",
+   "hanja": "長生",
+   "cnTerm": "长生",
+   "cnPinyin": "chángshēng",
+   "jpTerm": "長生",
+   "jpReading": "ちょうせい",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "절(포)",
+   "hanja": "絕(胞)",
+   "cnTerm": "绝（胞）",
+   "cnPinyin": "jué (bāo)",
+   "jpTerm": "絶",
+   "jpReading": "ぜつ",
+   "area": "twelve_unseong",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "제왕",
+   "hanja": "帝旺",
+   "cnTerm": "帝旺",
+   "cnPinyin": "dìwàng",
+   "jpTerm": "帝旺",
+   "jpReading": "ていおう",
+   "area": "twelve_unseong",
+   "school": "자평통설(양인 연결은 통설)"
+  },
+  {
+   "termKr": "태",
+   "hanja": "胎",
+   "cnTerm": "胎",
+   "cnPinyin": "tāi",
+   "jpTerm": "胎",
+   "jpReading": "たい",
+   "area": "twelve_unseong",
+   "school": "공통"
+  },
+  {
+   "termKr": "격국용신(상신)",
+   "hanja": "格局用神（相神）",
+   "cnTerm": "格局用神（相神）",
+   "cnPinyin": "ge2 ju2 yong4 shen2（xiang4 shen2）",
+   "jpTerm": "格局用神・相神",
+   "jpReading": "かっきょくようじん・そうしん（kakkyoku yōjin・sōshin）",
+   "area": "yongsin",
+   "school": "자평통설(자평진전 격국법)"
+  },
+  {
+   "termKr": "구신",
+   "hanja": "仇神",
+   "cnTerm": "仇神",
+   "cnPinyin": "chou2 shen2",
+   "jpTerm": "仇神",
+   "jpReading": "きゅうしん（kyūshin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "기신",
+   "hanja": "忌神",
+   "cnTerm": "忌神",
+   "cnPinyin": "ji4 shen2",
+   "jpTerm": "忌神",
+   "jpReading": "きじん（kijin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "득령",
+   "hanja": "得令",
+   "cnTerm": "得令",
+   "cnPinyin": "de2 ling4",
+   "jpTerm": "得令（月令を得る）",
+   "jpReading": "とくれい（tokurei）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "득세",
+   "hanja": "得勢",
+   "cnTerm": "得势",
+   "cnPinyin": "de2 shi4",
+   "jpTerm": "得勢",
+   "jpReading": "とくせい（tokusei）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "득지",
+   "hanja": "得地",
+   "cnTerm": "得地",
+   "cnPinyin": "de2 di4",
+   "jpTerm": "得地（通根）",
+   "jpReading": "とくち（tokuchi）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "병약용신",
+   "hanja": "病藥用神",
+   "cnTerm": "病药用神",
+   "cnPinyin": "bing4 yao4 yong4 shen2",
+   "jpTerm": "病薬用神",
+   "jpReading": "びょうやくようじん（byōyaku yōjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "신강신약 판정",
+   "hanja": "身強身弱",
+   "cnTerm": "身强身弱",
+   "cnPinyin": "shen1 qiang2 shen1 ruo4",
+   "jpTerm": "身強・身弱",
+   "jpReading": "しんきょう・しんじゃく（shinkyō・shinjaku）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "억부용신",
+   "hanja": "抑扶用神",
+   "cnTerm": "抑扶用神",
+   "cnPinyin": "yi4 fu2 yong4 shen2",
+   "jpTerm": "抑扶用神",
+   "jpReading": "よくふようじん（yokufu yōjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "용신",
+   "hanja": "用神",
+   "cnTerm": "用神",
+   "cnPinyin": "yong4 shen2",
+   "jpTerm": "用神",
+   "jpReading": "ようじん（yōjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "일주(일간)",
+   "hanja": "日主",
+   "cnTerm": "日主（日元/日干）",
+   "cnPinyin": "ri4 zhu3（ri4 yuan2 / ri4 gan1）",
+   "jpTerm": "日主（日干）",
+   "jpReading": "にっしゅ／にっかん（nisshu／nikkan）",
+   "area": "yongsin",
+   "school": "공통"
+  },
+  {
+   "termKr": "전왕용신",
+   "hanja": "專旺用神",
+   "cnTerm": "专旺用神（从旺/从强）",
+   "cnPinyin": "zhuan1 wang4 yong4 shen2（cong2 wang4 / cong2 qiang2）",
+   "jpTerm": "専旺用神（従旺）",
+   "jpReading": "せんおうようじん（sen'ō yōjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "조후용신",
+   "hanja": "調候用神",
+   "cnTerm": "调候用神",
+   "cnPinyin": "tiao2 hou4 yong4 shen2",
+   "jpTerm": "調候用神",
+   "jpReading": "ちょうこうようじん（chōkō yōjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "종격",
+   "hanja": "從格",
+   "cnTerm": "从格（从儿/从财/从杀/从势）",
+   "cnPinyin": "cong2 ge2（cong2 er2 / cong2 cai2 / cong2 sha1 / cong2 shi4）",
+   "jpTerm": "従格",
+   "jpReading": "じゅうかく（jūkaku）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "중화",
+   "hanja": "中和",
+   "cnTerm": "中和",
+   "cnPinyin": "zhong1 he2",
+   "jpTerm": "中和",
+   "jpReading": "ちゅうわ（chūwa）",
+   "area": "yongsin",
+   "school": "공통"
+  },
+  {
+   "termKr": "통관용신",
+   "hanja": "通關用神",
+   "cnTerm": "通关用神",
+   "cnPinyin": "tong1 guan1 yong4 shen2",
+   "jpTerm": "通関用神",
+   "jpReading": "つうかんようじん（tsūkan yōjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "통근",
+   "hanja": "通根",
+   "cnTerm": "通根",
+   "cnPinyin": "tong1 gen1",
+   "jpTerm": "通根",
+   "jpReading": "つうこん（tsūkon）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "한신",
+   "hanja": "閑神",
+   "cnTerm": "闲神",
+   "cnPinyin": "xian2 shen2",
+   "jpTerm": "閑神",
+   "jpReading": "かんじん（kanjin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "희신",
+   "hanja": "喜神",
+   "cnTerm": "喜神",
+   "cnPinyin": "xi3 shen2",
+   "jpTerm": "喜神",
+   "jpReading": "きしん（kishin）",
+   "area": "yongsin",
+   "school": "자평통설"
+  },
+  {
+   "termKr": "공망(yukhyo)",
+   "hanja": "空亡",
+   "cnTerm": "空亡",
+   "cnPinyin": "kōngwáng",
+   "jpTerm": "空亡",
+   "jpReading": "くうぼう",
+   "area": "yukhyo",
+   "school": "공통"
+  },
+  {
+   "termKr": "납갑",
+   "hanja": "納甲",
+   "cnTerm": "纳甲",
+   "cnPinyin": "nàjiǎ",
+   "jpTerm": "納甲",
+   "jpReading": "のうこう",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "단시점법",
+   "hanja": "斷時占法",
+   "cnTerm": "断时占法",
+   "cnPinyin": "duànshí zhànfǎ",
+   "jpTerm": "断時占法",
+   "jpReading": "だんじ せんぽう",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "동효·변효",
+   "hanja": "動爻·變爻",
+   "cnTerm": "动爻·变爻",
+   "cnPinyin": "dòngyáo·biànyáo",
+   "jpTerm": "動爻·変爻",
+   "jpReading": "どうこう・へんこう",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "반음·복음(yukhyo)",
+   "hanja": "反吟·伏吟",
+   "cnTerm": "反吟·伏吟",
+   "cnPinyin": "fǎnyín·fúyín",
+   "jpTerm": "反吟·伏吟",
+   "jpReading": "はんぎん・ふくぎん",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "비신·복신",
+   "hanja": "飛神·伏神",
+   "cnTerm": "飞神·伏神",
+   "cnPinyin": "fēishén·fúshén",
+   "jpTerm": "飛神·伏神",
+   "jpReading": "ひしん・ふくしん",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "생극충합",
+   "hanja": "生剋沖合",
+   "cnTerm": "生克冲合",
+   "cnPinyin": "shēng kè chōng hé",
+   "jpTerm": "生剋沖合",
+   "jpReading": "せいこくちゅうごう",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "세효·응효",
+   "hanja": "世爻·應爻",
+   "cnTerm": "世爻·应爻",
+   "cnPinyin": "shìyáo·yìngyáo",
+   "jpTerm": "世爻·応爻",
+   "jpReading": "せこう・おうこう",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "용신(yukhyo)",
+   "hanja": "用神",
+   "cnTerm": "用神",
+   "cnPinyin": "yòngshén",
+   "jpTerm": "用神",
+   "jpReading": "ようじん",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "월건·일진",
+   "hanja": "月建·日辰",
+   "cnTerm": "月建·日辰",
+   "cnPinyin": "yuèjiàn·rìchén",
+   "jpTerm": "月建·日辰",
+   "jpReading": "げっけん・にっしん",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "육수(육신)",
+   "hanja": "六獸(六神)",
+   "cnTerm": "六兽(六神)",
+   "cnPinyin": "liùshòu (liùshén)",
+   "jpTerm": "六獣(六神)",
+   "jpReading": "ろくじゅう(ろくしん)",
+   "area": "yukhyo",
+   "school": "공통"
+  },
+  {
+   "termKr": "육친",
+   "hanja": "六親",
+   "cnTerm": "六亲",
+   "cnPinyin": "liùqīn",
+   "jpTerm": "六親",
+   "jpReading": "ろくしん",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "육효점(단역)",
+   "hanja": "六爻占(斷易)",
+   "cnTerm": "六爻占(断易)",
+   "cnPinyin": "liùyáo zhàn (duànyì)",
+   "jpTerm": "六爻占(断易)",
+   "jpReading": "ろっこう うらない(だんえき)",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "응기",
+   "hanja": "應期",
+   "cnTerm": "应期",
+   "cnPinyin": "yìngqī",
+   "jpTerm": "応期",
+   "jpReading": "おうき",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "주역점과의 차이",
+   "hanja": "周易占別",
+   "cnTerm": "周易占别",
+   "cnPinyin": "zhōuyì zhàn bié",
+   "jpTerm": "周易占別",
+   "jpReading": "しゅうえき せんべつ",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "진신·퇴신",
+   "hanja": "進神·退神",
+   "cnTerm": "进神·退神",
+   "cnPinyin": "jìnshén·tuìshén",
+   "jpTerm": "進神·退神",
+   "jpReading": "しんしん・たいしん",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "팔궁·괘궁",
+   "hanja": "八宮·卦宮",
+   "cnTerm": "八宫·卦宫",
+   "cnPinyin": "bāgōng·guàgōng",
+   "jpTerm": "八宮·卦宮",
+   "jpReading": "はっきゅう・かきゅう",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "회두극·회두생",
+   "hanja": "回頭剋·回頭生",
+   "cnTerm": "回头克·回头生",
+   "cnPinyin": "huítóukè·huítóushēng",
+   "jpTerm": "回頭剋·回頭生",
+   "jpReading": "かいとうこく・かいとうせい",
+   "area": "yukhyo",
+   "school": "육효"
+  },
+  {
+   "termKr": "공망(yukim)",
+   "hanja": "空亡",
+   "cnTerm": "空亡",
+   "cnPinyin": "kōng wáng",
+   "jpTerm": "空亡",
+   "jpReading": "くうぼう",
+   "area": "yukim",
+   "school": "공통"
+  },
+  {
+   "termKr": "과체",
+   "hanja": "課體",
+   "cnTerm": "课体",
+   "cnPinyin": "kè tǐ",
+   "jpTerm": "課体",
+   "jpReading": "かたい",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "구종문",
+   "hanja": "九宗門",
+   "cnTerm": "九宗门",
+   "cnPinyin": "jiǔ zōng mén",
+   "jpTerm": "九宗門",
+   "jpReading": "きゅうそうもん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "국사점",
+   "hanja": "國事占",
+   "cnTerm": "国事占",
+   "cnPinyin": "guó shì zhàn",
+   "jpTerm": "國事占",
+   "jpReading": "こくじせん",
+   "area": "yukim",
+   "school": "공통"
+  },
+  {
+   "termKr": "귀인(천을귀인)",
+   "hanja": "貴人",
+   "cnTerm": "贵人",
+   "cnPinyin": "guì rén",
+   "jpTerm": "貴人",
+   "jpReading": "きじん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "년명(본명·행년)",
+   "hanja": "年命",
+   "cnTerm": "年命",
+   "cnPinyin": "nián mìng",
+   "jpTerm": "年命",
+   "jpReading": "ねんめい",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "단시점",
+   "hanja": "斷時占",
+   "cnTerm": "断时占",
+   "cnPinyin": "duàn shí zhàn",
+   "jpTerm": "断時占",
+   "jpReading": "だんじせん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "대육임",
+   "hanja": "大六壬",
+   "cnTerm": "大六壬",
+   "cnPinyin": "dà liù rén",
+   "jpTerm": "大六壬",
+   "jpReading": "だいりくじん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "사과",
+   "hanja": "四課",
+   "cnTerm": "四课",
+   "cnPinyin": "sì kè",
+   "jpTerm": "四課",
+   "jpReading": "しか",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "삼식",
+   "hanja": "三式",
+   "cnTerm": "三式",
+   "cnPinyin": "sān shì",
+   "jpTerm": "三式",
+   "jpReading": "さんしき",
+   "area": "yukim",
+   "school": "공통"
+  },
+  {
+   "termKr": "삼전",
+   "hanja": "三傳",
+   "cnTerm": "三传",
+   "cnPinyin": "sān chuán",
+   "jpTerm": "三伝",
+   "jpReading": "さんでん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "십이천장",
+   "hanja": "十二天將",
+   "cnTerm": "十二天将",
+   "cnPinyin": "shí'èr tiān jiàng",
+   "jpTerm": "十二天将",
+   "jpReading": "じゅうにてんしょう",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "월장",
+   "hanja": "月將",
+   "cnTerm": "月将",
+   "cnPinyin": "yuè jiàng",
+   "jpTerm": "月将",
+   "jpReading": "げっしょう",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "월장가시",
+   "hanja": "月將加時",
+   "cnTerm": "月将加时",
+   "cnPinyin": "yuè jiàng jiā shí",
+   "jpTerm": "月將加時",
+   "jpReading": "げっしょうかじ",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "유신",
+   "hanja": "類神",
+   "cnTerm": "类神",
+   "cnPinyin": "lèi shén",
+   "jpTerm": "類神",
+   "jpReading": "るいしん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "점시",
+   "hanja": "占時",
+   "cnTerm": "占时",
+   "cnPinyin": "zhān shí",
+   "jpTerm": "占時",
+   "jpReading": "せんじ",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "주객(주객산)",
+   "hanja": "主客",
+   "cnTerm": "主客",
+   "cnPinyin": "zhǔ kè",
+   "jpTerm": "主客",
+   "jpReading": "しゅかく",
+   "area": "yukim",
+   "school": "태을"
+  },
+  {
+   "termKr": "천반지반(yukim)",
+   "hanja": "天盤地盤",
+   "cnTerm": "天盘地盘",
+   "cnPinyin": "tiān pán dì pán",
+   "jpTerm": "天盤地盤",
+   "jpReading": "てんばんちばん",
+   "area": "yukim",
+   "school": "육임"
+  },
+  {
+   "termKr": "태을",
+   "hanja": "太乙",
+   "cnTerm": "太乙",
+   "cnPinyin": "tài yǐ",
+   "jpTerm": "太乙",
+   "jpReading": "たいおつ",
+   "area": "yukim",
+   "school": "태을"
+  },
+  {
+   "termKr": "태을신수",
+   "hanja": "太乙神數",
+   "cnTerm": "太乙神数",
+   "cnPinyin": "tài yǐ shén shù",
+   "jpTerm": "太乙神数",
+   "jpReading": "たいおつしんすう",
+   "area": "yukim",
+   "school": "태을"
+  },
+  {
+   "termKr": "거기동림격",
+   "hanja": "巨機同臨",
+   "cnTerm": "巨机同临",
+   "cnPinyin": "Jùjī tónglín",
+   "jpTerm": "巨機同臨",
+   "jpReading": "キョキドウリン",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "군신경회격",
+   "hanja": "君臣慶會",
+   "cnTerm": "君臣庆会",
+   "cnPinyin": "Jūnchén qìnghuì",
+   "jpTerm": "君臣慶會",
+   "jpReading": "クンシンケイカイ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "금찬광휘격",
+   "hanja": "金燦光輝",
+   "cnTerm": "金灿光辉",
+   "cnPinyin": "Jīncàn guānghuī",
+   "jpTerm": "金燦光輝",
+   "jpReading": "キンサンコウキ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "기월동량격",
+   "hanja": "機月同梁",
+   "cnTerm": "机月同梁",
+   "cnPinyin": "Jīyuè tóngliáng",
+   "jpTerm": "機月同梁",
+   "jpReading": "キゲツドウリョウ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "대한(ziwei_ge)",
+   "hanja": "大限",
+   "cnTerm": "大限",
+   "cnPinyin": "Dàxiàn",
+   "jpTerm": "大限",
+   "jpReading": "ダイゲン",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "두군",
+   "hanja": "斗君",
+   "cnTerm": "斗君",
+   "cnPinyin": "Dǒujūn",
+   "jpTerm": "斗君",
+   "jpReading": "トクン",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "부상조원격",
+   "hanja": "府相朝垣",
+   "cnTerm": "府相朝垣",
+   "cnPinyin": "Fǔxiàng cháoyuán",
+   "jpTerm": "府相朝垣",
+   "jpReading": "フショウチョウエン",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "살파랑격",
+   "hanja": "殺破狼",
+   "cnTerm": "杀破狼",
+   "cnPinyin": "Shāpòláng",
+   "jpTerm": "殺破狼",
+   "jpReading": "サツハロウ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "석중은옥격",
+   "hanja": "石中隱玉",
+   "cnTerm": "石中隐玉",
+   "cnPinyin": "Shízhōng yǐnyù",
+   "jpTerm": "石中隱玉",
+   "jpReading": "セキチュウインギョク",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "소한",
+   "hanja": "小限",
+   "cnTerm": "小限",
+   "cnPinyin": "Xiǎoxiàn",
+   "jpTerm": "小限",
+   "jpReading": "ショウゲン",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "양양창록격",
+   "hanja": "陽梁昌祿",
+   "cnTerm": "阳梁昌禄",
+   "cnPinyin": "Yángliáng chānglù",
+   "jpTerm": "陽梁昌祿",
+   "jpReading": "ヨウリョウショウロク",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "운한사화",
+   "hanja": "運限四化",
+   "cnTerm": "运限四化",
+   "cnPinyin": "Yùnxiàn sìhuà",
+   "jpTerm": "運限四化",
+   "jpReading": "ウンゲンシカ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "유년",
+   "hanja": "流年",
+   "cnTerm": "流年",
+   "cnPinyin": "Liúnián",
+   "jpTerm": "流年",
+   "jpReading": "リュウネン",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "일월병명격",
+   "hanja": "日月並明",
+   "cnTerm": "日月并明",
+   "cnPinyin": "Rìyuè bìngmíng",
+   "jpTerm": "日月並明",
+   "jpReading": "ジツゲツヘイメイ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "자부동궁격",
+   "hanja": "紫府同宮",
+   "cnTerm": "紫府同宫",
+   "cnPinyin": "Zǐfǔ tónggōng",
+   "jpTerm": "紫府同宮",
+   "jpReading": "シフドウグウ",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "화탐·영탐격",
+   "hanja": "火貪鈴貪",
+   "cnTerm": "火贪铃贪格",
+   "cnPinyin": "Huǒtān língtān gé",
+   "jpTerm": "火貪・鈴貪格",
+   "jpReading": "カタン・レイタンカク",
+   "area": "ziwei_ge",
+   "school": "자미"
+  },
+  {
+   "termKr": "경양·타라",
+   "hanja": "擎羊陀羅",
+   "cnTerm": "擎羊陀罗",
+   "cnPinyin": "qíng yáng tuó luó",
+   "jpTerm": "擎羊陀羅",
+   "jpReading": "けいよう・だら（keiyō・dara）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "관록궁",
+   "hanja": "官祿宮",
+   "cnTerm": "官禄宫",
+   "cnPinyin": "guān lù gōng",
+   "jpTerm": "官祿宮",
+   "jpReading": "かんろくきゅう（kanrokukyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "노복궁(교우궁)",
+   "hanja": "奴僕宮（交友宮）",
+   "cnTerm": "奴仆宫（交友宫）",
+   "cnPinyin": "nú pú gōng（jiāo yǒu gōng）",
+   "jpTerm": "奴僕宮（交友宮）",
+   "jpReading": "どぼくきゅう（dobokukyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "록존",
+   "hanja": "祿存",
+   "cnTerm": "禄存",
+   "cnPinyin": "lù cún",
+   "jpTerm": "祿存",
+   "jpReading": "ろくそん（rokuson）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "명궁(ziwei_palaces)",
+   "hanja": "命宮",
+   "cnTerm": "命宫",
+   "cnPinyin": "mìng gōng",
+   "jpTerm": "命宮",
+   "jpReading": "めいきゅう（meikyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "문창·문곡",
+   "hanja": "文昌文曲",
+   "cnTerm": "文昌文曲",
+   "cnPinyin": "wén chāng wén qū",
+   "jpTerm": "文昌文曲",
+   "jpReading": "ぶんしょう・ぶんきょく（bunshō・bunkyoku）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "복덕궁",
+   "hanja": "福德宮",
+   "cnTerm": "福德宫",
+   "cnPinyin": "fú dé gōng",
+   "jpTerm": "福德宮",
+   "jpReading": "ふくとくきゅう（fukutokukyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "부모궁",
+   "hanja": "父母宮",
+   "cnTerm": "父母宫",
+   "cnPinyin": "fù mǔ gōng",
+   "jpTerm": "父母宮",
+   "jpReading": "ふぼきゅう（fubokyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "부처궁",
+   "hanja": "夫妻宮",
+   "cnTerm": "夫妻宫",
+   "cnPinyin": "fū qī gōng",
+   "jpTerm": "夫妻宮",
+   "jpReading": "ふさいきゅう（fusaikyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "오행국",
+   "hanja": "五行局",
+   "cnTerm": "五行局",
+   "cnPinyin": "wǔ xíng jú",
+   "jpTerm": "五行局",
+   "jpReading": "ごぎょうきょく（gogyōkyoku）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "자녀궁",
+   "hanja": "子女宮",
+   "cnTerm": "子女宫",
+   "cnPinyin": "zǐ nǚ gōng",
+   "jpTerm": "子女宮",
+   "jpReading": "しじょきゅう（shijokyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "자미두수(ziwei_palaces)",
+   "hanja": "紫微斗數",
+   "cnTerm": "紫微斗数",
+   "cnPinyin": "zǐ wēi dǒu shù",
+   "jpTerm": "紫微斗数",
+   "jpReading": "しびとすう（shibitosū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "재백궁",
+   "hanja": "財帛宮",
+   "cnTerm": "财帛宫",
+   "cnPinyin": "cái bó gōng",
+   "jpTerm": "財帛宮",
+   "jpReading": "ざいはくきゅう（zaihakukyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "전택궁",
+   "hanja": "田宅宮",
+   "cnTerm": "田宅宫",
+   "cnPinyin": "tián zhái gōng",
+   "jpTerm": "田宅宮",
+   "jpReading": "でんたくきゅう（dentakukyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "좌보·우필",
+   "hanja": "左輔右弼",
+   "cnTerm": "左辅右弼",
+   "cnPinyin": "zuǒ fǔ yòu bì",
+   "jpTerm": "左輔右弼",
+   "jpReading": "さほ・ゆうひつ（saho・yūhitsu）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "지공·지겁",
+   "hanja": "地空地劫",
+   "cnTerm": "地空地劫",
+   "cnPinyin": "dì kōng dì jié",
+   "jpTerm": "地空地劫",
+   "jpReading": "ちくう・ちこう（chikū・chikō）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "질액궁",
+   "hanja": "疾厄宮",
+   "cnTerm": "疾厄宫",
+   "cnPinyin": "jí è gōng",
+   "jpTerm": "疾厄宮",
+   "jpReading": "しつやくきゅう（shitsuyakukyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "천괴·천월",
+   "hanja": "天魁天鉞",
+   "cnTerm": "天魁天钺",
+   "cnPinyin": "tiān kuí tiān yuè",
+   "jpTerm": "天魁天鉞",
+   "jpReading": "てんかい・てんえつ（tenkai・ten'etsu）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "천마",
+   "hanja": "天馬",
+   "cnTerm": "天马",
+   "cnPinyin": "tiān mǎ",
+   "jpTerm": "天馬",
+   "jpReading": "てんば（tenba）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "천이궁",
+   "hanja": "遷移宮",
+   "cnTerm": "迁移宫",
+   "cnPinyin": "qiān yí gōng",
+   "jpTerm": "遷移宮",
+   "jpReading": "せんいきゅう（sen'ikyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "형제궁",
+   "hanja": "兄弟宮",
+   "cnTerm": "兄弟宫",
+   "cnPinyin": "xiōng dì gōng",
+   "jpTerm": "兄弟宮",
+   "jpReading": "けいていきゅう（keiteikyū）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "화과",
+   "hanja": "化科",
+   "cnTerm": "化科",
+   "cnPinyin": "huà kē",
+   "jpTerm": "化科",
+   "jpReading": "かか（kaka）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "화권",
+   "hanja": "化權",
+   "cnTerm": "化权",
+   "cnPinyin": "huà quán",
+   "jpTerm": "化權",
+   "jpReading": "かけん（kaken）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "화기",
+   "hanja": "化忌",
+   "cnTerm": "化忌",
+   "cnPinyin": "huà jì",
+   "jpTerm": "化忌",
+   "jpReading": "かき（kaki）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "화록",
+   "hanja": "化祿",
+   "cnTerm": "化禄",
+   "cnPinyin": "huà lù",
+   "jpTerm": "化祿",
+   "jpReading": "かろく（karoku）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "화성·령성",
+   "hanja": "火星鈴星",
+   "cnTerm": "火星铃星",
+   "cnPinyin": "huǒ xīng líng xīng",
+   "jpTerm": "火星鈴星",
+   "jpReading": "かせい・れいせい（kasei・reisei）",
+   "area": "ziwei_palaces",
+   "school": "자미"
+  },
+  {
+   "termKr": "거문",
+   "hanja": "巨門",
+   "cnTerm": "巨门",
+   "cnPinyin": "jùmén",
+   "jpTerm": "巨門",
+   "jpReading": "きょもん",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "무곡",
+   "hanja": "武曲",
+   "cnTerm": "武曲",
+   "cnPinyin": "wǔqū",
+   "jpTerm": "武曲",
+   "jpReading": "ぶきょく",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "염정",
+   "hanja": "廉貞",
+   "cnTerm": "廉贞",
+   "cnPinyin": "liánzhēn",
+   "jpTerm": "廉貞",
+   "jpReading": "れんてい",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "자미",
+   "hanja": "紫微",
+   "cnTerm": "紫微",
+   "cnPinyin": "zǐwēi",
+   "jpTerm": "紫微",
+   "jpReading": "しび",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "천기",
+   "hanja": "天機",
+   "cnTerm": "天机",
+   "cnPinyin": "tiānjī",
+   "jpTerm": "天機",
+   "jpReading": "てんき",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "천동",
+   "hanja": "天同",
+   "cnTerm": "天同",
+   "cnPinyin": "tiāntóng",
+   "jpTerm": "天同",
+   "jpReading": "てんどう",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "천량",
+   "hanja": "天梁",
+   "cnTerm": "天梁",
+   "cnPinyin": "tiānliáng",
+   "jpTerm": "天梁",
+   "jpReading": "てんりょう",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "천부",
+   "hanja": "天府",
+   "cnTerm": "天府",
+   "cnPinyin": "tiānfǔ",
+   "jpTerm": "天府",
+   "jpReading": "てんぷ",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "천상",
+   "hanja": "天相",
+   "cnTerm": "天相",
+   "cnPinyin": "tiānxiàng",
+   "jpTerm": "天相",
+   "jpReading": "てんそう",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "칠살",
+   "hanja": "七殺",
+   "cnTerm": "七杀",
+   "cnPinyin": "qīshā",
+   "jpTerm": "七殺",
+   "jpReading": "しちさつ",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "탐랑",
+   "hanja": "貪狼",
+   "cnTerm": "贪狼",
+   "cnPinyin": "tānláng",
+   "jpTerm": "貪狼",
+   "jpReading": "たんろう",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "태양",
+   "hanja": "太陽",
+   "cnTerm": "太阳",
+   "cnPinyin": "tàiyáng",
+   "jpTerm": "太陽",
+   "jpReading": "たいよう",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "태음",
+   "hanja": "太陰",
+   "cnTerm": "太阴",
+   "cnPinyin": "tàiyīn",
+   "jpTerm": "太陰",
+   "jpReading": "たいいん",
+   "area": "ziwei_stars",
+   "school": "자미"
+  },
+  {
+   "termKr": "파군",
+   "hanja": "破軍",
+   "cnTerm": "破军",
+   "cnPinyin": "pòjūn",
+   "jpTerm": "破軍",
+   "jpReading": "はぐん",
+   "area": "ziwei_stars",
+   "school": "자미"
+  }
+ ]
+}

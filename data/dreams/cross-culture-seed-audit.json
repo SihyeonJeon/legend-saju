@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "status": "five_concept_seed_audit_lane_active",
+  "asOf": "2026-08-21",
+  "purpose": "서로 독립된 중국 한문권과 그리스계 영어 전승에서 맞물리는 꿈 모티프와 충돌 조건을 함께 보존한다.",
+  "method": {
+    "minimumIndependentSourceFamilies": 2,
+    "sourceFamilies": [
+      "zhougong_dreambook_tradition",
+      "artemidorus_oneirocritica_1644_english_transmission"
+    ],
+    "rule": "같은 대상이 나온다는 이유만으로 같은 뜻이라 하지 않는다. 대상과 행동과 상태와 장소와 꿈꾼 사람의 처지를 나누고 두 계보가 실제로 공유하는 구조만 공통 모티프로 적는다.",
+    "scientificBoundary": "전통 문헌 사이의 비교이며 미래 사건을 검증한 과학적 합의가 아니다."
+  },
+  "sourceCorpora": [
+    "data/dreams/zhougong-primary.json",
+    "data/dreams/artemidorus-1644-primary.json"
+  ],
+  "concepts": [
+    {
+      "concept": "배설물",
+      "sourceEvidence": {
+        "zhougong": [
+          "zhougong-0120",
+          "zhougong-0144",
+          "zhougong-0371",
+          "zhougong-0372"
+        ],
+        "artemidorus1644": [
+          "artemidorus-1644-088",
+          "artemidorus-1644-156"
+        ]
+      },
+      "sharedMotif": "버려지는 물질이 재화나 이익으로 바뀌는 해석이 두 계보에 모두 있으나 접촉 방식과 장소와 꿈꾼 사람의 처지에 따라 손해나 수치로 뒤집힌다.",
+      "conflict": "주공 계열 안에서도 쌓인 분뇨는 재물이고 그 안에 앉는 것은 흉하다. 1644년 전승도 농부나 빈자에게는 이익이 될 수 있으나 사람의 분뇨에 더럽혀지는 일은 해로 본다.",
+      "safeGeneralization": "배설물 자체보다 축적과 배출과 오염과 장소를 분리해 해석한다.",
+      "universalClaim": null
+    },
+    {
+      "concept": "물",
+      "sourceEvidence": {
+        "zhougong": [
+          "zhougong-0799",
+          "zhougong-0800",
+          "zhougong-0804",
+          "zhougong-0807"
+        ],
+        "artemidorus1644": [
+          "artemidorus-1644-089",
+          "artemidorus-1644-131"
+        ]
+      },
+      "sharedMotif": "맑고 다룰 수 있는 물은 유리하게 읽히고 탁하거나 거세거나 빠져나오지 못하는 물은 장애로 읽히는 경향이 맞물린다.",
+      "conflict": "물 위를 가는 일과 서 있는 일부터 길흉이 다르며 1644년 전승도 항해와 수영과 범람을 다르게 다룬다.",
+      "safeGeneralization": "물의 존재보다 맑기와 세기와 이동 방식과 탈출 가능성을 본다.",
+      "universalClaim": null
+    },
+    {
+      "concept": "이",
+      "sourceEvidence": {
+        "zhougong": [
+          "zhougong-0149",
+          "zhougong-0150"
+        ],
+        "artemidorus1644": [
+          "artemidorus-1644-021"
+        ]
+      },
+      "sharedMotif": "이는 집안사람과 세대와 상실이나 교체를 나타내는 구조로 두 계보에서 겹친다.",
+      "conflict": "빠지는 이는 가족 상실로도 읽히지만 빚진 사람에게는 채무 해소가 될 수 있고 다시 나는 이는 후손의 번성이나 처지 변화가 된다.",
+      "safeGeneralization": "어느 이가 어떻게 빠지고 다시 났는지와 가족·채무·질병 맥락을 함께 본다.",
+      "universalClaim": null
+    },
+    {
+      "concept": "불",
+      "sourceEvidence": {
+        "zhougong": [
+          "zhougong-0814",
+          "zhougong-0815",
+          "zhougong-0816",
+          "zhougong-0820",
+          "zhougong-0823",
+          "zhougong-0828"
+        ],
+        "artemidorus1644": [
+          "artemidorus-1644-072"
+        ]
+      },
+      "sharedMotif": "밝고 안정된 불은 활력과 재화로 읽히고 탁한 연기나 과도하거나 불안정한 불은 질병과 손실로 읽히는 구분이 맞물린다.",
+      "conflict": "집이 타는 꿈도 주공 계열에서는 흥왕으로 읽힐 수 있어 불의 크기만으로 길흉을 고정할 수 없다.",
+      "safeGeneralization": "밝기와 연기와 통제 여부와 불이 난 장소를 나눠 본다.",
+      "universalClaim": null
+    },
+    {
+      "concept": "죽은 사람",
+      "sourceEvidence": {
+        "zhougong": [
+          "zhougong-0673",
+          "zhougong-0674",
+          "zhougong-0675",
+          "zhougong-0676",
+          "zhougong-0679"
+        ],
+        "artemidorus1644": [
+          "artemidorus-1644-111",
+          "artemidorus-1644-115"
+        ]
+      },
+      "sharedMotif": "고인이 나타났다는 사실보다 생전 관계와 고인이 주거나 가져가는 행동과 다시 살아나는지에 따라 뜻이 달라진다는 구조가 맞물린다.",
+      "conflict": "같은 고인 꿈도 도움과 손실과 소식과 불안으로 갈리므로 조상꿈이라는 한 범주로 길흉을 정할 수 없다.",
+      "safeGeneralization": "누가 나타났는지와 생전 관계와 말과 교환된 물건과 떠나는 방향을 묻는다.",
+      "universalClaim": null
+    }
+  ],
+  "activation": {
+    "engineCapability": false,
+    "laneRouting": true,
+    "promptInjection": true,
+    "productionUse": true,
+    "activeScope": "concepts 배열의 교차 전승 요약 5건만 DREAM lane 근거로 사용한다. 두 원문 코퍼스는 직접 생성 근거로 라우팅하지 않는다."
+  }
+}
