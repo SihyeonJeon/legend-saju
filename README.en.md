@@ -77,13 +77,23 @@ Node.js 20 or newer is required.
 - Claims carry source IDs, maturity, omissions, conflicts, and uncertainty.
 - The full Korean naming path reads all 9,495 observed official entries lazily.
 
-The MCP exposes three gateways rather than three metaphysics features:
+The MCP exposes read-only tools whose names match the user's goal:
 
 | Tool | Purpose |
 | --- | --- |
+| `legend_saju_read_fortune` | General, yearly, wealth, business, career, relationship, and health readings |
+| `legend_saju_analyze_compatibility` | Compare two supplied birth charts |
+| `legend_saju_select_dates` | Run date selection only when it was explicitly requested |
+| `legend_saju_cast_divination` | Run Qimen, Daliuren, or I Ching question-time calculations |
+| `legend_saju_analyze_name` | Analyze Korean name Hanja, official-name observations, and declared stroke methods |
 | `legend_saju_manifest` | Inspect live methods, data coverage, and sources |
-| `legend_saju_capabilities` | Find relevant calculations from natural language |
-| `legend_saju_resolve` | Route open-ended input through multiple calculators |
+| `legend_saju_capabilities` | Discover specialized calculations for an expert request |
+| `legend_saju_resolve` | Execute an expert plan that names methods or evidence depth |
+
+Ordinary readings now execute a bounded plan. A wealth or business question does
+not silently add date selection or remedy calculators. MCP responses default to a
+compact `consumer` view; `evidence` and `debug` remain available when raw depth is
+explicitly requested.
 
 ## Auditable scope
 

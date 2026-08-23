@@ -1,6 +1,6 @@
 import {
   ENGINE_CAPABILITIES,
-  ENGINE_SOURCES,
+  ENGINE_SOURCE_BY_ID,
   LEGACY_SAJU_INTENTS,
   preflightCapability,
   type CapabilityDescriptor,
@@ -11,7 +11,9 @@ import {
 } from "./engine-capabilities";
 import {
   buildLifeDossier,
+  inferLifeDomains,
   type LifeDossier,
+  type LifeDomain,
 } from "./engine-v2";
 import type { LifeEventEvidence } from "./life-timeline";
 import type { SajuInput } from "./saju-engine";
@@ -53,6 +55,31 @@ export interface LegendSajuResolveInput {
   purpose?: string;
   asOfYear?: number;
   maxAutoCapabilities?: number;
+  entryIntent?: LegendSajuEntryIntent;
+  outputMode?: LegendSajuOutputMode;
+  maxClaims?: number;
+}
+
+export type LegendSajuEntryIntent =
+  | "general_reading"
+  | "compatibility"
+  | "date_selection"
+  | "divination"
+  | "naming"
+  | "expert";
+
+export type LegendSajuOutputMode = "consumer" | "compact" | "evidence" | "debug";
+
+export interface CapabilityExecutionPlan {
+  entryIntent: LegendSajuEntryIntent;
+  domains: LifeDomain[];
+  requiredByInput: EngineCapabilityId[];
+  core: EngineCapabilityId[];
+  supporting: EngineCapabilityId[];
+  requested: string[];
+  selected: EngineCapabilityId[];
+  unsupported: string[];
+  omitted: { capabilityId: EngineCapabilityId; reason: string }[];
 }
 
 export interface CapabilitySearchInput {
@@ -71,6 +98,7 @@ export interface CapabilitySearchHit {
 
 export interface LegendSajuResolution {
   question: string;
+  executionPlan: CapabilityExecutionPlan;
   selection: {
     requested: string[];
     autoSelected: EngineCapabilityId[];
@@ -127,7 +155,7 @@ const DOMAIN_HINTS: Record<string, { terms: string[]; domains: string[] }> = {
 
 const SYSTEM_ALIASES: Partial<Record<EngineSystem, string[]>> = {
   calendar: ["만세력", "일진", "절기", "calendar", "萬年曆", "万年历"],
-  myeongri: ["사주", "명리", "추명학", "bazi", "four pillars", "myeongri", "八字", "四柱", "命理"],
+  myeongri: ["사주", "명리", "추명학", "saju", "bazi", "four pillars", "myeongri", "八字", "四柱", "命理"],
   ziwei: ["자미두수", "자미", "비성", "zi wei", "ziwei", "紫微斗數", "紫微斗数"],
   juyeok: ["주역", "육십사괘", "효", "iching", "i ching", "周易", "易経"],
   yukim: ["육임", "대육임", "daliuren", "liuren", "大六壬"],
@@ -137,12 +165,60 @@ const SYSTEM_ALIASES: Partial<Record<EngineSystem, string[]>> = {
   musok: ["무속", "무당", "신앙", "shamanic"],
 };
 
+const SYSTEM_DEFAULT_CAPABILITIES: Partial<Record<EngineSystem, EngineCapabilityId[]>> = {
+  calendar: ["date_yinyang"],
+  myeongri: ["chart", "myeongri_structure", "current_luck"],
+  ziwei: ["ziwei_topology", "ziwei_horoscope"],
+  juyeok: ["juyeok_cast"],
+  yukim: ["yukim"],
+  gimun: ["gimun"],
+  cheolpan: ["cheolpan_shenshu"],
+  naming: ["korean_name_analysis", "suri", "naming"],
+};
+
+const EXPLICIT_CAPABILITY_TERMS: Partial<Record<EngineCapabilityId, string[]>> = {
+  taekil: ["택일", "좋은 날", "날짜 추천", "날을 골", "개업일", "계약일", "이사일", "수술일"],
+  gaeun: ["개운", "운을 바꾸", "운을 올리"],
+  gaeun_pro: ["개운", "색", "방위", "물건", "오행 처방"],
+  ziwei_gaeun: ["자미 개운", "자미두수 개운"],
+  compatibility: ["궁합", "두 사람", "남자친구", "여자친구", "배우자와", "연인과"],
+  gimun: ["기문", "기문둔갑"],
+  yukim: ["육임", "대육임"],
+  juyeok_cast: ["주역", "괘", "효"],
+  cheolpan_shenshu: ["철판", "철판신수"],
+  suri: ["81수", "수리", "획수"],
+  korean_name_analysis: ["이름 한자", "인명용 한자", "파자", "성명학"],
+  naming: ["작명", "이름 추천"],
+  naming_hanja: ["작명 한자", "이름 한자 추천"],
+};
+
+const ACTION_TERMS = ["개운", "행동", "무엇을 해야", "뭘 해야", "어떻게 해야", "조심할", "주의할", "구체적 액션", "실천"];
+const DEEP_READING_TERMS = ["종합", "전체", "깊게", "상세", "교차", "자미", "원전", "관법", "유파"];
+
 function normalize(value: string): string {
   return value.normalize("NFKC").toLocaleLowerCase().replace(/[_/.,:;()[\]{}|]+/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function queryTokens(value: string): string[] {
   return [...new Set(normalize(value).split(" ").filter((token) => token.length >= 2))];
+}
+
+function includesAny(query: string, terms: readonly string[]): boolean {
+  return terms.some((term) => query.includes(normalize(term)));
+}
+
+function systemsForFilter(values: readonly string[] | undefined): Set<EngineSystem> {
+  const resolved = new Set<EngineSystem>();
+  const registeredSystems = new Set(Object.values(ENGINE_CAPABILITIES).map((capability) => capability.system));
+  for (const raw of values ?? []) {
+    const value = normalize(raw);
+    for (const system of registeredSystems) {
+      if (normalize(system) === value || (SYSTEM_ALIASES[system] ?? []).some((alias) => normalize(alias) === value)) {
+        resolved.add(system);
+      }
+    }
+  }
+  return resolved;
 }
 
 export function isEngineCapabilityId(value: string): value is EngineCapabilityId {
@@ -153,13 +229,13 @@ export function isEngineCapabilityId(value: string): value is EngineCapabilityId
 export function searchCapabilities(input: CapabilitySearchInput): CapabilitySearchHit[] {
   const query = normalize(input.query);
   const tokens = queryTokens(query);
-  const systemFilter = new Set((input.systems ?? []).map(normalize));
+  const systemFilter = systemsForFilter(input.systems);
   const limit = Math.max(1, Math.min(input.limit ?? 12, 50));
 
   return Object.values(ENGINE_CAPABILITIES)
-    .filter((capability) => !systemFilter.size || systemFilter.has(normalize(capability.system)))
+    .filter((capability) => !systemFilter.size || systemFilter.has(capability.system))
     .map((capability): CapabilitySearchHit => {
-      const sourceTitles = capability.sourceIds.map((id) => ENGINE_SOURCES[id]?.title ?? id);
+      const sourceTitles = capability.sourceIds.map((id) => ENGINE_SOURCE_BY_ID[id]?.title ?? id);
       const haystack = normalize([
         capability.id,
         capability.system,
@@ -189,10 +265,13 @@ export function searchCapabilities(input: CapabilitySearchInput): CapabilitySear
       }
       for (const [system, aliases] of Object.entries(SYSTEM_ALIASES) as [EngineSystem, string[]][]) {
         if (capability.system === system && aliases.some((alias) => query.includes(normalize(alias)))) {
-          score += 20;
+          const isSystemDefault = (SYSTEM_DEFAULT_CAPABILITIES[system] ?? []).includes(capability.id);
+          score += isSystemDefault ? 8 : score > 0 ? 2 : 0;
           matches.add(system);
         }
       }
+      const explicitTerms = EXPLICIT_CAPABILITY_TERMS[capability.id];
+      if (explicitTerms?.length && !includesAny(query, explicitTerms)) score = 0;
       if (capability.evidenceRole === "primary") score += score > 0 ? 2 : 0;
       if (capability.evidenceRole === "blocked") score = Math.min(score, 1);
 
@@ -201,7 +280,7 @@ export function searchCapabilities(input: CapabilitySearchInput): CapabilitySear
         score,
         matches: [...matches],
         capability,
-        sources: capability.sourceIds.map((id) => ENGINE_SOURCES[id]).filter(Boolean).map((source) => ({
+        sources: capability.sourceIds.map((id) => ENGINE_SOURCE_BY_ID[id]).filter(Boolean).map((source) => ({
           id: source.id,
           title: source.title,
           uri: source.uri,
@@ -257,20 +336,110 @@ function toLegacyQuery(input: LegendSajuResolveInput, intent: SajuQuery["intent"
   };
 }
 
-function inputDrivenCapabilities(input: LegendSajuResolveInput): EngineCapabilityId[] {
+function inputDrivenCapabilities(input: LegendSajuResolveInput, entryIntent: LegendSajuEntryIntent): EngineCapabilityId[] {
   const ids: EngineCapabilityId[] = [];
-  if (input.birth) ids.push("cross_system_life_dossier");
-  if (input.partnerBirth) ids.push("compatibility");
-  if (input.timelineRange) ids.push("life_timeline");
-  if (input.lineValues?.length) ids.push("juyeok_cast");
-  if (input.surnameStrokes?.length && input.givenStrokes?.length) ids.push("suri");
-  if (input.name) ids.push("korean_name_analysis");
-  if (!input.birth && input.targetDate) ids.push("date_yinyang");
+  if (entryIntent === "compatibility" && input.partnerBirth) ids.push("compatibility");
+  if (entryIntent === "general_reading" && input.timelineRange) ids.push("life_timeline");
+  if (entryIntent === "divination" && input.lineValues?.length) ids.push("juyeok_cast");
+  if (entryIntent === "naming" && input.surnameStrokes?.length && input.givenStrokes?.length) ids.push("suri");
+  if (entryIntent === "naming" && input.name) ids.push("korean_name_analysis");
+  if (entryIntent === "general_reading" && !input.birth && input.targetDate) ids.push("date_yinyang");
   return ids;
 }
 
 function uniqueIds(ids: readonly EngineCapabilityId[]): EngineCapabilityId[] {
   return [...new Set(ids)];
+}
+
+function inferEntryIntent(input: LegendSajuResolveInput): LegendSajuEntryIntent {
+  if (input.entryIntent) return input.entryIntent;
+  if (input.requestedCapabilities?.length) return "expert";
+  const question = normalize(input.question);
+  if (input.name || input.surnameStrokes?.length || input.givenStrokes?.length || includesAny(question, DOMAIN_HINTS.naming.terms)) return "naming";
+  if (input.partnerBirth || includesAny(question, EXPLICIT_CAPABILITY_TERMS.compatibility ?? [])) return "compatibility";
+  if (input.lineValues?.length || includesAny(question, ["기문", "육임", "주역", "점괘", "점사"])) return "divination";
+  if (includesAny(question, EXPLICIT_CAPABILITY_TERMS.taekil ?? [])) return "date_selection";
+  return "general_reading";
+}
+
+function generalReadingCapabilities(input: LegendSajuResolveInput, domains: LifeDomain[]): { core: EngineCapabilityId[]; supporting: EngineCapabilityId[] } {
+  const question = normalize(input.question);
+  const core: EngineCapabilityId[] = input.birth ? ["chart", "myeongri_structure"] : [];
+  const supporting: EngineCapabilityId[] = [];
+  if (domains.some((domain) => ["identity", "career", "wealth", "relationship", "family", "health"].includes(domain))) {
+    core.push("myeongri_judgment");
+  }
+  if (domains.includes("timing") && input.targetDate && input.birth?.gender) core.push("current_luck");
+  if (input.timelineRange) core.push("life_timeline");
+  if (includesAny(question, ACTION_TERMS)) core.push("recommend");
+  if (includesAny(question, ["궁통보감", "고전", "원전", "조후", "격국", "용신"])) supporting.push("myeongri_doctrine");
+  if (input.birth?.hour !== undefined && input.birth.gender && includesAny(question, DEEP_READING_TERMS)) {
+    supporting.push("ziwei_topology");
+    if (domains.includes("timing") && input.targetDate) supporting.push("ziwei_horoscope");
+    if (includesAny(question, ["비성", "궁간사화", "흠천", "자화"])) supporting.push("ziwei_palace_flying");
+    if (includesAny(question, ["유파", "중주", "배치 비교"])) supporting.push("ziwei_lineage_compare");
+    if (includesAny(question, ["고전", "원전", "자미두수전서"])) supporting.push("ziwei_doctrine");
+  }
+  if (input.lifeEvents?.length && input.birth) {
+    supporting.push(input.birth.hour === undefined ? "event_rectification_matrix" : "event_validation_matrix");
+  }
+  if (includesAny(question, ["지식", "근거", "출처", "원문"])) supporting.push("knowledge_asset_router");
+  return { core: uniqueIds(core), supporting: uniqueIds(supporting) };
+}
+
+function planCapabilities(input: LegendSajuResolveInput): CapabilityExecutionPlan {
+  const question = normalize(input.question);
+  const entryIntent = inferEntryIntent(input);
+  const domains = inferLifeDomains(input.question);
+  const requested = [...new Set(input.requestedCapabilities ?? [])];
+  const unsupported = requested.filter((id) => !isEngineCapabilityId(id));
+  const validRequested = requested.filter(isEngineCapabilityId);
+  const requiredByInput = inputDrivenCapabilities(input, entryIntent);
+  let core: EngineCapabilityId[] = [];
+  let supporting: EngineCapabilityId[] = [];
+
+  if (entryIntent === "general_reading") {
+    ({ core, supporting } = generalReadingCapabilities(input, domains));
+  } else if (entryIntent === "compatibility") {
+    core = ["compatibility"];
+  } else if (entryIntent === "date_selection") {
+    core = ["taekil"];
+    supporting = input.targetDate ? ["date_yinyang"] : [];
+  } else if (entryIntent === "divination") {
+    if (input.lineValues?.length || includesAny(question, ["주역", "괘", "효"])) core.push("juyeok_cast");
+    if (includesAny(question, ["기문", "기문둔갑"])) core.push("gimun");
+    if (includesAny(question, ["육임", "대육임"])) core.push("yukim");
+    if (!core.length && input.questionDateTime) core.push("gimun", "yukim");
+  } else if (entryIntent === "naming") {
+    if (input.name) core.push("korean_name_analysis");
+    if (input.surnameStrokes?.length && input.givenStrokes?.length) core.push("suri");
+    if (input.birth && includesAny(question, ["작명", "이름 추천"])) supporting.push("naming", "naming_hanja");
+  } else {
+    core = validRequested.length
+      ? []
+      : searchCapabilities({ query: input.question, limit: input.maxAutoCapabilities ?? 8 }).map((hit) => hit.id);
+  }
+
+  const maxAuto = Math.max(0, Math.min(input.maxAutoCapabilities ?? 8, 20));
+  const mandatory = uniqueIds(requiredByInput);
+  const candidates = uniqueIds([...core, ...supporting]).filter((id) => !mandatory.includes(id));
+  const boundedAuto = maxAuto === 0 ? [] : candidates.slice(0, maxAuto);
+  const selected = uniqueIds([...validRequested, ...mandatory, ...boundedAuto]);
+  const selectedSet = new Set(selected);
+  const omitted = uniqueIds(candidates)
+    .filter((id) => !selectedSet.has(id))
+    .map((capabilityId) => ({ capabilityId, reason: "maxAutoCapabilities limit" }));
+  return {
+    entryIntent,
+    domains,
+    requiredByInput: mandatory,
+    core: uniqueIds(core),
+    supporting: uniqueIds(supporting),
+    requested,
+    selected,
+    unsupported,
+    omitted,
+  };
 }
 
 /**
@@ -286,19 +455,10 @@ function resolveBase(input: LegendSajuResolveInput): LegendSajuResolution {
     if (dateError) throw new Error(`INVALID_${field === "targetDate" ? "TARGET_DATE" : "QUESTION_DATETIME"}: ${dateError}`);
   }
 
-  const requested = [...new Set(input.requestedCapabilities ?? [])];
-  const unsupported = requested.filter((id) => !isEngineCapabilityId(id));
-  const validRequested = requested.filter(isEngineCapabilityId);
-  const maxAuto = Math.max(0, Math.min(input.maxAutoCapabilities ?? 8, 20));
-  const searched = maxAuto > 0
-    ? searchCapabilities({ query: question, limit: maxAuto }).map((hit) => hit.id)
-    : [];
-  const autoSelected = uniqueIds([...inputDrivenCapabilities(input), ...searched])
-    .filter((id) => !validRequested.includes(id));
-  if (input.birth && !autoSelected.some(isLegacyIntent) && !validRequested.some(isLegacyIntent)) {
-    autoSelected.push("chart");
-  }
-  const selected = uniqueIds([...validRequested, ...autoSelected]);
+  const executionPlan = planCapabilities(input);
+  const { requested, selected, unsupported } = executionPlan;
+  const requestedSet = new Set(requested.filter(isEngineCapabilityId));
+  const autoSelected = selected.filter((id) => !requestedSet.has(id));
 
   const evidence = selected
     .filter(isLegacyIntent)
@@ -322,6 +482,7 @@ function resolveBase(input: LegendSajuResolveInput): LegendSajuResolution {
 
   return {
     question,
+    executionPlan,
     selection: { requested, autoSelected, selected, unsupported },
     routes: [...routeById.values()],
     dossier,

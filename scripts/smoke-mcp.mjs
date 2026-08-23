@@ -19,9 +19,14 @@ const child = spawn(command, args, {
 let stderr = "";
 let settled = false;
 const expectedTools = [
+  "legend_saju_analyze_compatibility",
+  "legend_saju_analyze_name",
   "legend_saju_capabilities",
+  "legend_saju_cast_divination",
   "legend_saju_manifest",
+  "legend_saju_read_fortune",
   "legend_saju_resolve",
+  "legend_saju_select_dates",
 ];
 
 function finish(error) {
@@ -91,14 +96,13 @@ lines.on("line", (line) => {
       id: 4,
       method: "tools/call",
       params: {
-        name: "legend_saju_resolve",
+        name: "legend_saju_analyze_name",
         arguments: {
           question: "합성 이름 한자 출처를 확인해줘",
           name: {
             surname: [{ character: "洪", expectedReading: "홍" }],
             givenName: [{ character: "哲", expectedReading: "철" }, { character: "榮", expectedReading: "영" }],
           },
-          maxAutoCapabilities: 0,
         },
       },
     });

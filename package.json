@@ -1,6 +1,6 @@
 {
   "name": "legend-saju",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Source-traceable East Asian metaphysics engine for Saju, Zi Wei Dou Shu, Qimen, Daliuren, and bounded traditional systems.",
   "license": "Apache-2.0",

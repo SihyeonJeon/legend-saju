@@ -948,7 +948,7 @@ describe("cross-system life dossier", () => {
     expect(dossier.claims.some((claim) => claim.system === "myeongri" && claim.domain === "career")).toBe(true);
     expect(dossier.claims.some((claim) => claim.system === "ziwei" && claim.domain === "career")).toBe(true);
     expect(dossier.routes.map((route) => route.capability.id)).toContain("myeongri_judgment");
-    expect(dossier.claims.some((claim) => claim.capabilityId === "myeongri_judgment" && claim.statement.includes("왕쇠 상태"))).toBe(true);
+    expect(dossier.claims.some((claim) => claim.capabilityId === "myeongri_judgment" && claim.statement.includes("왕쇠 판단"))).toBe(true);
     expect(dossier.claims.some((claim) => claim.capabilityId === "myeongri_judgment" && claim.statement.includes("성패 장치"))).toBe(true);
     expect(dossier.synthesis.find((item) => item.domain === "career")?.status).toBe("parallel_evidence");
     expect(dossier.claims.every((claim) => claim.sourceIds.length > 0)).toBe(true);

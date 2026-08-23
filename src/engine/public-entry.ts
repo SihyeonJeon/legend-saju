@@ -29,14 +29,17 @@ import {
   resolve,
   resolveAsync,
   searchCapabilities,
+  type CapabilityExecutionPlan,
   type CapabilitySearchHit,
   type CapabilitySearchInput,
+  type LegendSajuEntryIntent,
   type LegendSajuDateInput,
+  type LegendSajuOutputMode,
   type LegendSajuResolution,
   type LegendSajuResolveInput,
 } from "./resolver";
 
-export const LEGEND_SAJU_ENGINE_VERSION = "0.1.0" as const;
+export const LEGEND_SAJU_ENGINE_VERSION = "0.2.0" as const;
 
 export interface LegendSajuEngineManifest {
   version: typeof LEGEND_SAJU_ENGINE_VERSION;
@@ -86,9 +89,12 @@ export type {
   SajuEvidence,
   SajuQuery,
   MyeongriKnowledgeAssetSummary,
+  CapabilityExecutionPlan,
   CapabilitySearchHit,
   CapabilitySearchInput,
+  LegendSajuEntryIntent,
   LegendSajuDateInput,
+  LegendSajuOutputMode,
   LegendSajuResolution,
   LegendSajuResolveInput,
 };

@@ -10,10 +10,11 @@ Use the engine as the calculation and evidence layer. Let the user speak natural
 ## Workflow
 
 1. Identify the user's actual question and extract reliable dates, people, names, events, or decisions from the conversation.
-2. If the appropriate method is unclear, call `legend_saju_capabilities` with the user's own wording. Do not expose this routing step unless asked.
-3. Call `legend_saju_resolve` with the open-ended question and every reliable input already supplied. The single resolver can invoke many underlying capabilities.
-4. Treat `available`, `partial`, and `blocked` routes differently. Ask one short follow-up only when a missing input would materially change the requested result.
-5. Explain calculated facts first, then structural observations, then school-dependent interpretations. Preserve conflicts and limitations without dumping the raw engine payload.
+2. Match the user goal to the focused tool: ordinary readings use `legend_saju_read_fortune`; two-person comparison uses `legend_saju_analyze_compatibility`; explicit date selection uses `legend_saju_select_dates`; question-time divination uses `legend_saju_cast_divination`; Korean-name work uses `legend_saju_analyze_name`.
+3. Use `legend_saju_capabilities` and `legend_saju_resolve` only when the user names a specialized method, lineage, capability, or evidence need that the focused tools do not express.
+4. Keep the default `consumer` output. Request `evidence` or `debug` only when the user wants raw methodology or a developer trace.
+5. Treat `available`, `partial`, and `blocked` routes differently. Ask one short follow-up only when a missing input would materially change the requested result.
+6. Explain calculated facts first, then structural observations, then school-dependent interpretations. Preserve conflicts and limitations without dumping the raw engine payload.
 
 ## Input handling
 
@@ -37,5 +38,5 @@ Use the engine as the calculation and evidence layer. Let the user speak natural
 
 - Accept ordinary requests such as "내 생년월일로 앞으로 3년 직업, 돈, 결혼을 종합해서 봐줘."
 - Do not present the user with an intent menu, capability list, JSON, or a mandatory intake form.
-- Do not describe the engine as three features. The three MCP tools are discovery and execution gateways over the live capability registry.
+- Use the focused MCP tool whose name matches the user's goal. The execution plan in its response records which calculations were actually selected and omitted.
 - If the user asks what was calculated, name the systems and capability IDs after the result, together with their maturity and limitations.

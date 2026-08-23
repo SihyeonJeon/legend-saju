@@ -48,7 +48,7 @@ Claude Code를 열고 `/mcp`에서 `legend-saju`가 연결됐는지 확인한 �
 1. ChatGPT의 **Settings → Security and login**에서 **Developer mode**를 켠다.
 2. [ChatGPT Plugins](https://chatgpt.com/plugins)에서 `+`를 누른다.
 3. 이름과 설명을 입력하고 **Connection**에 위 MCP 주소를 `/mcp`까지 포함해 넣는다.
-4. 연결을 만든 뒤 `legend_saju_manifest`, `legend_saju_capabilities`, `legend_saju_resolve`가 발견되는지 확인한다.
+4. 연결을 만든 뒤 `legend_saju_read_fortune`, `legend_saju_analyze_compatibility`, `legend_saju_select_dates` 등이 발견되는지 확인한다.
 5. 새 대화의 도구 메뉴에서 연결을 선택하고 자연어로 질문한다.
 
 개발자 모드 사용 가능 여부는 계정과 워크스페이스 정책에 따라 다를 수 있다. 자세한 절차는 [OpenAI의 플러그인 연결 안내](https://developers.openai.com/plugins/deploy/connect-chatgpt)를 참고하면 된다.
@@ -128,15 +128,20 @@ claude mcp add --transport stdio --scope user legend-saju -- node "$PWD/bin/lege
 
 ## MCP가 하는 일
 
-MCP 서버는 읽기 전용 도구 세 개를 제공한다.
+MCP 서버는 사용자의 목적이 이름에 드러나는 읽기 전용 도구를 제공한다.
 
 | 도구 | 역할 |
 | --- | --- |
+| `legend_saju_read_fortune` | 일반 사주, 총운, 재물·사업·직업·연애·건강운을 질문 범위에 맞춰 계산한다 |
+| `legend_saju_analyze_compatibility` | 두 사람의 출생 정보를 비교한다 |
+| `legend_saju_select_dates` | 명시적으로 택일을 요청한 경우에만 후보 날짜를 계산한다 |
+| `legend_saju_cast_divination` | 기문·육임·주역처럼 질문 시각이나 괘가 필요한 계산을 수행한다 |
+| `legend_saju_analyze_name` | 실제 이름 한자, 법원 인명용 한자 관측, 81수와 작명 정보를 분리해 계산한다 |
 | `legend_saju_manifest` | 현재 엔진에 들어 있는 계산법, 출처, 데이터 범위를 확인한다 |
-| `legend_saju_capabilities` | 자연어 질문에 맞는 계산법을 찾는다 |
-| `legend_saju_resolve` | 질문과 입력값을 받아 관련 계산법을 함께 실행한다 |
+| `legend_saju_capabilities` | 전문적인 질문에 맞는 세부 계산법을 찾는다 |
+| `legend_saju_resolve` | 유파·계산법을 직접 지정하는 전문가용 요청을 실행한다 |
 
-도구가 세 개라고 해서 역학 기능이 세 개인 것은 아니다. 세 도구는 거대한 기능 레지스트리를 살펴보고, 찾고, 실행하는 작은 관문이다.
+일상적인 운세 요청은 목적별 도구가 필요한 계산만 고른다. 예컨대 재물·사업운에 택일이나 개운 계산을 자동으로 섞지 않는다. 세부 유파를 직접 고르거나 전체 근거를 점검할 때만 capability 검색과 전문가용 resolver를 사용한다.
 
 ```text
 사용자의 자연어 질문
@@ -154,7 +159,7 @@ Legend Saju MCP 자체는 OpenAI나 Anthropic API 키를 읽지 않으며 모델
 
 ## MCP와 동봉 플러그인의 차이
 
-- **MCP만 연결**하면 계산 엔진과 세 도구를 바로 사용할 수 있다.
+- **MCP만 연결**하면 계산 엔진과 목적별 도구를 바로 사용할 수 있다.
 - [`plugins/legend-saju/`](plugins/legend-saju/README.md)의 **Codex 플러그인**에는 MCP 설정과 자연어 사용 지침이 함께 들어 있다. 사용자가 capability ID나 입력 스키마를 고르지 않도록 호스트 모델의 처리 방식을 보강한다.
 - 계산 능력은 플러그인 안에 축소 복사돼 있지 않다. MCP와 플러그인 모두 같은 공개 엔진 진입점을 사용한다.
 
@@ -209,6 +214,13 @@ console.log(result.routes);
 
 ```ts
 {
+  executionPlan: {
+    entryIntent: string;
+    domains: string[];
+    core: string[];
+    supporting: string[];
+    selected: string[];
+  };
   selection: { requested: string[]; selected: string[]; unsupported: string[] };
   routes: CapabilityPreflight[];
   dossier?: {
@@ -224,6 +236,8 @@ console.log(result.routes);
   interpretationBoundary: string;
 }
 ```
+
+MCP의 기본 응답은 `consumer` 모드다. 핵심 주장·출처·한계를 중복 없이 압축하며, 전체 계산 자료가 필요할 때만 `evidence` 또는 `debug` 모드를 요청한다.
 
 ## 왜 만들었나
 

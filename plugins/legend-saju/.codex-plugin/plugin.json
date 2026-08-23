@@ -1,6 +1,6 @@
 {
   "name": "legend-saju",
-  "version": "0.1.1",
+  "version": "0.2.0+codex.20260823095427",
   "description": "Deterministic, source-traceable East Asian metaphysics calculations for Codex and ChatGPT.",
   "author": {
     "name": "Jeon Sihyeon",
@@ -9,7 +9,14 @@
   "homepage": "https://github.com/SihyeonJeon/legend-saju#readme",
   "repository": "https://github.com/SihyeonJeon/legend-saju",
   "license": "Apache-2.0",
-  "keywords": ["saju", "bazi", "ziwei-doushu", "qimen", "daliuren", "mcp"],
+  "keywords": [
+    "saju",
+    "bazi",
+    "ziwei-doushu",
+    "qimen",
+    "daliuren",
+    "mcp"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Legend Saju",
@@ -17,11 +24,15 @@
     "longDescription": "Ask in ordinary language, then route the question through deterministic Saju, Myeongri, Zi Wei Dou Shu, Qimen, Daliuren, Tieban, naming, and related calculators with school and source boundaries intact.",
     "developerName": "Jeon Sihyeon",
     "category": "Lifestyle",
-    "capabilities": ["Read-only", "Deterministic calculation", "Source traceability"],
+    "capabilities": [
+      "Read-only",
+      "Deterministic calculation",
+      "Source traceability"
+    ],
     "defaultPrompt": [
-      "이 사주를 원국과 앞으로 3년 운으로 나눠서 봐줘.",
-      "두 사람의 궁합에서 계산 가능한 부분과 단정할 수 없는 부분을 구분해줘.",
-      "이 질문에 맞는 역학 계산법을 찾아서 근거와 같이 실행해줘."
+      "\uc774 \uc0ac\uc8fc\ub97c \uc6d0\uad6d\uacfc \uc55e\uc73c\ub85c 3\ub144 \uc6b4\uc73c\ub85c \ub098\ub220\uc11c \ubd10\uc918.",
+      "\ub450 \uc0ac\ub78c\uc758 \uad81\ud569\uc5d0\uc11c \uacc4\uc0b0 \uac00\ub2a5\ud55c \ubd80\ubd84\uacfc \ub2e8\uc815\ud560 \uc218 \uc5c6\ub294 \ubd80\ubd84\uc744 \uad6c\ubd84\ud574\uc918.",
+      "\uc774 \uc9c8\ubb38\uc5d0 \ub9de\ub294 \uc5ed\ud559 \uacc4\uc0b0\ubc95\uc744 \ucc3e\uc544\uc11c \uadfc\uac70\uc640 \uac19\uc774 \uc2e4\ud589\ud574\uc918."
     ],
     "brandColor": "#B99447"
   },

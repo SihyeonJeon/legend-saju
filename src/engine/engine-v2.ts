@@ -55,6 +55,20 @@ export type LifeDomain =
   "identity" | "career" | "wealth" | "relationship" | "family" |
   "health" | "timing" | "decision" | "methodology";
 
+const STRENGTH_STATUS_LABEL: Record<ReturnType<typeof evaluateMyeongriJudgment>["strength"]["status"], string> = {
+  support_leaning: "생조 근거가 우세",
+  weak_leaning: "설기·극제 근거가 우세",
+  contested: "생조와 극설 근거가 맞섬",
+  extreme_structure_candidate: "특수격 후보 검토가 필요",
+};
+
+const PATTERN_STATUS_LABEL: Record<ReturnType<typeof evaluateMyeongriJudgment>["pattern"]["status"], string> = {
+  supported: "성립을 보강하는 쪽으로 확인됐다",
+  contested: "보강과 훼손이 함께 확인됐다",
+  damaged: "훼손 쪽이 확인됐다",
+  unresolved: "한 방향으로 결정되지 않았다",
+};
+
 export interface EngineClaim {
   id: string;
   domain: LifeDomain;
@@ -97,7 +111,7 @@ export interface LifeDossierInput {
   partnerBirth?: SajuInput;
   timelineRange?: { startYear: number; endYear: number };
   lifeEvents?: LifeEventEvidence[];
-  /** Runtime IDs keep the caller schema open when new capabilities are added. */
+  /** When provided, this execution plan is authoritative. Runtime IDs keep the schema open. */
   requestedCapabilities?: readonly string[];
 }
 
@@ -137,6 +151,9 @@ export function inferLifeDomains(question?: string): LifeDomain[] {
 }
 
 function routeIds(input: LifeDossierInput, domains: LifeDomain[]): EngineCapabilityId[] {
+  if (input.requestedCapabilities !== undefined) {
+    return [...new Set(input.requestedCapabilities.filter((id): id is EngineCapabilityId => id in ENGINE_CAPABILITIES))];
+  }
   const ids = new Set<EngineCapabilityId>([
     "myeongri_time_envelope",
     "myeongri_structure",
@@ -201,146 +218,164 @@ function positionsMatching(chart: ReturnType<typeof analyzeMyeongriStructure>, p
   });
 }
 
-function addMyeongriClaims(input: LifeDossierInput, domains: LifeDomain[], add: ReturnType<typeof claimFactory>, conflicts: ClaimConflict[]) {
+function addMyeongriClaims(
+  input: LifeDossierInput,
+  domains: LifeDomain[],
+  selected: ReadonlySet<EngineCapabilityId>,
+  add: ReturnType<typeof claimFactory>,
+  conflicts: ClaimConflict[]
+) {
+  const requested = (...ids: EngineCapabilityId[]) => ids.some((id) => selected.has(id));
+  if (!requested("myeongri_time_envelope", "myeongri_structure", "myeongri_doctrine", "myeongri_judgment", "current_luck")) return;
   const envelope = computeSajuChartEnvelope(input.birth);
-  add({
-    domain: "identity",
-    system: "myeongri",
-    capabilityId: "myeongri_time_envelope",
-    kind: "calculated_fact",
-    statement: envelope.status === "full"
-      ? `년·월·일·시 네 기둥이 단일값으로 계산됐다.`
-      : `시간 미상이라 년·월·일의 공통값과 ${envelope.candidates.length}개 시각 후보를 분리했다.`,
-    observations: [
-      `년주 ${envelope.stablePillars.year ?? "후보별 상이"}`,
-      `월주 ${envelope.stablePillars.month ?? "후보별 상이"}`,
-      `일주 ${envelope.stablePillars.day ?? "후보별 상이"}`,
-      `시주 후보 ${[...new Set(envelope.candidates.map((candidate) => candidate.timePillar))].join("·")}`
-    ],
-    timeframe: { kind: "natal", value: "출생 원국" },
-    confidence: envelope.status === "full" ? "high" : "medium"
-  });
-  if (envelope.status === "time_unknown") {
-    conflicts.push({
-      id: `input-time-uncertainty-${conflicts.length + 1}`,
-      domain: "methodology",
-      claimIds: [],
-      systems: ["myeongri", "ziwei"],
-      reason: "input_uncertainty",
-      detail: `시주·명궁·신궁을 확정하지 않았다. 변동 합충 ${envelope.varyingRelations.length}건, 변동 신살 ${envelope.varyingSinsal.length}건이다.`
+  if (selected.has("myeongri_time_envelope")) {
+    add({
+      domain: "identity",
+      system: "myeongri",
+      capabilityId: "myeongri_time_envelope",
+      kind: "calculated_fact",
+      statement: envelope.status === "full"
+        ? `년·월·일·시 네 기둥이 단일값으로 계산됐다.`
+        : `시간 미상이라 년·월·일의 공통값과 ${envelope.candidates.length}개 시각 후보를 분리했다.`,
+      observations: [
+        `년주 ${envelope.stablePillars.year ?? "후보별 상이"}`,
+        `월주 ${envelope.stablePillars.month ?? "후보별 상이"}`,
+        `일주 ${envelope.stablePillars.day ?? "후보별 상이"}`,
+        `시주 후보 ${[...new Set(envelope.candidates.map((candidate) => candidate.timePillar))].join("·")}`
+      ],
+      timeframe: { kind: "natal", value: "출생 원국" },
+      confidence: envelope.status === "full" ? "high" : "medium"
     });
+  }
+  if (envelope.status === "time_unknown") {
+    if (selected.has("myeongri_time_envelope")) {
+      conflicts.push({
+        id: `input-time-uncertainty-${conflicts.length + 1}`,
+        domain: "methodology",
+        claimIds: [],
+        systems: ["myeongri", "ziwei"],
+        reason: "input_uncertainty",
+        detail: `시주·명궁·신궁을 확정하지 않았다. 변동 합충 ${envelope.varyingRelations.length}건, 변동 신살 ${envelope.varyingSinsal.length}건이다.`
+      });
+    }
     return;
   }
   const chart = analyzeMyeongriStructure(envelope.fullChart!);
-  const earth = analyzeEarthAnatomy(envelope.fullChart!);
   const dayRoot = chart.stemRoots.find((root) => root.position === "일간");
-  add({
-    domain: "identity",
-    system: "myeongri",
-    capabilityId: "myeongri_structure",
-    kind: "structural_observation",
-    statement: `일간 ${chart.dayMaster.gan}(${chart.dayMaster.ko}·${chart.dayMaster.el})과 월지 ${chart.monthCommand.branch}의 본기 ${chart.monthCommand.mainQi}를 구조값으로 잡았다.`,
-    observations: [
-      `일간 정확 통근 ${dayRoot?.exactRootBranches.join("·") || "없음"}`,
-      `일간 동오행 통근 ${dayRoot?.sameElementRootBranches.join("·") || "없음"}`,
-      `월지 지장간 ${chart.monthCommand.hiddenOrder.join("·")}`,
-      ...chart.relations,
-      ...chart.stemTransformationCandidates.map((candidate) => `${candidate.pair} 합화후보=${candidate.targetElement}·월령지원 ${candidate.monthSupportsTarget ? "있음" : "없음"}·확정안함`)
-    ],
-    timeframe: { kind: "natal", value: "출생 원국" },
-    confidence: "high"
-  });
-  if (earth.tokens.length) {
+  if (selected.has("myeongri_structure")) {
     add({
       domain: "identity",
       system: "myeongri",
-      capabilityId: "myeongri_doctrine",
+      capabilityId: "myeongri_structure",
       kind: "structural_observation",
-      statement: `토를 천간 ${earth.visibleEarthCount}개, 토지지 ${earth.earthBranchCount}개, 지장간 토 ${earth.hiddenEarthCount}개로 나눴다.`,
-      observations: earth.tokens.map((token) => `${token.position} ${token.glyph}=${token.subtype}·${token.seasonalImage}${token.hiddenComposition ? `(${token.hiddenComposition.join("·")})` : ""}`),
+      statement: `일간 ${chart.dayMaster.gan}(${chart.dayMaster.ko}·${chart.dayMaster.el})과 월지 ${chart.monthCommand.branch}의 본기 ${chart.monthCommand.mainQi}를 구조값으로 잡았다.`,
+      observations: [
+        `일간 정확 통근 ${dayRoot?.exactRootBranches.join("·") || "없음"}`,
+        `일간 동오행 통근 ${dayRoot?.sameElementRootBranches.join("·") || "없음"}`,
+        `월지 지장간 ${chart.monthCommand.hiddenOrder.join("·")}`,
+        ...chart.relations,
+        ...chart.stemTransformationCandidates.map((candidate) => `${candidate.pair} 합화후보=${candidate.targetElement}·월령지원 ${candidate.monthSupportsTarget ? "있음" : "없음"}·확정안함`)
+      ],
       timeframe: { kind: "natal", value: "출생 원국" },
-      confidence: "high",
-      limitations: [earth.boundary, earth.sourceLocator.section]
+      confidence: "high"
     });
   }
-  const doctrine = evaluateMyeongriDoctrine(envelope.fullChart!);
-  if (doctrine.status === "matched") {
-    add({
+  if (selected.has("myeongri_doctrine")) {
+    const earth = analyzeEarthAnatomy(envelope.fullChart!);
+    if (earth.tokens.length) {
+      add({
+        domain: "identity",
+        system: "myeongri",
+        capabilityId: "myeongri_doctrine",
+        kind: "structural_observation",
+        statement: `토를 천간 ${earth.visibleEarthCount}개, 토지지 ${earth.earthBranchCount}개, 지장간 토 ${earth.hiddenEarthCount}개로 나눴다.`,
+        observations: earth.tokens.map((token) => `${token.position} ${token.glyph}=${token.subtype}·${token.seasonalImage}${token.hiddenComposition ? `(${token.hiddenComposition.join("·")})` : ""}`),
+        timeframe: { kind: "natal", value: "출생 원국" },
+        confidence: "high",
+        limitations: [earth.boundary, earth.sourceLocator.section]
+      });
+    }
+    const doctrine = evaluateMyeongriDoctrine(envelope.fullChart!);
+    if (doctrine.status === "matched") {
+      add({
+        domain: "identity",
+        system: "myeongri",
+        capabilityId: "myeongri_doctrine",
+        kind: "heuristic_interpretation",
+        statement: doctrine.normalizedReading,
+        observations: [
+          ...doctrine.presences.map((presence) => `${presence.stem}(${presence.role})=${presence.state}${presence.visibleAt.length ? `:${presence.visibleAt.join("·")}` : presence.hiddenAt.length ? `:${presence.hiddenAt.join("·")}` : ""}`),
+          ...doctrine.conditionalFindings,
+          ...doctrine.subclauseMatches.map((match) => `${match.ruleId}·${match.section}·${match.sourceNote}`),
+          doctrine.classicalPattern ?? "고전 특수 조합 미성립"
+        ],
+        timeframe: { kind: "natal", value: "출생 원국" },
+        confidence: "medium",
+        limitations: [doctrine.boundary, doctrine.sourceLocator.section]
+      });
+    }
+  }
+  if (selected.has("myeongri_judgment")) {
+    const judgment = evaluateMyeongriJudgment(envelope.fullChart!);
+    const strengthClaimId = add({
       domain: "identity",
       system: "myeongri",
-      capabilityId: "myeongri_doctrine",
-      kind: "heuristic_interpretation",
-      statement: doctrine.normalizedReading,
+      capabilityId: "myeongri_judgment",
+      kind: "structural_observation",
+      statement: `월령·통근·투출을 따로 대조한 왕쇠 판단은 ${STRENGTH_STATUS_LABEL[judgment.strength.status]} 상태다.`,
       observations: [
-        ...doctrine.presences.map((presence) => `${presence.stem}(${presence.role})=${presence.state}${presence.visibleAt.length ? `:${presence.visibleAt.join("·")}` : presence.hiddenAt.length ? `:${presence.hiddenAt.join("·")}` : ""}`),
-        ...doctrine.conditionalFindings,
-        ...doctrine.subclauseMatches.map((match) => `${match.ruleId}·${match.section}·${match.sourceNote}`),
-        doctrine.classicalPattern ?? "고전 특수 조합 미성립"
+        `월령 십신 ${judgment.strength.monthCommandTenGod}`,
+        ...judgment.strength.axes.flatMap((axis) => axis.observations.map((observation) => `${axis.id}:${axis.direction}:${observation}`)),
+        `종격 검토 ${judgment.strength.followingCandidate ?? "해당 없음"}`
       ],
       timeframe: { kind: "natal", value: "출생 원국" },
       confidence: "medium",
-      limitations: [doctrine.boundary, doctrine.sourceLocator.section]
+      limitations: [judgment.strength.boundary, judgment.strength.policy]
     });
-  }
-  const judgment = evaluateMyeongriJudgment(envelope.fullChart!);
-  const strengthClaimId = add({
-    domain: "identity",
-    system: "myeongri",
-    capabilityId: "myeongri_judgment",
-    kind: "structural_observation",
-    statement: `월령·통근·투출을 따로 대조한 왕쇠 상태는 ${judgment.strength.status}다.`,
-    observations: [
-      `월령 십신 ${judgment.strength.monthCommandTenGod}`,
-      ...judgment.strength.axes.flatMap((axis) => axis.observations.map((observation) => `${axis.id}:${axis.direction}:${observation}`)),
-      `종격 검토 ${judgment.strength.followingCandidate ?? "해당 없음"}`
-    ],
-    timeframe: { kind: "natal", value: "출생 원국" },
-    confidence: "medium",
-    limitations: [judgment.strength.boundary, judgment.strength.policy]
-  });
-  const patternClaimIds = [...new Set<LifeDomain>([
-    "identity",
-    ...domains.filter((domain): domain is "career" | "wealth" => domain === "career" || domain === "wealth")
-  ])].map((domain) => add({
-    domain,
-    system: "myeongri",
-    capabilityId: "myeongri_judgment",
-    kind: "heuristic_interpretation",
-    statement: `월지 본기와 투출로 ${judgment.pattern.pattern}를 세웠고 성패 장치는 ${judgment.pattern.status}다.`,
-    observations: [
-      `월지 본기 ${judgment.pattern.monthMainStem}=${judgment.pattern.monthMainTenGod}`,
-      ...judgment.pattern.exposedMonthHiddenStems.map((item) => `${item.stem}(${item.tenGod}) 투출 ${item.exposedAt.join("·")}`),
-      ...judgment.pattern.mechanisms.map((mechanism) => `${mechanism.label}:${mechanism.polarity}:${mechanism.grade}:${mechanism.evidence.join("·")}`),
-      ...(judgment.pattern.mechanisms.length ? [] : ["성립·훼손 장치가 한 방향으로 모이지 않음"])
-    ],
-    timeframe: { kind: "natal", value: "월령 격국" },
-    confidence: "medium",
-    limitations: [judgment.pattern.boundary, judgment.pattern.sourceLocator.section]
-  }));
-  const usefulGodClaimId = add({
-    domain: "methodology",
-    system: "myeongri",
-    capabilityId: "myeongri_judgment",
-    kind: "heuristic_interpretation",
-    statement: "조후·격국 기능·부억의 용신 후보를 합치지 않고 세 관법으로 나눴다.",
-    observations: judgment.usefulGods.lenses.map((lens) =>
-      `${lens.school}:${lens.status}:천간 ${lens.candidateStems.join("·") || "보류"}:십신 ${lens.candidateFamilies.join("·") || "보류"}:오행 ${lens.candidateElements.join("·") || "보류"}`
-    ),
-    timeframe: { kind: "method", value: "용신 관법 비교" },
-    confidence: judgment.usefulGods.conflicts.length ? "low" : "medium",
-    limitations: [judgment.usefulGods.boundary, ...judgment.usefulGods.conflicts]
-  });
-  if (judgment.usefulGods.conflicts.length) {
-    conflicts.push({
-      id: `myeongri-useful-god-${conflicts.length + 1}`,
+    const patternClaimIds = [...new Set<LifeDomain>([
+      "identity",
+      ...domains.filter((domain): domain is "career" | "wealth" => domain === "career" || domain === "wealth")
+    ])].map((domain) => add({
+      domain,
+      system: "myeongri",
+      capabilityId: "myeongri_judgment",
+      kind: "heuristic_interpretation",
+      statement: `월지 본기와 투출로 ${judgment.pattern.pattern}를 세웠고 성패 장치는 ${PATTERN_STATUS_LABEL[judgment.pattern.status]}.`,
+      observations: [
+        `월지 본기 ${judgment.pattern.monthMainStem}=${judgment.pattern.monthMainTenGod}`,
+        ...judgment.pattern.exposedMonthHiddenStems.map((item) => `${item.stem}(${item.tenGod}) 투출 ${item.exposedAt.join("·")}`),
+        ...judgment.pattern.mechanisms.map((mechanism) => `${mechanism.label}:${mechanism.polarity}:${mechanism.grade}:${mechanism.evidence.join("·")}`),
+        ...(judgment.pattern.mechanisms.length ? [] : ["성립·훼손 장치가 한 방향으로 모이지 않음"])
+      ],
+      timeframe: { kind: "natal", value: "월령 격국" },
+      confidence: "medium",
+      limitations: [judgment.pattern.boundary, judgment.pattern.sourceLocator.section]
+    }));
+    const usefulGodClaimId = add({
       domain: "methodology",
-      claimIds: [strengthClaimId, ...patternClaimIds, usefulGodClaimId],
-      systems: ["myeongri"],
-      reason: "semantic_disagreement",
-      detail: judgment.usefulGods.conflicts.join(" ")
+      system: "myeongri",
+      capabilityId: "myeongri_judgment",
+      kind: "heuristic_interpretation",
+      statement: "조후·격국 기능·부억의 용신 후보를 합치지 않고 세 관법으로 나눴다.",
+      observations: judgment.usefulGods.lenses.map((lens) =>
+        `${lens.school}:${lens.status}:천간 ${lens.candidateStems.join("·") || "보류"}:십신 ${lens.candidateFamilies.join("·") || "보류"}:오행 ${lens.candidateElements.join("·") || "보류"}`
+      ),
+      timeframe: { kind: "method", value: "용신 관법 비교" },
+      confidence: judgment.usefulGods.conflicts.length ? "low" : "medium",
+      limitations: [judgment.usefulGods.boundary, ...judgment.usefulGods.conflicts]
     });
+    if (judgment.usefulGods.conflicts.length) {
+      conflicts.push({
+        id: `myeongri-useful-god-${conflicts.length + 1}`,
+        domain: "methodology",
+        claimIds: [strengthClaimId, ...patternClaimIds, usefulGodClaimId],
+        systems: ["myeongri"],
+        reason: "semantic_disagreement",
+        detail: judgment.usefulGods.conflicts.join(" ")
+      });
+    }
   }
-  if (domains.includes("career")) {
+  if (selected.has("myeongri_structure") && domains.includes("career")) {
     const output = positionsMatching(chart, /식신|상관/);
     const officer = positionsMatching(chart, /정관|편관|칠살/);
     const resource = positionsMatching(chart, /정인|편인/);
@@ -355,7 +390,7 @@ function addMyeongriClaims(input: LifeDossierInput, domains: LifeDomain[], add: 
       confidence: "high"
     });
   }
-  if (domains.includes("wealth")) {
+  if (selected.has("myeongri_structure") && domains.includes("wealth")) {
     const wealth = positionsMatching(chart, /정재|편재/);
     add({
       domain: "wealth",
@@ -368,7 +403,7 @@ function addMyeongriClaims(input: LifeDossierInput, domains: LifeDomain[], add: 
       confidence: "high"
     });
   }
-  if (domains.includes("relationship")) {
+  if (selected.has("myeongri_structure") && domains.includes("relationship")) {
     add({
       domain: "relationship",
       system: "myeongri",
@@ -380,7 +415,7 @@ function addMyeongriClaims(input: LifeDossierInput, domains: LifeDomain[], add: 
       confidence: "high"
     });
   }
-  if (domains.includes("family")) {
+  if (selected.has("myeongri_structure") && domains.includes("family")) {
     add({
       domain: "family",
       system: "myeongri",
@@ -392,7 +427,7 @@ function addMyeongriClaims(input: LifeDossierInput, domains: LifeDomain[], add: 
       confidence: "high"
     });
   }
-  if (domains.includes("timing") && input.targetDate && input.birth.gender) {
+  if (selected.has("current_luck") && domains.includes("timing") && input.targetDate && input.birth.gender) {
     const luck = currentLuck(input.birth, input.targetDate.year);
     add({
       domain: "timing",
@@ -443,55 +478,70 @@ function palaceObservations(chart: ZiweiChart, palace: ZiweiPalace): string[] {
   ];
 }
 
-function addZiweiClaims(input: LifeDossierInput, domains: LifeDomain[], add: ReturnType<typeof claimFactory>, conflicts: ClaimConflict[]) {
+function addZiweiClaims(
+  input: LifeDossierInput,
+  domains: LifeDomain[],
+  selected: ReadonlySet<EngineCapabilityId>,
+  add: ReturnType<typeof claimFactory>,
+  conflicts: ClaimConflict[]
+) {
   if (input.birth.hour === undefined || !input.birth.gender) return;
+  const requested = (...ids: EngineCapabilityId[]) => ids.some((id) => selected.has(id));
+  if (!requested("ziwei_topology", "ziwei_palace_flying", "ziwei_horoscope", "ziwei_lineage_compare", "ziwei_doctrine")) return;
   const lineage = compareZiweiLineages(input.birth);
   const chart = lineage.common;
-  const palaceFlyingComparison = compareZiweiPalaceFlyingProfiles(input.birth);
-  const palaceFlying = palaceFlyingComparison.graphs.iztro_documented;
-  const qintianStructure = computeZiweiQintianStructuralLayer(input.birth);
-  const doctrine = evaluateZiweiDoctrine(chart);
+  const palaceFlyingComparison = selected.has("ziwei_palace_flying")
+    ? compareZiweiPalaceFlyingProfiles(input.birth)
+    : undefined;
+  const palaceFlying = palaceFlyingComparison?.graphs.iztro_documented;
+  const qintianStructure = selected.has("ziwei_palace_flying")
+    ? computeZiweiQintianStructuralLayer(input.birth)
+    : undefined;
   for (const domain of domains.filter((value) => ZIWEI_PALACE_KEYS[value].length)) {
     for (const palace of relevantPalaces(chart, domain)) {
-      add({
-        domain,
-        system: "ziwei",
-        capabilityId: "ziwei_topology",
-        kind: "calculated_fact",
-        statement: `${palace.name}의 본궁·대궁·재백·관록 연결과 성요 배치를 계산했다.`,
-        observations: palaceObservations(chart, palace),
-        timeframe: { kind: "natal", value: "출생 명반" },
-        confidence: "high"
-      });
-      const outgoing = palaceFlying.edges.filter((edge) => edge.sourcePalace === palace.name);
-      const jiClash = palaceFlying.jiClashes.find((item) => item.sourcePalace === palace.name);
-      const profileDifferences = palaceFlyingComparison.differences.filter((difference) => difference.sourcePalace === palace.name);
-      const outward = qintianStructure.outwardSelfTransformations.filter((edge) => edge.sourcePalace === palace.name);
-      const inward = qintianStructure.inwardSelfTransformations.filter((edge) => edge.targetPalace === palace.name);
-      add({
-        domain,
-        system: "ziwei",
-        capabilityId: "ziwei_palace_flying",
-        kind: "calculated_fact",
-        statement: `${palace.name} ${palace.heavenlyStem}간이 발생시키는 네 사화의 도착궁을 계산했다.`,
-        observations: [
-          ...outgoing.map((edge) => `${edge.transformation}:${edge.transformedStar}→${edge.targetPalace}${edge.selfTransformation ? "(자화)" : ""}`),
-          ...(jiClash ? [`화기충 대궁 ${jiClash.jiTargetPalace}→${jiClash.oppositePalace}`] : []),
-          ...outward.map((edge) => `이심 자화 ${edge.transformation}:${edge.transformedStar}`),
-          ...inward.map((edge) => `향심 자화 ${edge.sourcePalace}→${edge.targetPalace} ${edge.transformation}:${edge.transformedStar}`),
-          ...(qintianStructure.laiyinPalace.name === palace.name ? [`내인궁 ${palace.name}(${qintianStructure.natalYearStem})`] : []),
-          ...profileDifferences.map((difference) =>
-            `사화표 차이 ${difference.transformation}: ` +
-            Object.entries(difference.values).map(([profile, value]) => `${profile}=${value.star}→${value.targetPalace}`).join(" / ")
-          )
-        ],
-        timeframe: { kind: "natal", value: "궁간비화" },
-        confidence: "high",
-        limitations: [palaceFlying.boundary, palaceFlyingComparison.boundary, qintianStructure.boundary]
-      });
+      if (selected.has("ziwei_topology")) {
+        add({
+          domain,
+          system: "ziwei",
+          capabilityId: "ziwei_topology",
+          kind: "calculated_fact",
+          statement: `${palace.name}의 본궁·대궁·재백·관록 연결과 성요 배치를 계산했다.`,
+          observations: palaceObservations(chart, palace),
+          timeframe: { kind: "natal", value: "출생 명반" },
+          confidence: "high"
+        });
+      }
+      if (palaceFlying && palaceFlyingComparison && qintianStructure) {
+        const outgoing = palaceFlying.edges.filter((edge) => edge.sourcePalace === palace.name);
+        const jiClash = palaceFlying.jiClashes.find((item) => item.sourcePalace === palace.name);
+        const profileDifferences = palaceFlyingComparison.differences.filter((difference) => difference.sourcePalace === palace.name);
+        const outward = qintianStructure.outwardSelfTransformations.filter((edge) => edge.sourcePalace === palace.name);
+        const inward = qintianStructure.inwardSelfTransformations.filter((edge) => edge.targetPalace === palace.name);
+        add({
+          domain,
+          system: "ziwei",
+          capabilityId: "ziwei_palace_flying",
+          kind: "calculated_fact",
+          statement: `${palace.name} ${palace.heavenlyStem}간이 발생시키는 네 사화의 도착궁을 계산했다.`,
+          observations: [
+            ...outgoing.map((edge) => `${edge.transformation}:${edge.transformedStar}→${edge.targetPalace}${edge.selfTransformation ? "(자화)" : ""}`),
+            ...(jiClash ? [`화기충 대궁 ${jiClash.jiTargetPalace}→${jiClash.oppositePalace}`] : []),
+            ...outward.map((edge) => `이심 자화 ${edge.transformation}:${edge.transformedStar}`),
+            ...inward.map((edge) => `향심 자화 ${edge.sourcePalace}→${edge.targetPalace} ${edge.transformation}:${edge.transformedStar}`),
+            ...(qintianStructure.laiyinPalace.name === palace.name ? [`내인궁 ${palace.name}(${qintianStructure.natalYearStem})`] : []),
+            ...profileDifferences.map((difference) =>
+              `사화표 차이 ${difference.transformation}: ` +
+              Object.entries(difference.values).map(([profile, value]) => `${profile}=${value.star}→${value.targetPalace}`).join(" / ")
+            )
+          ],
+          timeframe: { kind: "natal", value: "궁간비화" },
+          confidence: "high",
+          limitations: [palaceFlying.boundary, palaceFlyingComparison.boundary, qintianStructure.boundary]
+        });
+      }
     }
   }
-  if (palaceFlyingComparison.differences.length) {
+  if (palaceFlyingComparison?.differences.length) {
     const conflictClaimIds = palaceFlyingComparison.differences.map((difference) => add({
       domain: "methodology",
       system: "ziwei",
@@ -512,7 +562,7 @@ function addZiweiClaims(input: LifeDossierInput, domains: LifeDomain[], add: Ret
       detail: `사화 비성 간선 ${palaceFlyingComparison.differences.length}건이 전서 원문·iztro 문서·중주계 표에 따라 달라 한 유파의 값을 자동 선택하지 않는다.`
     });
   }
-  if (lineage.differences.length) {
+  if (selected.has("ziwei_lineage_compare") && lineage.differences.length) {
     const conflictClaimIds: string[] = [];
     for (const difference of lineage.differences.slice(0, 12)) {
       conflictClaimIds.push(add({
@@ -535,26 +585,28 @@ function addZiweiClaims(input: LifeDossierInput, domains: LifeDomain[], add: Ret
       detail: `명반 필드 ${lineage.differences.length}건이 배치법에 따라 달라 통행판 결과를 다른 유파의 확정값으로 일반화하지 않는다.`
     });
   }
-  for (const match of doctrine.matches) {
-    add({
-      domain: match.domain,
-      system: "ziwei",
-      capabilityId: "ziwei_doctrine",
-      kind: "heuristic_interpretation",
-      statement: match.normalizedReading,
-      observations: [
-        `${match.palace}: ${match.matchedStars.join("·")}`,
-        ...match.contextFindings,
-        `${match.sourceLocator.section}: ${match.sourceLocator.sourceNote}`
-      ],
-      timeframe: { kind: "natal", value: "출생 명반" },
-      confidence: match.confidence,
-      limitations: [match.boundary]
-    });
+  if (selected.has("ziwei_doctrine")) {
+    const doctrine = evaluateZiweiDoctrine(chart);
+    for (const match of doctrine.matches) {
+      add({
+        domain: match.domain,
+        system: "ziwei",
+        capabilityId: "ziwei_doctrine",
+        kind: "heuristic_interpretation",
+        statement: match.normalizedReading,
+        observations: [
+          `${match.palace}: ${match.matchedStars.join("·")}`,
+          ...match.contextFindings,
+          `${match.sourceLocator.section}: ${match.sourceLocator.sourceNote}`
+        ],
+        timeframe: { kind: "natal", value: "출생 명반" },
+        confidence: match.confidence,
+        limitations: [match.boundary]
+      });
+    }
   }
-  if (domains.includes("timing") && input.targetDate) {
+  if (selected.has("ziwei_horoscope") && domains.includes("timing") && input.targetDate) {
     const horoscope = computeZiweiHoroscope(input.birth, input.targetDate);
-    const qintianActivation = computeZiweiQintianActivationLayer(input.birth, input.targetDate);
     const transformationObservations = horoscope.transformationLayers.map((layer) => {
       const entries = layer.entries.map((entry) =>
         `${entry.transformation}:${entry.star}@${entry.natalPalace ?? "원궁미확인"}/${entry.layerPalace ?? "운궁미확인"}`
@@ -579,27 +631,30 @@ function addZiweiClaims(input: LifeDossierInput, domains: LifeDomain[], add: Ret
       confidence: "high",
       limitations: [horoscope.boundary]
     });
-    const exactActivations = qintianActivation.activations.filter((activation) =>
-      activation.exactBodyStar || activation.exactUseStarLinkIds.length > 0
-    );
-    add({
-      domain: "timing",
-      system: "ziwei",
-      capabilityId: "ziwei_palace_flying",
-      kind: "calculated_fact",
-      statement: `${horoscope.solarDate} 운한 사화와 원명반 체·자화 용의 동일 성요 접촉을 계산했다.`,
-      observations: [
-        `전체 운한 사화 접촉 ${qintianActivation.activations.length}건`,
-        ...exactActivations.map((activation) =>
-          `${activation.label}:${activation.transformation}:${activation.transitStar}@${activation.natalPalace ?? "원궁미확인"}` +
-          `${activation.exactBodyStar ? ":생년체동일성요" : ""}` +
-          `${activation.exactUseStarLinkIds.length ? `:자화용동일성요=${activation.exactUseStarLinkIds.join("·")}` : ""}`
-        )
-      ],
-      timeframe: { kind: "date", value: horoscope.solarDate },
-      confidence: "high",
-      limitations: [qintianActivation.boundary]
-    });
+    if (selected.has("ziwei_palace_flying")) {
+      const qintianActivation = computeZiweiQintianActivationLayer(input.birth, input.targetDate);
+      const exactActivations = qintianActivation.activations.filter((activation) =>
+        activation.exactBodyStar || activation.exactUseStarLinkIds.length > 0
+      );
+      add({
+        domain: "timing",
+        system: "ziwei",
+        capabilityId: "ziwei_palace_flying",
+        kind: "calculated_fact",
+        statement: `${horoscope.solarDate} 운한 사화와 원명반 체·자화 용의 동일 성요 접촉을 계산했다.`,
+        observations: [
+          `전체 운한 사화 접촉 ${qintianActivation.activations.length}건`,
+          ...exactActivations.map((activation) =>
+            `${activation.label}:${activation.transformation}:${activation.transitStar}@${activation.natalPalace ?? "원궁미확인"}` +
+            `${activation.exactBodyStar ? ":생년체동일성요" : ""}` +
+            `${activation.exactUseStarLinkIds.length ? `:자화용동일성요=${activation.exactUseStarLinkIds.join("·")}` : ""}`
+          )
+        ],
+        timeframe: { kind: "date", value: horoscope.solarDate },
+        confidence: "high",
+        limitations: [qintianActivation.boundary]
+      });
+    }
   }
 }
 
@@ -608,7 +663,8 @@ function contactObservation(contact: CrossChartContact): string {
   return `${contact.salience}:${contact.layer}:${contact.aPosition}${contact.aToken}-${contact.bPosition}${contact.bToken}:${contact.kind}${direction}`;
 }
 
-function addCompatibilityClaim(input: LifeDossierInput, add: ReturnType<typeof claimFactory>) {
+function addCompatibilityClaim(input: LifeDossierInput, selected: ReadonlySet<EngineCapabilityId>, add: ReturnType<typeof claimFactory>) {
+  if (!selected.has("compatibility")) return;
   if (!input.partnerBirth || input.birth.hour === undefined || input.partnerBirth.hour === undefined) return;
   const result = evaluateMyeongriCompatibility(computeSajuChart(input.birth), computeSajuChart(input.partnerBirth));
   add({
@@ -630,8 +686,8 @@ function addCompatibilityClaim(input: LifeDossierInput, add: ReturnType<typeof c
   });
 }
 
-function addCheolpanClaim(input: LifeDossierInput, add: ReturnType<typeof claimFactory>) {
-  if (!(input.question?.includes("철판신수") || input.requestedCapabilities?.includes("cheolpan_shenshu")) || input.birth.hour === undefined) return;
+function addCheolpanClaim(input: LifeDossierInput, selected: ReadonlySet<EngineCapabilityId>, add: ReturnType<typeof claimFactory>) {
+  if (!selected.has("cheolpan_shenshu") || input.birth.hour === undefined) return;
   const envelope = computeSajuChartEnvelope(input.birth);
   if (!envelope.fullChart) return;
   const result = computeCheolpanHuangjiNumbers(envelope.fullChart);
@@ -708,11 +764,11 @@ function addCheolpanClaim(input: LifeDossierInput, add: ReturnType<typeof claimF
   });
 }
 
-function addQuestionTimeDivinationClaims(input: LifeDossierInput, add: ReturnType<typeof claimFactory>) {
+function addQuestionTimeDivinationClaims(input: LifeDossierInput, selected: ReadonlySet<EngineCapabilityId>, add: ReturnType<typeof claimFactory>) {
   const questionDateTime = input.questionDateTime ?? input.targetDate;
   if (!questionDateTime || questionDateTime.hour === undefined) return;
   const { year, month, day, hour } = questionDateTime;
-  if (input.question?.includes("기문") || input.requestedCapabilities?.includes("gimun")) {
+  if (selected.has("gimun")) {
     const chart = castGimun(year, month, day, hour, questionDateTime.minute ?? 0);
     add({
       domain: "decision",
@@ -733,7 +789,7 @@ function addQuestionTimeDivinationClaims(input: LifeDossierInput, add: ReturnTyp
       limitations: [chart.boundary]
     });
   }
-  if (input.question?.includes("육임") || input.requestedCapabilities?.includes("yukim")) {
+  if (selected.has("yukim")) {
     const chart = castYukim(year, month, day, hour);
     add({
       domain: "decision",
@@ -771,6 +827,7 @@ function synthesize(domains: LifeDomain[], claims: EngineClaim[], conflicts: Cla
 export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
   const requestedDomains = inferLifeDomains(input.question);
   const ids = routeIds(input, requestedDomains);
+  const selected = new Set(ids);
   const context = routeContext(input);
   const routes = ids.map((id) => preflightCapability(id, context));
   const claims: EngineClaim[] = [];
@@ -792,16 +849,16 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
     };
   }
   const add = claimFactory(claims);
-  addMyeongriClaims(input, requestedDomains, add, conflicts);
-  addZiweiClaims(input, requestedDomains, add, conflicts);
-  addCompatibilityClaim(input, add);
-  addCheolpanClaim(input, add);
-  addQuestionTimeDivinationClaims(input, add);
+  addMyeongriClaims(input, requestedDomains, selected, add, conflicts);
+  addZiweiClaims(input, requestedDomains, selected, add, conflicts);
+  addCompatibilityClaim(input, selected, add);
+  addCheolpanClaim(input, selected, add);
+  addQuestionTimeDivinationClaims(input, selected, add);
   const requestedTimeline = input.timelineRange ?? (input.targetDate && input.question?.includes("3년")
     ? { startYear: input.targetDate.year, endYear: input.targetDate.year + 2 }
     : undefined);
   let timeline: LifeTimeline | undefined;
-  if (requestedTimeline && input.birth.hour !== undefined && input.birth.gender) {
+  if (selected.has("life_timeline") && requestedTimeline && input.birth.hour !== undefined && input.birth.gender) {
     timeline = buildLifeTimeline(input.birth, requestedTimeline);
     add({
       domain: "timing",
@@ -816,7 +873,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
     });
   }
   let rectification: BirthTimeRectificationMatrix | undefined;
-  if (input.lifeEvents?.length && input.birth.gender && input.birth.hour === undefined) {
+  if (selected.has("event_rectification_matrix") && input.lifeEvents?.length && input.birth.gender && input.birth.hour === undefined) {
     rectification = buildBirthTimeRectificationMatrix(input.birth, input.lifeEvents);
     add({
       domain: "methodology",
@@ -831,7 +888,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
     });
   }
   let eventValidation: LifeEventValidationMatrix | undefined;
-  if (input.lifeEvents?.length && input.birth.gender && input.birth.hour !== undefined) {
+  if (selected.has("event_validation_matrix") && input.lifeEvents?.length && input.birth.gender && input.birth.hour !== undefined) {
     eventValidation = buildLifeEventValidationMatrix(input.birth, input.lifeEvents);
     add({
       domain: "methodology",
@@ -848,7 +905,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
     });
   }
   let knowledgeAssets: KnowledgeAssetRoutingResult | undefined;
-  if (input.birth.hour !== undefined) {
+  if (selected.has("knowledge_asset_router") && input.birth.hour !== undefined) {
     const envelope = computeSajuChartEnvelope(input.birth);
     if (envelope.fullChart) {
       let ziwei: ZiweiChart | undefined;

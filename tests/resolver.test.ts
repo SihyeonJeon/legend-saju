@@ -38,16 +38,83 @@ describe("open-ended resolver", () => {
     expect(domains.has("timing")).toBe(true);
   });
 
+  it("treats saju as a Myeongri system alias and returns real source metadata", () => {
+    const hits = searchCapabilities({
+      query: "사용자의 현재 운세와 올해 운세를 사주로 풀이하려면 어떤 기능이 필요한가",
+      systems: ["saju"],
+      limit: 20,
+    });
+
+    expect(hits.length).toBeGreaterThan(0);
+    expect(hits.every((hit) => hit.capability.system === "myeongri")).toBe(true);
+    expect(hits.map((hit) => hit.id)).toContain("current_luck");
+    expect(hits.some((hit) => hit.sources.length > 0)).toBe(true);
+  });
+
+  it("keeps an ordinary wealth reading on a focused execution plan", () => {
+    const result = resolve({
+      question: "올해 재물운과 사업운을 봐줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    });
+
+    expect(result.executionPlan.entryIntent).toBe("general_reading");
+    expect(result.selection.selected).toEqual([
+      "chart",
+      "myeongri_structure",
+      "myeongri_judgment",
+      "current_luck",
+    ]);
+    expect(result.routes.map((route) => route.capability.id).sort()).toEqual([...result.selection.selected].sort());
+    expect(result.selection.selected).not.toContain("taekil");
+    expect(result.selection.selected).not.toContain("gaeun");
+    expect(result.selection.selected).not.toContain("ziwei_gaeun");
+  });
+
+  it("adds action guidance without silently turning it into date selection", () => {
+    const result = resolve({
+      question: "재물운을 보고 구체적 액션도 알려줘",
+      birth,
+    });
+
+    expect(result.selection.selected).toContain("recommend");
+    expect(result.selection.selected).not.toContain("taekil");
+  });
+
+  it("does not route an unused extra person into an unrelated reading", () => {
+    const result = resolve({
+      question: "내 올해 재물운을 봐줘",
+      birth,
+      partnerBirth: { ...birth, year: 1992, gender: "남" },
+      targetDate: { year: 2026, month: 8, day: 23 },
+      entryIntent: "general_reading",
+    });
+
+    expect(result.selection.selected).not.toContain("compatibility");
+  });
+
+  it("routes explicit date selection through its dedicated plan", () => {
+    const result = resolve({
+      question: "개업하기 좋은 날을 골라줘",
+      entryIntent: "date_selection",
+      birth,
+      targetDate: { year: 2026, month: 9, day: 1 },
+      rangeDays: 14,
+    });
+
+    expect(result.selection.selected).toEqual(["taekil", "date_yinyang"]);
+    expect(result.selection.selected).not.toContain("myeongri_judgment");
+  });
+
   it("accepts runtime string IDs without exposing a capability enum", () => {
     const result = resolve({
       question: "철판신수를 다른 체계와 같이 보고 싶다",
       birth,
       questionDateTime: { year: 2026, month: 8, day: 23, hour: 13 },
       requestedCapabilities: ["cheolpan_shenshu", "future_capability_not_yet_shipped"],
-      maxAutoCapabilities: 0,
     });
 
-    expect(result.selection.selected).toContain("cheolpan_shenshu");
+    expect(result.selection.selected).toEqual(["cheolpan_shenshu"]);
     expect(result.selection.unsupported).toEqual(["future_capability_not_yet_shipped"]);
     expect(result.dossier?.claims.some((claim) => claim.capabilityId === "cheolpan_shenshu")).toBe(true);
     expect(result.noModelCalls).toBe(true);
@@ -126,6 +193,24 @@ describe("token-free MCP handlers", () => {
     });
     expect(result.isError).not.toBe(true);
     expect(result.structuredContent.noModelCalls).toBe(true);
+  });
+
+  it("returns a bounded consumer payload while retaining a full debug mode", async () => {
+    const input = {
+      question: "올해 재물운과 사업운을 봐줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    };
+    const consumer = await runLegendSajuResolveTool({ ...input, maxClaims: 4 });
+    const debug = await runLegendSajuResolveTool({ ...input, outputMode: "debug" });
+    const consumerClaims = consumer.structuredContent.claims as unknown[];
+    const highlights = (consumer.structuredContent.readingSummary as { highlights: string[] }).highlights;
+
+    expect(consumerClaims.length).toBeLessThanOrEqual(4);
+    expect(new Set(highlights).size).toBe(highlights.length);
+    expect(JSON.stringify(consumer.structuredContent).length).toBeLessThan(50_000);
+    expect(debug.structuredContent.dossier).toBeDefined();
+    expect(JSON.stringify(debug.structuredContent).length).toBeGreaterThan(JSON.stringify(consumer.structuredContent).length);
   });
 
   it("exposes a server factory and searchable live manifest", async () => {

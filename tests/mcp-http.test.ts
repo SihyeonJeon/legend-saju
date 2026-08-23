@@ -42,11 +42,11 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(await response.json()).toEqual({
       status: "ok",
       service: "legend-saju",
-      version: "0.1.0",
+      version: "0.2.0",
     });
   });
 
-  it("initializes over Streamable HTTP and advertises the three gateway tools", async () => {
+  it("initializes over Streamable HTTP and advertises focused user-goal tools", async () => {
     const initialize = await fetch(`${baseUrl}/mcp`, {
       method: "POST",
       headers: {
@@ -68,7 +68,7 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(initialize.status).toBe(200);
     const initialization = ssePayload(await initialize.text());
     expect(initialization).toMatchObject({
-      result: { serverInfo: { name: "legend-saju", version: "0.1.0" } },
+      result: { serverInfo: { name: "legend-saju", version: "0.2.0" } },
       id: 1,
     });
 
@@ -84,9 +84,14 @@ describe("Legend Saju Streamable HTTP MCP", () => {
       result?: { tools?: { name?: string }[] };
     };
     expect(toolsPayload.result?.tools?.map((tool) => tool.name).sort()).toEqual([
+      "legend_saju_analyze_compatibility",
+      "legend_saju_analyze_name",
       "legend_saju_capabilities",
+      "legend_saju_cast_divination",
       "legend_saju_manifest",
+      "legend_saju_read_fortune",
       "legend_saju_resolve",
+      "legend_saju_select_dates",
     ]);
   });
 

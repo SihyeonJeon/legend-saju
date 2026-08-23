@@ -6,13 +6,18 @@
 
 플러그인은 대화에서 확실한 입력만 추출하고, 질문에 맞는 계산법을 찾고, 엔진이 돌려준 근거를 설명한다.
 
-내부에는 다음 세 MCP 관문이 있다.
+내부에는 사용 목적별 MCP 도구가 있다.
 
+- `legend_saju_read_fortune`: 일반·올해·재물·직업·연애·건강운
+- `legend_saju_analyze_compatibility`: 두 사람 궁합
+- `legend_saju_select_dates`: 명시적으로 요청한 택일
+- `legend_saju_cast_divination`: 기문·육임·주역 질문점
+- `legend_saju_analyze_name`: 실제 이름 한자·81수·작명
 - `legend_saju_manifest`: 엔진과 데이터 범위 확인
-- `legend_saju_capabilities`: 자연어로 계산법 탐색
-- `legend_saju_resolve`: 질문과 입력값을 여러 계산 체계로 실행
+- `legend_saju_capabilities`: 전문 계산법 탐색
+- `legend_saju_resolve`: 유파·계산법을 직접 지정하는 전문가용 실행
 
-세 관문은 세 가지 역학 기능을 뜻하지 않는다. `legend_saju_resolve` 하나가 현재 기능 레지스트리에서 여러 계산법을 골라 함께 실행할 수 있다.
+평소 운세는 목적별 도구가 질문에 필요한 계산만 실행한다. 전체 원자료가 필요한 경우에만 `evidence`나 `debug` 출력을 요청한다.
 
 한국 이름을 분석할 때는 실제 성과 이름 한자를 resolver의 `name` 필드로 전달한다. 이 경로는 인명용 한자 관측 9,495건 전체에 접근한다. 출생 정보만으로 이름을 제안하는 기존 기능은 범위가 더 작은 별도 방법이다.
 
