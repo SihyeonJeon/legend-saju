@@ -38,6 +38,23 @@ describe("open-ended resolver", () => {
     expect(domains.has("timing")).toBe(true);
   });
 
+  it("routes every documented deep-method phrase to the live capability registry", () => {
+    const phrases = [
+      "만세력", "사주원국", "십성", "지장간", "투간", "통근", "합충형파해", "삼합", "방합", "육합",
+      "월령", "격국", "조후", "억부", "통관", "병약", "궁통보감", "적천수", "삼명통회", "연해자평",
+      "종격", "화격", "특수격", "자미두수 12궁", "삼방사정", "대한", "유년", "유월", "유일", "유시",
+      "생년사화", "궁간사화", "자화", "비성", "흠천사화", "중주파", "기문둔갑", "대육임", "주역",
+      "철판신수", "당사주", "토정비결", "풍수", "택일", "작명", "성명학", "81수", "인명한자 파자", "해몽",
+    ];
+
+    for (const phrase of phrases) {
+      expect(searchCapabilities({ query: phrase, limit: 5 }), phrase).not.toHaveLength(0);
+    }
+    expect(searchCapabilities({ query: "당사주", limit: 1 })[0]?.id).toBe("dangsaju");
+    expect(searchCapabilities({ query: "비성", limit: 3 }).map((hit) => hit.id)).toContain("ziwei_palace_flying");
+    expect(searchCapabilities({ query: "토정비결", limit: 1 })[0]?.id).toBe("tojeong");
+  });
+
   it("treats saju as a Myeongri system alias and returns real source metadata", () => {
     const hits = searchCapabilities({
       query: "사용자의 현재 운세와 올해 운세를 사주로 풀이하려면 어떤 기능이 필요한가",
@@ -94,6 +111,59 @@ describe("open-ended resolver", () => {
 
     expect(result.selection.selected).toContain("recommend");
     expect(result.selection.selected).not.toContain("taekil");
+  });
+
+  it("composes deep natal methods in one expert request", async () => {
+    const result = await runLegendSajuResolveTool({
+      question: "원국과 앞으로 3년을 명리와 자미두수 원전까지 깊게 종합해줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+      timelineRange: { startYear: 2026, endYear: 2028 },
+      detailLevel: "expert",
+    });
+    const plan = result.structuredContent.executionPlan as { selected: string[] };
+    const methodAnalysis = result.structuredContent.methodAnalysis as {
+      methodResults?: Record<string, unknown>;
+      myeongriJudgment?: unknown;
+    };
+
+    expect(plan.selected).toEqual(expect.arrayContaining([
+      "chart",
+      "myeongri_structure",
+      "myeongri_judgment",
+      "myeongri_doctrine",
+      "strength_yongsin",
+      "ziwei_topology",
+      "ziwei_doctrine",
+      "ziwei_horoscope",
+    ]));
+    expect(methodAnalysis.myeongriJudgment).toBeDefined();
+    expect(methodAnalysis.methodResults).toMatchObject({
+      myeongri_judgment: expect.any(Object),
+      myeongri_doctrine: expect.any(Object),
+      ziwei_topology: expect.any(Object),
+      ziwei_horoscope: expect.any(Object),
+    });
+  });
+
+  it("keeps dream interpretation inside the semantically audited scope", () => {
+    const matched = resolve({
+      question: "이 불꿈을 해몽해줘",
+      dream: "집에 불이 크게 났고 불빛은 밝았으며 연기는 거의 없었다",
+    });
+    expect(matched.selection.selected).toEqual(["dream_interpretation"]);
+    expect(matched.dreamAnalysis?.status).toBe("matched");
+    expect(matched.dreamAnalysis?.matches[0]?.concept).toBe("불");
+    expect(matched.dreamAnalysis?.coverage).toMatchObject({
+      activeCrossCulturalConcepts: 5,
+      zhougongPrimaryEntries: 988,
+      artemidorusPrimarySections: 211,
+      broaderPrimaryCorpusSemanticallyNormalized: false,
+    });
+
+    const outside = resolve({ question: "꿈풀이", dream: "하늘에서 거대한 자주색 책이 내려왔다" });
+    expect(outside.dreamAnalysis?.status).toBe("outside_active_scope");
+    expect(outside.dreamAnalysis?.matches).toEqual([]);
   });
 
   it("does not route an unused extra person into an unrelated reading", () => {
@@ -248,6 +318,24 @@ describe("token-free MCP handlers", () => {
     expect(timeline).toHaveLength(3);
     expect(timeline.every((entry) => entry.evidenceClaimIds.length > 0 && entry.summary.includes(entry.period))).toBe(true);
     expect(claims[0].kind).toBe("heuristic_interpretation");
+  });
+
+  it("returns deterministic actions instead of only abstract consumer labels", async () => {
+    const result = await runLegendSajuResolveTool({
+      question: "올해 재물운과 직업운을 보고 내가 할 구체적 액션도 알려줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    });
+    const recommendations = result.structuredContent.recommendations as {
+      items: Array<{ actions: string[]; caution: string; sourceRefs: string[] }>;
+    };
+    const summary = result.structuredContent.readingSummary as { summary: string };
+
+    expect(recommendations.items.length).toBeGreaterThan(0);
+    expect(recommendations.items[0].actions.length).toBeGreaterThan(0);
+    expect(recommendations.items[0].caution.length).toBeGreaterThan(0);
+    expect(recommendations.items[0].sourceRefs.length).toBeGreaterThan(0);
+    expect(summary.summary.startsWith(recommendations.items[0].actions[0])).toBe(true);
   });
 
   it("surfaces input assumptions without silently upgrading birth-time certainty", async () => {

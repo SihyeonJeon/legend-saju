@@ -4,7 +4,7 @@
   "asOf": "2026-08-21",
   "purpose": "상업 서비스에 넣을 수 있는 전통 해몽 원문과 계보 연구 자료를 선별한다. 이 파일 자체는 해몽 규칙이나 출력 코퍼스가 아니다.",
   "activation": {
-    "engineCapability": false,
+    "engineCapability": true,
     "laneRouting": true,
     "promptInjection": true,
     "productionUse": true,

@@ -33,13 +33,15 @@ import {
   type CapabilitySearchHit,
   type CapabilitySearchInput,
   type LegendSajuEntryIntent,
+  type LegendSajuDetailLevel,
   type LegendSajuDateInput,
   type LegendSajuOutputMode,
   type LegendSajuResolution,
   type LegendSajuResolveInput,
 } from "./resolver";
+import { interpretDream } from "./dream-engine";
 
-export const LEGEND_SAJU_ENGINE_VERSION = "0.3.0" as const;
+export const LEGEND_SAJU_ENGINE_VERSION = "0.4.0" as const;
 
 export interface LegendSajuEngineManifest {
   version: typeof LEGEND_SAJU_ENGINE_VERSION;
@@ -76,10 +78,18 @@ export function getEngineManifest(): LegendSajuEngineManifest {
 }
 
 export {
+  interpretDream,
   resolve,
   resolveAsync,
   searchCapabilities,
 };
+
+export type {
+  DreamConceptMatch,
+  DreamInterpretationInput,
+  DreamInterpretationResult,
+  DreamSourceExcerpt,
+} from "./dream-engine";
 
 export type {
   CapabilityDescriptor,
@@ -93,6 +103,7 @@ export type {
   CapabilitySearchHit,
   CapabilitySearchInput,
   LegendSajuEntryIntent,
+  LegendSajuDetailLevel,
   LegendSajuDateInput,
   LegendSajuOutputMode,
   LegendSajuResolution,

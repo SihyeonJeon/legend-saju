@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-23T10:45:57.772Z",
+  "generatedAt": "2026-08-23T12:28:00.030Z",
   "scope": [
     "src",
     "tests",
     "data"
   ],
-  "fileCount": 63,
-  "totalBytes": 9047925,
+  "fileCount": 65,
+  "totalBytes": 9089357,
   "files": [
     {
       "path": "data/dreams/artemidorus-1644-primary.json",
@@ -21,8 +21,8 @@
     },
     {
       "path": "data/dreams/source-manifest.json",
-      "bytes": 11274,
-      "sha256": "c69e9e8ddb3153f9302c7c1e78a8adae98a48574c33dbe0cefc947876cd33a07"
+      "bytes": 11273,
+      "sha256": "778605465ecfd0eb757d5cf1d1eb219ef540fbac12ca5cceb6213b7b075b1777"
     },
     {
       "path": "data/dreams/zhougong-primary.json",
@@ -81,8 +81,8 @@
     },
     {
       "path": "src/engine/consumer-reading.ts",
-      "bytes": 8956,
-      "sha256": "e35eda0591dd15aa02dc772fa957f53ca0de38496887917a06375df1be53806c"
+      "bytes": 12669,
+      "sha256": "6bcb1f51a2fece3c1afa51ebd03bf32c85be5d2e8e629c3d1e7e159e5eef9420"
     },
     {
       "path": "src/engine/data/cheolpan-standard-numeric-tables.json",
@@ -100,14 +100,19 @@
       "sha256": "fcf8e8ad36f956acc5aaf514bdec8c8114c3cae6ad3bb2138eecc1df1ad38fde"
     },
     {
+      "path": "src/engine/dream-engine.ts",
+      "bytes": 6226,
+      "sha256": "393b1357325817131bc0f7b04983e21f7bdeb0f2745d64d0fa4f9f47161a2cfd"
+    },
+    {
       "path": "src/engine/engine-capabilities.ts",
-      "bytes": 39685,
-      "sha256": "ceddb13b58bef87097509f4bfb98afd23a0b087e6a3af7cac0f54a106f292122"
+      "bytes": 41479,
+      "sha256": "784560b84e39a4b5ae50f13e284ee7d29058b7ef56dfa29397eb51783fdfb3fc"
     },
     {
       "path": "src/engine/engine-v2.ts",
-      "bytes": 50389,
-      "sha256": "4dfdcc5860611c3f77fa316816b41a5cd6135c957bfaec776c8fe5fa0f22a554"
+      "bytes": 53515,
+      "sha256": "9b4637b03a38fed15c4c0c58d2fcc0d9551a322bb5f64cd6a78e52e63479753a"
     },
     {
       "path": "src/engine/gimun-engine.ts",
@@ -126,8 +131,8 @@
     },
     {
       "path": "src/engine/myeongri-action-guidance.ts",
-      "bytes": 10067,
-      "sha256": "4ed2625804e2dfbda713ec4440fee33db3f1e30e022fcc92b8bfd32c1853eae5"
+      "bytes": 10074,
+      "sha256": "b23ed8e2562820a769fe5de6c296c9da8ae1e338975d0099559b8d5e6acf1de0"
     },
     {
       "path": "src/engine/myeongri-judgment.ts",
@@ -146,8 +151,8 @@
     },
     {
       "path": "src/engine/public-entry.ts",
-      "bytes": 2984,
-      "sha256": "bf21df688d15b36b510c19c0f0b4d7f010f52b44c6b210cb730d4748352bde71"
+      "bytes": 3246,
+      "sha256": "7f9b2053bd29489aa2abb30eec35ab8c419486211f79e6dc87d6f47d6efc4c9d"
     },
     {
       "path": "src/engine/qiongtong-month-rules.ts",
@@ -171,8 +176,8 @@
     },
     {
       "path": "src/engine/resolver.ts",
-      "bytes": 22139,
-      "sha256": "e5387b59b8282b6cf9889dbef7c0bc76876bb167111262a7509430e11d480e91"
+      "bytes": 26796,
+      "sha256": "3925cdee2b130d1a6ec71ab938c5853720a1578d1423fd644e95e59a4df5d728"
     },
     {
       "path": "src/engine/saju-engine-advanced.ts",
@@ -246,13 +251,18 @@
     },
     {
       "path": "src/index.ts",
-      "bytes": 734,
-      "sha256": "338090ad4de10eb30f5bb923cdf03956bea352ec29ab0b2e37dfb3bf906615cb"
+      "bytes": 877,
+      "sha256": "4600b8aaa1392795d9e53e520da8c5a60a31112f8b0414ddb1122aa7b705feb5"
+    },
+    {
+      "path": "src/mcp-output-schema.ts",
+      "bytes": 9465,
+      "sha256": "6933364da4ed455d9315fc7e6222fa49bc4f0deed68a16dc2bc50e130b55e622"
     },
     {
       "path": "src/mcp.ts",
-      "bytes": 24726,
-      "sha256": "260aa896639ee8f181ed5ed0ba3344f8811b2277747786ab66b163adbf6b23ff"
+      "bytes": 31915,
+      "sha256": "ffe851392f08e59bc0ecf8461836ddacbd1b1fd8701d2e75e218966663286163"
     },
     {
       "path": "src/naming/data/cjk-decomp.LICENSE",
@@ -296,8 +306,8 @@
     },
     {
       "path": "tests/mcp-http.test.ts",
-      "bytes": 4792,
-      "sha256": "a17a3f9357c25e9548c450a6bebca85e6311647edbfc5c1ffefb3e9c21cce225"
+      "bytes": 5345,
+      "sha256": "4d1f8b6737787a752a3d74335b97528c489eb4dcde469b9c2ee6101de8db2f00"
     },
     {
       "path": "tests/name-engine.test.ts",
@@ -306,8 +316,8 @@
     },
     {
       "path": "tests/resolver.test.ts",
-      "bytes": 11982,
-      "sha256": "dbd660ce49941c33d7339dad5feea526f0b71dcbc97ad5953266d4100a90d559"
+      "bytes": 16280,
+      "sha256": "aa066c5b6e83f32ed2ae65e39180d24c9c86d6e8971d784c2c2af6b6a9dc269e"
     },
     {
       "path": "tests/saju-engine-v2.test.ts",

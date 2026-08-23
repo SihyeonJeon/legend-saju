@@ -7,6 +7,7 @@
  * neutral life-domain themes.
  */
 import type { EngineClaim, LifeDomain } from "./engine-v2";
+import type { MyeongriActionGuidance } from "./myeongri-action-guidance";
 import type { LegendSajuOutputMode, LegendSajuResolution } from "./resolver";
 
 export interface ConsumerReadingPoint {
@@ -48,9 +49,37 @@ export interface ConsumerReadingProjection {
   summary: string;
   highlights: string[];
   sections: ConsumerReadingSection[];
+  recommendations: ConsumerRecommendations | null;
   timeline: ConsumerTimelineEntry[];
   omittedTimelineYears: number;
   sourceIds: string[];
+}
+
+export interface ConsumerRecommendationBasis {
+  lensId: string;
+  school: string;
+  status: string;
+  candidateElements: string[];
+  candidateFunctions: string[];
+}
+
+export interface ConsumerRecommendation {
+  id: string;
+  title: string;
+  domains: string[];
+  actions: string[];
+  caution: string;
+  basis: ConsumerRecommendationBasis[];
+  sourceIds: string[];
+}
+
+export interface ConsumerRecommendations {
+  items: ConsumerRecommendation[];
+  safeguards: { id: string; label: string; action: string; evidence: string[] }[];
+  timing: MyeongriActionGuidance["timing"];
+  evidenceIntents: string[];
+  sourceIds: string[];
+  boundary: string;
 }
 
 const DOMAIN_LABELS: Partial<Record<LifeDomain | string, string>> = {
@@ -203,6 +232,74 @@ function buildTimeline(
   return { entries, omitted: Math.max(0, timeline.years.length - entries.length) };
 }
 
+function actionGuidanceFromResult(result: LegendSajuResolution): { guidance: MyeongriActionGuidance; intent: string } | null {
+  for (const evidence of result.evidence) {
+    if (!evidence.ok || !evidence.data || typeof evidence.data !== "object") continue;
+    const data = evidence.data as Record<string, unknown>;
+    if (evidence.intent === "recommend" && data.recommend) {
+      return { guidance: data.recommend as MyeongriActionGuidance, intent: evidence.intent };
+    }
+    if (evidence.intent === "gaeun" || evidence.intent === "gaeun_pro") {
+      const prescription = (evidence.intent === "gaeun" ? data.gaeun : data.gaeunPro) as { actionGuidance?: MyeongriActionGuidance } | undefined;
+      if (prescription?.actionGuidance) return { guidance: prescription.actionGuidance, intent: evidence.intent };
+    }
+  }
+  return null;
+}
+
+function buildRecommendations(
+  result: LegendSajuResolution,
+  mode: LegendSajuOutputMode,
+): ConsumerRecommendations | null {
+  const extracted = actionGuidanceFromResult(result);
+  if (!extracted) return null;
+  const { guidance } = extracted;
+  const grouped = new Map<string, ConsumerRecommendation>();
+
+  for (const lens of guidance.lenses) {
+    for (const practice of lens.practices) {
+      const id = `action-${practice.family}`;
+      const basis: ConsumerRecommendationBasis = {
+        lensId: lens.id,
+        school: lens.school,
+        status: lens.status,
+        candidateElements: lens.candidateElements,
+        candidateFunctions: lens.candidateFamilies,
+      };
+      const existing = grouped.get(id);
+      if (existing) {
+        if (!existing.basis.some((item) => item.lensId === basis.lensId)) existing.basis.push(basis);
+        existing.sourceIds = unique([...existing.sourceIds, ...lens.sourceIds]);
+      } else {
+        grouped.set(id, {
+          id,
+          title: practice.label,
+          domains: practice.domains,
+          actions: practice.actions,
+          caution: practice.guardrail,
+          basis: [basis],
+          sourceIds: lens.sourceIds,
+        });
+      }
+    }
+  }
+
+  const limit = mode === "consumer" ? 8 : mode === "compact" ? 12 : Number.POSITIVE_INFINITY;
+  return {
+    items: [...grouped.values()].slice(0, limit),
+    safeguards: guidance.mechanismGuardrails.map((item) => ({
+      id: item.mechanismId,
+      label: item.label,
+      action: item.action,
+      evidence: item.evidence,
+    })),
+    timing: guidance.timing,
+    evidenceIntents: [extracted.intent],
+    sourceIds: guidance.sourceIds,
+    boundary: guidance.boundary,
+  };
+}
+
 export function buildConsumerReading(
   result: LegendSajuResolution,
   mode: LegendSajuOutputMode,
@@ -211,21 +308,28 @@ export function buildConsumerReading(
   const defaultMax = mode === "consumer" ? 8 : mode === "compact" ? 16 : 100;
   const maxPoints = Math.max(1, Math.min(requestedMaxPoints ?? defaultMax, 100));
   const sections = buildSections(result, mode, maxPoints);
+  const recommendations = buildRecommendations(result, mode);
   const timeline = buildTimeline(result, mode);
   const highlights = unique([
+    ...(recommendations?.items.flatMap((item) => item.actions.slice(0, 1)) ?? []),
     ...sections.flatMap((section) => section.interpretations.map((item) => item.text)),
     ...timeline.entries.slice(0, 2).map((entry) => entry.summary),
   ]).slice(0, 6);
   const firstByDomain = sections.map((section) => section.interpretations[0]?.text).filter((text): text is string => Boolean(text));
-  const summary = firstByDomain.slice(0, 3).join(" ") || timeline.entries[0]?.summary || "현재 입력과 검증 범위에서 소비자용 해석 문장을 만들 근거가 부족하다.";
+  const firstAction = recommendations?.items[0]?.actions[0];
+  const summary = firstAction
+    ? [firstAction, recommendations?.items[0]?.caution, firstByDomain[0]].filter(Boolean).join(" ")
+    : firstByDomain.slice(0, 3).join(" ") || timeline.entries[0]?.summary || "현재 입력과 검증 범위에서 소비자용 해석 문장을 만들 근거가 부족하다.";
   return {
     summary,
     highlights,
     sections,
+    recommendations,
     timeline: timeline.entries,
     omittedTimelineYears: timeline.omitted,
     sourceIds: unique([
       ...sections.flatMap((section) => section.sourceIds),
+      ...(recommendations?.sourceIds ?? []),
       ...timeline.entries.flatMap((entry) => entry.sourceIds),
     ]),
   };

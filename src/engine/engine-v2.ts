@@ -160,12 +160,24 @@ export interface LifeDossier {
   claims: EngineClaim[];
   conflicts: ClaimConflict[];
   synthesis: DomainSynthesis[];
+  methodResults: Partial<Record<EngineCapabilityId, unknown>>;
   knowledgeAssets?: KnowledgeAssetRoutingResult;
   timeline?: LifeTimeline;
   eventValidation?: LifeEventValidationMatrix;
   rectification?: BirthTimeRectificationMatrix;
   blockedSystems: { capabilityId: EngineCapabilityId; reason: string }[];
   interpretationBoundary: string;
+}
+
+function recordMethodResult(
+  results: Partial<Record<EngineCapabilityId, unknown>>,
+  capabilityId: EngineCapabilityId,
+  value: Record<string, unknown>,
+): void {
+  const existing = results[capabilityId];
+  results[capabilityId] = existing && typeof existing === "object" && !Array.isArray(existing)
+    ? { ...(existing as Record<string, unknown>), ...value }
+    : value;
 }
 
 const DOMAIN_KEYWORDS: Record<LifeDomain, string[]> = {
@@ -265,11 +277,13 @@ function addMyeongriClaims(
   domains: LifeDomain[],
   selected: ReadonlySet<EngineCapabilityId>,
   add: ReturnType<typeof claimFactory>,
-  conflicts: ClaimConflict[]
+  conflicts: ClaimConflict[],
+  methodResults: Partial<Record<EngineCapabilityId, unknown>>,
 ) {
   const requested = (...ids: EngineCapabilityId[]) => ids.some((id) => selected.has(id));
   if (!requested("myeongri_time_envelope", "myeongri_structure", "myeongri_doctrine", "myeongri_judgment", "current_luck")) return;
   const envelope = computeSajuChartEnvelope(input.birth);
+  if (selected.has("myeongri_time_envelope")) recordMethodResult(methodResults, "myeongri_time_envelope", { envelope });
   if (selected.has("myeongri_time_envelope")) {
     add({
       domain: "identity",
@@ -303,6 +317,7 @@ function addMyeongriClaims(
     return;
   }
   const chart = analyzeMyeongriStructure(envelope.fullChart!);
+  if (selected.has("myeongri_structure")) recordMethodResult(methodResults, "myeongri_structure", { structure: chart });
   const dayRoot = chart.stemRoots.find((root) => root.position === "일간");
   if (selected.has("myeongri_structure")) {
     add({
@@ -324,6 +339,7 @@ function addMyeongriClaims(
   }
   if (selected.has("myeongri_doctrine")) {
     const earth = analyzeEarthAnatomy(envelope.fullChart!);
+    recordMethodResult(methodResults, "myeongri_doctrine", { earthAnatomy: earth });
     if (earth.tokens.length) {
       add({
         domain: "identity",
@@ -338,6 +354,7 @@ function addMyeongriClaims(
       });
     }
     const doctrine = evaluateMyeongriDoctrine(envelope.fullChart!);
+    recordMethodResult(methodResults, "myeongri_doctrine", { doctrine });
     if (doctrine.status === "matched") {
       add({
         domain: "identity",
@@ -359,6 +376,7 @@ function addMyeongriClaims(
   }
   if (selected.has("myeongri_judgment")) {
     const judgment = evaluateMyeongriJudgment(envelope.fullChart!);
+    recordMethodResult(methodResults, "myeongri_judgment", { judgment });
     const patternFamily = tenGodFamilyOf(judgment.pattern.monthMainTenGod);
     const strengthClaimId = add({
       domain: "identity",
@@ -478,6 +496,7 @@ function addMyeongriClaims(
   }
   if (selected.has("current_luck") && domains.includes("timing") && input.targetDate && input.birth.gender) {
     const luck = currentLuck(input.birth, input.targetDate.year);
+    recordMethodResult(methodResults, "current_luck", { currentLuck: luck });
     add({
       domain: "timing",
       system: "myeongri",
@@ -550,13 +569,21 @@ function addZiweiClaims(
   domains: LifeDomain[],
   selected: ReadonlySet<EngineCapabilityId>,
   add: ReturnType<typeof claimFactory>,
-  conflicts: ClaimConflict[]
+  conflicts: ClaimConflict[],
+  methodResults: Partial<Record<EngineCapabilityId, unknown>>,
 ) {
   if (input.birth.hour === undefined || !input.birth.gender) return;
   const requested = (...ids: EngineCapabilityId[]) => ids.some((id) => selected.has(id));
   if (!requested("ziwei_topology", "ziwei_palace_flying", "ziwei_horoscope", "ziwei_lineage_compare", "ziwei_doctrine")) return;
   const lineage = compareZiweiLineages(input.birth);
   const chart = lineage.common;
+  if (selected.has("ziwei_topology")) {
+    recordMethodResult(methodResults, "ziwei_topology", {
+      chart,
+      topologies: chart.palaces.map((palace) => buildZiweiPalaceTopology(chart, palace.name)),
+    });
+  }
+  if (selected.has("ziwei_lineage_compare")) recordMethodResult(methodResults, "ziwei_lineage_compare", { lineage });
   const palaceFlyingComparison = selected.has("ziwei_palace_flying")
     ? compareZiweiPalaceFlyingProfiles(input.birth)
     : undefined;
@@ -564,6 +591,9 @@ function addZiweiClaims(
   const qintianStructure = selected.has("ziwei_palace_flying")
     ? computeZiweiQintianStructuralLayer(input.birth)
     : undefined;
+  if (palaceFlyingComparison && qintianStructure) {
+    recordMethodResult(methodResults, "ziwei_palace_flying", { palaceFlyingComparison, qintianStructure });
+  }
   for (const domain of domains.filter((value) => ZIWEI_PALACE_KEYS[value].length)) {
     for (const palace of relevantPalaces(chart, domain)) {
       if (selected.has("ziwei_topology")) {
@@ -654,6 +684,7 @@ function addZiweiClaims(
   }
   if (selected.has("ziwei_doctrine")) {
     const doctrine = evaluateZiweiDoctrine(chart);
+    recordMethodResult(methodResults, "ziwei_doctrine", { doctrine });
     for (const match of doctrine.matches) {
       add({
         domain: match.domain,
@@ -674,6 +705,7 @@ function addZiweiClaims(
   }
   if (selected.has("ziwei_horoscope") && domains.includes("timing") && input.targetDate) {
     const horoscope = computeZiweiHoroscope(input.birth, input.targetDate);
+    recordMethodResult(methodResults, "ziwei_horoscope", { horoscope });
     const transformationObservations = horoscope.transformationLayers.map((layer) => {
       const entries = layer.entries.map((entry) =>
         `${entry.transformation}:${entry.star}@${entry.natalPalace ?? "원궁미확인"}/${entry.layerPalace ?? "운궁미확인"}`
@@ -700,6 +732,7 @@ function addZiweiClaims(
     });
     if (selected.has("ziwei_palace_flying")) {
       const qintianActivation = computeZiweiQintianActivationLayer(input.birth, input.targetDate);
+      recordMethodResult(methodResults, "ziwei_palace_flying", { qintianActivation });
       const exactActivations = qintianActivation.activations.filter((activation) =>
         activation.exactBodyStar || activation.exactUseStarLinkIds.length > 0
       );
@@ -730,10 +763,16 @@ function contactObservation(contact: CrossChartContact): string {
   return `${contact.salience}:${contact.layer}:${contact.aPosition}${contact.aToken}-${contact.bPosition}${contact.bToken}:${contact.kind}${direction}`;
 }
 
-function addCompatibilityClaim(input: LifeDossierInput, selected: ReadonlySet<EngineCapabilityId>, add: ReturnType<typeof claimFactory>) {
+function addCompatibilityClaim(
+  input: LifeDossierInput,
+  selected: ReadonlySet<EngineCapabilityId>,
+  add: ReturnType<typeof claimFactory>,
+  methodResults: Partial<Record<EngineCapabilityId, unknown>>,
+) {
   if (!selected.has("compatibility")) return;
   if (!input.partnerBirth || input.birth.hour === undefined || input.partnerBirth.hour === undefined) return;
   const result = evaluateMyeongriCompatibility(computeSajuChart(input.birth), computeSajuChart(input.partnerBirth));
+  recordMethodResult(methodResults, "compatibility", { compatibility: result });
   add({
     domain: "relationship",
     system: "myeongri",
@@ -781,11 +820,17 @@ function addCompatibilityClaim(input: LifeDossierInput, selected: ReadonlySet<En
   });
 }
 
-function addCheolpanClaim(input: LifeDossierInput, selected: ReadonlySet<EngineCapabilityId>, add: ReturnType<typeof claimFactory>) {
+function addCheolpanClaim(
+  input: LifeDossierInput,
+  selected: ReadonlySet<EngineCapabilityId>,
+  add: ReturnType<typeof claimFactory>,
+  methodResults: Partial<Record<EngineCapabilityId, unknown>>,
+) {
   if (!selected.has("cheolpan_shenshu") || input.birth.hour === undefined) return;
   const envelope = computeSajuChartEnvelope(input.birth);
   if (!envelope.fullChart) return;
   const result = computeCheolpanHuangjiNumbers(envelope.fullChart);
+  recordMethodResult(methodResults, "cheolpan_shenshu", { huangji: result });
   if (result.status !== "computed") {
     add({
       domain: "methodology",
@@ -835,6 +880,7 @@ function addCheolpanClaim(input: LifeDossierInput, selected: ReadonlySet<EngineC
     queryChart,
     input.birth.gender
   ));
+  recordMethodResult(methodResults, "cheolpan_shenshu", { standard });
   const computedLifetime = standard.lifetime.filter((year) => year.status === "computed").length;
   const natalClauseCount = standard.natalClauses
     ? standard.natalClauses.personality.length + standard.natalClauses.career.length +
@@ -859,12 +905,18 @@ function addCheolpanClaim(input: LifeDossierInput, selected: ReadonlySet<EngineC
   });
 }
 
-function addQuestionTimeDivinationClaims(input: LifeDossierInput, selected: ReadonlySet<EngineCapabilityId>, add: ReturnType<typeof claimFactory>) {
+function addQuestionTimeDivinationClaims(
+  input: LifeDossierInput,
+  selected: ReadonlySet<EngineCapabilityId>,
+  add: ReturnType<typeof claimFactory>,
+  methodResults: Partial<Record<EngineCapabilityId, unknown>>,
+) {
   const questionDateTime = input.questionDateTime ?? input.targetDate;
   if (!questionDateTime || questionDateTime.hour === undefined) return;
   const { year, month, day, hour } = questionDateTime;
   if (selected.has("gimun")) {
     const chart = castGimun(year, month, day, hour, questionDateTime.minute ?? 0);
+    recordMethodResult(methodResults, "gimun", { chart });
     add({
       domain: "decision",
       system: "gimun",
@@ -886,6 +938,7 @@ function addQuestionTimeDivinationClaims(input: LifeDossierInput, selected: Read
   }
   if (selected.has("yukim")) {
     const chart = castYukim(year, month, day, hour);
+    recordMethodResult(methodResults, "yukim", { chart });
     add({
       domain: "decision",
       system: "yukim",
@@ -927,6 +980,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
   const routes = ids.map((id) => preflightCapability(id, context));
   const claims: EngineClaim[] = [];
   const conflicts: ClaimConflict[] = [];
+  const methodResults: Partial<Record<EngineCapabilityId, unknown>> = {};
   const birthAudit = auditBirthInput(input.birth);
   if (birthAudit.issues.some((issue) => issue.severity === "blocking")) {
     return {
@@ -936,6 +990,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
       claims,
       conflicts,
       synthesis: synthesize(requestedDomains, claims, conflicts),
+      methodResults,
       blockedSystems: routes.map((route) => ({
         capabilityId: route.capability.id,
         reason: route.reasons.join(" ") || birthAudit.issues.filter((issue) => issue.severity === "blocking").map((issue) => issue.message).join(" ")
@@ -944,17 +999,18 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
     };
   }
   const add = claimFactory(claims);
-  addMyeongriClaims(input, requestedDomains, selected, add, conflicts);
-  addZiweiClaims(input, requestedDomains, selected, add, conflicts);
-  addCompatibilityClaim(input, selected, add);
-  addCheolpanClaim(input, selected, add);
-  addQuestionTimeDivinationClaims(input, selected, add);
+  addMyeongriClaims(input, requestedDomains, selected, add, conflicts, methodResults);
+  addZiweiClaims(input, requestedDomains, selected, add, conflicts, methodResults);
+  addCompatibilityClaim(input, selected, add, methodResults);
+  addCheolpanClaim(input, selected, add, methodResults);
+  addQuestionTimeDivinationClaims(input, selected, add, methodResults);
   const requestedTimeline = input.timelineRange ?? (input.targetDate && input.question?.includes("3년")
     ? { startYear: input.targetDate.year, endYear: input.targetDate.year + 2 }
     : undefined);
   let timeline: LifeTimeline | undefined;
   if (selected.has("life_timeline") && requestedTimeline && input.birth.hour !== undefined && input.birth.gender) {
     timeline = buildLifeTimeline(input.birth, requestedTimeline);
+    recordMethodResult(methodResults, "life_timeline", { timeline });
     add({
       domain: "timing",
       system: "cross_system",
@@ -970,6 +1026,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
   let rectification: BirthTimeRectificationMatrix | undefined;
   if (selected.has("event_rectification_matrix") && input.lifeEvents?.length && input.birth.gender && input.birth.hour === undefined) {
     rectification = buildBirthTimeRectificationMatrix(input.birth, input.lifeEvents);
+    recordMethodResult(methodResults, "event_rectification_matrix", { rectification });
     add({
       domain: "methodology",
       system: "cross_system",
@@ -985,6 +1042,7 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
   let eventValidation: LifeEventValidationMatrix | undefined;
   if (selected.has("event_validation_matrix") && input.lifeEvents?.length && input.birth.gender && input.birth.hour !== undefined) {
     eventValidation = buildLifeEventValidationMatrix(input.birth, input.lifeEvents);
+    recordMethodResult(methodResults, "event_validation_matrix", { eventValidation });
     add({
       domain: "methodology",
       system: "cross_system",
@@ -1006,19 +1064,25 @@ export function buildLifeDossier(input: LifeDossierInput): LifeDossier {
       let ziwei: ZiweiChart | undefined;
       if (input.birth.gender) ziwei = compareZiweiLineages(input.birth).common;
       knowledgeAssets = routeKnowledgeAssets(envelope.fullChart, ziwei);
+      recordMethodResult(methodResults, "knowledge_asset_router", { knowledgeAssets });
     }
   }
   const blockedSystems = routes.filter((route) => route.status === "blocked").map((route) => ({
     capabilityId: route.capability.id,
     reason: route.reasons.join(" ") || route.capability.note
   }));
+  const synthesis = synthesize(requestedDomains, claims, conflicts);
+  if (selected.has("cross_system_life_dossier")) {
+    recordMethodResult(methodResults, "cross_system_life_dossier", { synthesis, conflicts, blockedSystems });
+  }
   return {
     version: "engine-v2-foundation",
     requestedDomains,
     routes,
     claims,
     conflicts,
-    synthesis: synthesize(requestedDomains, claims, conflicts),
+    synthesis,
+    methodResults,
     knowledgeAssets,
     timeline,
     eventValidation,

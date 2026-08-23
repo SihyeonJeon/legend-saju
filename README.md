@@ -137,11 +137,12 @@ MCP 서버는 사용자의 목적이 이름에 드러나는 읽기 전용 도구
 | `legend_saju_select_dates` | 명시적으로 택일을 요청한 경우에만 후보 날짜를 계산한다 |
 | `legend_saju_cast_divination` | 기문·육임·주역처럼 질문 시각이나 괘가 필요한 계산을 수행한다 |
 | `legend_saju_analyze_name` | 실제 이름 한자, 법원 인명용 한자 관측, 81수와 작명 정보를 분리해 계산한다 |
+| `legend_saju_interpret_dream` | 의미 대조가 끝난 교차 전승 범위 안에서 꿈의 공통 모티프와 충돌 조건을 반환한다 |
 | `legend_saju_manifest` | 현재 엔진에 들어 있는 계산법, 출처, 데이터 범위를 확인한다 |
 | `legend_saju_capabilities` | 전문적인 질문에 맞는 세부 계산법을 찾는다 |
-| `legend_saju_resolve` | 유파·계산법을 직접 지정하는 전문가용 요청을 실행한다 |
+| `legend_saju_run_methods` | 이름을 지정한 유파·계산법이나 복합 계산을 한 실행 계획으로 묶는다 |
 
-일상적인 운세 요청은 목적별 도구가 필요한 계산만 고른다. 예컨대 재물·사업운에 택일이나 개운 계산을 자동으로 섞지 않는다. 세부 유파를 직접 고르거나 전체 근거를 점검할 때만 capability 검색과 전문가용 resolver를 사용한다.
+일상적인 운세 요청은 목적별 도구가 필요한 계산만 고른다. 예컨대 재물·사업운에 택일 계산을 자동으로 섞지 않는다. 깊은 종합 분석은 `legend_saju_read_fortune`에 `detailLevel: "expert"`를 한 번 주면 명리 원국·판단·원전 규칙·자미 구조·운한과 질문에 맞는 보조 계산을 함께 조합한다. 세부 유파나 계산법을 직접 지목한 경우에만 capability 검색과 `legend_saju_run_methods`를 사용한다.
 
 ```text
 사용자의 자연어 질문
@@ -228,6 +229,7 @@ console.log(result.routes);
     conflicts: ClaimConflict[];
     synthesis: DomainSynthesis[];
     timeline?: LifeTimeline;
+    methodResults: Record<string, unknown>;
     blockedSystems: { capabilityId: string; reason: string }[];
   };
   evidence: SajuEvidence[];
@@ -237,7 +239,7 @@ console.log(result.routes);
 }
 ```
 
-MCP의 기본 응답은 `consumer` 모드다. `readingSummary`, 영역별 `sections`, 연도별 `timeline`을 먼저 반환하고 모든 해석 문장을 `evidenceClaimIds`, `sourceRefs`, `counterClaimIds`, `limitationRefs`에 연결한다. `inputNotes`에는 출생시각 출처나 진태양시 미보정 같은 입력 조건을 한 번만 표시한다. 전체 계산 자료가 필요할 때만 `evidence` 또는 `debug` 모드를 요청한다.
+MCP는 `brief`, `standard`, `expert`, `raw` 네 상세도를 제공한다. 기본 `standard` 응답은 `readingSummary`, 영역별 `sections`, 행동 요청의 `recommendations`, 연도별 `timeline`을 반환하고 모든 해석 문장을 `evidenceClaimIds`, `sourceRefs`, `counterClaimIds`, `limitationRefs`에 연결한다. `expert`는 관련 엔진의 전체 결과를 `methodAnalysis.methodResults`에 보존한다. `raw`는 개발자 실행 기록을 점검할 때 사용한다. 모든 도구는 명시적인 `outputSchema`를 제공하므로 호스트 모델은 짧은 완료 메시지 대신 `structuredContent`의 필드를 호출 전에 알 수 있다.
 
 ## 왜 만들었나
 
@@ -264,7 +266,7 @@ MCP의 기본 응답은 `consumer` 모드다. `readingSummary`, 영역별 `secti
 | 철판신수 질문시각 경로 | 괘 1,500칸, 선천 144행, 평생 2,028행 |
 | 한국 성명학 | 대법원 인명용 한자 관측 9,495건과 획수 이형 관측 2,003건 |
 | 원전 범위가 명시된 81수 | 81개 전체 행과 1차 출처 대조 |
-| 해몽 연구 데이터 | 주공해몽 988개, 아르테미도로스 211절, 교차문화 감사 시드 5개 |
+| 해몽 | 주공해몽 988개, 아르테미도로스 211절, 의미 대조가 끝난 교차문화 개념 5개 |
 
 검사 가능한 원본 데이터는 [`data/`](data/README.md)에 있다. 실행에 필요한 지식은 런타임에 포함되므로 원격 데이터베이스나 숨겨진 검색 서비스에 의존하지 않는다.
 
@@ -281,6 +283,7 @@ MCP의 기본 응답은 `consumer` 모드다. `readingSummary`, 영역별 `secti
 | 기문둔갑 | 시가전반, 구궁, 구성, 팔문, 팔신, 직부·직사, 공망 |
 | 철판신수 | 세 판본의 황극 연쇄와 별도 질문시각 14계열 표, 선천수, 108년 조문수 |
 | 한국 성명학 | 인명용 한자 9,495건, 유니코드·자형 분해, 사용자가 밝힌 획수 체계의 오격 계산, 원전 범위 81수 |
+| 해몽 | 배설물·물·이·불·고인 5개 개념의 독립 전승 공통점과 충돌 조건, 연결된 원문 발췌 |
 
 기능 수를 README의 고정 숫자로 믿기보다 `getEngineManifest()`로 현재 레지스트리를 확인하는 편이 정확하다.
 

@@ -62,11 +62,12 @@ invariant(nameRuntime.sources.koreanCourt.snapshotSha256 === sha256(officialByte
 invariant(zhougong.entries.length === 988, "Zhougong corpus must contain 988 entries");
 invariant(artemidorus.sections.length === 211, "Artemidorus corpus must contain 211 sections");
 invariant(dreamSeeds.concepts.length === 5, "cross-cultural dream seed audit must contain five concepts");
-invariant(dreamManifest.activation.engineCapability === false, "dream primary corpora must remain unactivated until semantic mapping is ready");
+invariant(dreamManifest.activation.engineCapability === true, "the five audited dream concepts must remain available to the bounded engine");
+invariant(dreamManifest.activation.activeCorpus.includes("5건"), "dream activation must remain limited to the five audited concepts");
 
 console.log(JSON.stringify({
   status: "pass",
   knowledge: { facts: 777, areas: 36, myeongriTerms: 777, ziweiTerms: 214, sipsinCells: 100 },
   naming: { officialEntries: 9495, runtimeEntries: nameRuntime.counts.officialEntries },
-  dreams: { zhougongEntries: 988, artemidorusSections: 211, auditedSeeds: 5, engineCapability: false },
+  dreams: { zhougongEntries: 988, artemidorusSections: 211, auditedSeeds: 5, engineCapability: true },
 }));

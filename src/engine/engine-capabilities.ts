@@ -32,6 +32,7 @@ export type EngineCapabilityId = LegacySajuIntent |
   "event_validation_matrix" |
   "event_rectification_matrix" |
   "korean_name_analysis" |
+  "dream_interpretation" |
   "cheolpan_shenshu" |
   "shamanic_oral_tradition" |
   "cross_system_life_dossier";
@@ -39,7 +40,7 @@ export type EngineCapabilityId = LegacySajuIntent |
 export type EngineSystem =
   "calendar" | "myeongri" | "ziwei" | "juyeok" | "yukim" | "gimun" |
   "dangsaju" | "tojeong" | "pungsu" | "gusung" | "naming" |
-  "cheolpan" | "musok" | "cross_system";
+  "cheolpan" | "dream" | "musok" | "cross_system";
 
 export type CapabilityMaturity =
   "verified_calculation" |
@@ -52,7 +53,8 @@ export type EvidenceRole = "primary" | "support" | "blocked";
 export type InputRequirement =
   "birth_date" | "birth_time" | "gender" | "partner_birth_date" |
   "partner_birth_time" | "target_date" | "question_datetime" |
-  "line_values" | "name_characters" | "name_strokes" | "past_events";
+  "line_values" | "name_characters" | "name_strokes" | "past_events" |
+  "dream_text";
 
 export interface EngineSource {
   id: string;
@@ -256,6 +258,30 @@ export const ENGINE_SOURCES: Record<string, EngineSource> = {
     scope: "내인궁과 자·축 천지불작내인의 중복 궁간 제외 규칙",
     checkedAt: "2026-08-21"
   },
+  zhougongDreambook: {
+    id: "zhougong-dreambook",
+    title: "주공해몽(周公解夢) 위키문헌 전사",
+    uri: "https://zh.wikisource.org/zh-hans/%E5%91%A8%E5%85%AC%E8%A7%A3%E5%A4%A2",
+    kind: "primary_text",
+    scope: "주공 계열 988개 원문 항목; 자동 의미 해석은 교차 검증된 항목에 한정",
+    checkedAt: "2026-08-21"
+  },
+  artemidorusDreambook: {
+    id: "artemidorus-oneirocritica-1644",
+    title: "Artemidorus, The Interpretation of Dreams (1644 EEBO-TCP)",
+    uri: "https://quod.lib.umich.edu/e/eebo/A25906.0001.001?view=toc",
+    kind: "primary_text",
+    scope: "CC0 영어 전사 211절; 고대 그리스 전승의 1644년 영어 수용본",
+    checkedAt: "2026-08-21"
+  },
+  dreamCrossCultureAudit: {
+    id: "dream-cross-culture-audit",
+    title: "Legend Saju 교차 전승 해몽 감사",
+    uri: "data/dreams/cross-culture-seed-audit.json",
+    kind: "local_audit",
+    scope: "독립된 주공·Artemidorus 계보가 겹치는 5개 개념과 충돌 조건",
+    checkedAt: "2026-08-21"
+  },
   localDivinationAudit: {
     id: "divination-table-audit",
     title: "점술 계산표 독립 감수",
@@ -357,6 +383,7 @@ export const ENGINE_CAPABILITIES: Record<EngineCapabilityId, CapabilityDescripto
   life_timeline: capability("life_timeline", "cross_system", "bounded_calculation", "primary", "대운·세운·자미 운한 연도별 병렬 시간축", ["birth_date", "birth_time", "gender", "target_date"], [], ["timing", "career", "wealth", "relationship", "family"], ["lunar-typescript", "iztro-config", "iztro-astrolabe", "sanming-tonghui"], ["접촉의 길흉 점수", "사건 발생 보장", "대만 현대 운한 관법"], "최대 30년의 배치와 원국 접촉을 계산하며 접촉 개수로 좋고 나쁨을 정하지 않는다."),
   event_validation_matrix: capability("event_validation_matrix", "cross_system", "bounded_calculation", "support", "알려진 시각의 과거 사건 영역·당시 구조 자료 대조", ["birth_date", "birth_time", "gender", "past_events"], [], ["methodology", "timing", "life_events"], ["lunar-typescript", "iztro-config", "iztro-astrolabe", "sanming-tonghui"], ["사건 문장 자동 채점", "적중률", "인과 판정", "미검출 사건 반증"], "사건 영역과 당시 대운·세운·자미 운한 자료의 존재만 대조하며 적중으로 승격하지 않는다."),
   event_rectification_matrix: capability("event_rectification_matrix", "cross_system", "bounded_calculation", "support", "과거 사건 기반 시각 후보 무점수 비교", ["birth_date", "gender", "past_events"], ["birth_time"], ["methodology", "timing", "life_events"], ["lunar-typescript", "iztro-config", "iztro-astrolabe", "sanming-tonghui"], ["후보 확률", "사건 의미의 자동 채점", "정답 시각 자동 선택"], "과거 사건별 대운·세운·자미 서명을 후보 시각마다 계산하고 같은 서명 후보를 묶는다."),
+  dream_interpretation: capability("dream_interpretation", "dream", "bounded_calculation", "support", "주공·Artemidorus 교차 전승 의미 감사 5개 개념 v1", ["dream_text"], [], ["dream", "culture"], ["zhougong-dreambook", "artemidorus-oneirocritica-1644", "dream-cross-culture-audit"], ["나머지 1,199개 원문 항목의 의미 정규화", "미래 사건 검증", "개인 심리·의학 진단"], "배설물·물·이·불·고인의 다섯 개념만 독립 계보의 공통 모티프와 충돌 조건을 함께 반환한다. 나머지 원문은 존재만으로 해석하지 않는다."),
   cheolpan_shenshu: capability("cheolpan_shenshu", "cheolpan", "bounded_calculation", "support", "황극·곤집·질문시각 표준표 분리 계산 v2", ["birth_date", "birth_time"], ["gender", "target_date", "past_events"], ["identity", "family", "timing", "methodology"], ["tieban-research-corpus", "xu-yunong-tieban-publication", "tieban-standard-published-tables"], ["12,000 조문의 문장 코퍼스", "공개 표에서 비어 있는 일부 고령 유년 셀", "서로 다른 유파를 합친 단일 만능 선택기", "사실 대조 없이 고각 정답 자동 확정"], "황극 원회운세, 곤집 암호, 질문 시각 14계열 표준표를 유파별로 분리한다. 표준표는 선천수에서 본명 조문과 108세 유년 표 조회까지 실행하고, 고각은 독립 과거 사실 세 건·두 주제에서 한 후보만 전부 일치할 때만 잠근다."),
   shamanic_oral_tradition: capability("shamanic_oral_tradition", "musok", "knowledge_only", "blocked", "지역·전승별 구술 지식", [], [], ["ritual", "culture"], [], ["재현 가능한 보편 계산법", "효과 검증"], "문화·상담 맥락 자료이지 출생 데이터 결정 계산이 아니다."),
   cross_system_life_dossier: capability("cross_system_life_dossier", "cross_system", "bounded_calculation", "primary", "체계 독립 claim graph v2", ["birth_date"], ["birth_time", "gender", "target_date"], ["identity", "career", "wealth", "relationship", "family", "timing"], ["lunar-typescript", "iztro-astrolabe", "sanming-tonghui", "ziwei-doushu-quanshu"], ["미컴파일 고전 관법", "회고 사건 보정"], "서로 다른 체계의 관찰을 합치지 않고 같은 생애 영역에서 병렬 비교한다.")
@@ -372,6 +399,7 @@ export interface EngineQueryShape {
   givenStrokes?: number[];
   name?: { surname?: unknown[]; givenName?: unknown[] };
   pastEvents?: unknown[];
+  dream?: string;
 }
 
 export interface InputIssue {
@@ -452,6 +480,7 @@ function missingRequirement(req: InputRequirement, q: EngineQueryShape): string 
     case "name_characters": return q.name?.surname?.length && q.name?.givenName?.length ? null : "성·이름 한자";
     case "name_strokes": return q.surnameStrokes?.length && q.givenStrokes?.length ? null : "성·이름 획수";
     case "past_events": return q.pastEvents?.length ? null : "검증용 과거 사건";
+    case "dream_text": return q.dream?.trim() ? null : "꿈 내용";
   }
 }
 

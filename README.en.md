@@ -86,14 +86,19 @@ The MCP exposes read-only tools whose names match the user's goal:
 | `legend_saju_select_dates` | Run date selection only when it was explicitly requested |
 | `legend_saju_cast_divination` | Run Qimen, Daliuren, or I Ching question-time calculations |
 | `legend_saju_analyze_name` | Analyze Korean name Hanja, official-name observations, and declared stroke methods |
+| `legend_saju_interpret_dream` | Compare shared motifs and conflicting conditions in the audited dream scope |
 | `legend_saju_manifest` | Inspect live methods, data coverage, and sources |
 | `legend_saju_capabilities` | Discover specialized calculations for an expert request |
-| `legend_saju_resolve` | Execute an expert plan that names methods or evidence depth |
+| `legend_saju_run_methods` | Execute named or mixed traditional methods in one expert plan |
 
 Ordinary readings now execute a bounded plan. A wealth or business question does
 not silently add date selection or remedy calculators. MCP responses default to a
-compact `consumer` view; `evidence` and `debug` remain available when raw depth is
-explicitly requested.
+readable `standard` view. A single `legend_saju_read_fortune` call with
+`detailLevel: "expert"` composes question-relevant Myeongri, Zi Wei, knowledge,
+and timing methods and preserves their complete outputs under
+`methodAnalysis.methodResults`. The four levels are `brief`, `standard`, `expert`,
+and developer-oriented `raw`. Every tool declares an `outputSchema`; clients should
+read `structuredContent`, not only the short completion digest in `content`.
 
 ## Auditable scope
 

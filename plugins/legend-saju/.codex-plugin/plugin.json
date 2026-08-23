@@ -1,6 +1,6 @@
 {
   "name": "legend-saju",
-  "version": "0.3.0+codex.20260823104508",
+  "version": "0.4.0+codex.20260823122733",
   "description": "Deterministic, source-traceable East Asian metaphysics calculations for Codex and ChatGPT.",
   "author": {
     "name": "Jeon Sihyeon",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Legend Saju",
     "shortDescription": "Traceable Saju calculations without another API key.",
-    "longDescription": "Ask in ordinary language, then route the question through deterministic Saju, Myeongri, Zi Wei Dou Shu, Qimen, Daliuren, Tieban, naming, and related calculators with school and source boundaries intact.",
+    "longDescription": "Ask in ordinary language, then route questions through deterministic Saju, Myeongri, Zi Wei Dou Shu, Qimen, Daliuren, Tieban, naming, dream, and related calculators with complete method results, school boundaries, and source evidence intact.",
     "developerName": "Jeon Sihyeon",
     "category": "Lifestyle",
     "capabilities": [

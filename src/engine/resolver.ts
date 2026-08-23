@@ -24,6 +24,7 @@ import {
   type SajuQuery,
 } from "./saju-engine-router";
 import type { KoreanNameAnalysis, KoreanNameInput } from "../naming/index";
+import { interpretDream, type DreamInterpretationResult } from "./dream-engine";
 
 export interface LegendSajuDateInput {
   year: number;
@@ -51,11 +52,15 @@ export interface LegendSajuResolveInput {
   surnameStrokes?: number[];
   givenStrokes?: number[];
   name?: KoreanNameInput;
+  dream?: string;
+  dreamContext?: string;
+  maxDreamMatches?: number;
   rangeDays?: number;
   purpose?: string;
   asOfYear?: number;
   maxAutoCapabilities?: number;
   entryIntent?: LegendSajuEntryIntent;
+  detailLevel?: LegendSajuDetailLevel;
   outputMode?: LegendSajuOutputMode;
   maxClaims?: number;
 }
@@ -66,9 +71,12 @@ export type LegendSajuEntryIntent =
   | "date_selection"
   | "divination"
   | "naming"
+  | "dream"
   | "expert";
 
 export type LegendSajuOutputMode = "consumer" | "compact" | "evidence" | "debug";
+
+export type LegendSajuDetailLevel = "brief" | "standard" | "expert" | "raw";
 
 export interface CapabilityExecutionPlan {
   entryIntent: LegendSajuEntryIntent;
@@ -109,6 +117,7 @@ export interface LegendSajuResolution {
   dossier?: LifeDossier;
   evidence: SajuEvidence[];
   nameAnalysis?: KoreanNameAnalysis;
+  dreamAnalysis?: DreamInterpretationResult;
   noModelCalls: true;
   publicationSideEffects: false;
   interpretationBoundary: string;
@@ -162,6 +171,12 @@ const SYSTEM_ALIASES: Partial<Record<EngineSystem, string[]>> = {
   gimun: ["기문", "기문둔갑", "qimen", "奇門遁甲", "奇门遁甲"],
   cheolpan: ["철판신수", "철판", "tieban", "鐵板神數", "铁板神数"],
   naming: ["작명", "성명학", "인명용", "naming", "姓名", "命名"],
+  dangsaju: ["당사주", "dangsaju", "唐四柱"],
+  tojeong: ["토정비결", "토정", "tojeong"],
+  pungsu: ["풍수", "팔택", "좌향", "pungsu", "feng shui", "風水"],
+  gusung: ["구성", "구성기학", "본명성", "nine star ki", "九星"],
+  dream: ["해몽", "꿈풀이", "꿈 해석", "dream interpretation", "oneirocritica", "周公解夢"],
+  cross_system: ["종합", "교차", "통합", "cross system"],
   musok: ["무속", "무당", "신앙", "shamanic"],
 };
 
@@ -174,6 +189,7 @@ const SYSTEM_DEFAULT_CAPABILITIES: Partial<Record<EngineSystem, EngineCapability
   gimun: ["gimun"],
   cheolpan: ["cheolpan_shenshu"],
   naming: ["korean_name_analysis", "suri", "naming"],
+  dream: ["dream_interpretation"],
 };
 
 const EXPLICIT_CAPABILITY_TERMS: Partial<Record<EngineCapabilityId, string[]>> = {
@@ -190,6 +206,35 @@ const EXPLICIT_CAPABILITY_TERMS: Partial<Record<EngineCapabilityId, string[]>> =
   korean_name_analysis: ["이름 한자", "인명용 한자", "파자", "성명학"],
   naming: ["작명", "이름 추천"],
   naming_hanja: ["작명 한자", "이름 한자 추천"],
+  dream_interpretation: ["해몽", "꿈풀이", "꿈 해석", "꿈을 풀"],
+};
+
+const CAPABILITY_SEARCH_ALIASES: Partial<Record<EngineCapabilityId, string[]>> = {
+  chart: ["만세력", "사주원국", "원국", "사주팔자", "십성", "지장간", "투간"],
+  myeongri_structure: ["사주원국", "십성", "지장간", "투간", "투출", "통근", "합충형파해", "삼합", "방합", "육합", "월령"],
+  relations: ["합충형파해", "천간합", "천간충", "지지합", "지지충", "삼합", "방합", "육합"],
+  strength_yongsin: ["신강", "신약", "왕쇠", "용신", "조후", "억부", "통관", "병약", "종격", "화격", "특수격"],
+  myeongri_judgment: ["월령", "격국", "조후", "억부", "통관", "병약", "종격", "화격", "특수격", "적천수", "삼명통회", "연해자평"],
+  myeongri_doctrine: ["궁통보감", "적천수", "삼명통회", "연해자평", "종격", "화격", "특수격"],
+  geokguk: ["격국", "월령", "종격", "화격", "특수격", "성패"],
+  joho: ["조후", "궁통보감", "병약"],
+  ziwei: ["자미두수", "12궁", "십이궁", "명반"],
+  ziwei_topology: ["자미두수 12궁", "십이궁", "삼방사정", "본궁", "대궁", "재백궁", "관록궁"],
+  ziwei_horoscope: ["대한", "대운", "소한", "유년", "유월", "유일", "유시", "운한", "생년사화"],
+  ziwei_palace_flying: ["생년사화", "궁간사화", "궁간비화", "자화", "비성", "흠천사화", "내인궁", "체용법상"],
+  ziwei_lineage_compare: ["중주파", "통행판", "유파 비교", "대만 자미"],
+  gimun: ["기문둔갑", "기문"],
+  yukim: ["대육임", "육임"],
+  juyeok_cast: ["주역", "64괘", "육십사괘", "동효"],
+  cheolpan_shenshu: ["철판신수", "황극", "곤집", "질문시각 숫자표"],
+  dangsaju: ["당사주", "십이성"],
+  tojeong: ["토정비결", "144괘"],
+  pungsu_bangwi: ["풍수", "팔택", "본명괘", "동서사택"],
+  taekil: ["택일", "좋은 날", "날짜 선택"],
+  naming: ["작명", "성명학", "발음오행", "자원오행"],
+  suri: ["81수", "수리", "사격", "획수"],
+  korean_name_analysis: ["인명한자", "인명용 한자", "파자", "대법원 한자", "성명학"],
+  dream_interpretation: ["해몽", "꿈풀이", "꿈 해석", "주공해몽", "아르테미도로스"],
 };
 
 const ACTION_TERMS = ["개운", "행동", "무엇을 해야", "뭘 해야", "어떻게 해야", "조심할", "주의할", "구체적 액션", "실천"];
@@ -243,6 +288,7 @@ export function searchCapabilities(input: CapabilitySearchInput): CapabilitySear
         capability.lineage,
         capability.note,
         ...capability.domains,
+        ...(CAPABILITY_SEARCH_ALIASES[capability.id] ?? []),
         ...sourceTitles,
       ].join(" "));
       let score = 0;
@@ -258,6 +304,12 @@ export function searchCapabilities(input: CapabilitySearchInput): CapabilitySear
           matches.add(token);
         }
       }
+      for (const alias of CAPABILITY_SEARCH_ALIASES[capability.id] ?? []) {
+        const normalizedAlias = normalize(alias);
+        if (!query.includes(normalizedAlias)) continue;
+        score += query === normalizedAlias ? 24 : 10;
+        matches.add(alias);
+      }
       for (const [theme, hint] of Object.entries(DOMAIN_HINTS)) {
         if (hint.terms.some((term) => query.includes(normalize(term))) && hint.domains.some((domain) => capability.domains.includes(domain))) {
           score += 8;
@@ -272,7 +324,15 @@ export function searchCapabilities(input: CapabilitySearchInput): CapabilitySear
         }
       }
       const explicitTerms = EXPLICIT_CAPABILITY_TERMS[capability.id];
-      if (explicitTerms?.length && !includesAny(query, explicitTerms)) score = 0;
+      if (explicitTerms?.length) {
+        const methodTerms = [...explicitTerms, ...(CAPABILITY_SEARCH_ALIASES[capability.id] ?? [])];
+        if (includesAny(query, methodTerms)) {
+          score += 18;
+          matches.add("explicit method phrase");
+        } else {
+          score = 0;
+        }
+      }
       if (capability.evidenceRole === "primary") score += score > 0 ? 2 : 0;
       if (capability.evidenceRole === "blocked") score = Math.min(score, 1);
 
@@ -313,6 +373,7 @@ function queryContext(input: LegendSajuResolveInput, id?: EngineCapabilityId): E
     givenStrokes: input.givenStrokes ?? declaredGivenStrokes,
     name: input.name,
     pastEvents: input.lifeEvents,
+    dream: input.dream,
   };
 }
 
@@ -344,6 +405,7 @@ function inputDrivenCapabilities(input: LegendSajuResolveInput, entryIntent: Leg
   if (entryIntent === "divination" && input.lineValues?.length) ids.push("juyeok_cast");
   if (entryIntent === "naming" && input.surnameStrokes?.length && input.givenStrokes?.length) ids.push("suri");
   if (entryIntent === "naming" && input.name) ids.push("korean_name_analysis");
+  if (entryIntent === "dream" && input.dream?.trim()) ids.push("dream_interpretation");
   if (entryIntent === "general_reading" && !input.birth && input.targetDate) ids.push("date_yinyang");
   return ids;
 }
@@ -356,6 +418,7 @@ function inferEntryIntent(input: LegendSajuResolveInput): LegendSajuEntryIntent 
   if (input.entryIntent) return input.entryIntent;
   if (input.requestedCapabilities?.length) return "expert";
   const question = normalize(input.question);
+  if (input.dream?.trim() || includesAny(question, EXPLICIT_CAPABILITY_TERMS.dream_interpretation ?? [])) return "dream";
   if (input.name || input.surnameStrokes?.length || input.givenStrokes?.length || includesAny(question, DOMAIN_HINTS.naming.terms)) return "naming";
   if (input.partnerBirth || includesAny(question, EXPLICIT_CAPABILITY_TERMS.compatibility ?? [])) return "compatibility";
   if (input.lineValues?.length || includesAny(question, ["기문", "육임", "주역", "점괘", "점사"])) return "divination";
@@ -365,6 +428,7 @@ function inferEntryIntent(input: LegendSajuResolveInput): LegendSajuEntryIntent 
 
 function generalReadingCapabilities(input: LegendSajuResolveInput, domains: LifeDomain[]): { core: EngineCapabilityId[]; supporting: EngineCapabilityId[] } {
   const question = normalize(input.question);
+  const deepDetail = input.detailLevel === "expert" || input.detailLevel === "raw";
   const core: EngineCapabilityId[] = input.birth ? ["chart", "myeongri_structure"] : [];
   const supporting: EngineCapabilityId[] = [];
   if (domains.some((domain) => ["identity", "career", "wealth", "relationship", "family", "health"].includes(domain))) {
@@ -374,7 +438,10 @@ function generalReadingCapabilities(input: LegendSajuResolveInput, domains: Life
   if (input.timelineRange) core.push("life_timeline");
   if (includesAny(question, ACTION_TERMS)) core.push("recommend");
   if (includesAny(question, ["궁통보감", "고전", "원전", "조후", "격국", "용신"])) supporting.push("myeongri_doctrine");
-  if (input.birth?.hour !== undefined && input.birth.gender && (includesAny(question, DEEP_READING_TERMS) || includesAny(question, BROAD_READING_TERMS))) {
+  if (deepDetail && input.birth) {
+    supporting.push("strength_yongsin", "myeongri_doctrine", "knowledge_asset_router", "cross_system_life_dossier");
+  }
+  if (input.birth?.hour !== undefined && input.birth.gender && (deepDetail || includesAny(question, DEEP_READING_TERMS) || includesAny(question, BROAD_READING_TERMS))) {
     supporting.push("ziwei_topology", "ziwei_doctrine");
     if (domains.includes("timing") && input.targetDate) supporting.push("ziwei_horoscope");
     if (includesAny(question, ["비성", "궁간사화", "흠천", "자화"])) supporting.push("ziwei_palace_flying");
@@ -414,13 +481,22 @@ function planCapabilities(input: LegendSajuResolveInput): CapabilityExecutionPla
     if (input.name) core.push("korean_name_analysis");
     if (input.surnameStrokes?.length && input.givenStrokes?.length) core.push("suri");
     if (input.birth && includesAny(question, ["작명", "이름 추천"])) supporting.push("naming", "naming_hanja");
+  } else if (entryIntent === "dream") {
+    core = ["dream_interpretation"];
   } else {
     core = validRequested.length
       ? []
       : searchCapabilities({ query: input.question, limit: input.maxAutoCapabilities ?? 8 }).map((hit) => hit.id);
   }
 
-  const maxAuto = Math.max(0, Math.min(input.maxAutoCapabilities ?? 8, 20));
+  const defaultMaxAuto = input.detailLevel === "brief"
+    ? 5
+    : input.detailLevel === "expert"
+      ? 14
+      : input.detailLevel === "raw"
+        ? 20
+        : 8;
+  const maxAuto = Math.max(0, Math.min(input.maxAutoCapabilities ?? defaultMaxAuto, 20));
   const mandatory = uniqueIds(requiredByInput);
   const candidates = uniqueIds([...core, ...supporting]).filter((id) => !mandatory.includes(id));
   const boundedAuto = maxAuto === 0 ? [] : candidates.slice(0, maxAuto);
@@ -463,6 +539,9 @@ function resolveBase(input: LegendSajuResolveInput): LegendSajuResolution {
   const evidence = selected
     .filter(isLegacyIntent)
     .map((intent) => querySajuEngine(toLegacyQuery(input, intent)));
+  const dreamAnalysis = selected.includes("dream_interpretation") && input.dream?.trim()
+    ? interpretDream({ dream: input.dream, context: input.dreamContext, maxMatches: input.maxDreamMatches })
+    : undefined;
 
   const dossier = input.birth
     ? buildLifeDossier({
@@ -487,6 +566,7 @@ function resolveBase(input: LegendSajuResolveInput): LegendSajuResolution {
     routes: [...routeById.values()],
     dossier,
     evidence,
+    dreamAnalysis,
     noModelCalls: true,
     publicationSideEffects: false,
     interpretationBoundary: "The engine returns reproducible calculations, source metadata, school boundaries, and bounded interpretations. A client may explain them, but must not silently upgrade them into guaranteed events.",

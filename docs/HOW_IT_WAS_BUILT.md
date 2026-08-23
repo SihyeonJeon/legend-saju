@@ -23,7 +23,7 @@ multilingual source search
 7. **Do not invent noon.** Unknown birth time produces all hour candidates, including distinct Rat-hour date policies. Stable and variable claims remain separate; past events compare candidates without declaring one correct.
 8. **Use a claim graph, not a fate score.** Results are returned as claims, conflicts, synthesis, timelines, blocked systems, source IDs, and limitations.
 9. **Keep naming independent.** Official Korean name-character observations, assigned readings, observed strokes, Unicode decomposition, user-declared stroke policy, and source-bounded 81-number material remain distinct layers.
-10. **Do not overclaim dream material.** Public Zhougong, Artemidorus, and cross-cultural research data are documented, but a deterministic dream engine stays inactive until attribution and mapping are complete.
+10. **Do not overclaim dream material.** Public Zhougong and Artemidorus corpora remain source material. The deterministic dream path activates only five concepts whose meanings were compared item by item across both traditions; the other 1,199 source items are not treated as an automatic dictionary.
 11. **Keep adapters outside the core.** Writing, UI, and publishing belong outside the deterministic engine. The repository contains the calculation core, redistributable data, provenance, and tests.
 
 ## Reproducible research brief

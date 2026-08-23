@@ -164,7 +164,7 @@ function timingContact(
     family,
     contactedLensIds,
     interpretation: contactedLensIds.length
-      ? `${layer === "da_yun" ? "대운" : "세운"} 천간의 ${tenGod}·${element}가 ${contactedLensIds.join("·")} 관법 후보와 접촉한다.`
+      ? `${layer === "da_yun" ? "대운" : "세운"} 천간의 ${tenGod}·${element} 요소가 ${contactedLensIds.join("·")} 관법 후보와 접촉한다.`
       : `${layer === "da_yun" ? "대운" : "세운"} 천간의 ${tenGod}·${element}는 세 관법 후보와 직접 겹치지 않는다.`
   };
 }

@@ -23,9 +23,10 @@ const expectedTools = [
   "legend_saju_analyze_name",
   "legend_saju_capabilities",
   "legend_saju_cast_divination",
+  "legend_saju_interpret_dream",
   "legend_saju_manifest",
   "legend_saju_read_fortune",
-  "legend_saju_resolve",
+  "legend_saju_run_methods",
   "legend_saju_select_dates",
 ];
 
@@ -78,9 +79,15 @@ lines.on("line", (line) => {
     return;
   }
   if (message.id === 2) {
-    const actual = (message.result?.tools ?? []).map((tool) => tool.name).sort();
+    const tools = message.result?.tools ?? [];
+    const actual = tools.map((tool) => tool.name).sort();
     if (JSON.stringify(actual) !== JSON.stringify(expectedTools)) {
       finish(new Error(`Unexpected MCP tools: ${JSON.stringify(actual)}`));
+      return;
+    }
+    const readingTool = tools.find((tool) => tool.name === "legend_saju_read_fortune");
+    if (!readingTool?.inputSchema?.properties?.detailLevel || !readingTool?.outputSchema?.properties?.methodAnalysis) {
+      finish(new Error("MCP reading tool is missing detailLevel or its structured output schema."));
       return;
     }
     send({ jsonrpc: "2.0", id: 3, method: "tools/call", params: { name: "legend_saju_manifest", arguments: {} } });
@@ -111,6 +118,25 @@ lines.on("line", (line) => {
   if (message.id === 4) {
     if (message.error || message.result?.isError || message.result?.structuredContent?.nameAnalysis?.legalIdentityStatus !== "all_official_eligible") {
       finish(new Error(`MCP resolver did not execute the full naming path: ${line}`));
+      return;
+    }
+    send({
+      jsonrpc: "2.0",
+      id: 5,
+      method: "tools/call",
+      params: {
+        name: "legend_saju_interpret_dream",
+        arguments: {
+          question: "이 불꿈을 해몽해줘",
+          dream: "집에 불이 크게 났고 불빛은 밝았으며 연기는 거의 없었다",
+        },
+      },
+    });
+    return;
+  }
+  if (message.id === 5) {
+    if (message.error || message.result?.isError || message.result?.structuredContent?.dreamAnalysis?.matches?.[0]?.concept !== "불") {
+      finish(new Error(`MCP dream tool did not execute the audited interpretation path: ${line}`));
       return;
     }
     finish();

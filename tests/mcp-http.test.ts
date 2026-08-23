@@ -42,7 +42,7 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(await response.json()).toEqual({
       status: "ok",
       service: "legend-saju",
-      version: "0.3.0",
+      version: "0.4.0",
     });
   });
 
@@ -68,7 +68,10 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     expect(initialize.status).toBe(200);
     const initialization = ssePayload(await initialize.text());
     expect(initialization).toMatchObject({
-      result: { serverInfo: { name: "legend-saju", version: "0.3.0" } },
+      result: {
+        serverInfo: { name: "legend-saju", version: "0.4.0" },
+        instructions: expect.stringContaining("structuredContent"),
+      },
       id: 1,
     });
 
@@ -81,18 +84,23 @@ describe("Legend Saju Streamable HTTP MCP", () => {
       body: JSON.stringify({ jsonrpc: "2.0", id: 2, method: "tools/list", params: {} }),
     });
     const toolsPayload = ssePayload(await toolsResponse.text()) as {
-      result?: { tools?: { name?: string }[] };
+      result?: { tools?: { name?: string; inputSchema?: any; outputSchema?: any }[] };
     };
     expect(toolsPayload.result?.tools?.map((tool) => tool.name).sort()).toEqual([
       "legend_saju_analyze_compatibility",
       "legend_saju_analyze_name",
       "legend_saju_capabilities",
       "legend_saju_cast_divination",
+      "legend_saju_interpret_dream",
       "legend_saju_manifest",
       "legend_saju_read_fortune",
-      "legend_saju_resolve",
+      "legend_saju_run_methods",
       "legend_saju_select_dates",
     ]);
+    const readingTool = toolsPayload.result?.tools?.find((tool) => tool.name === "legend_saju_read_fortune");
+    expect(readingTool?.inputSchema?.properties?.detailLevel?.enum).toEqual(["brief", "standard", "expert", "raw"]);
+    expect(readingTool?.outputSchema?.properties?.methodAnalysis).toBeDefined();
+    expect(readingTool?.outputSchema?.properties?.recommendations).toBeDefined();
   });
 
   it("rejects oversized JSON before MCP dispatch", async () => {
