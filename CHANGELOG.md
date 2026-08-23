@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- ChatGPT Apps(MCP UI) 위젯 4종: 원국 카드·영역별 운세 카드(총운/재물운/연애운 등)·궁합 카드·대운 타임라인. `text/html+skybridge` 리소스와 `legend_saju_card_*` 도구로 노출되며, 계산 값은 서버가 결정적으로 채우고 해석 문장·점수는 호출 모델이 작성해 카드에 "AI 해석"으로 표기된다. 위젯 구성은 지식iN·네이트판 '사주' 실질문 스크래핑(궁합·원국 풀이·재물/연애/직업운·대운 시기) 기반.
 - consumer 응답에 `verdicts` 상시 포함: 왕쇠 판정, 격국(격국명·성패·보강/훼손 장치), 용신 후보(조후·격국 기능·부억 관법 분리 + 충돌). 문장 budget과 무관하게 항상 실린다.
 - consumer/action_only 응답에 `evidenceIndex` 추가: 프로젝션에서 생략된 내부 claim(구조 관찰·계산 사실·방법론 설명)의 도메인·종류별 색인.
 - claim 조회 포트: 동일 입력으로 재호출하며 `claimIds`를 넘기면 색인의 claim 전문(진술·관찰·출처·한계·반대근거)을 선택적으로 반환하는 `mode: "claims"` 응답. claim ID는 동일 입력에 대해 결정적이다.

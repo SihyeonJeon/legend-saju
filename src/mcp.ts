@@ -17,6 +17,20 @@ import {
 } from "./engine/public-entry";
 import { buildConsumerEvidenceIndex, buildConsumerReading, buildMethodologyVerdicts } from "./engine/consumer-reading";
 import {
+  buildCompatibilityCardPayload,
+  buildFortuneCardsPayload,
+  buildLuckTimelinePayload,
+  buildNatalCardPayload,
+  FORTUNE_DOMAINS,
+} from "./mcp-render";
+import {
+  COMPATIBILITY_CARD_HTML,
+  FORTUNE_CARDS_HTML,
+  LUCK_TIMELINE_HTML,
+  NATAL_CARD_HTML,
+  WIDGET_URIS,
+} from "./widgets/widget-html";
+import {
   capabilitySearchOutputSchema,
   legendSajuResultOutputSchema,
   manifestOutputSchema,
@@ -160,6 +174,105 @@ type ToolResult = {
   structuredContent: Record<string, unknown>;
   isError?: boolean;
 };
+
+const narrativeSchema = z.object({
+  headline: z.string().max(120).optional().describe("Card headline written by the assistant, one warm sentence."),
+  reading: z.string().max(1500).optional().describe("Assistant-written interpretation prose shown in the card's AI bubble. Ground it in engine facts from a prior legend_saju_read_fortune call."),
+});
+
+const natalCardSchema = z.object({
+  birth: birthSchema.refine((input) => input.hour !== undefined, { message: "원국 카드에는 출생시각(hour)이 필요하다." }),
+  narrative: narrativeSchema.optional(),
+});
+
+const fortuneCardsSchema = z.object({
+  birth: birthSchema.refine((input) => input.hour !== undefined, { message: "운세 카드에는 출생시각(hour)이 필요하다." }),
+  title: z.string().max(60).optional().describe("Report title, e.g. 2026년 하반기 운세."),
+  asOfYear: z.number().int().optional(),
+  cards: z.array(z.object({
+    domain: z.enum(FORTUNE_DOMAINS),
+    score: z.number().int().min(1).max(5).optional().describe("Assistant's editorial 1–5 score, rendered as hearts. Omit rather than guess."),
+    text: z.string().min(1).max(700).describe("Assistant-written reading for this domain, grounded in engine facts."),
+  })).min(1).max(6).describe("Pick only the domains the user asked about."),
+  actions: z.array(z.object({
+    title: z.string().max(60),
+    detail: z.string().max(160).optional(),
+  })).max(5).optional().describe("개운 action checklist."),
+  narrative: narrativeSchema.optional(),
+});
+
+const compatibilityCardSchema = z.object({
+  birthA: birthSchema.refine((input) => input.hour !== undefined, { message: "궁합 카드에는 출생시각(hour)이 필요하다." }),
+  birthB: birthSchema.refine((input) => input.hour !== undefined, { message: "궁합 카드에는 출생시각(hour)이 필요하다." }),
+  nameA: z.string().max(20).optional().describe("Display label such as 나, 그 사람, or a first name the user supplied."),
+  nameB: z.string().max(20).optional(),
+  score: z.number().int().min(1).max(5).optional().describe("Assistant's editorial 1–5 harmony score, rendered as hearts."),
+  narrative: narrativeSchema.optional(),
+});
+
+const luckTimelineSchema = z.object({
+  birth: birthSchema.refine((input) => input.hour !== undefined && Boolean(input.gender), { message: "대운 타임라인에는 출생시각(hour)과 성별(gender)이 필요하다." }),
+  asOfYear: z.number().int().optional(),
+  focusYear: z.number().int().optional().describe("Year the user is asking about (결혼·이직·창업 시기 등)."),
+  focusNote: z.string().max(160).optional().describe("Assistant's one-line note about the focus year."),
+  narrative: narrativeSchema.optional(),
+});
+
+const widgetOutputSchema = z.object({ widget: z.string() }).passthrough();
+
+function widgetResult(structuredContent: Record<string, unknown>, summary: string): ToolResult {
+  return { content: [{ type: "text", text: summary }], structuredContent };
+}
+
+export function runNatalCardTool(input: z.infer<typeof natalCardSchema>): ToolResult {
+  try {
+    return widgetResult(jsonObject(buildNatalCardPayload(input.birth, input.narrative)), "원국 카드를 렌더링했다. 카드에 없는 내용만 짧게 보충하라.");
+  } catch (error) {
+    return toolError("원국 카드를 만들 수 없습니다", error);
+  }
+}
+
+export function runFortuneCardsTool(input: z.infer<typeof fortuneCardsSchema>): ToolResult {
+  try {
+    const payload = buildFortuneCardsPayload(input.birth, input.cards, {
+      title: input.title,
+      asOfYear: input.asOfYear,
+      actions: input.actions,
+      narrative: input.narrative,
+    });
+    return widgetResult(jsonObject(payload), `운세 카드 ${input.cards.length}장을 렌더링했다. 카드에 없는 내용만 짧게 보충하라.`);
+  } catch (error) {
+    return toolError("운세 카드를 만들 수 없습니다", error);
+  }
+}
+
+export function runCompatibilityCardTool(input: z.infer<typeof compatibilityCardSchema>): ToolResult {
+  try {
+    const payload = buildCompatibilityCardPayload(input.birthA, input.birthB, {
+      nameA: input.nameA,
+      nameB: input.nameB,
+      score: input.score,
+      narrative: input.narrative,
+    });
+    return widgetResult(jsonObject(payload), "궁합 카드를 렌더링했다. 카드에 없는 내용만 짧게 보충하라.");
+  } catch (error) {
+    return toolError("궁합 카드를 만들 수 없습니다", error);
+  }
+}
+
+export function runLuckTimelineTool(input: z.infer<typeof luckTimelineSchema>): ToolResult {
+  try {
+    const payload = buildLuckTimelinePayload(input.birth, {
+      asOfYear: input.asOfYear,
+      focusYear: input.focusYear,
+      focusNote: input.focusNote,
+      narrative: input.narrative,
+    });
+    return widgetResult(jsonObject(payload), "대운 타임라인을 렌더링했다. 카드에 없는 내용만 짧게 보충하라.");
+  } catch (error) {
+    return toolError("대운 타임라인을 만들 수 없습니다", error);
+  }
+}
 
 function jsonObject(value: unknown): Record<string, unknown> {
   return JSON.parse(JSON.stringify(value)) as Record<string, unknown>;
@@ -667,7 +780,7 @@ export function createLegendSajuMcpServer(): McpServer {
     name: "legend-saju",
     version: LEGEND_SAJU_ENGINE_VERSION,
   }, {
-    instructions: "일반 운세는 legend_saju_read_fortune을 호출한다. detailLevel은 계산 범위, outputMode는 반환 형식을 정한다. 기본 consumer는 readingSummary·verdicts·sections·recommendations·timeline을 사용하고, 행동만 필요하면 action_only를 쓴다. consumer 응답의 verdicts에는 왕쇠·격국(성패 포함)·용신 후보(조후/격국/부억 관법 분리) 결론이 항상 들어 있으니 전문적 해석의 뼈대로 쓴다. evidenceIndex는 응답에 싣지 않은 내부 계산 근거의 색인이다: 왕쇠 근거, 격국 구조, 해석 방법론 설명이 더 필요하면 동일 입력으로 같은 도구를 다시 호출하며 claimIds에 색인의 ID를 넣어 필요한 것만 선택적으로 가져온다(전체를 무조건 당기지 말 것). 계산 근거·지식 자산·원문·출처 전반이 필요할 때만 evidence 모드로 다시 호출한다. 특정 유파나 산법을 지목한 요청은 legend_saju_capabilities에서 ID를 찾은 뒤 legend_saju_run_methods에 함께 전달한다. debug는 개발자 점검용이다.",
+    instructions: "일반 운세는 legend_saju_read_fortune을 호출한다. detailLevel은 계산 범위, outputMode는 반환 형식을 정한다. 기본 consumer는 readingSummary·verdicts·sections·recommendations·timeline을 사용하고, 행동만 필요하면 action_only를 쓴다. consumer 응답의 verdicts에는 왕쇠·격국(성패 포함)·용신 후보(조후/격국/부억 관법 분리) 결론이 항상 들어 있으니 전문적 해석의 뼈대로 쓴다. evidenceIndex는 응답에 싣지 않은 내부 계산 근거의 색인이다: 왕쇠 근거, 격국 구조, 해석 방법론 설명이 더 필요하면 동일 입력으로 같은 도구를 다시 호출하며 claimIds에 색인의 ID를 넣어 필요한 것만 선택적으로 가져온다(전체를 무조건 당기지 말 것). 계산 근거·지식 자산·원문·출처 전반이 필요할 때만 evidence 모드로 다시 호출한다. 특정 유파나 산법을 지목한 요청은 legend_saju_capabilities에서 ID를 찾은 뒤 legend_saju_run_methods에 함께 전달한다. debug는 개발자 점검용이다. UI를 지원하는 클라이언트(ChatGPT Apps)에서는 legend_saju_card_natal(원국)·legend_saju_card_fortune(영역 운세)·legend_saju_card_compatibility(궁합)·legend_saju_card_timeline(대운·시기) 카드 도구를 우선 사용한다: 먼저 read_fortune으로 근거를 얻고, 해석 문장은 직접 써서 카드의 narrative/text 필드로 전달하면 계산 값은 서버가 채운다.",
   });
 
   server.registerTool("legend_saju_manifest", {
@@ -737,6 +850,60 @@ export function createLegendSajuMcpServer(): McpServer {
     outputSchema: legendSajuResultOutputSchema,
     annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
   }, async (input) => runIntentTool(input, "dream"));
+
+  const widgets: { name: string; uri: string; title: string; description: string; html: string }[] = [
+    { name: "saju-natal-card", uri: WIDGET_URIS.natalCard, title: "사주 원국 카드", description: "네 기둥, 오행 밸런스, 왕쇠·격국·용신 판정, 신살을 보여주는 카드.", html: NATAL_CARD_HTML },
+    { name: "saju-fortune-cards", uri: WIDGET_URIS.fortuneCards, title: "운세 리포트 카드", description: "총운·재물운·연애운 등 영역별 파스텔 운세 카드 묶음.", html: FORTUNE_CARDS_HTML },
+    { name: "saju-compatibility-card", uri: WIDGET_URIS.compatibilityCard, title: "궁합 카드", description: "두 사람 일주와 합·충 신호를 보여주는 궁합 카드.", html: COMPATIBILITY_CARD_HTML },
+    { name: "saju-luck-timeline", uri: WIDGET_URIS.luckTimeline, title: "대운 타임라인", description: "대운 흐름과 시기 질문에 답하는 타임라인 카드.", html: LUCK_TIMELINE_HTML },
+  ];
+  for (const widget of widgets) {
+    server.registerResource(widget.name, widget.uri, {
+      title: widget.title,
+      description: widget.description,
+      mimeType: "text/html+skybridge",
+    }, async (uri) => ({
+      contents: [{ uri: uri.href, mimeType: "text/html+skybridge", text: widget.html }],
+    }));
+  }
+
+  const widgetToolCommon = "Compute chart facts server-side and render them in a widget card. Write the narrative/text fields yourself, grounded in a prior legend_saju_read_fortune call — the card labels them as AI interpretation. After the card renders, add only brief text the card does not already show.";
+
+  server.registerTool("legend_saju_card_natal", {
+    title: "원국 카드 렌더링",
+    description: `Render a natal-chart card (사주 봐주세요·원국 풀이·신살 질문). Shows four pillars, day-master identity, element balance, 왕쇠·격국·용신 verdicts, 신살, and 합충. ${widgetToolCommon}`,
+    inputSchema: natalCardSchema,
+    outputSchema: widgetOutputSchema,
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+    _meta: { "openai/outputTemplate": WIDGET_URIS.natalCard, "openai/toolInvocation/invoking": "원국 카드를 그리는 중", "openai/toolInvocation/invoked": "원국 카드 완성" },
+  }, async (input) => runNatalCardTool(input));
+
+  server.registerTool("legend_saju_card_fortune", {
+    title: "운세 카드 렌더링",
+    description: `Render domain fortune cards (재물운·연애운·결혼운·직업운·건강운·학업운·이동운·재회운·총운). Pick only the domains the user asked about and write each card's text yourself. ${widgetToolCommon}`,
+    inputSchema: fortuneCardsSchema,
+    outputSchema: widgetOutputSchema,
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+    _meta: { "openai/outputTemplate": WIDGET_URIS.fortuneCards, "openai/toolInvocation/invoking": "운세 카드를 그리는 중", "openai/toolInvocation/invoked": "운세 카드 완성" },
+  }, async (input) => runFortuneCardsTool(input));
+
+  server.registerTool("legend_saju_card_compatibility", {
+    title: "궁합 카드 렌더링",
+    description: `Render a two-person compatibility card (사주 궁합 봐주세요). Shows both day pillars and deterministic 합·충·형·파·해 signals. ${widgetToolCommon}`,
+    inputSchema: compatibilityCardSchema,
+    outputSchema: widgetOutputSchema,
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+    _meta: { "openai/outputTemplate": WIDGET_URIS.compatibilityCard, "openai/toolInvocation/invoking": "궁합 카드를 그리는 중", "openai/toolInvocation/invoked": "궁합 카드 완성" },
+  }, async (input) => runCompatibilityCardTool(input));
+
+  server.registerTool("legend_saju_card_timeline", {
+    title: "대운 타임라인 렌더링",
+    description: `Render the 대운 flow timeline (대운 흐름·결혼 시기·이직/창업 시기 질문). Marks the current 대운 and an optional focus year with its 세운. ${widgetToolCommon}`,
+    inputSchema: luckTimelineSchema,
+    outputSchema: widgetOutputSchema,
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+    _meta: { "openai/outputTemplate": WIDGET_URIS.luckTimeline, "openai/toolInvocation/invoking": "대운 타임라인을 그리는 중", "openai/toolInvocation/invoked": "대운 타임라인 완성" },
+  }, async (input) => runLuckTimelineTool(input));
 
   server.registerTool("legend_saju_run_methods", {
     title: "Run specific or mixed traditional methods",
