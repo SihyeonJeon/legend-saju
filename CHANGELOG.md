@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- consumer 응답에 `verdicts` 상시 포함: 왕쇠 판정, 격국(격국명·성패·보강/훼손 장치), 용신 후보(조후·격국 기능·부억 관법 분리 + 충돌). 문장 budget과 무관하게 항상 실린다.
+- consumer/action_only 응답에 `evidenceIndex` 추가: 프로젝션에서 생략된 내부 claim(구조 관찰·계산 사실·방법론 설명)의 도메인·종류별 색인.
+- claim 조회 포트: 동일 입력으로 재호출하며 `claimIds`를 넘기면 색인의 claim 전문(진술·관찰·출처·한계·반대근거)을 선택적으로 반환하는 `mode: "claims"` 응답. claim ID는 동일 입력에 대해 결정적이다.
 - Biome lint 도입: `npm run lint` / `npm run lint:fix` 스크립트와 CI 린트 게이트.
 - `.editorconfig`, `CHANGELOG.md` 추가.
 

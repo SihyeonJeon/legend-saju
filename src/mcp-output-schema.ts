@@ -35,10 +35,70 @@ const executionPlanSchema = z.object({
   unsupported: z.array(z.string()),
 });
 
+const verdictsSchema = z.object({
+  wangswae: z.object({
+    status: z.string(),
+    monthCommandTenGod: z.string(),
+    sameElementRoots: z.array(z.string()),
+    followingCandidate: z.string().nullable(),
+  }).nullable(),
+  geokguk: z.object({
+    pattern: z.string(),
+    status: z.string(),
+    monthMainStem: z.string(),
+    monthMainTenGod: z.string(),
+    mechanisms: z.array(z.object({
+      label: z.string(),
+      polarity: z.enum(["supporting", "damaging"]),
+      grade: z.string(),
+    })),
+  }).nullable(),
+  yongsin: z.object({
+    lenses: z.array(z.object({
+      school: z.string(),
+      status: z.string(),
+      candidateElements: z.array(z.string()),
+      candidateFunctions: z.array(z.string()),
+    })),
+    conflicts: z.array(z.string()),
+    boundary: z.string(),
+  }).nullable(),
+  sourceIds: z.array(z.string()),
+});
+
+const evidenceIndexSchema = z.object({
+  omittedClaimCount: z.number().int(),
+  groups: z.array(z.object({
+    domain: z.string(),
+    kind: z.string(),
+    count: z.number().int(),
+    claimIds: z.array(z.string()),
+    capabilityIds: z.array(z.string()),
+  })),
+  fetchHint: z.string(),
+});
+
+const claimDetailSchema = z.object({
+  id: z.string(),
+  domain: z.string(),
+  system: z.string(),
+  capabilityId: z.string(),
+  kind: z.string(),
+  statement: z.string(),
+  observations: z.array(z.string()),
+  timeframe: timeframeSchema,
+  confidence: z.string(),
+  maturity: z.string(),
+  lineage: z.string(),
+  sourceRefs,
+  limitations: z.array(z.string()),
+  counterClaimIds: z.array(z.string()),
+});
+
 /** Stable model-facing result contract. Raw dossier fields remain optional developer payloads. */
 export const legendSajuResultOutputSchema = z.object({
   error: z.string().optional(),
-  mode: z.enum(["action_only", "consumer", "evidence", "debug"]).optional(),
+  mode: z.enum(["action_only", "consumer", "evidence", "debug", "claims"]).optional(),
   detailLevel: z.enum(["brief", "standard", "expert", "raw"]).optional(),
   question: z.string().optional(),
   readingSummary: z.object({
@@ -52,6 +112,10 @@ export const legendSajuResultOutputSchema = z.object({
     interpretations: z.array(interpretationSchema),
     evidenceClaimIds: z.array(z.string()),
   })).optional(),
+  verdicts: verdictsSchema.optional(),
+  evidenceIndex: evidenceIndexSchema.optional(),
+  claimDetails: z.array(claimDetailSchema).optional(),
+  unmatchedClaimIds: z.array(z.string()).optional(),
   recommendations: recommendationSchema.optional(),
   timeline: z.array(z.object({
     period: z.string(),

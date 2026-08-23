@@ -15,7 +15,7 @@ import {
   type LegendSajuResolution,
   type LegendSajuResolveInput,
 } from "./engine/public-entry";
-import { buildConsumerReading } from "./engine/consumer-reading";
+import { buildConsumerEvidenceIndex, buildConsumerReading, buildMethodologyVerdicts } from "./engine/consumer-reading";
 import {
   capabilitySearchOutputSchema,
   legendSajuResultOutputSchema,
@@ -69,6 +69,7 @@ const outputControlFields = {
   detailLevel: detailLevelSchema.optional().describe("Calculation breadth. This does not choose the response projection."),
   outputMode: outputModeSchema.optional().describe("Response projection: action_only returns actions, consumer returns a readable interpretation, evidence returns claims and source-linked method data, and debug returns the internal resolver record."),
   maxClaims: z.number().int().min(1).max(100).optional().describe("Global item budget outside debug mode. It limits interpretations, actions, timeline entries, claims, legacy evidence, and method results together."),
+  claimIds: z.array(z.string()).min(1).max(40).optional().describe("Fetch port: repeat the previous call with identical inputs and pass claim IDs from evidenceIndex or evidenceClaimIds to receive those claims in full (statement, observations, sources, limitations) instead of the projected reading. Claim IDs are deterministic for identical inputs."),
 };
 
 const resolveSchema = z.object({
@@ -280,6 +281,12 @@ export function formatLegendSajuResolution(
 
   if (mode === "action_only" || mode === "consumer") {
     const reading = buildConsumerReading(result, mode, maxClaims);
+    const shownClaimIds = new Set([
+      ...reading.sections.flatMap((section) => section.evidenceClaimIds),
+      ...reading.timeline.flatMap((entry) => entry.evidenceClaimIds),
+    ]);
+    const evidenceIndex = buildConsumerEvidenceIndex(result, shownClaimIds);
+    const verdicts = mode === "consumer" ? buildMethodologyVerdicts(result) : null;
     const primaryItemCount = reading.sections.reduce((sum, section) => sum + section.interpretations.length, 0)
       + (reading.recommendations?.items.length ?? 0)
       + reading.timeline.length;
@@ -359,7 +366,7 @@ export function formatLegendSajuResolution(
       },
     };
     if (mode === "action_only") {
-      return jsonObject({ ...common, recommendations });
+      return jsonObject({ ...common, recommendations, evidenceIndex });
     }
     return jsonObject({
       ...common,
@@ -370,12 +377,14 @@ export function formatLegendSajuResolution(
         returnedItemCount: primaryItemCount + dreamMatches.length + nameCharacters.length,
         totalInternalClaimCount: rawClaims.length,
       },
+      ...(verdicts ? { verdicts } : {}),
       recommendations,
       ...(dreamSummary ? { dreamSummary } : {}),
       ...(nameSummary ? { nameSummary } : {}),
       sections,
       timeline,
       omittedTimelineYears: reading.omittedTimelineYears,
+      evidenceIndex,
     });
   }
 
@@ -521,10 +530,77 @@ export function formatLegendSajuResolution(
   });
 }
 
-export async function runLegendSajuResolveTool(input: LegendSajuResolveInput): Promise<ToolResult> {
+/**
+ * Claim-level fetch port. The resolver is deterministic and claim IDs are
+ * stable for identical inputs, so a follow-up call that repeats the same
+ * inputs plus claimIds re-derives the dossier and returns exactly the
+ * requested claims in full — no session state, no re-projection.
+ */
+export function formatLegendSajuClaimFetch(
+  result: LegendSajuResolution,
+  claimIds: string[],
+  detailLevel: LegendSajuDetailLevel,
+): Record<string, unknown> {
+  const requested = [...new Set(claimIds)];
+  const byId = new Map((result.dossier?.claims ?? []).map((claim) => [claim.id, claim]));
+  const conflicts = result.dossier?.conflicts ?? [];
+  const sourceById = new Map(Object.values(ENGINE_SOURCES).map((source) => [source.id, source]));
+  const sourceIds = new Set<string>();
+  const claimDetails = requested.flatMap((id) => {
+    const claim = byId.get(id);
+    if (!claim) return [];
+    for (const sourceId of claim.sourceIds) sourceIds.add(sourceId);
+    return [{
+      id: claim.id,
+      domain: claim.domain,
+      system: claim.system,
+      capabilityId: claim.capabilityId,
+      kind: claim.kind,
+      statement: claim.statement,
+      observations: claim.observations,
+      timeframe: claim.timeframe,
+      confidence: claim.confidence,
+      maturity: claim.maturity,
+      lineage: claim.lineage,
+      sourceRefs: claim.sourceIds,
+      limitations: claim.limitations,
+      counterClaimIds: [...new Set(conflicts.flatMap((conflict) =>
+        conflict.claimIds.includes(claim.id) ? conflict.claimIds.filter((other) => other !== claim.id) : []
+      ))],
+    }];
+  });
+  return jsonObject({
+    mode: "claims",
+    detailLevel,
+    question: result.question,
+    claimDetails,
+    unmatchedClaimIds: requested.filter((id) => !byId.has(id)),
+    sources: [...sourceIds].flatMap((id) => {
+      const source = sourceById.get(id);
+      return source ? [source] : [];
+    }),
+  });
+}
+
+type LegendSajuToolInput = LegendSajuResolveInput & { claimIds?: string[] };
+
+export async function runLegendSajuResolveTool(input: LegendSajuToolInput): Promise<ToolResult> {
   try {
-    const result = await resolveAsync(input);
-    const controls = resolvedOutputControls(input);
+    const { claimIds, ...resolveInput } = input;
+    const result = await resolveAsync(resolveInput);
+    const controls = resolvedOutputControls(resolveInput);
+    if (claimIds?.length) {
+      const formatted = formatLegendSajuClaimFetch(result, claimIds, controls.detailLevel);
+      const details = formatted.claimDetails as unknown[];
+      const unmatched = formatted.unmatchedClaimIds as unknown[];
+      return {
+        content: [{
+          type: "text",
+          text: `Returned ${details.length} full claims${unmatched.length ? ` (${unmatched.length} IDs not found — inputs must match the original call exactly)` : ""}.`,
+        }],
+        structuredContent: formatted,
+      };
+    }
     const formatted = formatLegendSajuResolution(result, controls.mode, controls.maxClaims, controls.detailLevel);
     return {
       content: [{ type: "text", text: resolutionSummary(result, formatted) }],
@@ -535,7 +611,7 @@ export async function runLegendSajuResolveTool(input: LegendSajuResolveInput): P
   }
 }
 
-async function runIntentTool(input: Omit<LegendSajuResolveInput, "entryIntent">, entryIntent: LegendSajuEntryIntent): Promise<ToolResult> {
+async function runIntentTool(input: Omit<LegendSajuToolInput, "entryIntent">, entryIntent: LegendSajuEntryIntent): Promise<ToolResult> {
   return runLegendSajuResolveTool({
     ...input,
     entryIntent,
@@ -591,7 +667,7 @@ export function createLegendSajuMcpServer(): McpServer {
     name: "legend-saju",
     version: LEGEND_SAJU_ENGINE_VERSION,
   }, {
-    instructions: "일반 운세는 legend_saju_read_fortune을 호출한다. detailLevel은 계산 범위, outputMode는 반환 형식을 정한다. 기본 consumer는 readingSummary·sections·recommendations·timeline을 사용하고, 행동만 필요하면 action_only를 쓴다. 계산 근거·지식 자산·원문·출처가 필요할 때만 evidence로 다시 호출한다. 특정 유파나 산법을 지목한 요청은 legend_saju_capabilities에서 ID를 찾은 뒤 legend_saju_run_methods에 함께 전달한다. debug는 개발자 점검용이다.",
+    instructions: "일반 운세는 legend_saju_read_fortune을 호출한다. detailLevel은 계산 범위, outputMode는 반환 형식을 정한다. 기본 consumer는 readingSummary·verdicts·sections·recommendations·timeline을 사용하고, 행동만 필요하면 action_only를 쓴다. consumer 응답의 verdicts에는 왕쇠·격국(성패 포함)·용신 후보(조후/격국/부억 관법 분리) 결론이 항상 들어 있으니 전문적 해석의 뼈대로 쓴다. evidenceIndex는 응답에 싣지 않은 내부 계산 근거의 색인이다: 왕쇠 근거, 격국 구조, 해석 방법론 설명이 더 필요하면 동일 입력으로 같은 도구를 다시 호출하며 claimIds에 색인의 ID를 넣어 필요한 것만 선택적으로 가져온다(전체를 무조건 당기지 말 것). 계산 근거·지식 자산·원문·출처 전반이 필요할 때만 evidence 모드로 다시 호출한다. 특정 유파나 산법을 지목한 요청은 legend_saju_capabilities에서 ID를 찾은 뒤 legend_saju_run_methods에 함께 전달한다. debug는 개발자 점검용이다.",
   });
 
   server.registerTool("legend_saju_manifest", {
@@ -616,7 +692,7 @@ export function createLegendSajuMcpServer(): McpServer {
 
   server.registerTool("legend_saju_read_fortune", {
     title: "Read a Saju fortune",
-    description: "Use this for natal, current, annual, career, wealth, relationship, health, and action readings. Use detailLevel for calculation breadth and outputMode for action, readable, evidence, or debug results.",
+    description: "Use this for natal, current, annual, career, wealth, relationship, health, and action readings. Use detailLevel for calculation breadth and outputMode for action, readable, evidence, or debug results. Consumer responses always carry verdicts (왕쇠·격국·용신 후보 conclusions) plus an evidenceIndex of omitted internal claims; repeat the identical call with claimIds from that index to selectively pull deeper grounding such as strength axes, pattern structure, or methodology notes.",
     inputSchema: readingSchema,
     outputSchema: legendSajuResultOutputSchema,
     annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },

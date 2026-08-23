@@ -423,6 +423,53 @@ describe("token-free MCP handlers", () => {
     expect(inputNotes.map((note) => note.code)).toContain("BIRTH_TIME_SOURCE_UNSPECIFIED");
   });
 
+  it("always ships methodology verdicts and an omitted-claim index in consumer mode", async () => {
+    const result = await runLegendSajuResolveTool({
+      question: "내 용신이랑 격국 알려줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    });
+    const verdicts = result.structuredContent.verdicts as {
+      wangswae: { status: string } | null;
+      geokguk: { pattern: string; status: string } | null;
+      yongsin: { lenses: Array<{ school: string }>; boundary: string } | null;
+    };
+    expect(verdicts.wangswae?.status).toBeTruthy();
+    expect(verdicts.geokguk?.pattern).toContain("격");
+    expect(verdicts.yongsin?.lenses.length).toBeGreaterThanOrEqual(3);
+
+    const index = result.structuredContent.evidenceIndex as {
+      omittedClaimCount: number;
+      groups: Array<{ domain: string; kind: string; claimIds: string[] }>;
+      fetchHint: string;
+    };
+    expect(index.omittedClaimCount).toBeGreaterThan(0);
+    expect(index.groups.flatMap((group) => group.claimIds).length).toBe(index.omittedClaimCount);
+    expect(index.groups.some((group) => group.kind === "structural_observation")).toBe(true);
+  });
+
+  it("serves omitted claims in full through the claimIds fetch port", async () => {
+    const input = {
+      question: "내 용신이랑 격국 알려줘",
+      birth,
+      targetDate: { year: 2026, month: 8, day: 23 },
+    };
+    const first = await runLegendSajuResolveTool(input);
+    const index = first.structuredContent.evidenceIndex as { groups: Array<{ claimIds: string[] }> };
+    const requested = index.groups.flatMap((group) => group.claimIds).slice(0, 3);
+    expect(requested.length).toBeGreaterThan(0);
+
+    const fetched = await runLegendSajuResolveTool({ ...input, claimIds: [...requested, "no-such-claim"] });
+    expect(fetched.isError).not.toBe(true);
+    expect(fetched.structuredContent.mode).toBe("claims");
+    const details = fetched.structuredContent.claimDetails as Array<{ id: string; statement: string; observations: string[]; sourceRefs: string[] }>;
+    expect(details.map((claim) => claim.id)).toEqual(requested);
+    expect(details.every((claim) => claim.statement.length > 0)).toBe(true);
+    expect(details.some((claim) => claim.observations.length > 0)).toBe(true);
+    expect(fetched.structuredContent.unmatchedClaimIds).toEqual(["no-such-claim"]);
+    expect(fetched.structuredContent.sections).toBeUndefined();
+  });
+
   it("exposes a server factory and searchable live manifest", async () => {
     expect(createLegendSajuMcpServer()).toBeDefined();
     const manifest = await runManifestTool();

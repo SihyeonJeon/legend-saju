@@ -8,6 +8,7 @@
  */
 import type { EngineClaim, LifeDomain } from "./engine-v2";
 import type { MyeongriActionGuidance } from "./myeongri-action-guidance";
+import type { MyeongriJudgment } from "./myeongri-judgment";
 import type { LegendSajuOutputMode, LegendSajuResolution } from "./resolver";
 
 export interface ConsumerReadingPoint {
@@ -80,6 +81,115 @@ export interface ConsumerRecommendations {
   evidenceIntents: string[];
   sourceIds: string[];
   boundary: string;
+}
+
+export interface ConsumerMethodologyVerdicts {
+  /** 왕쇠 판정 — 월령·통근·투출을 분리 대조한 상태값. */
+  wangswae: {
+    status: MyeongriJudgment["strength"]["status"];
+    monthCommandTenGod: string;
+    sameElementRoots: string[];
+    followingCandidate: MyeongriJudgment["strength"]["followingCandidate"];
+  } | null;
+  /** 월령 격국 판정 — 격국명·성패 상태·보강/훼손 장치. */
+  geokguk: {
+    pattern: string;
+    status: MyeongriJudgment["pattern"]["status"];
+    monthMainStem: string;
+    monthMainTenGod: string;
+    mechanisms: { label: string; polarity: "supporting" | "damaging"; grade: string }[];
+  } | null;
+  /** 용신 후보 — 조후·격국 기능·부억 세 관법을 합치지 않고 병기. */
+  yongsin: {
+    lenses: { school: string; status: string; candidateElements: string[]; candidateFunctions: string[] }[];
+    conflicts: string[];
+    boundary: string;
+  } | null;
+  sourceIds: string[];
+}
+
+/**
+ * Always-on methodology conclusions for the consumer projection. These are the
+ * verdict values (격국명·성패·왕쇠·용신 후보) that interpretation sentences rest
+ * on; they ride outside the item budget so a reading never arrives without them.
+ */
+export function buildMethodologyVerdicts(result: LegendSajuResolution): ConsumerMethodologyVerdicts | null {
+  const method = result.dossier?.methodResults?.myeongri_judgment as { judgment?: MyeongriJudgment } | undefined;
+  const judgment = method?.judgment;
+  if (!judgment) return null;
+  return {
+    wangswae: {
+      status: judgment.strength.status,
+      monthCommandTenGod: judgment.strength.monthCommandTenGod,
+      sameElementRoots: judgment.strength.sameElementRoots.map((root) => `${root.position}${root.branch}`),
+      followingCandidate: judgment.strength.followingCandidate,
+    },
+    geokguk: {
+      pattern: judgment.pattern.pattern,
+      status: judgment.pattern.status,
+      monthMainStem: judgment.pattern.monthMainStem,
+      monthMainTenGod: judgment.pattern.monthMainTenGod,
+      mechanisms: judgment.pattern.mechanisms.map((mechanism) => ({
+        label: mechanism.label,
+        polarity: mechanism.polarity,
+        grade: mechanism.grade,
+      })),
+    },
+    yongsin: {
+      lenses: judgment.usefulGods.lenses.map((lens) => ({
+        school: lens.school,
+        status: lens.status,
+        candidateElements: lens.candidateElements,
+        candidateFunctions: lens.candidateFamilies,
+      })),
+      conflicts: judgment.usefulGods.conflicts,
+      boundary: judgment.usefulGods.boundary,
+    },
+    sourceIds: judgment.sourceIds,
+  };
+}
+
+export interface ConsumerEvidenceIndexGroup {
+  domain: string;
+  kind: EngineClaim["kind"];
+  count: number;
+  claimIds: string[];
+  capabilityIds: string[];
+}
+
+export interface ConsumerEvidenceIndex {
+  omittedClaimCount: number;
+  groups: ConsumerEvidenceIndexGroup[];
+  fetchHint: string;
+}
+
+/**
+ * Compact index of every dossier claim the projection did not render —
+ * including methodology and structural/calculated layers that consumer
+ * sections never show. Claim IDs are deterministic for identical inputs, so a
+ * follow-up call with claimIds can pull any of them in full.
+ */
+export function buildConsumerEvidenceIndex(
+  result: LegendSajuResolution,
+  shownClaimIds: ReadonlySet<string>,
+): ConsumerEvidenceIndex {
+  const omitted = (result.dossier?.claims ?? []).filter((claim) => !shownClaimIds.has(claim.id));
+  const groups = new Map<string, ConsumerEvidenceIndexGroup>();
+  for (const claim of omitted) {
+    const key = `${claim.domain}|${claim.kind}`;
+    const group = groups.get(key) ?? { domain: claim.domain, kind: claim.kind, count: 0, claimIds: [], capabilityIds: [] };
+    group.count += 1;
+    group.claimIds.push(claim.id);
+    if (!group.capabilityIds.includes(claim.capabilityId)) group.capabilityIds.push(claim.capabilityId);
+    groups.set(key, group);
+  }
+  return {
+    omittedClaimCount: omitted.length,
+    groups: [...groups.values()],
+    fetchHint: omitted.length
+      ? "동일한 입력으로 같은 도구를 다시 호출하면서 claimIds에 이 ID들을 넣으면 해당 계산 근거 전문을 받는다. 왕쇠·격국 구조나 해석법 설명이 필요할 때 선택적으로 가져온다."
+      : "생략된 계산 근거가 없다.",
+  };
 }
 
 const DOMAIN_LABELS: Partial<Record<LifeDomain | string, string>> = {
