@@ -22,8 +22,6 @@ import {
 import { currentLuck } from "./engine/saju-engine-advanced";
 import { evaluateMyeongriJudgment, type MyeongriJudgment, tenGodForStem } from "./engine/myeongri-judgment";
 
-export const WIDGET_DISCLAIMER = "전통 명리 관법을 결정적으로 계산한 참고용 해석이며, 미래를 보장하거나 단정하지 않는다.";
-
 const EL_HANJA: Record<string, string> = { 목: "木", 화: "火", 토: "土", 금: "金", 수: "水" };
 const STRENGTH_LABEL: Record<MyeongriJudgment["strength"]["status"], string> = {
   support_leaning: "신강 경향",
@@ -127,7 +125,6 @@ export function buildNatalCardPayload(birth: SajuInput, narrative?: WidgetNarrat
     sinsal: deriveSinsal(chart),
     relations: detectRelations(chart),
     ...(narrative ? { narrative } : {}),
-    disclaimer: WIDGET_DISCLAIMER,
   };
 }
 
@@ -162,7 +159,6 @@ export function buildFortuneCardsPayload(
     })),
     ...(options.actions?.length ? { actions: options.actions } : {}),
     ...(options.narrative ? { narrative: options.narrative } : {}),
-    disclaimer: WIDGET_DISCLAIMER,
   };
 }
 
@@ -199,7 +195,6 @@ export function buildCompatibilityCardPayload(
     ...(options.score ? { score: Math.max(1, Math.min(5, Math.round(options.score))) } : {}),
     signals: match.signals.map((text) => ({ type: signalType(text), text })),
     ...(options.narrative ? { narrative: options.narrative } : {}),
-    disclaimer: `${match.note} ${WIDGET_DISCLAIMER}`,
   };
 }
 
@@ -249,6 +244,5 @@ export function buildLuckTimelinePayload(
       },
     } : {}),
     ...(options.narrative ? { narrative: options.narrative } : {}),
-    disclaimer: WIDGET_DISCLAIMER,
   };
 }

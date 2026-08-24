@@ -27,7 +27,7 @@ describe("ChatGPT Apps widget payloads", () => {
     expect(payload.verdicts.geokguk.label).toContain("격");
     expect(Array.isArray(payload.sinsal)).toBe(true);
     expect(payload.narrative.headline).toBe("표현으로 여는 사주");
-    expect(payload.disclaimer.length).toBeGreaterThan(0);
+    expect(payload.disclaimer).toBeUndefined();
   });
 
   it("builds fortune cards with engine luck facts and clamps model scores", () => {

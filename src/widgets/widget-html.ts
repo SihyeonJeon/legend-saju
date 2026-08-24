@@ -84,7 +84,7 @@ const SHARED_JS = `
       +(n.reading?"<div>"+esc(n.reading)+"</div>":"")+"</div></div>";
   }
   function foot(d,esc){
-    return "<div class='dots'></div><div class='foot'>"+esc(d.disclaimer||"")+"<br><span class='brand'>\\u2728 LEGEND SAJU \\u2728</span></div>";
+    return "<div class='dots'></div><div class='foot'><span class='brand'>\\u2728 LEGEND SAJU \\u2728</span></div>";
   }
 `;
 
