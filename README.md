@@ -1,43 +1,43 @@
 <!-- mcp-name: io.github.SihyeonJeon/legend-saju -->
 
 <div align="center">
-  <img src="assets/og-social-1280x640.png" alt="Legend Saju — 출처와 유파를 추적하는 동양 역학 엔진" width="100%" />
+  <img src="assets/og-social-1280x640.png" alt="Legend Saju: 출처와 유파를 추적하는 동양 술수 엔진" width="100%" />
 
 # Legend Saju
 
-**사주 몇 글자를 LLM에 넘기는 래퍼가 아니다.**
-계산식, 유파, 출처, 불확실성을 구조화해 반환하는 동양 역학 엔진이다.
+**모든 답이 결정적 계산에서 시작하는 동양 술수(命·卜·相) 엔진.**
+계산식, 유파, 출처, 불확실성을 구조화해 반환한다.
 
 [![CI](https://github.com/SihyeonJeon/legend-saju/actions/workflows/ci.yml/badge.svg)](https://github.com/SihyeonJeon/legend-saju/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6.svg)](https://www.typescriptlang.org/)
 
-[English](README.en.md) · [기여하기](CONTRIBUTING.md) · [원격 MCP](https://legend-saju-mcp-production.up.railway.app/mcp)
+[English](README.en.md) · [기여하기](CONTRIBUTING.md) · [원격 MCP](https://saju.tripsight.co.kr/mcp)
 
 </div>
 
-> 같은 생년월일을 여러 전통으로 계산한다. 계산 경로 안에는 숨겨진 LLM 호출이 없다.
+> 같은 생년월일을 여러 전통으로 계산한다. 계산 경로 안에는 숨겨진 LLM 호출이 0회다.
 
 **출처가 연결된 지식 777건 · 대육임 720국 · 한국 인명용 한자 관측 9,495건 · 계산 경로 모델 호출 0회**
 
-Legend Saju는 사주·명리, 자미두수, 기문둔갑, 대육임, 철판신수, 성명학 등 서로 다른 전통의 계산을 하나의 엔진에서 다룬다. 유파가 다르면 억지로 하나의 결론으로 합치지 않고, 출생시간을 모르면 임의의 시각을 만들어내지 않는다.
+Legend Saju는 사주·명리, 자미두수, 기문둔갑, 대육임, 철판신수, 성명학, 해몽까지 명(命)·복(卜)·상(相) 삼술의 계산을 하나의 엔진에서 다룬다. 유파가 다르면 각각의 결과로 나란히 보존하고, 출생시간을 모르면 후보 차트를 분리해 계산한다.
 
 ## 가장 빠른 사용법
 
 설치 없이 연결할 수 있는 HTTPS MCP 주소다.
 
 ```text
-https://legend-saju-mcp-production.up.railway.app/mcp
+https://saju.tripsight.co.kr/mcp
 ```
 
-공식 MCP Registry 이름은 `io.github.SihyeonJeon/legend-saju`다.
+공식 MCP Registry 이름은 `io.github.SihyeonJeon/legend-saju`다. 기존 주소 `https://legend-saju-mcp-production.up.railway.app/mcp`도 같은 서버로 연결된다.
 
 ### Claude Code
 
 아래 명령은 모든 프로젝트에서 쓸 수 있도록 사용자 범위에 연결한다.
 
 ```bash
-claude mcp add --transport http --scope user legend-saju https://legend-saju-mcp-production.up.railway.app/mcp
+claude mcp add --transport http --scope user legend-saju https://saju.tripsight.co.kr/mcp
 claude mcp list
 ```
 
@@ -48,8 +48,10 @@ Claude Code를 열고 `/mcp`에서 `legend-saju`가 연결됐는지 확인한 �
 1. ChatGPT의 **Settings → Security and login**에서 **Developer mode**를 켠다.
 2. [ChatGPT Plugins](https://chatgpt.com/plugins)에서 `+`를 누른다.
 3. 이름과 설명을 입력하고 **Connection**에 위 MCP 주소를 `/mcp`까지 포함해 넣는다.
-4. 연결을 만든 뒤 `legend_saju_read_fortune`, `legend_saju_analyze_compatibility`, `legend_saju_select_dates` 등이 발견되는지 확인한다.
+4. 연결을 만든 뒤 `legend_saju_read_fortune`, `legend_saju_analyze_compatibility`, `legend_saju_card_natal` 등이 발견되는지 확인한다.
 5. 새 대화의 도구 메뉴에서 연결을 선택하고 자연어로 질문한다.
+
+ChatGPT에서는 계산 결과가 카드 위젯(ChatGPT Apps)으로 렌더링된다. 원국 카드, 영역별 운세 카드, 궁합 카드, 대운 타임라인 네 종류가 질문 유형에 맞춰 뜬다. 위젯 렌더링은 웹(chatgpt.com)에서 가장 안정적이다.
 
 개발자 모드 사용 가능 여부는 계정과 워크스페이스 정책에 따라 다를 수 있다. 자세한 절차는 [OpenAI의 플러그인 연결 안내](https://developers.openai.com/plugins/deploy/connect-chatgpt)를 참고하면 된다.
 
@@ -58,7 +60,7 @@ Claude Code를 열고 `/mcp`에서 `legend-saju`가 연결됐는지 확인한 �
 MCP만 바로 연결하려면 다음 두 줄이면 된다.
 
 ```bash
-codex mcp add legend-saju-remote --url https://legend-saju-mcp-production.up.railway.app/mcp
+codex mcp add legend-saju-remote --url https://saju.tripsight.co.kr/mcp
 codex mcp list
 ```
 
@@ -68,7 +70,7 @@ MCP 연결과 자연어 사용 지침을 함께 설치하려면 저장소를 플
 codex plugin marketplace add SihyeonJeon/legend-saju --ref main
 ```
 
-원격 서버는 입력값을 저장하지 않으며 모델 API를 호출하지 않는다. 요청 크기, 분당 요청 수, 동시 실행 수 제한은 적용된다.
+원격 서버는 입력값을 저장 없이 처리하고 모델 API 호출 0회를 유지한다. 요청 크기, 분당 요청 수, 동시 실행 수 제한은 적용된다.
 
 ### 로컬에서 실행하기
 
@@ -105,7 +107,7 @@ claude mcp add --transport stdio --scope user legend-saju -- node "$PWD/bin/lege
   "mcpServers": {
     "legend-saju": {
       "type": "http",
-      "url": "https://legend-saju-mcp-production.up.railway.app/mcp"
+      "url": "https://saju.tripsight.co.kr/mcp"
     }
   }
 }
@@ -141,8 +143,14 @@ MCP 서버는 사용자의 목적이 이름에 드러나는 읽기 전용 도구
 | `legend_saju_manifest` | 현재 엔진에 들어 있는 계산법, 출처, 데이터 범위를 확인한다 |
 | `legend_saju_capabilities` | 전문적인 질문에 맞는 세부 계산법을 찾는다 |
 | `legend_saju_run_methods` | 이름을 지정한 유파·계산법이나 복합 계산을 한 실행 계획으로 묶는다 |
+| `legend_saju_card_natal` | 네 기둥·오행 밸런스·왕쇠/격국/용신 판정·신살을 원국 카드 위젯으로 렌더링한다 |
+| `legend_saju_card_fortune` | 총운·재물운·연애운 등 영역별 운세 카드 위젯을 렌더링한다 |
+| `legend_saju_card_compatibility` | 두 사람의 일주와 합충 신호를 궁합 카드 위젯으로 렌더링한다 |
+| `legend_saju_card_timeline` | 대운 타임라인 위젯을 렌더링하고 시기 질문의 연도를 표시한다 |
 
 일상적인 운세 요청은 목적별 도구가 필요한 계산만 고른다. `detailLevel`은 계산 범위를 정하고 `outputMode`는 반환 형식을 정한다. 깊은 종합 분석은 `detailLevel: "expert"`로 계산하되 기본 응답은 읽기 좋은 `consumer` 형식을 유지한다. 지식 자산·원문·출처가 필요할 때 같은 입력을 `outputMode: "evidence"`로 호출한다.
+
+카드 도구의 계산 값은 전부 서버가 채우고, 해석 문장과 점수는 호스트 모델이 작성해 카드의 `narrative`·`text` 필드로 전달한다. 카드에는 해석 작성 주체가 라벨로 표시된다.
 
 ```text
 사용자의 자연어 질문
@@ -151,29 +159,29 @@ MCP 서버는 사용자의 목적이 이름에 드러나는 읽기 전용 도구
         ↓
 Legend Saju MCP가 결정론적 계산 수행
         ↓
-근거 ID가 연결된 요약·영역별 해석·시간축
+근거 ID가 연결된 요약·영역별 해석·타임라인
         ↓
 호스트 모델이 근거와 경계를 보존해 대화로 전달
 ```
 
-Legend Saju MCP 자체는 OpenAI나 Anthropic API 키를 읽지 않으며 모델을 호출하지 않는다. 대화와 설명에는 사용 중인 Codex·Claude·기타 클라이언트의 기존 모델 세션이 쓰인다.
+Legend Saju MCP 자체는 OpenAI나 Anthropic API 키 없이 동작하며 계산 경로의 모델 호출 0회를 유지한다. 대화와 설명에는 사용 중인 Codex·Claude·기타 클라이언트의 기존 모델 세션이 쓰인다.
 
 ## MCP와 동봉 플러그인의 차이
 
 - **MCP만 연결**하면 계산 엔진과 목적별 도구를 바로 사용할 수 있다.
 - [`plugins/legend-saju/`](plugins/legend-saju/README.md)의 **Codex 플러그인**에는 MCP 설정과 자연어 사용 지침이 함께 들어 있다. 사용자가 capability ID나 입력 스키마를 고르지 않도록 호스트 모델의 처리 방식을 보강한다.
-- 계산 능력은 플러그인 안에 축소 복사돼 있지 않다. MCP와 플러그인 모두 같은 공개 엔진 진입점을 사용한다.
+- 계산 능력은 MCP와 플러그인이 같은 공개 엔진 진입점을 공유한다.
 
 ## 자연어 입력
 
-이 프로젝트가 의도한 인터페이스는 접수 폼이나 intent 메뉴가 아니라 대화다. 모델은 대화에서 확실한 정보만 추출하고, 필요한 계산법을 찾은 뒤, 엔진이 돌려준 근거를 설명한다.
+이 프로젝트가 의도한 인터페이스는 대화다. 접수 폼과 intent 메뉴 대신, 모델이 대화에서 확실한 정보만 추출하고, 필요한 계산법을 찾은 뒤, 엔진이 돌려준 근거를 설명한다.
 
 ```text
 1990년 1월 1일 양력이고 태어난 시간은 몰라.
 앞으로 3년 직업과 돈을 봐줘.
 ```
 
-출생시간을 모른다고 말하면 엔진은 정오를 임의로 넣지 않는다. 자시의 날짜 경계 두 방식까지 포함한 후보 차트를 분리해 반환한다.
+출생시간을 모른다고 말하면 엔진은 자시의 날짜 경계 두 방식까지 포함한 후보 차트를 분리해 반환한다. 임의의 정오 대입 대신 후보군 전체를 유지한다.
 
 ## 개발자로 실행하기
 
@@ -211,7 +219,7 @@ console.log(result.dossier?.conflicts);
 console.log(result.routes);
 ```
 
-반환값은 완성된 점사 문장이 아니라 계산과 해석의 근거 데이터다.
+반환값은 계산과 해석의 근거 데이터다. 완성된 점사 문장 대신 claim, 충돌, 실행 경로가 돌아온다.
 
 ```ts
 {
@@ -238,7 +246,9 @@ console.log(result.routes);
 }
 ```
 
-상세도는 `brief`, `standard`, `expert`, `raw`이고 출력은 `action_only`, `consumer`, `evidence`, `debug`다. `action_only`는 행동 제안만, `consumer`는 요약·영역별 해석·시간축, `evidence`는 claim·계산 결과·지식 자산·원문·출처, `debug`는 내부 실행 기록을 반환한다. `maxClaims`는 debug를 제외한 응답에서 해석·행동·시간축·claim·계산 결과에 하나의 공통 예산으로 적용된다.
+상세도는 `brief`, `standard`, `expert`, `raw`이고 출력은 `action_only`, `consumer`, `evidence`, `debug`다. `action_only`는 행동 제안만, `consumer`는 요약·판정·영역별 해석·타임라인, `evidence`는 claim·계산 결과·지식 자산·원문·출처, `debug`는 내부 실행 기록을 반환한다. `maxClaims`는 debug를 제외한 응답에서 해석·행동·타임라인·claim·계산 결과에 하나의 공통 예산으로 적용된다.
+
+consumer 응답에는 왕쇠·격국·용신 판정이 상시 포함되고, 응답에 싣지 못한 내부 claim은 `evidenceIndex` 색인으로 노출된다. 같은 입력으로 `claimIds`를 넘겨 재호출하면 색인의 claim 전문을 선택적으로 받는다.
 
 ## 왜 만들었나
 
@@ -246,13 +256,13 @@ console.log(result.routes);
 
 - **결정론적 코어**: 같은 입력은 LLM 없이 같은 계산 결과를 만든다.
 - **유파 보존**: 명리 관법이나 자미두수 사화표가 다르면 각각의 결과로 남긴다.
-- **출생시간 미상 처리**: 모르는 시각은 후보군으로 계산하며 정오로 꾸며내지 않는다.
+- **출생시간 미상 처리**: 모르는 시각은 정오 대입 대신 후보군으로 계산한다.
 - **출처 추적**: 기능마다 성숙도, 근거 역할, 유파, 출처 ID, 빠진 차원을 기록한다.
-- **운명 점수 없음**: 여러 체계의 근거와 충돌을 하나의 숫자로 뭉개지 않는다.
+- **운명 점수 없음**: 여러 체계의 근거와 충돌을 각각의 층으로 보존한다. 하나의 숫자로 뭉개는 종합 점수를 거부한다.
 
 ## 실제로 들어 있는 자산
 
-이 저장소는 모델 호출 인터페이스만 공개하는 것이 아니라, 어려운 데이터와 규칙 작업을 함께 공개한다.
+이 저장소는 모델 호출 인터페이스와 함께, 어려운 데이터와 규칙 작업 자체를 공개한다.
 
 | 자산 | 공개 범위 |
 | --- | ---: |
@@ -267,7 +277,7 @@ console.log(result.routes);
 | 원전 범위가 명시된 81수 | 81개 전체 행과 1차 출처 대조 |
 | 해몽 | 주공해몽 988개, 아르테미도로스 211절, 의미 대조가 끝난 교차문화 개념 5개 |
 
-검사 가능한 원본 데이터는 [`data/`](data/README.md)에 있다. 실행에 필요한 지식은 런타임에 포함되므로 원격 데이터베이스나 숨겨진 검색 서비스에 의존하지 않는다.
+검사 가능한 원본 데이터는 [`data/`](data/README.md)에 있다. 실행에 필요한 지식은 런타임에 포함되므로 원격 데이터베이스나 숨겨진 검색 서비스 없이 동작한다.
 
 자미두수 궁성 계산의 최적화 전후 결과는 144개 조합에서 바이트 단위로 일치했다. 자세한 검증 범위는 [`docs/PARITY.md`](docs/PARITY.md)에 기록돼 있다.
 
@@ -286,7 +296,7 @@ console.log(result.routes);
 
 기능 수를 README의 고정 숫자로 믿기보다 `getEngineManifest()`로 현재 레지스트리를 확인하는 편이 정확하다.
 
-출생시각은 현지 민간시로 해석한다. `timezone`과 `longitudeE`는 출생지 메타데이터로 보존하지만, 기본 차트가 근사 진태양시 보정을 몰래 적용하지는 않는다. 이 누락은 기능 및 입력 감사 메타데이터에 기록된다.
+출생시각은 현지 민간시로 해석한다. `timezone`과 `longitudeE`는 출생지 메타데이터로 보존하고, 기본 차트는 근사 진태양시 보정 없이 민간시를 그대로 쓴다. 이 정책은 기능 및 입력 감사 메타데이터에 기록된다.
 
 잘못된 출생 정보는 구조화된 `blocked` 경로로 반환돼 다른 결과와 함께 정정 요청을 할 수 있다. 존재할 수 없는 `targetDate`나 `questionDateTime`은 날짜 기반 계산 전체를 안전하게 진행할 수 없으므로 요청 자체를 거절한다.
 
@@ -300,7 +310,7 @@ import { resolve } from "./dist/index.js";
 
 이름을 `resolveAsync`의 `name`으로 넘기면 별도의 한국 성명학 전체 경로가 열린다. 실제 성과 이름 한자를 9,495개 관측 스냅샷과 대조하고, 법적 사용 가능성, 배정 음, 관측 획수 후보, 유니코드, 자형 분해, 사용자가 밝힌 오격 계산법, 81수 대조를 서로 다른 근거 층으로 유지한다.
 
-기존 동기식 `resolve`는 계산 전용 사용자와 호환된다. 비동기식은 이름이 들어왔을 때만 큰 성명학 데이터를 지연 로딩하므로 일반 사주 계산의 시작 비용을 늘리지 않는다.
+기존 동기식 `resolve`는 계산 전용 사용자와 호환된다. 비동기식은 이름이 들어왔을 때만 큰 성명학 데이터를 지연 로딩하므로 일반 사주 계산의 시작 비용이 그대로 유지된다.
 
 `analyze(input)`는 타입이 정해진 출생 명세 API다. `query({ intent, ... })`는 26개 intent를 지원하는 호환 인터페이스다. 설명과 UI 같은 어댑터는 계산 코어와 분리한다.
 
@@ -330,7 +340,7 @@ const result = analyze({
 });
 ```
 
-고정되는 기둥, 달라지는 관계, 모든 시주 후보를 분리해 반환한다. 과거 사건으로 후보를 비교할 수는 있어도 엔진이 혼자 하나의 출생시간을 정답으로 선언하지 않는다.
+고정되는 기둥, 달라지는 관계, 모든 시주 후보를 분리해 반환한다. 후보 확정은 과거 사건 대조와 사용자의 몫으로 남긴다.
 
 ## 신비보다 방법론
 
