@@ -858,12 +858,20 @@ export function createLegendSajuMcpServer(): McpServer {
     { name: "saju-luck-timeline", uri: WIDGET_URIS.luckTimeline, title: "대운 타임라인", description: "대운 흐름과 시기 질문에 답하는 타임라인 카드.", html: LUCK_TIMELINE_HTML },
   ];
   for (const widget of widgets) {
+    // 위젯은 외부 요청·외부 리소스가 전혀 없는 자급형 HTML이므로 CSP 허용목록은 비워 선언한다.
+    const widgetMeta: Record<string, unknown> = {
+      "openai/widgetDescription": widget.description,
+      "openai/widgetCSP": { connect_domains: [], resource_domains: [] },
+      "openai/widgetDomain": "https://saju.tripsight.co.kr",
+      "openai/widgetPrefersBorder": true,
+    };
     server.registerResource(widget.name, widget.uri, {
       title: widget.title,
       description: widget.description,
       mimeType: "text/html+skybridge",
+      _meta: widgetMeta,
     }, async (uri) => ({
-      contents: [{ uri: uri.href, mimeType: "text/html+skybridge", text: widget.html }],
+      contents: [{ uri: uri.href, mimeType: "text/html+skybridge", text: widget.html, _meta: widgetMeta }],
     }));
   }
 
