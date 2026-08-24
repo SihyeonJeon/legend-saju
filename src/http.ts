@@ -128,6 +128,44 @@ function createRateLimiter(limit: number): (request: IncomingMessage, response: 
   };
 }
 
+const MODERN_ENVELOPE_PREFIX = "io.modelcontextprotocol/";
+const LEGACY_HEADER_VERSIONS = new Set(["2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05", "2024-10-07"]);
+
+/**
+ * Compatibility shim for half-modern MCP clients (notably ChatGPT).
+ *
+ * The 2026-07-28 protocol revision requires a complete per-request _meta
+ * envelope plus an Mcp-Method header; some clients send only fragments (an
+ * envelope protocolVersion claim without clientCapabilities, or a modern
+ * MCP-Protocol-Version header without any envelope). The SDK rejects those
+ * with 400s. A complete modern request passes through untouched; anything
+ * partial is downgraded — envelope keys and unsupported version headers are
+ * stripped — so it classifies as legacy and the stateless path serves it.
+ */
+export function downgradeHalfModernRequest(
+  headers: Record<string, string | string[] | undefined>,
+  body: unknown,
+): unknown {
+  const params = (body as { params?: { _meta?: Record<string, unknown> } } | null)?.params;
+  const meta = params?._meta;
+  const envelopeKeys = meta ? Object.keys(meta).filter((key) => key.startsWith(MODERN_ENVELOPE_PREFIX)) : [];
+  const headerValue = headers["mcp-protocol-version"];
+  const headerVersion = Array.isArray(headerValue) ? headerValue[0] : headerValue;
+  const isCompleteModern = envelopeKeys.includes(`${MODERN_ENVELOPE_PREFIX}protocolVersion`)
+    && envelopeKeys.includes(`${MODERN_ENVELOPE_PREFIX}clientCapabilities`)
+    && headers["mcp-method"] !== undefined;
+  if (isCompleteModern) return body;
+
+  if (meta && envelopeKeys.length) {
+    for (const key of envelopeKeys) delete meta[key];
+    if (Object.keys(meta).length === 0) delete params._meta;
+  }
+  if (headerVersion !== undefined && !LEGACY_HEADER_VERSIONS.has(headerVersion)) {
+    delete headers["mcp-protocol-version"];
+  }
+  return body;
+}
+
 function isJsonRequest(request: IncomingMessage): boolean {
   const contentType = request.headers["content-type"];
   const value = Array.isArray(contentType) ? contentType[0] : contentType;
@@ -202,7 +240,7 @@ export function createLegendSajuHttpServer(options: LegendSajuHttpOptions = {}) 
           await nodeHandler(request, response);
           return;
         }
-        const body = await readJsonBody(request, config.maxBodyBytes!);
+        const body = downgradeHalfModernRequest(request.headers, await readJsonBody(request, config.maxBodyBytes!));
         await nodeHandler(request, response, body);
       } catch (error) {
         if (error instanceof RequestBodyTooLargeError) {

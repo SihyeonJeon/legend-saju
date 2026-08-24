@@ -46,6 +46,33 @@ describe("Legend Saju Streamable HTTP MCP", () => {
     });
   });
 
+  it("serves half-modern clients by downgrading partial 2026 envelopes to the legacy path", async () => {
+    const partialEnvelope = await fetch(`${baseUrl}/mcp`, {
+      method: "POST",
+      headers: { accept: "application/json, text/event-stream", "content-type": "application/json" },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        id: 1,
+        method: "tools/list",
+        params: { _meta: { "io.modelcontextprotocol/protocolVersion": "2026-07-28" } },
+      }),
+    });
+    expect(partialEnvelope.status).toBe(200);
+    expect(await partialEnvelope.text()).toContain("legend_saju_card_natal");
+
+    const modernHeaderOnly = await fetch(`${baseUrl}/mcp`, {
+      method: "POST",
+      headers: {
+        accept: "application/json, text/event-stream",
+        "content-type": "application/json",
+        "mcp-protocol-version": "2026-07-28",
+      },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 2, method: "tools/list" }),
+    });
+    expect(modernHeaderOnly.status).toBe(200);
+    expect(await modernHeaderOnly.text()).toContain("legend_saju_read_fortune");
+  });
+
   it("initializes over Streamable HTTP and advertises focused user-goal tools", async () => {
     const initialize = await fetch(`${baseUrl}/mcp`, {
       method: "POST",
